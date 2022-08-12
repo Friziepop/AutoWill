@@ -2,9 +2,13 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
+import time
+from cgi import print_arguments
 import os
 import win32com.client as win32
+
+from pyawr_utils import awrde_utils
+
 from awr_optimizer import AwrOptimizer
 
 
@@ -17,12 +21,14 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-    awr = win32.DispatchEx("MWOApp.MWOffice")
-    path = f"{os.getcwd()}\\WilkingsonPowerDivider.emp"
-    print (f"opening path :{path}")
-    awr.Open(path)
-    # optimizer = AwrOptimizer()
-    # optimizer.connect()
-    # optimizer.run_optimizer()
+    # awr = win32.gencache.EnsureDispatch("MWOApp.MWOffice")
+    #
+    # path = f"{os.getcwd()}\\WilkingsonPowerDivider.emp"
+    # print (f"opening path :{path}")
+    # awr.Open(path)
+    # print("end")
+    optimizer = AwrOptimizer(max_iter=1000, type="Gradient Optimization")
+    optimizer.connect()
+    optimizer.run_optimizer()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
