@@ -1,30 +1,56 @@
+from typing import List
+
+import numpy as np
 from pyawr_utils import awrde_utils
-import os
-import win32com.client as win32
 import time
 
 from tqdm import tqdm
 
+from optimization_constraint import OptimizationConstraint
+
 
 class AwrOptimizer:
-    def __init__(self, type: str, max_iter: int) -> None:
-        self.awrde = None
-        self.max_iter = max_iter
-        self.type = type
-        self.proj = None
+    def __init__(self) -> None:
+        self._awrde = None
+        self._proj = None
 
     def connect(self):
-        # self.awrde = awrde_utils.establish_link()#clsid_str='5BF3163E-6734-4FB4-891E-FD9E3D4A2CFA')
-        self.awrde = awrde_utils.establish_link()
-        self.proj = awrde_utils.Project(self.awrde)
+        self._awrde = awrde_utils.establish_link()
+        self._proj = awrde_utils.Project(self._awrde)
+
+    def setup(self, start_freq: float, end_freq: float, num_points: int, max_iter: int, optimization_type: str,
+              constraints: List[OptimizationConstraint]):
+        self._proj.optimization_max_iterations = max_iter
+        self._proj.optimization_type = optimization_type
+
+        freq_array = np.linspace(start_freq, end_freq, num_points)
+        self._proj.set_project_frequencies(project_freq_ay=freq_array, units_str='GHz')
+
+        equations_dict = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict
+
+        for key, ele in equations_dict.items():
+            ele.optimize_enabled = False
+
+        for con in constraints:
+            equation_opt = [eq for key, eq in equations_dict.items() if
+                            eq.equation_name == con.name]
+            if len(equation_opt) == 1:
+                first = equation_opt[0]
+                first.optimize_enabled = True
+                first.lower_constraint = con.min if con.min else 0
+                first.upper_constraint = con.max if con.max else 10 ^ 6
+                first.constrain = con.constrain
+                first.equation_value = str(con.start)
+            else:
+                print(f"error:{con.name} not optimized")
 
     def run_optimizer(self):
-        self.proj.optimization_max_iterations = self.max_iter
-        self.proj.optimization_type = self.type
-        self.proj.optimization_start = True  # Start the optimization
-
-        with tqdm(total=self.max_iter) as pbar:
-            while self.proj.optimization_start:
+        max_iter = self._proj.optimization_max_iterations
+        self._proj.optimization_start = True  # Start the optimization
+        old = 0
+        with tqdm(total=max_iter) as pbar:
+            while self._proj.optimization_start:
                 time.sleep(0.1)
-                pbar.update(self.awrde.Project.Optimizer.Iteration)
-        x = 5
+                new = self._awrde.Project.Optimizer.Iteration
+                pbar.update(new - old)
+                old = new
