@@ -1,3 +1,0 @@
-12:12:10 PM Sat, 08/13/2022 Log: Do check dataset with the current document
-12:12:10 PM Sat, 08/13/2022 Log: Compare the document with the dataset 'EM_Sim_DS0'
-12:12:10 PM Sat, 08/13/2022 Log: Schedule simulation job with AXIEM® - Async
