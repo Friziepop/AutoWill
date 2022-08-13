@@ -25,15 +25,15 @@ if __name__ == '__main__':
     # max_iter=1000, type="Gradient Optimization"
     extractor = Extractor()
     extractor.connect()
-    extraction_result = extractor.extract_results()
-
     optimizer = AwrOptimizer()
+    optimizer.connect()
 
     constraints = [OptimizationConstraint(name='R', max=120, min=80, start=100),
                    OptimizationConstraint(name='HALF', max=None, min=None, start=20)]
-    optimizer.connect()
     optimizer.setup(start_freq=4, end_freq=5, num_points=2, max_iter=10, optimization_type="Gradient Optimization",
                     constraints=constraints)
     optimizer.run_optimizer()
+    res = extractor.extract_results()
+    x=5
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

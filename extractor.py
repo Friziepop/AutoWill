@@ -25,6 +25,7 @@ class ExtractionResult:
     def __init__(self):
         self.s_param_to_measurements = {}
         self.circuit_vars = {}
+        self.equation_vars = {}
 
 
 class Extractor:
@@ -48,5 +49,6 @@ class Extractor:
                 [SParam(measurement[0], measurement[1]) for measurement in value.trace_data[0]]
 
         result.circuit_vars = self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict
+        result.equation_vars = self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict
 
         return result
