@@ -25,7 +25,7 @@ if __name__ == '__main__':
     # max_iter=1000, type="Gradient Optimization"
     extractor = Extractor()
     extractor.connect()
-    extractor.extract_results()
+    extraction_result = extractor.extract_results()
 
     optimizer = AwrOptimizer()
 
