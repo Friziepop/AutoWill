@@ -22,18 +22,18 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
-    # max_iter=1000, type="Gradient Optimization"
+    # output Res,Quarter,HALF,RADIUS wavelength
     extractor = Extractor()
     extractor.connect()
     optimizer = AwrOptimizer()
     optimizer.connect()
 
-    constraints = [OptimizationConstraint(name='Res', max=120, min=80, start=100)]
-                   #OptimizationConstraint(name='HALF', max=None, min=None, start=20)]
+    constraints = [OptimizationConstraint(name='Res', max=120, min=80, start=100),
+                   OptimizationConstraint(name='QUARTER ', max=None, min=None, start=10)]
     optimizer.setup(start_freq=4, end_freq=4.5, num_points=2, max_iter=10, optimization_type="Gradient Optimization",
                     constraints=constraints)
     optimizer.run_optimizer()
-    #res = extractor.extract_results()
+    res = extractor.extract_results()
     x=5
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
