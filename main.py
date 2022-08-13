@@ -10,6 +10,7 @@ import win32com.client as win32
 from pyawr_utils import awrde_utils
 
 from awr_optimizer import AwrOptimizer
+from extractor import Extractor
 
 
 def print_hi(name):
@@ -27,8 +28,12 @@ if __name__ == '__main__':
     # print (f"opening path :{path}")
     # awr.Open(path)
     # print("end")
+
+    extractor = Extractor()
+    extractor.connect()
+    extractor.extract_results()
+
     optimizer = AwrOptimizer(max_iter=1000, type="Gradient Optimization")
     optimizer.connect()
     optimizer.run_optimizer()
-
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
