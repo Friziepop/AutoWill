@@ -18,12 +18,12 @@ class AwrOptimizer:
         self._awrde = awrde_utils.establish_link()
         self._proj = awrde_utils.Project(self._awrde)
 
-    def setup(self, start_freq: float, end_freq: float, num_points: int, max_iter: int, optimization_type: str,
+    def setup(self, freq: float, bandwidth: float, num_points: int, max_iter: int, optimization_type: str,
               constraints: List[OptimizationConstraint]):
         self._proj.optimization_max_iterations = max_iter
         self._proj.optimization_type = optimization_type
 
-        freq_array = np.linspace(start_freq, end_freq, num_points)
+        freq_array = np.linspace(freq-bandwidth/2, freq + bandwidth/2, num_points)
         self._proj.set_project_frequencies(project_freq_ay=freq_array, units_str='GHz')
 
         equations_dict = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict
