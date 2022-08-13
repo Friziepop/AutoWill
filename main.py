@@ -10,6 +10,7 @@ import win32com.client as win32
 from pyawr_utils import awrde_utils
 
 from awr_optimizer import AwrOptimizer
+from extractor import Extractor
 from optimization_constraint import OptimizationConstraint
 
 
@@ -22,6 +23,10 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
     # max_iter=1000, type="Gradient Optimization"
+    extractor = Extractor()
+    extractor.connect()
+    extractor.extract_results()
+
     optimizer = AwrOptimizer()
 
     constraints = [OptimizationConstraint(name='R', max=120, min=80, start=100),
