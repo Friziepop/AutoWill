@@ -28,7 +28,7 @@ if __name__ == '__main__':
     optimizer = AwrOptimizer()
     optimizer.connect()
 
-    constraints = [OptimizationConstraint(name='Res', max=120, min=80, start=120)]
+    constraints = [OptimizationConstraint(name='Res', max=120, min=80, start=100)]
                    #OptimizationConstraint(name='HALF', max=None, min=None, start=20)]
     optimizer.setup(start_freq=4, end_freq=4.5, num_points=2, max_iter=10, optimization_type="Gradient Optimization",
                     constraints=constraints)
