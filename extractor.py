@@ -23,6 +23,29 @@ S_PARAM_FIELD_TO_CLASS_FIELD = {
     "WilkinsonPowerDivider:DB(|S(2,1)|)": "s_2_1"
 }
 
+VARS_TO_CLASS_FIELD = {
+    "Res": "res",
+    "HALF": "half",
+    "QUARTER": "quarter",
+    "RADIUS": "radius"
+}
+
+
+@dataclass
+class Vars:
+    frequency: float
+    radius: float
+    quarter: float
+    half: float
+    res: float
+
+    def __init__(self, frequency, radius, quarter, half, res):
+        self.frequency = frequency
+        self.radius = radius
+        self.quarter = quarter
+        self.half = half
+        self.res = res
+
 
 @dataclass
 class SParams:
@@ -92,7 +115,27 @@ class Extractor:
 
         self.extract_s_params_to_csv(bandwidth, frequency, result)
 
+        self.extract_vars_to_csv(result, frequency)
+
         return result
+
+    def extract_vars_to_csv(self, result, frequency):
+        vars_dict = {"frequency": frequency}
+        for key, value in result.equation_vars.items():
+            if value.equation_name in VARS_TO_CLASS_FIELD:
+                vars_dict[VARS_TO_CLASS_FIELD[value.equation_name]] = float(value.equation_value)
+
+        vars = from_dict(data_class=Vars, data=vars_dict)
+
+        csv_file = Path(VARS_CSV_FILE)
+        csv_already_exists = csv_file.exists()
+
+        with open(VARS_CSV_FILE, "a", newline='', encoding='utf-8') as f:
+            w = DataclassWriter(f, [vars], Vars)
+            for key, value in VARS_TO_CLASS_FIELD.items():
+                w.map(value).to(key)
+
+            w.write(skip_header=csv_already_exists)
 
     @staticmethod
     def extract_s_params_to_csv(bandwidth, frequency, result):
@@ -103,12 +146,12 @@ class Extractor:
                     s_params_dict[S_PARAM_FIELD_TO_CLASS_FIELD[key]] = s_param.db_value
                     break
 
-        csv_file = Path(S_PARAMS_CSV_FILE)
+        s_params = from_dict(data_class=SParams, data=s_params_dict)
 
+        csv_file = Path(S_PARAMS_CSV_FILE)
         csv_already_exists = csv_file.exists()
 
         with open(S_PARAMS_CSV_FILE, "a", newline='', encoding='utf-8') as f:
-            s_params = from_dict(data_class=SParams, data=s_params_dict)
             w = DataclassWriter(f, [s_params], SParams)
             for key, value in S_PARAM_FIELD_TO_CLASS_FIELD.items():
                 w.map(value).to(key)
