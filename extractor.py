@@ -111,6 +111,6 @@ class Extractor:
             s_params = from_dict(data_class=SParams, data=s_params_dict)
             w = DataclassWriter(f, [s_params], SParams)
             for key, value in S_PARAM_FIELD_TO_CLASS_FIELD.items():
-                w.map(key).to(value)
+                w.map(value).to(key)
 
             w.write(skip_header=csv_already_exists)
