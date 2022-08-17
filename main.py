@@ -30,7 +30,7 @@ if __name__ == '__main__':
     optimizer.connect()
 
     bandwith = 0.25
-    freqs = np.linspace(1, 50, 99)
+    freqs = np.linspace(1, 50, 99)[13:]
     for freq in freqs:
         quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
         print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")

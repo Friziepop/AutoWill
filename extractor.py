@@ -100,12 +100,14 @@ class Extractor:
     def connect(self):
         self.awrde = awrde_utils.establish_link()
         self.proj = awrde_utils.Project(self.awrde)
+
     def extract_quarter_wavelength(self, frequency) -> float:
         eps_r = self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict["MSUB.FR4"].parameters_dict[
             'Er'].value
         qua_meter = (constants.speed_of_light / (frequency * 10 ** 9 * math.sqrt(eps_r))) / 4
-        return qua_meter*10**3
-    def extract_results(self, frequency, bandwidth,save_csv= True) -> ExtractionResult:
+        return qua_meter * 10 ** 3
+
+    def extract_results(self, frequency, bandwidth, save_csv=True) -> ExtractionResult:
         result = ExtractionResult()
 
         for key, value in self.proj.graph_dict['Match'].measurements_dict.items():
@@ -148,7 +150,7 @@ class Extractor:
         s_params_dict = {"bandwidth": bandwidth, "frequency": frequency}
         for key, value in result.s_param_to_measurements.items():
             for s_param in value:
-                if s_param.frequency == frequency:
+                if round(s_param.frequency, 2) == round(frequency, 2):
                     s_params_dict[S_PARAM_FIELD_TO_CLASS_FIELD[key]] = s_param.db_value
                     break
 
