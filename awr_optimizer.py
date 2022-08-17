@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 
 import numpy as np
 from pyawr_utils import awrde_utils
@@ -19,12 +19,16 @@ class AwrOptimizer:
         self._proj = awrde_utils.Project(self._awrde)
 
     def setup(self, freq: float, bandwidth: float, num_points: int, max_iter: int, optimization_type: str,
+              optimization_properties: Dict,
               constraints: List[OptimizationConstraint]):
         self._proj.optimization_max_iterations = max_iter
         self._proj.optimization_type = optimization_type
+        self._proj.optimization_type = optimization_type
 
-        freq_array = np.linspace(freq-bandwidth/2, freq + bandwidth/2, num_points)
-        #print(f"{freq} , mid:{freq_array.tolist()[1]}")
+        for key, val in self._proj.optimization_type_properties.items():
+            self._proj.optimization_type_properties[key] = optimization_properties[key]
+
+        freq_array = np.linspace(freq - bandwidth / 2, freq + bandwidth / 2, num_points)
         self._proj.set_project_frequencies(project_freq_ay=freq_array, units_str='GHz')
 
         equations_dict = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict

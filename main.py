@@ -29,8 +29,8 @@ if __name__ == '__main__':
     optimizer = AwrOptimizer()
     optimizer.connect()
 
-    bandwith = 0.1
-    freqs = np.linspace(4, 6, 5)
+    bandwith = 0.5
+    freqs = [4]  # np.linspace(4, 6, 5)
     for freq in freqs:
         quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
         print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
@@ -42,6 +42,9 @@ if __name__ == '__main__':
 
         optimizer.setup(freq=freq, bandwidth=bandwith, num_points=3, max_iter=10,
                         optimization_type="Gradient Optimization",
+                        optimization_properties={"Converge Tolerance": 0.01,
+                                                 "Step Size": 0.001
+                                                 },
                         constraints=constraints)
         optimizer.run_optimizer()
         # optimizer.cleanup()
