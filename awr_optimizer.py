@@ -18,7 +18,7 @@ class AwrOptimizer:
         self._awrde = awrde_utils.establish_link()
         self._proj = awrde_utils.Project(self._awrde)
 
-    def setup(self, freq: float, bandwidth: float, num_points: int, max_iter: int, optimization_type: str,
+    def setup(self, max_iter: int, optimization_type: str,
               optimization_properties: Dict,
               constraints: List[OptimizationConstraint]):
         self._proj.optimization_max_iterations = max_iter
@@ -27,9 +27,6 @@ class AwrOptimizer:
         for key, val in self._proj.optimization_type_properties.items():
             self._proj.optimization_type_properties[key] = optimization_properties[key]
         self._proj.optimization_update_type_properties()
-
-        freq_array = np.linspace(freq - bandwidth / 2, freq + bandwidth / 2, num_points)
-        self._proj.set_project_frequencies(project_freq_ay=freq_array, units_str='GHz')
 
         equations_dict = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict
 
@@ -49,12 +46,14 @@ class AwrOptimizer:
             else:
                 print(f"error:{con.name} not optimized")
 
+    def run_optimizer(self, freq: float, bandwidth: float, num_points: int, ):
+        freq_array = np.linspace(freq - bandwidth / 2, freq + bandwidth / 2, num_points)
+        self._proj.set_project_frequencies(project_freq_ay=freq_array, units_str='GHz')
 
-    def run_optimizer(self):
         max_iter = self._proj.optimization_max_iterations
         self._proj.optimization_start = True  # Start the optimization
         old = 0
-        with tqdm(total=max_iter) as pbar:
+        with tqdm(total=max_iter, desc=f"{freq} Ghz") as pbar:
             while self._proj.optimization_start:
                 time.sleep(0.1)
                 new = self._awrde.Project.Optimizer.Iteration
