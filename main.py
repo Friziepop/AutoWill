@@ -34,7 +34,7 @@ if __name__ == '__main__':
     for freq in freqs:
         quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
         print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
-        constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=50)
+        constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=51)
             , OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
                                      start=quarter_wavelength),
                        OptimizationConstraint(name='HALF', max=None, min=None, start=quarter_wavelength * 2,
