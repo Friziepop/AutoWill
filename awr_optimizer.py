@@ -75,7 +75,9 @@ class AwrOptimizer:
         with open("microstip_freq/freq2width_dict.pickle", "rb") as file:
             freq_to_width = pickle.load(file)
             self._width_eq.equation_value = str(freq_to_width[str(freq)])
-            self._root_width_eq.equation_value = str(math.sqrt(freq_to_width[str(freq)]))
+        with open("microstip_freq/freq2width_root_dict.pickle", "rb") as file:
+            freq_to_width_root = pickle.load(file)
+            self._root_width_eq.equation_value = str(freq_to_width_root[str(freq)])
 
 
 
