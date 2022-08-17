@@ -99,7 +99,7 @@ class Extractor:
         self.awrde = awrde_utils.establish_link()
         self.proj = awrde_utils.Project(self.awrde)
 
-    def extract_results(self, frequency, bandwidth) -> ExtractionResult:
+    def extract_results(self, frequency, bandwidth,save_csv= True) -> ExtractionResult:
         result = ExtractionResult()
 
         for key, value in self.proj.graph_dict['Match'].measurements_dict.items():
@@ -113,9 +113,9 @@ class Extractor:
         result.circuit_vars = self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict
         result.equation_vars = self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict
 
-        self.extract_s_params_to_csv(bandwidth, frequency, result)
-
-        self.extract_vars_to_csv(result, frequency)
+        if save_csv:
+            self.extract_s_params_to_csv(bandwidth, frequency, result)
+            self.extract_vars_to_csv(result, frequency)
 
         return result
 

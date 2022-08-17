@@ -4,6 +4,8 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import time
 import os
+
+import numpy as np
 import win32com.client as win32
 
 from pyawr_utils import awrde_utils
@@ -26,13 +28,15 @@ if __name__ == '__main__':
     extractor.connect()
     optimizer = AwrOptimizer()
     optimizer.connect()
-
     constraints = [OptimizationConstraint(name='Res', max=120, min=80, start=100),
                    OptimizationConstraint(name='QUARTER', max=None, min=None, start=10)]
-    optimizer.setup(freq=4.5, bandwidth=0.5, num_points=3, max_iter=10, optimization_type="Gradient Optimization",
-                    constraints=constraints)
-    optimizer.run_optimizer()
-    res = extractor.extract_results(4.0, 3)
-    x=5
+    bandwith = 0.1
+    freqs = np.linspace(4, 6, 5)
+    for freq in freqs:
+        optimizer.setup(freq=freq, bandwidth=bandwith, num_points=3, max_iter=10, optimization_type="Gradient Optimization",
+                        constraints=constraints)
+        optimizer.run_optimizer()
+        extractor.extract_results(frequency=freq,bandwidth=bandwith)
+    x = 5
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
