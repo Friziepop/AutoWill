@@ -28,15 +28,18 @@ if __name__ == '__main__':
     extractor.connect()
     optimizer = AwrOptimizer()
     optimizer.connect()
-    constraints = [OptimizationConstraint(name='Res', max=120, min=80, start=100),
-                   OptimizationConstraint(name='QUARTER', max=None, min=None, start=10)]
+    constraints = [OptimizationConstraint(name='Res', max=120, min=80, start=100)]
+                   #,OptimizationConstraint(name='QUARTER', max=20, min=1, start=10)]
     bandwith = 0.1
     freqs = np.linspace(4, 6, 5)
     for freq in freqs:
-        optimizer.setup(freq=freq, bandwidth=bandwith, num_points=3, max_iter=10, optimization_type="Gradient Optimization",
+        optimizer.setup(freq=freq, bandwidth=bandwith, num_points=3, max_iter=10,
+                        optimization_type="Gradient Optimization",
                         constraints=constraints)
         optimizer.run_optimizer()
-        extractor.extract_results(frequency=freq,bandwidth=bandwith)
+        #optimizer.cleanup()
+        extractor.extract_results(frequency=freq, bandwidth=bandwith)
+        x=5
     x = 5
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

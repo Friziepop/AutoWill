@@ -3,7 +3,7 @@ from typing import List
 import numpy as np
 from pyawr_utils import awrde_utils
 import time
-
+import shutil
 from tqdm import tqdm
 
 from optimization_constraint import OptimizationConstraint
@@ -24,6 +24,7 @@ class AwrOptimizer:
         self._proj.optimization_type = optimization_type
 
         freq_array = np.linspace(freq-bandwidth/2, freq + bandwidth/2, num_points)
+        #print(f"{freq} , mid:{freq_array.tolist()[1]}")
         self._proj.set_project_frequencies(project_freq_ay=freq_array, units_str='GHz')
 
         equations_dict = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict
@@ -54,3 +55,7 @@ class AwrOptimizer:
                 new = self._awrde.Project.Optimizer.Iteration
                 pbar.update(new - old)
                 old = new
+
+    def cleanup(self):
+        shutil.rmtree("DATA_SETS")
+        shutil.rmtree("TEMP")
