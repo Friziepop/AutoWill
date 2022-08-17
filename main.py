@@ -40,7 +40,7 @@ if __name__ == '__main__':
                        OptimizationConstraint(name='HALF', max=None, min=None, start=quarter_wavelength * 2,
                                               should_optimize=False)]
 
-        optimizer.setup(freq=freq, bandwidth=bandwith, num_points=3, max_iter=10,
+        optimizer.setup(freq=freq, bandwidth=bandwith, num_points=3, max_iter=20,
                         optimization_type="Gradient Optimization",
                         optimization_properties={"Converge Tolerance": 0.01,
                                                  "Step Size": 0.001

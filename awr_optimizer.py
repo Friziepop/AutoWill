@@ -23,10 +23,10 @@ class AwrOptimizer:
               constraints: List[OptimizationConstraint]):
         self._proj.optimization_max_iterations = max_iter
         self._proj.optimization_type = optimization_type
-        self._proj.optimization_type = optimization_type
 
         for key, val in self._proj.optimization_type_properties.items():
             self._proj.optimization_type_properties[key] = optimization_properties[key]
+        self._proj.optimization_update_type_properties()
 
         freq_array = np.linspace(freq - bandwidth / 2, freq + bandwidth / 2, num_points)
         self._proj.set_project_frequencies(project_freq_ay=freq_array, units_str='GHz')
@@ -48,6 +48,7 @@ class AwrOptimizer:
                 first.equation_value = str(con.start)
             else:
                 print(f"error:{con.name} not optimized")
+
 
     def run_optimizer(self):
         max_iter = self._proj.optimization_max_iterations
