@@ -1,3 +1,4 @@
+import math
 from pathlib import Path
 from typing import Dict, List
 
@@ -10,6 +11,7 @@ from pyawr_utils.common_utils import _Element
 from dataclasses import dataclass
 
 from dataclass_csv import DataclassWriter
+from scipy.constants import constants
 
 S_PARAMS_CSV_FILE = "sparams.csv"
 VARS_CSV_FILE = "vars.csv"
@@ -98,7 +100,11 @@ class Extractor:
     def connect(self):
         self.awrde = awrde_utils.establish_link()
         self.proj = awrde_utils.Project(self.awrde)
-
+    def extract_quarter_wavelength(self, frequency) -> float:
+        eps_r = self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict["MSUB.FR4"].parameters_dict[
+            'Er'].value
+        qua_meter = (constants.speed_of_light / (frequency * 10 ** 9 * math.sqrt(eps_r))) / 4
+        return qua_meter*10**3
     def extract_results(self, frequency, bandwidth,save_csv= True) -> ExtractionResult:
         result = ExtractionResult()
 

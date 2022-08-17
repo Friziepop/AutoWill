@@ -37,7 +37,7 @@ class AwrOptimizer:
                             eq.equation_name == con.name]
             if len(equation_opt) == 1:
                 first = equation_opt[0]
-                first.optimize_enabled = True
+                first.optimize_enabled = con.should_optimize
                 first.lower_constraint = con.min if con.min else 0
                 first.upper_constraint = con.max if con.max else 10 ^ 6
                 first.constrain = con.constrain
