@@ -29,9 +29,9 @@ if __name__ == '__main__':
     optimizer = AwrOptimizer()
     optimizer.connect()
 
-    bandwith = 0.5
-    freqs = np.linspace(4, 6, 5)
-    for freq in [10]:
+    bandwith = 0.25
+    freqs = np.linspace(1, 50, 100)
+    for freq in freqs:
         quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
         print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
         constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=50)
