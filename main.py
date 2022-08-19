@@ -2,17 +2,12 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-import time
-import os
 
 import numpy as np
-import win32com.client as win32
 
-from pyawr_utils import awrde_utils
-
-from awr_optimizer import AwrOptimizer
-from extractor import Extractor
-from optimization_constraint import OptimizationConstraint
+from awr_optimizer.awr_optimizer import AwrOptimizer
+from awr_optimizer.extractor import Extractor
+from awr_optimizer.optimization_constraint import OptimizationConstraint
 
 
 def print_hi(name):
