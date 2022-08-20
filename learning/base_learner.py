@@ -20,7 +20,7 @@ class BaseLearner(ABC):
         return x, y
 
     def create_feature(self, x):
-        pass
+        return np.array([x]).T
 
     def get_calculated_y(self, x, coefficients: List[float]):
         calculated_features = self.create_feature(x)
