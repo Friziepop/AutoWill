@@ -26,7 +26,8 @@ class BaseLearner(ABC):
         calculated_features = self.create_feature(x)
         return [row @ coefficients for row in calculated_features]
 
-    def draw_graph(self, csv_data_path: str, title: str, x_col: str, y_col: str, coefficients: List[float]):
+    def draw_graph(self, csv_data_path: str, title: str, x_col: str, y_col: str, coefficients: List[float],
+                   block=False):
         x, y = self.extract_xy(csv_data_path, x_col, y_col)
         calculated_y = self.get_calculated_y(x=x, coefficients=coefficients)
         # plot
@@ -40,7 +41,7 @@ class BaseLearner(ABC):
         ax.set_xlabel(x_col)
         ax.set_title(title)
 
-        plt.show()
+        plt.show(block=block)
 
     def train(self, csv_data_path: str, x_col: str, y_col: str):
         # model = Pipeline([('poly', PolynomialFeatures(degree=self.degree)),
@@ -53,5 +54,3 @@ class BaseLearner(ABC):
         print(model.coef_)
 
         return model.coef_
-
-
