@@ -49,17 +49,17 @@ def extract(config_dict: Dict):
 
     btn_sy = driver.find_element(value="btn_ms_synthesize")
     width = driver.find_element(value="edt_msWidth")
-    for freq in tqdm(freqs):
-        freq_form.clear()
-        freq_form.send_keys(freq)
-        btn_sy.click()
-        sleep(0.1)
-        val = float(width.get_attribute("value")) * 0.0254
-        print(f"{freq}:{val}")
-        dict_ans[f"{freq}"] = val
-
-    with open(f'{config_dict["prefix"]}_freq2width_dict.pickle', 'wb') as handle:
-        pickle.dump(dict_ans, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    # # for freq in tqdm(freqs):
+    # #     freq_form.clear()
+    # #     freq_form.send_keys(freq)
+    # #     btn_sy.click()
+    # #     sleep(0.1)
+    # #     val = float(width.get_attribute("value")) * 0.0254
+    # #     print(f"{freq}:{val}")
+    # #     dict_ans[f"{freq}"] = val
+    #
+    # with open(f'{config_dict["prefix"]}_freq2width_dict.pickle', 'wb') as handle:
+    #     pickle.dump(dict_ans, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
     # root
     print("now root")
@@ -75,7 +75,7 @@ def extract(config_dict: Dict):
         sleep(0.1)
         val = float(width.get_attribute("value")) * 0.0254
         print(f"{freq}:{val}")
-        dict_ans[f"{freq}"] = val
+        dict_ans_root[f"{freq}"] = val
 
     with open(f'{config_dict["prefix"]}_freq2width_root_dict.pickle', 'wb') as handle:
         pickle.dump(dict_ans_root, handle, protocol=pickle.HIGHEST_PROTOCOL)
