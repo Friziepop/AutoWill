@@ -8,7 +8,7 @@ import time
 import shutil
 from tqdm import tqdm
 
-from optimization_constraint import OptimizationConstraint
+from awr_optimizer.optimization_constraint import OptimizationConstraint
 
 
 class AwrOptimizer:
