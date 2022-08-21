@@ -26,16 +26,16 @@ if __name__ == '__main__':
 
     bandwith = 0.25
     freqs = np.linspace(1, 50, 99)
-    for freq in freqs:
+    for freq in [20.0, 30.0, 40.0]:
         quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
         print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
-        constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=51)
+        constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100,should_optimize=False)
             , OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
                                      start=quarter_wavelength),
                        OptimizationConstraint(name='HALF', max=None, min=None, start=quarter_wavelength * 2,
                                               should_optimize=False)]
 
-        optimizer.setup(max_iter=35,
+        optimizer.setup(max_iter=300,
                         optimization_type="Gradient Optimization",
                         optimization_properties={"Converge Tolerance": 0.01,
                                                  "Step Size": 0.001
