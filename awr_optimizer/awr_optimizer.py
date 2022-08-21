@@ -8,7 +8,7 @@ import time
 import shutil
 from tqdm import tqdm
 
-from optimization_constraint import OptimizationConstraint
+from awr_optimizer.optimization_constraint import OptimizationConstraint
 
 
 class AwrOptimizer:
@@ -72,10 +72,10 @@ class AwrOptimizer:
     def set_proj_params(self, bandwidth, freq, num_points):
         freq_array = np.linspace(freq - bandwidth / 2, freq + bandwidth / 2, num_points)
         self._proj.set_project_frequencies(project_freq_ay=freq_array, units_str='GHz')
-        with open("../microstip_freq_calc/freq2width_dict.pickle", "rb") as file:
+        with open("../microstip_freq_calc/ro4350_freq2width_dict.pickle", "rb") as file:
             freq_to_width = pickle.load(file)
             self._width_eq.equation_value = str(freq_to_width[str(freq)])
-        with open("../microstip_freq_calc/fr4_freq2width_root_dict.pickle", "rb") as file:
+        with open("../microstip_freq_calc/ro4350_freq2width_root_dict.pickle", "rb") as file:
             freq_to_width_root = pickle.load(file)
             self._root_width_eq.equation_value = str(freq_to_width_root[str(freq)])
 
