@@ -12,9 +12,10 @@ from dataclasses import dataclass
 
 from dataclass_csv import DataclassWriter
 from scipy.constants import constants
+import os
 
-S_PARAMS_CSV_FILE = "../sparams.csv"
-VARS_CSV_FILE = "../vars.csv"
+S_PARAMS_CSV_FILE = "sparams.csv"
+VARS_CSV_FILE = "vars.csv"
 
 S_PARAM_FIELD_TO_CLASS_FIELD = {
     "WilkinsonPowerDivider:DB(|S(1,1)|)": "s_1_1",

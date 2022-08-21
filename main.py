@@ -8,7 +8,7 @@ import numpy as np
 from awr_optimizer.awr_optimizer import AwrOptimizer
 from awr_optimizer.extractor import Extractor
 from awr_optimizer.optimization_constraint import OptimizationConstraint
-
+import os
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
