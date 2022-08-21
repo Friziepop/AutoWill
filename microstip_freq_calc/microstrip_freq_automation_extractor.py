@@ -70,13 +70,13 @@ def main():
         print(f"{freq}:{val}")
         dict_ans[f"{freq}"] = val
 
-    with open('freq2width_root_dict.pickle', 'wb') as handle:
+    with open('fr4_freq2width_root_dict.pickle', 'wb') as handle:
         pickle.dump(dict_ans_root, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 if __name__ == '__main__':
     #main()
-    with open('freq2width_root_dict.pickle', 'rb') as handle:
+    with open('fr4_freq2width_root_dict.pickle', 'rb') as handle:
         b_dict = pickle.load(handle)
         for key, val in b_dict.items():
             print(f"{key}:{val}")
