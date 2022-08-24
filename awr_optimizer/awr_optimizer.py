@@ -1,14 +1,19 @@
 import math
 import pickle
+from pathlib import Path
 from typing import List, Dict
 
 import numpy as np
+from dataclass_csv import DataclassReader
 from pyawr_utils import awrde_utils
 import time
 import shutil
 from tqdm import tqdm
 
 from awr_optimizer.optimization_constraint import OptimizationConstraint
+from materials.material import Material
+
+MATERIALS_DB_CSV_PATH = "materials/materials_db.csv"
 
 
 class AwrOptimizer:
@@ -17,6 +22,7 @@ class AwrOptimizer:
         self._proj = None
         self._width_eq = None
         self._root_width_eq = None
+        self._material_name = None
 
     def connect(self):
         self._awrde = awrde_utils.establish_link()
@@ -24,9 +30,11 @@ class AwrOptimizer:
 
     def setup(self, max_iter: int, optimization_type: str,
               optimization_properties: Dict,
-              constraints: List[OptimizationConstraint]):
+              constraints: List[OptimizationConstraint],
+              material_name: str):
         self._proj.optimization_max_iterations = max_iter
         self._proj.optimization_type = optimization_type
+        self._material_name = material_name
 
         for key, value in self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict.items():
             if value.equation_name == 'WIDTH':
@@ -56,6 +64,23 @@ class AwrOptimizer:
             else:
                 print(f"error:{con.name} not optimized")
 
+        material = None
+        with open(MATERIALS_DB_CSV_PATH) as f:
+            reader = DataclassReader(f, Material, validate_header=False)
+            for row in reader:
+                if row.name.strip() == material_name.strip():
+                    material = row
+
+        params = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict[
+            'MSUB.SUBSTRATE'].parameters_dict
+
+        params['Er'].value = material.er
+        params['H'].value = material.height / 1000
+        params['T'].value = material.thickness / 1000
+        params['Rho'].value = material.rho
+        params['Tand'].value = material.tanl
+        params['ErNom'].value = material.er
+
     def run_optimizer(self, freq: float, bandwidth: float, num_points: int, ):
         self.set_proj_params(bandwidth, freq, num_points)
 
@@ -72,14 +97,12 @@ class AwrOptimizer:
     def set_proj_params(self, bandwidth, freq, num_points):
         freq_array = np.linspace(freq - bandwidth / 2, freq + bandwidth / 2, num_points)
         self._proj.set_project_frequencies(project_freq_ay=freq_array, units_str='GHz')
-        with open("microstip_freq_calc/ro4350_freq2width_dict.pickle", "rb") as file:
+        with open(f"microstip_freq_calc/{self._material_name}_freq2width_dict.pickle", "rb") as file:
             freq_to_width = pickle.load(file)
             self._width_eq.equation_value = str(freq_to_width[str(freq)])
-        with open("microstip_freq_calc/ro4350_freq2width_root_dict.pickle", "rb") as file:
+        with open(f"microstip_freq_calc/{self._material_name}_freq2width_root_dict.pickle", "rb") as file:
             freq_to_width_root = pickle.load(file)
             self._root_width_eq.equation_value = str(freq_to_width_root[str(freq)])
-
-
 
     def cleanup(self):
         shutil.rmtree("../DATA_SETS")
