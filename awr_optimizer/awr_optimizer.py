@@ -1,13 +1,12 @@
-import math
 import pickle
-from pathlib import Path
+import shutil
+import time
 from typing import List, Dict
 
+import json
 import numpy as np
 from dataclass_csv import DataclassReader
 from pyawr_utils import awrde_utils
-import time
-import shutil
 from tqdm import tqdm
 
 from awr_optimizer.optimization_constraint import OptimizationConstraint
@@ -27,6 +26,13 @@ class AwrOptimizer:
     def connect(self):
         self._awrde = awrde_utils.establish_link()
         self._proj = awrde_utils.Project(self._awrde)
+
+    def get_sub_mapping(self, material_name: str):
+        sub_dielectric_list = json.loads(
+            self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict['STACKUP.SUB1'].parameters_dict[
+                'MatName'].value_str.replace("{", "[").replace("}", "]"))
+        sub_dielectric = {x: i for i, x in enumerate(sub_dielectric_list)}
+        return "{" + f"{sub_dielectric['Air']},{sub_dielectric[material_name]}" + "}"
 
     def setup(self, max_iter: int, optimization_type: str,
               optimization_properties: Dict,
@@ -80,6 +86,9 @@ class AwrOptimizer:
         params['Rho'].value = material.rho
         params['Tand'].value = material.tanl
         params['ErNom'].value = material.er
+
+        self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict['STACKUP.SUB1'].parameters_dict[
+            'DieInd'].value_str = self.get_sub_mapping(material_name=material_name)
 
     def run_optimizer(self, freq: float, bandwidth: float, num_points: int, ):
         self.set_proj_params(bandwidth, freq, num_points)

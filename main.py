@@ -46,11 +46,10 @@ if __name__ == '__main__':
                                                  "Step Size": 0.001
                                                  },
                         constraints=constraints,
-                        material_name='fr4')
+                        material_name='FR4')
         optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
         # optimizer.cleanup()
         extractor.extract_results(frequency=freq, bandwidth=bandwith)
-        x = 5
     x = 5
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
