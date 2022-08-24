@@ -10,6 +10,9 @@ from awr_optimizer.extractor import Extractor
 from awr_optimizer.optimization_constraint import OptimizationConstraint
 import os
 
+from materials.material import Material
+
+
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
@@ -26,10 +29,10 @@ if __name__ == '__main__':
 
     bandwith = 0.25
     freqs = np.linspace(1, 50, 99)
-    for freq in [20.0, 30.0, 40.0]:
+    for freq in [5.0]:
         quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
         print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
-        constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100,should_optimize=False)
+        constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False)
             , OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
                                      start=quarter_wavelength),
                        OptimizationConstraint(name='HALF', max=None, min=None, start=quarter_wavelength * 2,
@@ -40,7 +43,8 @@ if __name__ == '__main__':
                         optimization_properties={"Converge Tolerance": 0.01,
                                                  "Step Size": 0.001
                                                  },
-                        constraints=constraints)
+                        constraints=constraints,
+                        material_name='fr4')
         optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
         # optimizer.cleanup()
         extractor.extract_results(frequency=freq, bandwidth=bandwith)
