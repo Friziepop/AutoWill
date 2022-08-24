@@ -15,36 +15,37 @@ from tqdm import tqdm
 # ro4350_params = {
 #         "prefix": "ro4350","er": 3.66, "tanl": 0.0037, "rho": 0.7, "height": 3.93701, "thickness": 0.039370079, "z0": 50
 # }
+from materials.material import Material
 
 Z0 = 50
 MILLS_TO_MM = 0.0254
 MM_TO_MILS = 1 / MILLS_TO_MM
 
 
-def extract(config_dict: Dict, step_size):
+def extract(material: Material, step_size):
     dict_ans = {}
     dict_ans_root = {}
-    freqs = [round(x, 1) for x in np.arange(config_dict["start_freq"], config_dict["end_freq"] + step_size, step_size)]
+    freqs = [round(x, 1) for x in np.arange(material.start_freq, material.end_freq + step_size, step_size)]
     driver = webdriver.Chrome('./chromedriver')
     driver.get("https://www.microwaves101.com/calculators/1201-microstrip-calculator")
     sleep(2)
     er = driver.find_element(value="edt_msEr")
     er.clear()
-    er.send_keys(config_dict["er"])
+    er.send_keys(material.er)
     tanl = driver.find_element(value="edt_msTand")
     tanl.clear()
-    tanl.send_keys(config_dict["tanl"])
+    tanl.send_keys(material.tanl)
     rho = driver.find_element(value="edt_msRho")
     rho.clear()
-    rho.send_keys(config_dict["rho"])
+    rho.send_keys(material.rho)
     freq_form = driver.find_element(value="edt_msFreq")
 
     height = driver.find_element(value="edt_msHeight")
     height.clear()
-    height.send_keys(config_dict["height"] * MM_TO_MILS)
+    height.send_keys(material.height * MM_TO_MILS)
     thickness = driver.find_element(value="edt_msThickness")
     thickness.clear()
-    thickness.send_keys(config_dict["thickness"] * MM_TO_MILS)
+    thickness.send_keys(material.thickness * MM_TO_MILS)
 
     zo = driver.find_element(value="edt_msZo")
     zo.clear()
@@ -63,7 +64,7 @@ def extract(config_dict: Dict, step_size):
         val = float(width.get_attribute("value")) * MILLS_TO_MM
         dict_ans[f"{freq}"] = val
 
-    with open(f'{config_dict["name"]}_freq2width_dict.pickle', 'wb') as handle:
+    with open(f'{material.name}_freq2width_dict.pickle', 'wb') as handle:
         pickle.dump(dict_ans, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
     # root
@@ -81,12 +82,13 @@ def extract(config_dict: Dict, step_size):
         val = float(width.get_attribute("value")) * MILLS_TO_MM
         dict_ans_root[f"{freq}"] = val
 
-    with open(f'{config_dict["name"]}_freq2width_root_dict.pickle', 'wb') as handle:
+    with open(f'{material.name}_freq2width_root_dict.pickle', 'wb') as handle:
         pickle.dump(dict_ans_root, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 if __name__ == '__main__':
     materials_csv = pd.read_csv('../materials/materials_db.csv')
     for config_dict in materials_csv.to_dict('records'):
-        print(f"starting material :{config_dict['name']}")
-        extract(config_dict=config_dict, step_size=0.1)
+        mat = Material(**config_dict)
+        print(f"starting material :{mat.name}")
+        extract(material=mat, step_size=0.1)
