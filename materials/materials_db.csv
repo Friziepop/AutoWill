@@ -1,4 +1,4 @@
 name,er,tanl,rho,height,thickness,start_freq,end_freq,description
-fr4,4.4,0.018,0.7,1.524,0.035,0.5,13.0,no info
-ro4350b,3.66,0.0037,0.7,0.1,0.01,0.5,40.0,best from 8 to 40 ghz
-r04003c,3.55,0.0027,0.7,0.1,0.01,0.5,40.0,best from 8 to 40 ghz not done height and thikness
+FR4,4.4,0.018,0.7,1.524,0.035,0.5,13.0,no info
+4350B,3.66,0.0037,0.7,0.1,0.01,0.5,40.0,best from 8 to 40 ghz
+4003C,3.55,0.0027,0.7,0.1,0.01,0.5,40.0,best from 8 to 40 ghz not done height and thikness
