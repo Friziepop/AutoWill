@@ -32,6 +32,8 @@ if __name__ == '__main__':
         constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100,should_optimize=False)
             , OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
                                      start=quarter_wavelength),
+                       OptimizationConstraint(name='THICKNESS', max=1, min=0, start=0.01, should_optimize=True),
+                       OptimizationConstraint(name='HEIGHT', max=1, min=0, start=0.1, should_optimize=True),
                        OptimizationConstraint(name='HALF', max=None, min=None, start=quarter_wavelength * 2,
                                               should_optimize=False)]
 
