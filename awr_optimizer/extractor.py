@@ -103,7 +103,7 @@ class Extractor:
         self.proj = awrde_utils.Project(self.awrde)
 
     def extract_quarter_wavelength(self, frequency) -> float:
-        eps_r = self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict["MSUB.4350B"].parameters_dict[
+        eps_r = self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict["MSUB.SUBSTRATE"].parameters_dict[
             'Er'].value
         qua_meter = (constants.speed_of_light / (frequency * 10 ** 9 * math.sqrt(eps_r))) / 4
         return qua_meter * 10 ** 3
