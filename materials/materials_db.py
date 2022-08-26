@@ -16,8 +16,8 @@ class MaterialDB:
             mat = Material(**config_dict)
             self._inner_materials_mapping[mat.id] = mat
 
-    def get_by_id(self,id:int) -> Material:
+    def get_by_id(self, id: int) -> Material:
         return self._inner_materials_mapping[id]
 
-    def get_by_name(self,name:str) -> List[Material]:
-        pass
+    def get_by_name(self, name: str) -> List[Material]:
+        return [mat for mat in self._inner_materials_mapping.values() if mat.name == name]
