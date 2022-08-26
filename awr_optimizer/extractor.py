@@ -30,7 +30,8 @@ VARS_TO_CLASS_FIELD = {
     "Res": "res",
     "HALF": "half",
     "QUARTER": "quarter",
-    "RADIUS": "radius"
+    "RADIUS": "radius",
+    "HEIGHT": "height"
 }
 
 
@@ -43,8 +44,9 @@ class Vars:
     quarter: float
     half: float
     res: float
+    height: float
 
-    def __init__(self, name, id, frequency, radius, quarter, half, res):
+    def __init__(self, name, id, frequency, radius, quarter, half, res, height):
         self.name = name
         self.id = id
         self.frequency = frequency
@@ -52,6 +54,7 @@ class Vars:
         self.quarter = quarter
         self.half = half
         self.res = res
+        self.height = height
 
 
 @dataclass
