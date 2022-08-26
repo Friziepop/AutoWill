@@ -91,7 +91,8 @@ if __name__ == '__main__':
     materials_csv = pd.read_csv('../materials/materials_db.csv')
     for config_dict in materials_csv.to_dict('records'):
         mat = Material(**config_dict)
-        # calc = MicroStripCopiedCalc()
-        # print(f"{mat.name}:{calc.calc(er=mat.er, height=mat.height, thickness=mat.thickness, z0=50, freq=5)}")
+        calc = MicroStripCopiedCalc()
+        print(mat)
+        print(f"{mat.name}:{calc.calc(er=mat.er, height=mat.height, thickness=mat.thickness, z0=50, freq=5)}")
         print(f"starting material :{mat.name}")
-        extract(material=mat, step_size=0.1)
+        #extract(material=mat, step_size=0.1)
