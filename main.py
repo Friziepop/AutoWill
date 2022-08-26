@@ -12,6 +12,7 @@ import os
 
 from materials.material import Material
 from materials.materials_db import MaterialDB
+from copy import deepcopy
 
 
 def print_hi(name):
@@ -30,49 +31,52 @@ if __name__ == '__main__':
 
     mat_db = MaterialDB()
 
-    chosen_mat = mat_db.get_by_id(7)
+    ids = [1, 2, 3, 4, 5, 6]
     bandwith = 0.25
-    freqs = np.linspace(1, 50, 99)
-    for freq in [20.0, 21.0]:
-        quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
-        print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
-        constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False)
-            , OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
-                                     start=quarter_wavelength, should_optimize=False),
-                       OptimizationConstraint(name='THICKNESS', max=1, min=0, start=chosen_mat.thickness,
-                                              should_optimize=False),
-                       OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height),
-                       OptimizationConstraint(name='HALF', max=None, min=None, start=quarter_wavelength * 2,
-                                              should_optimize=False)]
+    freqs = np.arange(1, 40, 0.5)
 
-        optimizer.setup(max_iter=300,
-                        optimization_type="Gradient Optimization",
-                        optimization_properties={"Converge Tolerance": 0.01,
-                                                 "Step Size": 0.001
-                                                 },
-                        constraints=constraints,
-                        material=chosen_mat)
-        optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
+    for id in ids:
+        for freq in freqs:
+            chosen_mat = deepcopy(MaterialDB().get_by_id(id))
+            quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
+            print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
+            constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False)
+                , OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
+                                         start=quarter_wavelength, should_optimize=False),
+                           OptimizationConstraint(name='THICKNESS', max=1, min=0, start=chosen_mat.thickness,
+                                                  should_optimize=False),
+                           OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height),
+                           OptimizationConstraint(name='HALF', max=None, min=None, start=quarter_wavelength * 2,
+                                                  should_optimize=False)]
 
-        constraints = [OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
-                                              start=quarter_wavelength)]
+            optimizer.setup(max_iter=300,
+                            optimization_type="Gradient Optimization",
+                            optimization_properties={"Converge Tolerance": 0.01,
+                                                     "Step Size": 0.001
+                                                     },
+                            constraints=constraints,
+                            material=chosen_mat)
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
 
-        result = extractor.extract_results(frequency=freq, bandwidth=bandwith, material=chosen_mat, save_csv=False)
-        for key, value in result.equation_vars.items():
-            if value.equation_name == "HEIGHT":
-                chosen_mat.height = float(value.equation_value)
+            constraints = [OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
+                                                  start=quarter_wavelength)]
 
-        optimizer.setup(max_iter=300,
-                        optimization_type="Gradient Optimization",
-                        optimization_properties={"Converge Tolerance": 0.01,
-                                                 "Step Size": 0.001
-                                                 },
-                        constraints=constraints,
-                        material=chosen_mat)
+            result = extractor.extract_results(frequency=freq, bandwidth=bandwith, material=chosen_mat, save_csv=False)
+            for key, value in result.equation_vars.items():
+                if value.equation_name == "HEIGHT":
+                    chosen_mat.height = float(value.equation_value)
 
-        optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
+            optimizer.setup(max_iter=300,
+                            optimization_type="Gradient Optimization",
+                            optimization_properties={"Converge Tolerance": 0.01,
+                                                     "Step Size": 0.001
+                                                     },
+                            constraints=constraints,
+                            material=chosen_mat)
 
-        extractor.extract_results(frequency=freq, bandwidth=bandwith, material=chosen_mat)
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
+
+            extractor.extract_results(frequency=freq, bandwidth=bandwith, material=chosen_mat)
     x = 5
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
