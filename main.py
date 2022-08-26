@@ -11,6 +11,7 @@ from awr_optimizer.optimization_constraint import OptimizationConstraint
 import os
 
 from materials.material import Material
+from materials.materials_db import MaterialDB
 
 
 def print_hi(name):
@@ -27,16 +28,21 @@ if __name__ == '__main__':
     optimizer = AwrOptimizer()
     optimizer.connect()
 
+    mat_db = MaterialDB()
+
+    chosen_mat = mat_db.get_by_id(5)
     bandwith = 0.25
     freqs = np.linspace(1, 50, 99)
-    for freq in [5.0]:
+    for freq in [20.0]:
         quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
         print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
         constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False)
             , OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
                                      start=quarter_wavelength),
-                       OptimizationConstraint(name='THICKNESS', max=1, min=0, start=0.01, should_optimize=False),
-                       OptimizationConstraint(name='HEIGHT', max=1, min=0, start=0.1, should_optimize=False),
+                       OptimizationConstraint(name='THICKNESS', max=1, min=0, start=chosen_mat.thickness,
+                                              should_optimize=False),
+                       OptimizationConstraint(name='HEIGHT', max=1, min=0, start=chosen_mat.height,
+                                              should_optimize=False),
                        OptimizationConstraint(name='HALF', max=None, min=None, start=quarter_wavelength * 2,
                                               should_optimize=False)]
 
@@ -46,10 +52,10 @@ if __name__ == '__main__':
                                                  "Step Size": 0.001
                                                  },
                         constraints=constraints,
-                        material_name='FR4')
+                        material=chosen_mat)
         optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
         # optimizer.cleanup()
-        extractor.extract_results(frequency=freq, bandwidth=bandwith)
+        extractor.extract_results(frequency=freq, bandwidth=bandwith, material=chosen_mat)
     x = 5
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
