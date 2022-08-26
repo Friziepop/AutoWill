@@ -42,6 +42,8 @@ class AwrOptimizer:
               optimization_properties: Dict,
               constraints: List[OptimizationConstraint],
               material: Material):
+        for key, eq in self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict.items():
+            eq.optimize_enabled = False
         self._proj.optimization_max_iterations = max_iter
         self._proj.optimization_type = optimization_type
         self._material = material
@@ -85,9 +87,6 @@ class AwrOptimizer:
 
         self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict['STACKUP.SUB1'].parameters_dict[
             'DieInd'].value_str = self.get_sub_mapping(material_name=self._material.name)
-
-        for key, eq in self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict.items():
-            eq.optimize_enabled = False
 
     def run_optimizer(self, freq: float, bandwidth: float, num_points: int, ):
         self.set_proj_params(bandwidth, freq, num_points)
