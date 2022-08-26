@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
     mat_db = MaterialDB()
 
-    chosen_mat = mat_db.get_by_id(5)
+    chosen_mat = mat_db.get_by_id(7)
     bandwith = 0.25
     freqs = np.linspace(1, 50, 99)
     for freq in [20.0]:
@@ -38,11 +38,10 @@ if __name__ == '__main__':
         print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
         constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False)
             , OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
-                                     start=quarter_wavelength),
+                                     start=quarter_wavelength, should_optimize=False),
                        OptimizationConstraint(name='THICKNESS', max=1, min=0, start=chosen_mat.thickness,
                                               should_optimize=False),
-                       OptimizationConstraint(name='HEIGHT', max=1, min=0, start=chosen_mat.height,
-                                              should_optimize=False),
+                       OptimizationConstraint(name='HEIGHT', max=1, min=0, start=chosen_mat.height),
                        OptimizationConstraint(name='HALF', max=None, min=None, start=quarter_wavelength * 2,
                                               should_optimize=False)]
 

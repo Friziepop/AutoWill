@@ -5,8 +5,8 @@ from typing import Dict
 
 import numpy as np
 import pandas as pd
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+#from selenium import webdriver
+#from selenium.webdriver.common.keys import Keys
 from tqdm import tqdm
 
 # fr4_params = {
@@ -16,6 +16,7 @@ from tqdm import tqdm
 #         "prefix": "ro4350","er": 3.66, "tanl": 0.0037, "rho": 0.7, "height": 3.93701, "thickness": 0.039370079, "z0": 50
 # }
 from materials.material import Material
+from materials.materials_db import MaterialDB
 from microstip_freq_calc.copied_calc import MicroStripCopiedCalc
 
 Z0 = 50
@@ -88,11 +89,13 @@ def extract(material: Material, step_size):
 
 
 if __name__ == '__main__':
-    materials_csv = pd.read_csv('../materials/materials_db.csv')
-    for config_dict in materials_csv.to_dict('records'):
-        mat = Material(**config_dict)
-        calc = MicroStripCopiedCalc()
-        print(mat)
-        print(f"{mat.name}:{calc.calc(er=mat.er, height=mat.height, thickness=mat.thickness, z0=50, freq=5)}")
-        print(f"starting material :{mat.name}")
-        #extract(material=mat, step_size=0.1)
+    materials = MaterialDB('../materials/materials_db.csv')
+    material = materials.get_by_id(7)
+    material.height = 0.0817161767152128
+    MicroStripCopiedCalc().calc(material.er, material.height, material.thickness,
+                                50, 20)
+    print(MicroStripCopiedCalc().calc(material.er, material.height, material.thickness,
+                                      50, 20))
+    print(MicroStripCopiedCalc().calc(material.er, material.height, material.thickness,
+                                      70.7, 20))
+

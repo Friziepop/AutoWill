@@ -38,22 +38,13 @@ class AwrOptimizer:
         sub_dielectric = {x: i for i, x in enumerate(sub_dielectric_list)}
         return "{" + f"{sub_dielectric['Air']},{sub_dielectric[material_name]}" + "}"
 
-    def get_material_from_db(self, material_name: str) -> Material:
-        material = None
-        with open(MATERIALS_DB_CSV_PATH) as f:
-            reader = DataclassReader(f, Material, validate_header=False)
-            for row in reader:
-                if row.name.strip() == material_name.strip():
-                    material = row
-        return material
-
     def setup(self, max_iter: int, optimization_type: str,
               optimization_properties: Dict,
               constraints: List[OptimizationConstraint],
-              material_name: str):
+              material: Material):
         self._proj.optimization_max_iterations = max_iter
         self._proj.optimization_type = optimization_type
-        self._material = self.get_material_from_db(material_name=material_name)
+        self._material = material
 
         for key, value in self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict.items():
             if value.equation_name == 'WIDTH':
@@ -87,14 +78,16 @@ class AwrOptimizer:
             'MSUB.SUBSTRATE'].parameters_dict
 
         params['Er'].value = self._material.er
-        params['H'].value = self._material.height / 1000
         params['T'].value = self._material.thickness / 1000
         params['Rho'].value = self._material.rho
         params['Tand'].value = self._material.tanl
         params['ErNom'].value = self._material.er
 
         self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict['STACKUP.SUB1'].parameters_dict[
-            'DieInd'].value_str = self.get_sub_mapping(material_name=material_name)
+            'DieInd'].value_str = self.get_sub_mapping(material_name=self._material.name)
+
+        for key, eq in self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict.items():
+            eq.optimize_enabled = False
 
     def run_optimizer(self, freq: float, bandwidth: float, num_points: int, ):
         self.set_proj_params(bandwidth, freq, num_points)
