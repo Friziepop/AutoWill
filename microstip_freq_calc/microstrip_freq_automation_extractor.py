@@ -16,6 +16,7 @@ from tqdm import tqdm
 #         "prefix": "ro4350","er": 3.66, "tanl": 0.0037, "rho": 0.7, "height": 3.93701, "thickness": 0.039370079, "z0": 50
 # }
 from materials.material import Material
+from microstip_freq_calc.copied_calc import MicroStripCopiedCalc
 
 Z0 = 50
 MILLS_TO_MM = 0.0254
@@ -90,5 +91,7 @@ if __name__ == '__main__':
     materials_csv = pd.read_csv('../materials/materials_db.csv')
     for config_dict in materials_csv.to_dict('records'):
         mat = Material(**config_dict)
+        # calc = MicroStripCopiedCalc()
+        # print(f"{mat.name}:{calc.calc(er=mat.er, height=mat.height, thickness=mat.thickness, z0=50, freq=5)}")
         print(f"starting material :{mat.name}")
         extract(material=mat, step_size=0.1)
