@@ -35,17 +35,18 @@ if __name__ == '__main__':
     bandwith = 0.25
     freqs = np.arange(1, 40, 0.5)
 
-    for id in ids:
-        for freq in freqs:
+    for id in [1]:
+        for freq in [20.0]:
             chosen_mat = deepcopy(MaterialDB().get_by_id(id))
             quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
             print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
             constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False)
                 , OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
-                                         start=quarter_wavelength, should_optimize=False),
+                                         start=quarter_wavelength),
                            OptimizationConstraint(name='THICKNESS', max=1, min=0, start=chosen_mat.thickness,
                                                   should_optimize=False),
-                           OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height),
+                           OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height,
+                                                  should_optimize=False),
                            OptimizationConstraint(name='HALF', max=None, min=None, start=quarter_wavelength * 2,
                                                   should_optimize=False)]
 
@@ -58,13 +59,8 @@ if __name__ == '__main__':
                             material=chosen_mat)
             optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
 
-            constraints = [OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
-                                                  start=quarter_wavelength)]
-
-            result = extractor.extract_results(frequency=freq, bandwidth=bandwith, material=chosen_mat, save_csv=False)
-            for key, value in result.equation_vars.items():
-                if value.equation_name == "HEIGHT":
-                    chosen_mat.height = float(value.equation_value)
+            constraints = [
+                OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height)]
 
             optimizer.setup(max_iter=300,
                             optimization_type="Gradient Optimization",

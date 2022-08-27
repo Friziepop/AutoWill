@@ -15,6 +15,7 @@ class BaseLearner(ABC):
 
     def extract_xy(self, csv_data_path: str, x_col: str, y_col: str):
         df = pd.read_csv(filepath_or_buffer=csv_data_path, dtype={x_col: float, y_col: float})
+        df = df[df["id"] == 1]
         x = df[x_col].to_numpy()
         y = df[y_col].to_numpy()
         return x, y
@@ -35,8 +36,8 @@ class BaseLearner(ABC):
         ax.scatter(x, y, color='blue')
         ax.plot(x, calculated_y, color='red')
 
-        ax.set(xlim=(0, 20), xticks=np.arange(1, 30),
-               ylim=(0, 20), yticks=np.arange(1, 50))
+        ax.set(xlim=(0, 40), xticks=np.arange(1, 40,1),
+               ylim=(0, 0.11), yticks=np.arange(0, 0.11, 0.01))
         ax.set_ylabel(y_col)
         ax.set_xlabel(x_col)
         ax.set_title(title)
