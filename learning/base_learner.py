@@ -1,3 +1,4 @@
+import pickle
 from abc import ABC
 from typing import List
 
@@ -8,10 +9,14 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+from learning.learnings_util import get_learning_model_name
+
 
 class BaseLearner(ABC):
-    def __init__(self,material_id:int):
+    def __init__(self, material_id: int, model_dir: str = "models"):
+        self._model_dir = model_dir
         self._material_id = material_id
+        self._model = None
 
     def extract_xy(self, csv_data_path: str, x_col: str, y_col: str):
         df = pd.read_csv(filepath_or_buffer=csv_data_path, dtype={x_col: float, y_col: float})
@@ -47,7 +52,7 @@ class BaseLearner(ABC):
 
         plt.show(block=block)
 
-    def train(self, csv_data_path: str, x_col: str, y_col: str):
+    def train(self, csv_data_path: str, x_col: str, y_col: str, save_model: bool = False):
         # model = Pipeline([('poly', PolynomialFeatures(degree=self.degree)),
         #                   ('linear', LinearRegression(fit_intercept=False))])
 
@@ -57,4 +62,16 @@ class BaseLearner(ABC):
         model = model.fit(features, y)
         print(model.coef_)
 
+        if save_model:
+            path = get_learning_model_name(models_dir=self._model_dir, material_id=self._material_id, input_name=x_col,
+                                           output_name=y_col)
+            self._model = model
+            print(f"saving model: {path}")
+            with open(path, 'wb') as handle:
+                pickle.dump(self, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
         return model.coef_
+
+    def predict(self, x):
+        features = self.create_feature(x)
+        return self._model.predict(features)
