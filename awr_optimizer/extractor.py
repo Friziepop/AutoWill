@@ -12,9 +12,10 @@ from dataclasses import dataclass
 
 from dataclass_csv import DataclassWriter
 from scipy.constants import constants
+import os
 
-S_PARAMS_CSV_FILE = "../sparams.csv"
-VARS_CSV_FILE = "../vars.csv"
+S_PARAMS_CSV_FILE = "sparams.csv"
+VARS_CSV_FILE = "vars.csv"
 
 S_PARAM_FIELD_TO_CLASS_FIELD = {
     "WilkinsonPowerDivider:DB(|S(1,1)|)": "s_1_1",
@@ -29,24 +30,31 @@ VARS_TO_CLASS_FIELD = {
     "Res": "res",
     "HALF": "half",
     "QUARTER": "quarter",
-    "RADIUS": "radius"
+    "RADIUS": "radius",
+    "HEIGHT": "height"
 }
 
 
 @dataclass
 class Vars:
+    name: str
+    id: int
     frequency: float
     radius: float
     quarter: float
     half: float
     res: float
+    height: float
 
-    def __init__(self, frequency, radius, quarter, half, res):
+    def __init__(self, name, id, frequency, radius, quarter, half, res, height):
+        self.name = name
+        self.id = id
         self.frequency = frequency
         self.radius = radius
         self.quarter = quarter
         self.half = half
         self.res = res
+        self.height = height
 
 
 @dataclass
@@ -102,12 +110,13 @@ class Extractor:
         self.proj = awrde_utils.Project(self.awrde)
 
     def extract_quarter_wavelength(self, frequency) -> float:
-        eps_r = self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict["MSUB.FR4"].parameters_dict[
-            'Er'].value
+        eps_r = \
+            self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict["MSUB.SUBSTRATE"].parameters_dict[
+                'Er'].value
         qua_meter = (constants.speed_of_light / (frequency * 10 ** 9 * math.sqrt(eps_r))) / 4
         return qua_meter * 10 ** 3
 
-    def extract_results(self, frequency, bandwidth, save_csv=True) -> ExtractionResult:
+    def extract_results(self, frequency, bandwidth, material, save_csv=True) -> ExtractionResult:
         result = ExtractionResult()
 
         for key, value in self.proj.graph_dict['Match'].measurements_dict.items():
@@ -123,12 +132,12 @@ class Extractor:
 
         if save_csv:
             self.extract_s_params_to_csv(bandwidth, frequency, result)
-            self.extract_vars_to_csv(result, frequency)
+            self.extract_vars_to_csv(result, frequency, material.id, material.name)
 
         return result
 
-    def extract_vars_to_csv(self, result, frequency):
-        vars_dict = {"frequency": frequency}
+    def extract_vars_to_csv(self, result, frequency, id, name):
+        vars_dict = {"frequency": frequency, "id": id, "name": name}
         for key, value in result.equation_vars.items():
             if value.equation_name in VARS_TO_CLASS_FIELD:
                 vars_dict[VARS_TO_CLASS_FIELD[value.equation_name]] = float(value.equation_value)
