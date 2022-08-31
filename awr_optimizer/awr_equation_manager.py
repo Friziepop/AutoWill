@@ -25,3 +25,7 @@ class AwrEquationManager(AwrConnector):
         eq.upper_constraint = con.max if con.max else 10 ^ 6
         eq.constrain = con.constrain
         eq.equation_value = str(con.start)
+
+    def disable_opt_all(self):
+        for key, eq in self._eq_dict.items():
+            eq.optimize_enabled = False
