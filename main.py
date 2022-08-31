@@ -37,7 +37,7 @@ def run_simulations():
             print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
             constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False),
                            OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2,
-                                                  min=quarter_wavelength / 2,
+                                                  min=quarter_wavelength / 3,
                                                   start=quarter_wavelength),
                            OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height,
                                                   should_optimize=False)]
@@ -66,8 +66,7 @@ def run_simulations():
             optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
 
             constraints = [
-                OptimizationConstraint(name='WIDTH', max=10, min=0.1, start=5),
-                OptimizationConstraint(name='ROOTWIDTH', max=10, min=0.01, start=5)]
+                OptimizationConstraint(name='WIDTH', max=10, min=0.1, start=5)]
 
             optimizer.setup(max_iter=30,
                             optimization_type="Gradient Optimization",
