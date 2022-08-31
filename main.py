@@ -39,11 +39,7 @@ def run_simulations():
                            OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2,
                                                   min=quarter_wavelength / 2,
                                                   start=quarter_wavelength),
-                           OptimizationConstraint(name='THICKNESS', max=1, min=0, start=chosen_mat.thickness,
-                                                  should_optimize=False),
                            OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height,
-                                                  should_optimize=False),
-                           OptimizationConstraint(name='HALF', max=None, min=None, start=quarter_wavelength * 2,
                                                   should_optimize=False)]
 
             optimizer.setup(max_iter=300,
