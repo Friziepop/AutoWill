@@ -28,6 +28,9 @@ def create(params: SymbolParams):
     print(f"res_predictor:{res_predictor.predict(symbol_input_params=params)}")
     print(f"radius_predictor:{radius_predictor.predict(symbol_input_params=params)}")
 
+    print("generation dxf")
+
+
 
 if __name__ == '__main__':
     params = SymbolParams(material_id=1, frequency=10.0, bandwidth=0.5)

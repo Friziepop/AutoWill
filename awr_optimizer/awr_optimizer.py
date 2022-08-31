@@ -43,10 +43,7 @@ class AwrOptimizer(AwrConnector):
               constraints: List[OptimizationConstraint],
               material: Material):
 
-        for key, eq in self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict.items():
-            eq.optimize_enabled = False
-
-
+        self._eq_manager.disable_opt_all()
         self._proj.optimization_max_iterations = max_iter
         self._proj.optimization_type = optimization_type
         self._material = material
@@ -86,12 +83,12 @@ class AwrOptimizer(AwrConnector):
     def set_proj_params(self, bandwidth, freq, num_points):
         freq_array = np.linspace(freq - bandwidth / 2, freq + bandwidth / 2, num_points)
         self._proj.set_project_frequencies(project_freq_ay=freq_array, units_str='GHz')
-        self._width_eq.equation_value = str(
+        self._eq_manager.set_equation_value(eq_name="WIDTH", eq_val=str(
             self._width_calc.calc(er=self._material.er, thickness=self._material.thickness, z0=Z0,
-                                  height=self._material.height, freq=freq))
-        self._root_width_eq.equation_value = str(
+                                  height=self._material.height, freq=freq)))
+        self._eq_manager.set_equation_value(eq_name="ROOTWIDTH", eq_val=str(
             self._width_calc.calc(er=self._material.er, thickness=self._material.thickness, z0=Z0 * math.sqrt(2),
-                                  height=self._material.height, freq=freq))
+                                  height=self._material.height, freq=freq)))
 
     def cleanup(self):
         shutil.rmtree("../DATA_SETS")

@@ -14,6 +14,9 @@ from dataclass_csv import DataclassWriter
 from scipy.constants import constants
 import os
 
+from awr_optimizer.awr_connector import AwrConnector
+from awr_optimizer.awr_equation_manager import AwrEquationManager
+
 S_PARAMS_CSV_FILE = "sparams.csv"
 VARS_CSV_FILE = "vars.csv"
 
@@ -26,12 +29,12 @@ S_PARAM_FIELD_TO_CLASS_FIELD = {
     "WilkinsonPowerDivider:DB(|S(2,1)|)": "s_2_1"
 }
 
-VARS_TO_CLASS_FIELD = {
-    "Res": "res",
-    "HALF": "half",
-    "QUARTER": "quarter",
-    "RADIUS": "radius",
-    "HEIGHT": "height"
+CLASS_FIELD_TO_VARS = {
+    "res": "Res",
+    "half": "HALF",
+    "quarter": "QUARTER",
+    "radius": "RADIUS",
+    "height": "HEIGHT"
 }
 
 
@@ -97,21 +100,20 @@ class ExtractionResult:
     def __init__(self):
         self.s_param_to_measurements = {}
         self.circuit_vars = {}
-        self.equation_vars = {}
 
 
-class Extractor:
+class Extractor(AwrConnector):
     def __init__(self):
-        self.awrde = None
-        self.proj = None
+        super(Extractor, self).__init__()
+        self._eq_manager = AwrEquationManager()
 
     def connect(self):
-        self.awrde = awrde_utils.establish_link()
-        self.proj = awrde_utils.Project(self.awrde)
+        super(Extractor, self).connect()
+        self._eq_manager.connect()
 
     def extract_quarter_wavelength(self, frequency) -> float:
         eps_r = \
-            self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict["MSUB.SUBSTRATE"].parameters_dict[
+            self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict["MSUB.SUBSTRATE"].parameters_dict[
                 'Er'].value
         qua_meter = (constants.speed_of_light / (frequency * 10 ** 9 * math.sqrt(eps_r))) / 4
         return qua_meter * 10 ** 3
@@ -119,16 +121,15 @@ class Extractor:
     def extract_results(self, frequency, bandwidth, material, save_csv=True) -> ExtractionResult:
         result = ExtractionResult()
 
-        for key, value in self.proj.graph_dict['Match'].measurements_dict.items():
+        for key, value in self._proj.graph_dict['Match'].measurements_dict.items():
             result.s_param_to_measurements[value.measurement_name] = \
                 [SParam(measurement[0], measurement[1]) for measurement in value.trace_data[0]]
 
-        for key, value in self.proj.graph_dict['Transmission'].measurements_dict.items():
+        for key, value in self._proj.graph_dict['Transmission'].measurements_dict.items():
             result.s_param_to_measurements[value.measurement_name] = \
                 [SParam(measurement[0], measurement[1]) for measurement in value.trace_data[0]]
 
-        result.circuit_vars = self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict
-        result.equation_vars = self.proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict
+        result.circuit_vars = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict
 
         if save_csv:
             self.extract_s_params_to_csv(bandwidth, frequency, result)
@@ -138,9 +139,8 @@ class Extractor:
 
     def extract_vars_to_csv(self, result, frequency, id, name):
         vars_dict = {"frequency": frequency, "id": id, "name": name}
-        for key, value in result.equation_vars.items():
-            if value.equation_name in VARS_TO_CLASS_FIELD:
-                vars_dict[VARS_TO_CLASS_FIELD[value.equation_name]] = float(value.equation_value)
+        for field,eq_name in CLASS_FIELD_TO_VARS.items():
+            vars_dict[field] = float(self._eq_manager.get_equation_by_name(eq_name).equation_value)
 
         vars = from_dict(data_class=Vars, data=vars_dict)
 
@@ -149,7 +149,7 @@ class Extractor:
 
         with open(VARS_CSV_FILE, "a", newline='', encoding='utf-8') as f:
             w = DataclassWriter(f, [vars], Vars)
-            for key, value in VARS_TO_CLASS_FIELD.items():
+            for key, value in CLASS_FIELD_TO_VARS.items():
                 w.map(value).to(key)
 
             w.write(skip_header=csv_already_exists)
