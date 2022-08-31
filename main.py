@@ -55,7 +55,7 @@ def run_simulations():
             constraints = [
                 OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height)]
 
-            optimizer.setup(max_iter=300,
+            optimizer.setup(max_iter=50,
                             optimization_type="Gradient Optimization",
                             optimization_properties={"Converge Tolerance": 0.01,
                                                      "Step Size": 0.001
@@ -66,9 +66,10 @@ def run_simulations():
             optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
 
             constraints = [
-                OptimizationConstraint(name='WIDTH', max=10, min=0.1, start=5)]
+                OptimizationConstraint(name='WIDTH', max=10, min=0.1, start=5),
+                OptimizationConstraint(name='ROOTWIDTH', max=10, min=0.01, start=5)]
 
-            optimizer.setup(max_iter=300,
+            optimizer.setup(max_iter=30,
                             optimization_type="Gradient Optimization",
                             optimization_properties={"Converge Tolerance": 0.01,
                                                      "Step Size": 0.001

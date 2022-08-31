@@ -16,6 +16,7 @@ import os
 
 from awr_optimizer.awr_connector import AwrConnector
 from awr_optimizer.awr_equation_manager import AwrEquationManager
+from materials.material import Material
 
 S_PARAMS_CSV_FILE = "sparams.csv"
 VARS_CSV_FILE = "vars.csv"
@@ -31,10 +32,11 @@ S_PARAM_FIELD_TO_CLASS_FIELD = {
 
 CLASS_FIELD_TO_VARS = {
     "res": "Res",
-    "half": "HALF",
     "quarter": "QUARTER",
     "radius": "RADIUS",
-    "height": "HEIGHT"
+    "height": "HEIGHT",
+    "root_width": "ROOTWIDTH",
+    "width": "WIDTH"
 }
 
 
@@ -45,23 +47,27 @@ class Vars:
     frequency: float
     radius: float
     quarter: float
-    half: float
     res: float
     height: float
+    root_width: float
+    width: float
 
-    def __init__(self, name, id, frequency, radius, quarter, half, res, height):
+    def __init__(self, name, id, frequency, radius, quarter, res, height, root_width, width):
         self.name = name
         self.id = id
         self.frequency = frequency
         self.radius = radius
         self.quarter = quarter
-        self.half = half
         self.res = res
         self.height = height
+        self.root_width = root_width
+        self.width = width
 
 
 @dataclass
 class SParams:
+    id: int
+    name: str
     bandwidth: float
     frequency: float
     s_1_1: float
@@ -71,7 +77,9 @@ class SParams:
     s_3_2: float
     s_2_1: float
 
-    def __init__(self, bandwidth, frequency, s_1_1, s_2_2, s_3_3, s_3_1, s_3_2, s_2_1):
+    def __init__(self, id, name, bandwidth, frequency, s_1_1, s_2_2, s_3_3, s_3_1, s_3_2, s_2_1):
+        self.id = id
+        self.name = name
         self.bandwidth = bandwidth
         self.frequency = frequency
         self.s_1_1 = s_1_1
@@ -118,7 +126,8 @@ class Extractor(AwrConnector):
         qua_meter = (constants.speed_of_light / (frequency * 10 ** 9 * math.sqrt(eps_r))) / 4
         return qua_meter * 10 ** 3
 
-    def extract_results(self, frequency, bandwidth, material, save_csv=True) -> ExtractionResult:
+    def extract_results(self, frequency: float, bandwidth: float, material: Material,
+                        save_csv=True) -> ExtractionResult:
         result = ExtractionResult()
 
         for key, value in self._proj.graph_dict['Match'].measurements_dict.items():
@@ -132,18 +141,17 @@ class Extractor(AwrConnector):
         result.circuit_vars = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict
 
         if save_csv:
-            self.extract_s_params_to_csv(bandwidth, frequency, result)
-            self.extract_vars_to_csv(result, frequency, material.id, material.name)
+            self.extract_s_params_to_csv(material.id, material.name, bandwidth, frequency, result)
+            self.extract_vars_to_csv(frequency, material.id, material.name)
 
         return result
 
-    def extract_vars_to_csv(self, result, frequency, id, name):
+    def extract_vars_to_csv(self, frequency: float, id: int, name: str):
         vars_dict = {"frequency": frequency, "id": id, "name": name}
-        for field,eq_name in CLASS_FIELD_TO_VARS.items():
+        for field, eq_name in CLASS_FIELD_TO_VARS.items():
             vars_dict[field] = float(self._eq_manager.get_equation_by_name(eq_name).equation_value)
 
         vars = from_dict(data_class=Vars, data=vars_dict)
-
         csv_file = Path(VARS_CSV_FILE)
         csv_already_exists = csv_file.exists()
 
@@ -155,8 +163,10 @@ class Extractor(AwrConnector):
             w.write(skip_header=csv_already_exists)
 
     @staticmethod
-    def extract_s_params_to_csv(bandwidth, frequency, result):
-        s_params_dict = {"bandwidth": bandwidth, "frequency": frequency}
+    def extract_s_params_to_csv(material_id: int, material_name: str, bandwidth: float, frequency: float,
+                                result: ExtractionResult):
+        s_params_dict = {"id": material_id, "name": material_name,
+                         "bandwidth": bandwidth, "frequency": frequency}
         for key, value in result.s_param_to_measurements.items():
             for s_param in value:
                 if round(s_param.frequency, 2) == round(frequency, 2):
