@@ -1,7 +1,8 @@
 import math
-
+import os
+from creator.dxf_generator import DxfAwrGenerator
 from creator.predictors import ModelPredictor, CsvPredictor, WidthPredictor, ConstPredictor
-from creator.symbol_params import SymbolParams
+from creator.symbol_params import SymbolParams, SymbolGenerationParams
 from materials.materials_db import MaterialDB
 
 MODELS_DIR = "../learning/models"
@@ -28,8 +29,19 @@ def create(params: SymbolParams):
     print(f"res_predictor:{res_predictor.predict(symbol_input_params=params)}")
     print(f"radius_predictor:{radius_predictor.predict(symbol_input_params=params)}")
 
+    dxf_params = SymbolGenerationParams(
+        height=height_predictor.predict(symbol_input_params=params),
+        thickness=thickness_predictor.predict(symbol_input_params=params),
+        quarter=thickness_predictor.predict(symbol_input_params=params),
+        width=width_predictor.predict(symbol_input_params=params),
+        rootwidth=width_predictor.predict(symbol_input_params=params),
+        res=res_predictor.predict(symbol_input_params=params),
+        radius=radius_predictor.predict(symbol_input_params=params)
+    )
+    out_path = os.path.join(os.getcwd(), "out.dxf")
+    print(f"Generating dxf file out:{out_path}")
+    DxfAwrGenerator().generate(params=dxf_params, out_path=out_path)
     print("generation dxf")
-
 
 
 if __name__ == '__main__':
