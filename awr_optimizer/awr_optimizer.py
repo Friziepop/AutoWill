@@ -10,6 +10,8 @@ from dataclass_csv import DataclassReader
 from pyawr_utils import awrde_utils
 from tqdm import tqdm
 
+from awr_optimizer.awr_connector import AwrConnector
+from awr_optimizer.awr_equation_manager import AwrEquationManager
 from awr_optimizer.optimization_constraint import OptimizationConstraint
 from materials.material import Material
 from microstip_freq_calc.copied_calc import MicroStripCopiedCalc
@@ -18,18 +20,16 @@ MATERIALS_DB_CSV_PATH = "materials/materials_db.csv"
 Z0 = 50
 
 
-class AwrOptimizer:
+class AwrOptimizer(AwrConnector):
     def __init__(self) -> None:
-        self._awrde = None
-        self._proj = None
-        self._width_eq = None
-        self._root_width_eq = None
+        super(AwrOptimizer, self).__init__()
         self._material = None
         self._width_calc = MicroStripCopiedCalc()
+        self._eq_manager = AwrEquationManager()
 
     def connect(self):
-        self._awrde = awrde_utils.establish_link()
-        self._proj = awrde_utils.Project(self._awrde)
+        super(AwrOptimizer, self).connect()
+        self._eq_manager.connect()
 
     def get_sub_mapping(self, material_name: str):
         sub_dielectric_list = json.loads(
@@ -42,39 +42,21 @@ class AwrOptimizer:
               optimization_properties: Dict,
               constraints: List[OptimizationConstraint],
               material: Material):
+
         for key, eq in self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict.items():
             eq.optimize_enabled = False
+
+
         self._proj.optimization_max_iterations = max_iter
         self._proj.optimization_type = optimization_type
         self._material = material
-
-        for key, value in self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict.items():
-            if value.equation_name == 'WIDTH':
-                self._width_eq = value
-            if value.equation_name == 'ROOTWIDTH':
-                self._root_width_eq = value
 
         for key, val in self._proj.optimization_type_properties.items():
             self._proj.optimization_type_properties[key] = optimization_properties[key]
         self._proj.optimization_update_type_properties()
 
-        equations_dict = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].equations_dict
-
-        for key, ele in equations_dict.items():
-            ele.optimize_enabled = False
-
         for con in constraints:
-            equation_opt = [eq for key, eq in equations_dict.items() if
-                            eq.equation_name == con.name]
-            if len(equation_opt) == 1:
-                first = equation_opt[0]
-                first.optimize_enabled = con.should_optimize
-                first.lower_constraint = con.min if con.min else 0
-                first.upper_constraint = con.max if con.max else 10 ^ 6
-                first.constrain = con.constrain
-                first.equation_value = str(con.start)
-            else:
-                print(f"error:{con.name} not optimized")
+            self._eq_manager.set_constraint(con=con)
 
         params = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict[
             'MSUB.SUBSTRATE'].parameters_dict
