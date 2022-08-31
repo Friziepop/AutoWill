@@ -5,12 +5,11 @@
 
 import numpy as np
 
+from awr_optimizer.awr_equation_manager import AwrEquationManager
 from awr_optimizer.awr_optimizer import AwrOptimizer
 from awr_optimizer.extractor import Extractor
 from awr_optimizer.optimization_constraint import OptimizationConstraint
-import os
 
-from materials.material import Material
 from materials.materials_db import MaterialDB
 from copy import deepcopy
 
@@ -20,23 +19,19 @@ def print_hi(name):
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-    # output Res,Quarter,HALF,RADIUS wavelength
+def run_simulations():
     extractor = Extractor()
     extractor.connect()
     optimizer = AwrOptimizer()
     optimizer.connect()
-
-    mat_db = MaterialDB()
-
     ids = [1, 2, 3]
     bandwith = 0.25
     freqs = np.arange(1, 40, 0.5)
 
     for id in ids:
         for freq in freqs:
+            set_meshing(freq)
+
             chosen_mat = deepcopy(MaterialDB().get_by_id(id))
             quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
             print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
@@ -88,6 +83,25 @@ if __name__ == '__main__':
             optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
 
             extractor.extract_results(frequency=freq, bandwidth=bandwith, material=chosen_mat)
+
+
+def set_meshing(freq):
+    equation_manager = AwrEquationManager()
+    equation_manager.connect()
+    if 0 <= freq < 10:
+        equation_manager.set_equation_value("MESHING", 0.1)
+    if 10 <= freq < 20:
+        equation_manager.set_equation_value("MESHING", 0.01)
+    if 20 <= freq < 30:
+        equation_manager.set_equation_value("MESHING", 0.005)
+    if 30 <= freq < 40:
+        equation_manager.set_equation_value("MESHING", 0.002)
+
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('PyCharm')
+    run_simulations()
     x = 5
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
