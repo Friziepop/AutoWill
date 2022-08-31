@@ -31,18 +31,19 @@ if __name__ == '__main__':
 
     mat_db = MaterialDB()
 
-    ids = [1, 2, 3, 4, 5, 6]
+    ids = [1, 2, 3]
     bandwith = 0.25
     freqs = np.arange(1, 40, 0.5)
 
-    for id in [1]:
-        for freq in [20.0]:
+    for id in ids:
+        for freq in freqs:
             chosen_mat = deepcopy(MaterialDB().get_by_id(id))
             quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
             print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
-            constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False)
-                , OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2, min=quarter_wavelength / 2,
-                                         start=quarter_wavelength),
+            constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False),
+                           OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2,
+                                                  min=quarter_wavelength / 2,
+                                                  start=quarter_wavelength),
                            OptimizationConstraint(name='THICKNESS', max=1, min=0, start=chosen_mat.thickness,
                                                   should_optimize=False),
                            OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height,
@@ -57,10 +58,24 @@ if __name__ == '__main__':
                                                      },
                             constraints=constraints,
                             material=chosen_mat)
+
             optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
 
             constraints = [
                 OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height)]
+
+            optimizer.setup(max_iter=300,
+                            optimization_type="Gradient Optimization",
+                            optimization_properties={"Converge Tolerance": 0.01,
+                                                     "Step Size": 0.001
+                                                     },
+                            constraints=constraints,
+                            material=chosen_mat)
+
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
+
+            constraints = [
+                OptimizationConstraint(name='WIDTH', max=10, min=0.1, start=5)]
 
             optimizer.setup(max_iter=300,
                             optimization_type="Gradient Optimization",
