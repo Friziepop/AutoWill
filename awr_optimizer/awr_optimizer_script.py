@@ -87,7 +87,7 @@ if __name__ == '__main__':
     step_size = 1
 
     ids = [1, 2, 3]
-    bandwidth = 0.5
+    bandwidth = 1
 
     freqs = [float(freq) for freq in np.arange(start_freq, end_freq, step_size)]
     print("starting dataset generation using awr optimization")
