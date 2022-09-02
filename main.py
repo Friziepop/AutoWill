@@ -25,8 +25,8 @@ def run_simulations():
     optimizer = AwrOptimizer()
     optimizer.connect()
     ids = [1, 2, 3]
-    bandwith = 0.25
-    freqs = np.arange(1, 20, 1)
+    bandwith = 0.5
+    freqs = [float(freq) for freq in np.arange(1, 20, 1)]
 
     for id in ids:
         for freq in freqs:
@@ -50,7 +50,7 @@ def run_simulations():
                             constraints=constraints,
                             material=chosen_mat)
 
-            optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=3)
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwith, num_points=5)
 
             constraints = [
                 OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height)]
