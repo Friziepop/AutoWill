@@ -84,8 +84,8 @@ def set_meshing(freq):
 
 if __name__ == '__main__':
     start_freq = 1
-    end_freq = 20
-    step_size = 1
+    end_freq = 40
+    step_size = 0.5
 
     ids = [1, 2, 3]
 
