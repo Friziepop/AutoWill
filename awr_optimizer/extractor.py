@@ -13,8 +13,8 @@ from dataclasses import dataclass
 from dataclass_csv import DataclassWriter
 from scipy.constants import constants
 
-from awr_optimizer.awr_connector import AwrConnector
-from awr_optimizer.awr_equation_manager import AwrEquationManager
+from awr_connector import AwrConnector
+from awr_equation_manager import AwrEquationManager
 from materials.material import Material
 
 S_PARAMS_CSV_FILE = "sparams.csv"

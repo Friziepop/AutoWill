@@ -4,7 +4,7 @@ import pandas as pd
 
 from materials.material import Material
 
-DEFAULT_DB_PATH = 'materials/materials_db.csv'
+DEFAULT_DB_PATH = '../materials/materials_db.csv'
 
 
 class MaterialDB:

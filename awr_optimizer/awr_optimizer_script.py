@@ -1,9 +1,9 @@
 import numpy as np
 
-from awr_optimizer.awr_equation_manager import AwrEquationManager
-from awr_optimizer.awr_optimizer import AwrOptimizer
-from awr_optimizer.extractor import Extractor
-from awr_optimizer.optimization_constraint import OptimizationConstraint
+from awr_equation_manager import AwrEquationManager
+from awr_optimizer import AwrOptimizer
+from extractor import Extractor
+from optimization_constraint import OptimizationConstraint
 
 from materials.materials_db import MaterialDB
 from copy import deepcopy
@@ -37,7 +37,7 @@ def run_simulations(ids, freqs, bandwidth):
                             constraints=constraints,
                             material=chosen_mat)
 
-            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=5)
 
             constraints = [
                 OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height)]
@@ -50,7 +50,7 @@ def run_simulations(ids, freqs, bandwidth):
                             constraints=constraints,
                             material=chosen_mat)
 
-            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=5)
 
             constraints = [
                 OptimizationConstraint(name='WIDTH', max=10, min=0.1, start=5)]
@@ -63,7 +63,7 @@ def run_simulations(ids, freqs, bandwidth):
                             constraints=constraints,
                             material=chosen_mat)
 
-            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=5)
 
             extractor.extract_results(frequency=freq, bandwidth=bandwidth, material=chosen_mat)
 
@@ -87,9 +87,9 @@ if __name__ == '__main__':
     step_size = 1
 
     ids = [1, 2, 3]
-    bandwidth = 0.25
+    bandwidth = 0.5
 
-    freqs = np.arange(1, 20, 1)
+    freqs = [float(freq) for freq in np.arange(start_freq, end_freq, step_size)]
     print("starting dataset generation using awr optimization")
     print(f"ids:{ids}")
     print(f"bandwidth:{bandwidth}")

@@ -10,9 +10,9 @@ from dataclass_csv import DataclassReader
 from pyawr_utils import awrde_utils
 from tqdm import tqdm
 
-from awr_optimizer.awr_connector import AwrConnector
-from awr_optimizer.awr_equation_manager import AwrEquationManager
-from awr_optimizer.optimization_constraint import OptimizationConstraint
+from awr_connector import AwrConnector
+from awr_equation_manager import AwrEquationManager
+from optimization_constraint import OptimizationConstraint
 from materials.material import Material
 from microstip_freq_calc.copied_calc import MicroStripCopiedCalc
 
