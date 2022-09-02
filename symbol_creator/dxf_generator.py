@@ -1,6 +1,6 @@
 from awr_optimizer.awr_connector import AwrConnector
 from awr_optimizer.awr_equation_manager import AwrEquationManager
-from creator.symbol_params import SymbolGenerationParams
+from symbol_creator_script.symbol_params import SymbolGenerationParams
 
 
 class DxfAwrGenerator(AwrConnector):
