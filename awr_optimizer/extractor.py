@@ -12,7 +12,6 @@ from dataclasses import dataclass
 
 from dataclass_csv import DataclassWriter
 from scipy.constants import constants
-import os
 
 from awr_optimizer.awr_connector import AwrConnector
 from awr_optimizer.awr_equation_manager import AwrEquationManager
@@ -38,6 +37,22 @@ CLASS_FIELD_TO_VARS = {
     "root_width": "ROOTWIDTH",
     "width": "WIDTH"
 }
+
+SPARAM_ZERO_THRESHOLD = -30
+
+SPARAMS_TO_CHECK_ZERO_THRESHOLD = [
+    "WilkinsonPowerDivider:DB(|S(1,1)|)",
+    "WilkinsonPowerDivider:DB(|S(2,2)|)",
+    "WilkinsonPowerDivider:DB(|S(3,3)|)",
+    "WilkinsonPowerDivider:DB(|S(3,2)|)"
+]
+
+SPARAM_3_DB_THRESHOLD = 1000
+
+SPARAMS_TO_CHECK_3_DB_THRESHOLD = [
+    "WilkinsonPowerDivider:DB(|S(2,1)|)",
+    "WilkinsonPowerDivider:DB(|S(3,1)|)"
+]
 
 
 @dataclass
@@ -70,6 +85,8 @@ class SParams:
     name: str
     bandwidth: float
     frequency: float
+    left_freq: float
+    right_freq: float
     s_1_1: float
     s_2_2: float
     s_3_3: float
@@ -77,11 +94,14 @@ class SParams:
     s_3_2: float
     s_2_1: float
 
-    def __init__(self, id, name, bandwidth, frequency, s_1_1, s_2_2, s_3_3, s_3_1, s_3_2, s_2_1):
+    def __init__(self, id, name, bandwidth, frequency, left_freq, right_freq,
+                 s_1_1, s_2_2, s_3_3, s_3_1, s_3_2, s_2_1):
         self.id = id
         self.name = name
         self.bandwidth = bandwidth
         self.frequency = frequency
+        self.left_freq = left_freq
+        self.right_freq = right_freq
         self.s_1_1 = s_1_1
         self.s_2_2 = s_2_2
         self.s_3_3 = s_3_3
@@ -141,7 +161,7 @@ class Extractor(AwrConnector):
         result.circuit_vars = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict
 
         if save_csv:
-            self.extract_s_params_to_csv(material.id, material.name, bandwidth, frequency, result)
+            self.extract_s_params_to_csv(material.id, bandwidth, material.name, frequency, result)
             self.extract_vars_to_csv(frequency, material.id, material.name)
 
         return result
@@ -163,15 +183,41 @@ class Extractor(AwrConnector):
             w.write(skip_header=csv_already_exists)
 
     @staticmethod
-    def extract_s_params_to_csv(material_id: int, material_name: str, bandwidth: float, frequency: float,
+    def extract_s_params_to_csv(material_id: int, bandwidth: float, material_name: str, frequency: float,
                                 result: ExtractionResult):
-        s_params_dict = {"id": material_id, "name": material_name,
-                         "bandwidth": bandwidth, "frequency": frequency}
+        s_params_dict = {"id": material_id, "name": material_name, "frequency": frequency}
+
         for key, value in result.s_param_to_measurements.items():
             for s_param in value:
                 if round(s_param.frequency, 2) == round(frequency, 2):
                     s_params_dict[S_PARAM_FIELD_TO_CLASS_FIELD[key]] = s_param.db_value
                     break
+
+        left_frequency = 0
+        right_frequency = frequency + bandwidth
+
+        for key, value in result.s_param_to_measurements.items():
+            if key in SPARAMS_TO_CHECK_ZERO_THRESHOLD:
+                frequencies_below_zero = [s_param.frequency for s_param in value if
+                                          s_param.db_value <= SPARAM_ZERO_THRESHOLD]
+
+                left_frequency = max(left_frequency,
+                                     min(frequencies_below_zero)) if frequencies_below_zero else frequency
+                right_frequency = min(left_frequency,
+                                      max(frequencies_below_zero)) if frequencies_below_zero else frequency
+
+            if key in SPARAMS_TO_CHECK_3_DB_THRESHOLD:
+                frequencies_around_3db = [s_param.frequency for s_param in value if
+                                          -3 + SPARAM_3_DB_THRESHOLD <= s_param.db_value <= -3 - SPARAM_3_DB_THRESHOLD]
+
+                left_frequency = max(left_frequency,
+                                     min(frequencies_around_3db)) if frequencies_around_3db else frequency
+                right_frequency = min(left_frequency,
+                                      max(frequencies_around_3db)) if frequencies_around_3db else frequency
+
+        s_params_dict["bandwidth"] = right_frequency - left_frequency
+        s_params_dict["left_freq"] = left_frequency
+        s_params_dict["right_freq"] = right_frequency
 
         s_params = from_dict(data_class=SParams, data=s_params_dict)
 
