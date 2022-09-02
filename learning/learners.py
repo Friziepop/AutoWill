@@ -11,8 +11,8 @@ class InverseLearner(BaseLearner):
 
 
 class PolyLearner(BaseLearner):
-    def __init__(self, material_id: int, degree: int):
-        super().__init__(material_id)
+    def __init__(self, material_id: int, degree: int, models_dir):
+        super().__init__(material_id, models_dir)
         self._degree = degree
 
     def create_feature(self, x):

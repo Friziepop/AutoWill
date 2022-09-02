@@ -10,7 +10,7 @@ MATERIALS_DB = "../materials/materials_db.csv"
 
 
 def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str = MATERIALS_DB):
-    print(f"creating symbol for material_id:{maetrail_id} , frequency:{frequency}, bandwidth:{bandwidth}")
+    print(f"creating symbol for material_id:{material_id} , frequency:{frequency}, bandwidth:{bandwidth}")
     material_db = MaterialDB(csv_path=materials_db)
     height_predictor = ModelPredictor(models_dir=models_dir, model_feature="HEIGHT")
     thickness_predictor = CsvPredictor(material_db=material_db)
@@ -47,8 +47,8 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
 
 
 if __name__ == '__main__':
-    maetrail_id = 1
+    material_id = 1
     frequency = 10.0
     bandwidth = 0.5
-    params = SymbolParams(material_id=1, frequency=10.0, bandwidth=0.5)
+    params = SymbolParams(material_id=material_id, frequency=frequency, bandwidth=bandwidth)
     create(params=params)

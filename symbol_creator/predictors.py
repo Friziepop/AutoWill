@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 import numpy
 import numpy as np
 
-from symbol_creator_script.symbol_params import SymbolParams
+from symbol_creator.symbol_params import SymbolParams
 from learning.learnings_util import get_learning_model_name
 from materials.materials_db import MaterialDB
 from microstip_freq_calc.copied_calc import MicroStripCopiedCalc
