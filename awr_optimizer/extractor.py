@@ -203,16 +203,16 @@ class Extractor(AwrConnector):
 
                 left_frequency = max(left_frequency,
                                      min(frequencies_below_zero)) if frequencies_below_zero else frequency
-                right_frequency = min(left_frequency,
+                right_frequency = min(right_frequency,
                                       max(frequencies_below_zero)) if frequencies_below_zero else frequency
 
             if key in SPARAMS_TO_CHECK_3_DB_THRESHOLD:
                 frequencies_around_3db = [s_param.frequency for s_param in value if
-                                          -3 + SPARAM_3_DB_THRESHOLD <= s_param.db_value <= -3 - SPARAM_3_DB_THRESHOLD]
+                                          -3 - SPARAM_3_DB_THRESHOLD <= s_param.db_value <= -3 + SPARAM_3_DB_THRESHOLD]
 
                 left_frequency = max(left_frequency,
                                      min(frequencies_around_3db)) if frequencies_around_3db else frequency
-                right_frequency = min(left_frequency,
+                right_frequency = min(right_frequency,
                                       max(frequencies_around_3db)) if frequencies_around_3db else frequency
 
         s_params_dict["bandwidth"] = right_frequency - left_frequency
