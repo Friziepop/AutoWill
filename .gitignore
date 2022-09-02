@@ -190,3 +190,5 @@ fabric.properties
 /vars.csv
 /symbol_creator/out.dxf
 /creator/out.dxf
+/awr_optimizer/sparams.csv
+/awr_optimizer/vars.csv

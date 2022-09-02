@@ -9,7 +9,7 @@ from materials.materials_db import MaterialDB
 from copy import deepcopy
 
 
-def run_simulations(ids, freqs, bandwidth):
+def run_simulations(ids, freqs):
     extractor = Extractor()
     extractor.connect()
     optimizer = AwrOptimizer()
@@ -18,6 +18,7 @@ def run_simulations(ids, freqs, bandwidth):
     for id in ids:
         for freq in freqs:
             set_meshing(freq)
+            bandwidth = freq / 10
 
             chosen_mat = deepcopy(MaterialDB().get_by_id(id))
             quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
@@ -87,13 +88,11 @@ if __name__ == '__main__':
     step_size = 1
 
     ids = [1, 2, 3]
-    bandwidth = 1
 
     freqs = [float(freq) for freq in np.arange(start_freq, end_freq, step_size)]
     print("starting dataset generation using awr optimization")
     print(f"ids:{ids}")
-    print(f"bandwidth:{bandwidth}")
     print(f"freqs from :{start_freq} , to :{end_freq} ,step :{step_size}")
 
-    run_simulations(ids=ids, bandwidth=bandwidth, freqs=freqs)
+    run_simulations(ids=ids, freqs=freqs)
     x = 5
