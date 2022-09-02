@@ -26,7 +26,7 @@ def run_simulations():
     optimizer.connect()
     ids = [1, 2, 3]
     bandwith = 0.25
-    freqs = np.arange(1, 40, 0.5)
+    freqs = np.arange(1, 20, 1)
 
     for id in ids:
         for freq in freqs:
@@ -42,7 +42,7 @@ def run_simulations():
                            OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height,
                                                   should_optimize=False)]
 
-            optimizer.setup(max_iter=300,
+            optimizer.setup(max_iter=30,
                             optimization_type="Gradient Optimization",
                             optimization_properties={"Converge Tolerance": 0.01,
                                                      "Step Size": 0.001
@@ -55,7 +55,7 @@ def run_simulations():
             constraints = [
                 OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height)]
 
-            optimizer.setup(max_iter=50,
+            optimizer.setup(max_iter=30,
                             optimization_type="Gradient Optimization",
                             optimization_properties={"Converge Tolerance": 0.01,
                                                      "Step Size": 0.001
