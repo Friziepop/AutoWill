@@ -4,6 +4,8 @@ from matplotlib import pyplot as plt
 
 from learning.learners import InverseLearner, PolyLearner
 
+CSV_DIR = "../"
+
 
 def get_vars_path(csv_dir: str):
     return f"{csv_dir}/vars.csv"
@@ -17,7 +19,7 @@ def learn_poly(degree: int, material_id: int, feature, vars_path: str, show_grap
                         coefficients=coeff)
 
 
-def learn_models(materials_ids: List[int], csv_dir: str, show_graph: bool = False):
+def learn_models(materials_ids: List[int], csv_dir: str = CSV_DIR, show_graph: bool = False):
     for mat_id in materials_ids:
         print(f"learning models : [QUARTER,HEIGHT,WIDTH] for material_id={mat_id}")
         quarter_learner = InverseLearner(material_id=1)
@@ -33,15 +35,13 @@ def learn_models(materials_ids: List[int], csv_dir: str, show_graph: bool = Fals
 
 
 def main():
-    csv_dir = "../"
     show_graph = True
     ids = [1]
     print("starting to learn models")
-    learn_models(materials_ids=ids, show_graph=show_graph, csv_dir=csv_dir)
+    learn_models(materials_ids=ids, show_graph=show_graph)
     if show_graph:
         plt.show()
 
 
 if __name__ == '__main__':
     main()
-
