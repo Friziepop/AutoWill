@@ -1,8 +1,8 @@
 import math
 import os
-from symbol_creator_script.dxf_generator import DxfAwrGenerator
-from symbol_creator_script.predictors import ModelPredictor, CsvPredictor, WidthPredictor, ConstPredictor
-from symbol_creator_script.symbol_params import SymbolParams, SymbolGenerationParams
+from symbol_creator.dxf_generator import DxfAwrGenerator
+from symbol_creator.predictors import ModelPredictor, CsvPredictor, WidthPredictor, ConstPredictor
+from symbol_creator.symbol_params import SymbolParams, SymbolGenerationParams
 from materials.materials_db import MaterialDB
 
 MODELS_DIR = "../learning/models"
