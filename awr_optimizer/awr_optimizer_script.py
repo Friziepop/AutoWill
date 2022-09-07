@@ -1,3 +1,5 @@
+import math
+
 import numpy as np
 
 from awr_equation_manager import AwrEquationManager
@@ -16,19 +18,33 @@ def run_simulations(ids, freqs):
     optimizer.connect()
 
     for id in ids:
-        for freq in freqs:
+        for freq in [24.0]:
             set_meshing(freq)
             bandwidth = freq / 10
 
             chosen_mat = deepcopy(MaterialDB().get_by_id(id))
             quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
             print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
+
+            # if needed add half wavelength to add room for padding
+            number_of_quarters_to_add = math.floor(chosen_mat.padding_length / quarter_wavelength)
+            number_of_quarters_to_add = number_of_quarters_to_add + 1 if number_of_quarters_to_add % 2 \
+                else number_of_quarters_to_add
+
+            quarter_wavelength = quarter_wavelength + number_of_quarters_to_add * quarter_wavelength
+
+            quarter_wavelength = quarter_wavelength - chosen_mat.padding_length
+
             constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False),
                            OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2,
                                                   min=quarter_wavelength / 3,
                                                   start=quarter_wavelength),
                            OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height,
-                                                  should_optimize=False)]
+                                                  should_optimize=False),
+                           OptimizationConstraint(name='PADDING_DITSTANCE', max=10, min=0.01,
+                                                  start=chosen_mat.padding_length,
+                                                  should_optimize=False)
+                           ]
 
             optimizer.setup(max_iter=30,
                             optimization_type="Gradient Optimization",
@@ -42,19 +58,6 @@ def run_simulations(ids, freqs):
 
             constraints = [
                 OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height)]
-
-            optimizer.setup(max_iter=30,
-                            optimization_type="Gradient Optimization",
-                            optimization_properties={"Converge Tolerance": 0.01,
-                                                     "Step Size": 0.001
-                                                     },
-                            constraints=constraints,
-                            material=chosen_mat)
-
-            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=5)
-
-            constraints = [
-                OptimizationConstraint(name='WIDTH', max=10, min=0.1, start=5)]
 
             optimizer.setup(max_iter=30,
                             optimization_type="Gradient Optimization",

@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Material:
-    id:int
+    id: int
     name: str
     er: float
     tanl: float
@@ -12,10 +12,11 @@ class Material:
     thickness: float
     start_freq: float
     end_freq: float
+    padding_length: float
     description: str
 
     def __init__(self,
-                 id : int,
+                 id: int,
                  name: str,
                  er: float,
                  tanl: float,
@@ -24,6 +25,7 @@ class Material:
                  thickness: float,
                  start_freq: float,
                  end_freq: float,
+                 padding_length: float,
                  description: str = "",
                  ):
         self.id = id
@@ -36,3 +38,4 @@ class Material:
         self.tanl = tanl
         self.er = er
         self.name = name
+        self.padding_length = padding_length
