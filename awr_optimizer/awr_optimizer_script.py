@@ -17,13 +17,18 @@ def run_simulations(ids, freqs):
     optimizer = AwrOptimizer()
     optimizer.connect()
 
-    for id in ids:
-        for freq in [24.0]:
+    prev_quarter = None
+
+    eq_manager = AwrEquationManager()
+    eq_manager.connect()
+
+    for id in [2, 1, 3]:
+        for freq in freqs[9:]:
             set_meshing(freq)
-            bandwidth = freq / 10
+            bandwidth = 0.5
 
             chosen_mat = deepcopy(MaterialDB().get_by_id(id))
-            quarter_wavelength = extractor.extract_quarter_wavelength(frequency=freq)
+            quarter_wavelength = prev_quarter if prev_quarter else extractor.extract_quarter_wavelength(frequency=freq)
             print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
 
             # if needed add half wavelength to add room for padding
@@ -33,7 +38,7 @@ def run_simulations(ids, freqs):
 
             quarter_wavelength = quarter_wavelength + number_of_quarters_to_add * quarter_wavelength
 
-            quarter_wavelength = quarter_wavelength - chosen_mat.padding_length
+            quarter_wavelength = quarter_wavelength - chosen_mat.padding_length / 2
 
             constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False),
                            OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2,
@@ -46,7 +51,7 @@ def run_simulations(ids, freqs):
                                                   should_optimize=False)
                            ]
 
-            optimizer.setup(max_iter=30,
+            optimizer.setup(max_iter=15,
                             optimization_type="Gradient Optimization",
                             optimization_properties={"Converge Tolerance": 0.01,
                                                      "Step Size": 0.001
@@ -54,12 +59,12 @@ def run_simulations(ids, freqs):
                             constraints=constraints,
                             material=chosen_mat)
 
-            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=5)
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
 
             constraints = [
                 OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height)]
 
-            optimizer.setup(max_iter=30,
+            optimizer.setup(max_iter=15,
                             optimization_type="Gradient Optimization",
                             optimization_properties={"Converge Tolerance": 0.01,
                                                      "Step Size": 0.001
@@ -67,9 +72,12 @@ def run_simulations(ids, freqs):
                             constraints=constraints,
                             material=chosen_mat)
 
-            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=5)
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
 
             extractor.extract_results(frequency=freq, bandwidth=bandwidth, material=chosen_mat)
+
+            prev_quarter = float(
+                eq_manager.get_equation_by_name("QUARTER").equation_value) + chosen_mat.padding_length / 2
 
 
 def set_meshing(freq):
@@ -88,7 +96,7 @@ def set_meshing(freq):
 if __name__ == '__main__':
     start_freq = 1
     end_freq = 40
-    step_size = 0.5
+    step_size = 1
 
     ids = [1, 2, 3]
 

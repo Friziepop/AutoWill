@@ -32,7 +32,6 @@ S_PARAM_FIELD_TO_CLASS_FIELD = {
 CLASS_FIELD_TO_VARS = {
     "res": "Res",
     "quarter": "QUARTER",
-    "radius": "RADIUS",
     "height": "HEIGHT",
     "root_width": "ROOTWIDTH",
     "width": "WIDTH"
@@ -60,18 +59,16 @@ class Vars:
     name: str
     id: int
     frequency: float
-    radius: float
     quarter: float
     res: float
     height: float
     root_width: float
     width: float
 
-    def __init__(self, name, id, frequency, radius, quarter, res, height, root_width, width):
+    def __init__(self, name, id, frequency, quarter, res, height, root_width, width):
         self.name = name
         self.id = id
         self.frequency = frequency
-        self.radius = radius
         self.quarter = quarter
         self.res = res
         self.height = height
