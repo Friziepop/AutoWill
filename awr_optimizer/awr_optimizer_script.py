@@ -5,6 +5,7 @@ import numpy as np
 from awr_equation_manager import AwrEquationManager
 from awr_optimizer import AwrOptimizer
 from extractor import Extractor
+from microstip_freq_calc.copied_calc import MicroStripCopiedCalc
 from optimization_constraint import OptimizationConstraint
 
 from materials.materials_db import MaterialDB
@@ -31,14 +32,11 @@ def run_simulations(ids, freqs):
             quarter_wavelength = prev_quarter if prev_quarter else extractor.extract_quarter_wavelength(frequency=freq)
             print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
 
-            # if needed add half wavelength to add room for padding
-            number_of_quarters_to_add = math.floor(chosen_mat.padding_length / quarter_wavelength)
-            number_of_quarters_to_add = number_of_quarters_to_add + 1 if number_of_quarters_to_add % 2 \
-                else number_of_quarters_to_add
+            start_width = MicroStripCopiedCalc().calc(er=chosen_mat.er, height=chosen_mat.height,
+                                                      thickness=chosen_mat.thickness, z0=50, freq=freq)
 
-            quarter_wavelength = quarter_wavelength + number_of_quarters_to_add * quarter_wavelength
-
-            quarter_wavelength = quarter_wavelength - chosen_mat.padding_length / 2
+            input_padding = (2 * chosen_mat.pad_b + chosen_mat.pad_c - start_width) / 2
+            quarter_wavelength = quarter_wavelength - input_padding
 
             constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False),
                            OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2,
@@ -49,11 +47,14 @@ def run_simulations(ids, freqs):
                            OptimizationConstraint(name='PAD_A', max=10, min=0,
                                                   start=chosen_mat.pad_a,
                                                   should_optimize=False),
-                           OptimizationConstraint(name='PAD_B', max=10, min=0,
+                           OptimizationConstraint(name='PAD_B', max=chosen_mat.pad_b, min=0,
                                                   start=chosen_mat.pad_b,
                                                   should_optimize=False),
-                           OptimizationConstraint(name='PAD_C', max=10, min=0,
+                           OptimizationConstraint(name='PAD_C', max=chosen_mat.pad_c, min=0,
                                                   start=chosen_mat.pad_c,
+                                                  should_optimize=False),
+                           OptimizationConstraint(name='INPUT_PADDING', max=input_padding, min=0,
+                                                  start=input_padding,
                                                   should_optimize=False)
                            ]
 
