@@ -12,7 +12,6 @@ class Material:
     thickness: float
     start_freq: float
     end_freq: float
-    padding_length: float
     pad_a: float
     pad_b: float
     pad_c: float
@@ -28,7 +27,6 @@ class Material:
                  thickness: float,
                  start_freq: float,
                  end_freq: float,
-                 padding_length: float,
                  pad_a: float,
                  pad_b: float,
                  pad_c: float,
@@ -44,7 +42,6 @@ class Material:
         self.tanl = tanl
         self.er = er
         self.name = name
-        self.padding_length = padding_length
         self.pad_a = pad_a
         self.pad_b = pad_b
         self.pad_c = pad_c
