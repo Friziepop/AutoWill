@@ -46,8 +46,14 @@ def run_simulations(ids, freqs):
                                                   start=quarter_wavelength),
                            OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height,
                                                   should_optimize=False),
-                           OptimizationConstraint(name='PADDING_DITSTANCE', max=10, min=0.01,
-                                                  start=chosen_mat.padding_length,
+                           OptimizationConstraint(name='PAD_A', max=10, min=0,
+                                                  start=chosen_mat.pad_a,
+                                                  should_optimize=False),
+                           OptimizationConstraint(name='PAD_B', max=10, min=0,
+                                                  start=chosen_mat.pad_b,
+                                                  should_optimize=False),
+                           OptimizationConstraint(name='PAD_C', max=10, min=0,
+                                                  start=chosen_mat.pad_c,
                                                   should_optimize=False)
                            ]
 
@@ -61,18 +67,18 @@ def run_simulations(ids, freqs):
 
             optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
 
-            constraints = [
-                OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height)]
-
-            optimizer.setup(max_iter=15,
-                            optimization_type="Gradient Optimization",
-                            optimization_properties={"Converge Tolerance": 0.01,
-                                                     "Step Size": 0.001
-                                                     },
-                            constraints=constraints,
-                            material=chosen_mat)
-
-            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
+            # constraints = [
+            #     OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height)]
+            #
+            # optimizer.setup(max_iter=15,
+            #                 optimization_type="Gradient Optimization",
+            #                 optimization_properties={"Converge Tolerance": 0.01,
+            #                                          "Step Size": 0.001
+            #                                          },
+            #                 constraints=constraints,
+            #                 material=chosen_mat)
+            #
+            # optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
 
             extractor.extract_results(frequency=freq, bandwidth=bandwidth, material=chosen_mat)
 
