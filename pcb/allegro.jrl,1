@@ -1,0 +1,114 @@
+\t (00:33:46) allegro 17.4 P001 Windows SPB 64-bit Edition
+\t (00:33:46)     Journal start - Sun Sep 11 16:19:33 2022
+\t (00:33:46)         Host=DESKTOP-1JKGU2H User=lavi Pid=8156 CPUs=8
+\t (00:33:46) CmdLine= C:\Cadence\SPB_17.4\tools\bin\allegro.exe
+\t (00:33:46) 
+\t (00:33:46) Starting new design...
+\i (00:33:47) trapsize 1203
+\i (00:33:47) trapsize 1243
+\i (00:33:47) trapsize 1360
+\i (00:33:47) trapsize 1360
+\i (00:33:47) trapsize 1305
+\i (00:33:47) generaledit 
+\i (00:33:51) place manual 
+\i (00:33:52) setwindow form.plc_manual
+\i (00:33:52) FORM plc_manual tree  'Components by refdes' 
+\i (00:33:54) FORM plc_manual cancel  
+\i (00:33:55) setwindow pcb
+\i (00:33:55) generaledit 
+\i (00:33:59) clppaste 
+\t (00:34:04) No valid name selected.
+\t (00:34:05) No valid name selected.
+\t (00:34:05) No valid name selected.
+\t (00:34:06) No valid name selected.
+\i (00:34:07) fillin "menu_cancel"
+\i (00:34:07) generaledit 
+\i (00:34:14) plctxt in 
+\i (00:34:19) setwindow form.plctxt
+\i (00:34:19) FORM plctxt browse  
+\i (00:34:25) fillin "menu_cancel"
+\i (00:35:11) FORM plctxt cancel  
+\i (00:35:11) setwindow pcb
+\i (00:35:11) generaledit 
+\i (00:35:15) symbol to spreadsheet 
+\i (00:35:17) pick -3.1708 0.2343
+\t (00:35:17) last pick:  -3.1708 0.2343
+\t (00:35:17) No Element Found.
+\i (00:35:27) bundle import 
+\i (00:35:29) setwindow form.bundle_in
+\i (00:35:29) FORM bundle_in browse  
+\i (00:35:32) fillin "menu_cancel"
+\i (00:35:33) FORM bundle_in cancel  
+\i (00:35:33) setwindow pcb
+\i (00:35:33) generaledit 
+\i (00:35:45) orbit import 
+\e (00:35:45) ERROR(SPMHIP-113): Java Virtual Machine is not found in C:\Cadence\SPB_17.4\tools/OrbitIO\jreWin64\bin\server\jvm.dll.
+\i (00:35:45) generaledit 
+\i (00:35:46) pick grid -1.2135 -1.6186
+\t (00:35:46) last pick:  0.0000 -2.5400
+\i (00:35:52) ipc2581 in 
+\i (00:35:53) setwindow form.ipc2581_in
+\i (00:35:53) FORM ipc2581_in browse  
+\i (00:35:56) fillin "menu_cancel"
+\i (00:35:57) FORM ipc2581_in cancel  
+\i (00:35:57) setwindow pcb
+\i (00:35:57) generaledit 
+\i (00:36:09) plctxt in 
+\i (00:37:30) setwindow form.plctxt
+\i (00:37:30) FORM plctxt cancel  
+\i (00:37:30) setwindow pcb
+\i (00:37:30) generaledit 
+\i (00:37:35) create module 
+\i (00:37:36) pick grid 5.5979 3.9923
+\t (00:37:36) last pick:  5.0800 5.0800
+\i (00:37:39) open 
+\e (00:37:39) Do you want to save the changes you made to test.brd?
+\i (00:37:41) fillin no 
+\i (00:37:44) fillin "menu_cancel"
+\i (00:37:45) generaledit 
+\i (00:38:10) place manual 
+\i (00:38:10) setwindow form.plc_manual
+\i (00:38:10) FORM plc_manual tree  'Components by refdes' 
+\i (00:38:22) FORM plc_manual cancel  
+\i (00:38:22) setwindow pcb
+\i (00:38:22) generaledit 
+\i (00:38:25) enved 
+\i (00:38:25) setwindow form.prfedit
+\i (00:38:25) FORM prfedit treelist  My_favorites 
+\i (00:38:25) setwindow pcb
+\i (00:38:25) generaledit 
+\i (00:38:27) setwindow form.prfedit
+\i (00:38:27) FORM prfedit treelist  Paths 
+\i (00:38:30) FORM prfedit treelist  Library Paths 
+\i (00:38:33) FORM prfedit psmpath  
+\i (00:38:42) fillin "C:/Users/lavi/Desktop/project_wil/AutoWill/pcb/resistors/0402"
+\i (00:38:47) FORM prfedit padpath  
+\i (00:38:55) fillin "C:/Users/lavi/Desktop/project_wil/AutoWill/pcb/resistors/0402"
+\i (00:39:03) FORM prfedit cancel  
+\i (00:39:05) setwindow pcb
+\i (00:39:05) place manual 
+\i (00:39:05) setwindow form.plc_manual
+\i (00:39:05) FORM plc_manual tree  'Components by refdes' 
+\i (00:39:09) FORM plc_manual categories Module instances 
+\i (00:39:10) FORM plc_manual categories Module definition 
+\i (00:39:10) FORM plc_manual categories Package symbols 
+\i (00:39:11) FORM plc_manual categories Mechanical symbols 
+\i (00:39:11) FORM plc_manual categories Format symbols 
+\i (00:39:12) FORM plc_manual categories Mechanical symbols 
+\i (00:39:12) FORM plc_manual categories Package symbols 
+\i (00:39:13) FORM plc_manual categories Module definition 
+\i (00:39:13) FORM plc_manual categories Module instances 
+\i (00:39:13) FORM plc_manual categories Components by net group 
+\i (00:39:13) FORM plc_manual categories Components by refdes 
+\i (00:39:14) FORM plc_manual categories Components by net group 
+\i (00:39:16) FORM plc_manual cancel  
+\i (00:39:16) setwindow pcb
+\i (00:39:16) generaledit 
+\i (00:39:24) replace padstack 
+\i (00:39:29) padeditdb 
+\i (00:39:32) pick grid -2.3096 -2.3232
+\t (00:39:32) last pick:  -2.5400 -2.5400
+\i (00:39:33) exit 
+\e (00:39:33) Do you want to save the changes you made to test.brd?
+\i (00:39:34) fillin no 
+\t (00:39:35)     Journal end - Sun Sep 11 16:25:22 2022

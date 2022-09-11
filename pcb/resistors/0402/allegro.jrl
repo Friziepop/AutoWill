@@ -1,0 +1,628 @@
+\t (00:11:01) allegro 17.4 P001 Windows SPB 64-bit Edition
+\t (00:11:01)     Journal start - Sun Sep 11 16:36:28 2022
+\t (00:11:01)         Host=DESKTOP-1JKGU2H User=lavi Pid=11544 CPUs=8
+\t (00:11:01) CmdLine= C:\Cadence\SPB_17.4\tools\bin\allegro.exe
+\t (00:11:01) 
+\d (00:11:01) Design opened: C:/Users/lavi/Desktop/project_wil/AutoWill/pcb/resistors/0402/CAPC1005X56.dra
+\i (00:11:01) trapsize 1305
+\i (00:11:02) generaledit 
+\i (00:11:03) save 
+\i (00:11:07) fillin yes 
+\t (00:11:07) Symbol 'capc1005x56.psm' created.
+\i (00:11:07) generaledit 
+\i (00:11:10) prepopup 0.4045 3.8096
+\i (00:11:15) dxf in 
+\i (00:11:19) setwindow form.dxfInMain
+\i (00:11:19) FORM dxfInMain browsedxf  
+\i (00:11:28) fillin "C:/Users/lavi/Downloads/WilkinsonPowerDivider.dxf"
+   (00:11:28) Loading mfg.cxt 
+\i (00:11:32) FORM dxfInMain editcnvprofile  
+\i (00:11:34) setwindow form.dxfInMapping
+\i (00:11:34) FORM dxfInMapping cancel  
+\i (00:11:36) setwindow form.dxfInMain
+\i (00:11:36) FORM dxfInMain incremental YES 
+\i (00:11:37) FORM dxfInMain import  
+\t (00:11:37) Starting dxf2a...
+\t (00:11:37) Opening existing design...
+\i (00:11:37) setwindow pcb
+\i (00:11:37) trapsize 1360
+\i (00:11:37) trapsize 1419
+\i (00:11:37) trapsize 1360
+\i (00:11:37) trapsize 1360
+\i (00:11:37) trapsize 1305
+\i (00:11:44) zoom in 1 
+\i (00:11:44) setwindow pcb
+\i (00:11:44) zoom in 0.2218 0.8867
+\i (00:11:44) trapsize 652
+\i (00:11:44) zoom in 1 
+\i (00:11:44) setwindow pcb
+\i (00:11:44) zoom in 0.2218 0.8868
+\i (00:11:44) trapsize 326
+\i (00:11:44) zoom in 1 
+\i (00:11:44) setwindow pcb
+\i (00:11:44) zoom in 0.2219 0.8868
+\i (00:11:44) trapsize 163
+\i (00:11:44) zoom in 1 
+\i (00:11:44) setwindow pcb
+\i (00:11:44) zoom in 0.2219 0.8868
+\i (00:11:44) trapsize 82
+\i (00:11:44) zoom in 1 
+\i (00:11:44) setwindow pcb
+\i (00:11:44) zoom in 0.2220 0.8869
+\i (00:11:44) trapsize 41
+\i (00:11:45) zoom out 1 
+\i (00:11:45) setwindow pcb
+\i (00:11:45) zoom out 0.2220 0.8869
+\i (00:11:45) trapsize 82
+\i (00:11:45) zoom out 1 
+\i (00:11:45) setwindow pcb
+\i (00:11:45) zoom out 0.2220 0.8869
+\i (00:11:45) trapsize 163
+\i (00:11:46) zoom out 1 
+\i (00:11:46) setwindow pcb
+\i (00:11:46) zoom out 0.2219 0.8868
+\i (00:11:46) trapsize 326
+\i (00:11:47) zoom out 1 
+\i (00:11:47) setwindow pcb
+\i (00:11:47) zoom out 0.2220 0.8869
+\i (00:11:47) trapsize 652
+\i (00:11:59) setwindow form.dxfInMain
+\i (00:11:59) FORM dxfInMain cancel  
+\i (00:11:59) setwindow pcb
+\i (00:11:59) generaledit 
+\i (00:12:00) zoom in 1 
+\i (00:12:00) setwindow pcb
+\i (00:12:00) zoom in 2.2706 0.7172
+\i (00:12:00) trapsize 326
+\i (00:12:00) zoom in 1 
+\i (00:12:00) setwindow pcb
+\i (00:12:00) zoom in 2.2706 0.7173
+\i (00:12:00) trapsize 163
+\i (00:12:01) zoom out 1 
+\i (00:12:01) setwindow pcb
+\i (00:12:01) zoom out 1.7715 1.2915
+\i (00:12:01) trapsize 326
+\i (00:12:03) drag_start grid 1.1321 2.2701
+\i (00:12:03) drag_stop 2.6522 0.3846
+\i (00:12:04) pick grid 1.6866 1.3371
+\t (00:12:04) last pick:  2.5400 2.5400
+\i (00:12:05) drag_start grid 2.1433 0.7499
+\i (00:12:06) drag_stop 3.5135 1.3175
+\i (00:12:09) pop dyn_option_select 'Application Mode@:@Etch Edit' 
+\i (00:12:09) etchedit 
+\i (00:12:10) drag_start grid 1.9998 0.9652
+\i (00:12:11) slide 
+\t (00:12:11) Waiting for the destination pick.
+\t (00:12:11) Start slide location has pre-existing DRC errors.
+\i (00:12:11) drag_stop grid 2.5152 0.4498
+\t (00:12:11) DRC errors detected.
+\i (00:12:11) etchedit 
+\i (00:12:13) undo 
+\i (00:12:13) trapsize 326
+\i (00:12:13) etchedit 
+\i (00:12:14) drag_start grid 0.2317 2.0939
+\i (00:12:15) drag_stop 2.6588 0.4433
+\i (00:12:16) drag_start grid 0.7471 -0.0330
+\i (00:12:17) drag_stop 0.4209 -0.1504
+\i (00:12:19) pick grid -0.5382 0.1693
+\t (00:12:19) last pick:  -0.6350 0.0000
+\i (00:12:20) drag_start grid -0.5382 0.1693
+\i (00:12:21) drag_stop 0.5384 -0.0460
+\i (00:12:22) drag_start grid 0.5384 -0.0460
+\i (00:12:23) drag_stop 2.3260 -0.1765
+\i (00:12:24) drag_start grid tgl -0.1467 -0.0787
+\i (00:12:25) drag_stop grid tgl 1.2756 -0.2679
+\i (00:12:30) pick grid 1.6605 1.4611
+\t (00:12:30) last pick:  1.9050 1.2700
+\i (00:12:30) slide 
+\t (00:12:30) Waiting for the destination pick.
+\i (00:12:31) undo 
+\i (00:12:31) trapsize 326
+\i (00:12:32) etchedit 
+\i (00:12:34) pick grid 0.1665 -1.4031
+\t (00:12:34) last pick:  0.0000 -1.2700
+\i (00:12:34) slide 
+\t (00:12:34) Waiting for the destination pick.
+\i (00:12:36) undo 
+\i (00:12:36) trapsize 326
+\i (00:12:36) etchedit 
+\i (00:12:38) pick grid 0.5971 -0.6398
+\t (00:12:38) last pick:  0.6350 -0.6350
+\i (00:12:39) pick grid 0.6949 -0.1178
+\t (00:12:39) last pick:  0.6350 0.0000
+\i (00:12:40) pick grid 1.6671 0.1627
+\t (00:12:40) last pick:  1.9050 0.0000
+\i (00:12:43) zoom out 1 
+\i (00:12:43) setwindow pcb
+\i (00:12:43) zoom out 1.3930 -0.1830
+\i (00:12:43) trapsize 652
+\i (00:12:43) zoom out 1 
+\i (00:12:43) setwindow pcb
+\i (00:12:43) zoom out 1.3931 -0.1831
+\i (00:12:43) trapsize 1305
+\i (00:12:46) zoom in 1 
+\i (00:12:46) setwindow pcb
+\i (00:12:46) zoom in 0.3001 -0.2094
+\i (00:12:46) trapsize 652
+\i (00:12:47) zoom in 1 
+\i (00:12:47) setwindow pcb
+\i (00:12:47) zoom in 0.3002 -0.2094
+\i (00:12:47) trapsize 326
+\i (00:12:47) prepopup 0.3002 -0.2093
+\i (00:12:49) pop dyn_option_select '@:@Add connect' 
+\i (00:12:49) add connect 
+\w (00:12:49) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:12:49) Pick first element.
+\t (00:12:49) last pick:  0.4300 0.0000
+\i (00:12:50) pick grid 0.3198 -0.0723
+\t (00:12:50) last pick:  0.6350 0.0000
+\t (00:12:50) No DRC errors detected.
+\i (00:12:56) pick grid 2.0749 0.3322
+\t (00:12:56) last pick:  1.9050 0.6350
+\t (00:12:56) DRC error(s) created.
+\t (00:12:56) last pick:  1.8502 0.5802
+\i (00:13:00) mouse_pos -0.7045 -0.3007
+\i (00:13:01) mouse_pos 0.3851 0.0386
+\i (00:13:01) mouse_pos 1.5986 0.1234
+\i (00:13:03) pick grid 1.6964 0.3191
+\t (00:13:03) last pick:  1.9050 0.6350
+\w (00:13:03) WARNING(SPMHAC-22): The pick was ignored.  It is the same as the previous pick.
+\i (00:13:03) mouse_pos 2.0944 0.7824
+\i (00:13:03) mouse_pos 1.7943 0.2930
+\i (00:13:03) mouse_pos 1.5660 -0.0723
+\i (00:13:03) mouse_pos 1.4289 -0.3855
+\i (00:13:05) mouse_pos 2.0161 1.0694
+\i (00:13:06) prepopup 1.6834 1.4413
+\i (00:13:06) mouse_pos 1.7291 0.8541
+\i (00:13:07) mouse_pos 0.9788 -0.2093
+\i (00:13:07) mouse_pos 1.1484 0.3191
+\i (00:13:07) mouse_pos 1.2397 0.3126
+\i (00:13:08) pick grid 1.2397 0.3126
+\t (00:13:08) last pick:  1.2700 0.0000
+\t (00:13:08) No DRC errors detected.
+\i (00:13:09) pick grid 1.5986 0.4235
+\t (00:13:09) last pick:  1.9050 0.6350
+\t (00:13:09) No DRC errors detected.
+\t (00:13:09) last pick:  1.8469 0.5769
+\i (00:13:11) pick grid 2.8252 0.3191
+\t (00:13:11) last pick:  2.5400 0.6350
+\t (00:13:11) DRC error(s) created.
+\i (00:13:12) pick grid 3.1514 1.0238
+\t (00:13:12) last pick:  3.1750 1.2700
+\t (00:13:12) No DRC errors detected.
+\i (00:13:12) mouse_pos 2.1466 0.5083
+\i (00:13:13) mouse_pos -0.3196 0.0255
+\i (00:13:13) pick grid -0.3196 0.0255
+\t (00:13:13) last pick:  -0.6350 0.0000
+\t (00:13:13) DRC error(s) created.
+\t (00:13:13) Pick first element.
+\i (00:13:14) etchedit 
+\i (00:13:38) undo 
+\i (00:13:38) trapsize 326
+\i (00:13:38) etchedit 
+\i (00:13:38) undo 
+\i (00:13:39) etchedit 
+\i (00:13:39) undo 
+\i (00:13:39) etchedit 
+\i (00:13:39) undo 
+\i (00:13:39) undo 
+\i (00:13:40) etchedit 
+\i (00:13:40) undo 
+\i (00:13:40) undo 
+\i (00:13:40) undo 
+\i (00:13:40) undo 
+\i (00:13:40) etchedit 
+\i (00:13:40) undo 
+\i (00:13:40) undo 
+\i (00:13:41) undo 
+\i (00:13:41) etchedit 
+\i (00:13:50) undo 
+\i (00:13:51) undo 
+\i (00:13:51) etchedit 
+\i (00:13:51) undo 
+\i (00:13:51) undo 
+\i (00:13:51) etchedit 
+\i (00:13:51) undo 
+\i (00:13:51) undo 
+\i (00:13:52) undo 
+\i (00:13:52) etchedit 
+\i (00:13:52) undo 
+\i (00:13:52) etchedit 
+\i (00:13:52) undo 
+\i (00:13:52) undo 
+\i (00:13:52) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) etchedit 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:53) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:54) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:55) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:56) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:57) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:58) undo 
+\i (00:13:59) etchedit 
+\i (00:14:02) open 
+\e (00:14:02) Do you want to save the changes you made to C:/Users/lavi/Desktop/project_wil/AutoWill/pcb/resistors/0402/CAPC1005X56.dra?
+\i (00:14:03) fillin no 
+\i (00:14:04) fillin "CAPC1005X56.dra"
+\t (00:14:04) Opening existing design...
+\i (00:14:05) fillin yes 
+\i (00:14:05) trapsize 1360
+\i (00:14:05) trapsize 1419
+\i (00:14:06) trapsize 1360
+\i (00:14:06) trapsize 1360
+\d (00:14:06) Design opened: C:/Users/lavi/Desktop/project_wil/AutoWill/pcb/resistors/0402/CAPC1005X56.dra
+\i (00:14:06) trapsize 1305
+\i (00:14:06) etchedit 
+\i (00:14:23) pop dyn_option_select 'Application Mode@:@Shape Edit' 
+\i (00:14:23) shapeedit 
+\i (00:14:25) zoom in 1 
+\i (00:14:25) setwindow pcb
+\i (00:14:25) zoom in -0.4828 0.5997
+\i (00:14:25) trapsize 652
+\i (00:14:25) zoom in 1 
+\i (00:14:25) setwindow pcb
+\i (00:14:25) zoom in -0.4828 0.5997
+\i (00:14:25) trapsize 326
+\i (00:14:25) zoom in 1 
+\i (00:14:25) setwindow pcb
+\i (00:14:25) zoom in -0.4828 0.5997
+\i (00:14:25) trapsize 163
+\i (00:14:26) zoom out 1 
+\i (00:14:26) setwindow pcb
+\i (00:14:26) zoom out -0.4827 0.5998
+\i (00:14:26) trapsize 326
+\i (00:14:27) prepopup -0.4763 0.0843
+\i (00:14:32) spin 
+\t (00:14:32) Select element(s) to spin.
+\i (00:14:33) drag_start grid -0.9982 0.4823
+\i (00:14:34) drag_stop 0.9721 -0.6399
+\t (00:14:34) Pick reference point for controlling the spin angle.
+\i (00:14:36) drag_start grid 1.0113 0.6519
+\i (00:14:37) drag_stop grid 0.4502 -0.6986
+\t (00:14:37) Element has no origin, using pick.
+\t (00:14:37) Element has no origin, using pick.
+\t (00:14:37) Element has no origin, using pick.
+\t (00:14:37) Element has no origin, using pick.
+\t (00:14:37) Element has no origin, using pick.
+\t (00:14:37) Element has no origin, using pick.
+\i (00:14:39) undo 
+\i (00:14:39) trapsize 326
+\i (00:14:39) shapeedit 
+\i (00:14:41) drag_start grid -1.2788 0.5997
+\i (00:14:41) drag_stop 1.4484 -0.7573
+\i (00:14:44) drag_start grid 0.5807 0.7367
+\i (00:14:45) drag_stop grid -0.3458 -0.7573
+\i (00:14:49) move 
+\i (00:14:52) pick grid -0.2871 0.0517
+\t (00:14:52) last pick:  0.0000 0.0000
+\t (00:14:52) Element has no origin, using pick.
+\t (00:14:52) Element has no origin, using pick.
+\t (00:14:52) Element has no origin, using pick.
+\t (00:14:52) Pick new location for the element(s).
+\i (00:14:54) pick grid 1.5919 1.2848
+\t (00:14:54) last pick:  1.9050 1.2700
+\i (00:14:54) shapeedit 
+\i (00:14:55) drag_start grid -1.1744 0.5867
+\i (00:14:56) drag_stop 1.0569 -0.8683
+\i (00:14:57) undo 
+\i (00:14:57) trapsize 326
+\i (00:14:57) shapeedit 
+\i (00:15:04) setwindow form.mini
+\i (00:15:04) FORM mini subclass BOTTOM 
+\i (00:15:05) setwindow pcb
+\i (00:15:05) drag_start grid -1.1157 1.1151
+\i (00:15:05) drag_stop 1.9834 -1.3902
+\i (00:15:06) drag_start grid 0.2936 -0.0919
+\i (00:15:06) drag_stop grid 2.0747 1.5001
+\i (00:15:11) move 
+\i (00:15:12) pick grid -0.1892 -0.3855
+\t (00:15:12) last pick:  0.0000 -0.6350
+\t (00:15:12) Element has no origin, using pick.
+\t (00:15:12) Element has no origin, using pick.
+\t (00:15:12) Element has no origin, using pick.
+\t (00:15:12) Pick new location for the element(s).
+\i (00:15:14) pick grid 2.4597 1.5914
+\t (00:15:14) last pick:  2.5400 1.9050
+\i (00:15:14) shapeedit 
+\i (00:15:15) drag_start grid 0.2088 0.2605
+\i (00:15:15) drag_stop 2.1465 1.1478
+\i (00:15:16) pick grid -0.1762 0.0386
+\t (00:15:16) last pick:  0.0000 0.0000
+\i (00:15:17) pick grid dbl -0.1762 0.0386
+\t (00:15:17) last pick:  0.0000 0.0000
+\i (00:15:17) pick grid -0.3066 -0.0005
+\t (00:15:17) last pick:  0.0000 0.0000
+\i (00:15:17) pick grid dbl -0.3393 -0.0005
+\t (00:15:17) last pick:  -0.6350 0.0000
+\i (00:15:17) pick grid -0.3393 -0.0005
+\t (00:15:17) last pick:  -0.6350 0.0000
+\i (00:15:18) pick grid dbl -0.3393 -0.0005
+\t (00:15:18) last pick:  -0.6350 0.0000
+\i (00:15:18) drag_start grid -0.3262 -0.0005
+\i (00:15:18) drag_stop -0.0783 0.0582
+\i (00:15:19) pick grid 2.2248 2.5766
+\t (00:15:19) last pick:  2.5400 2.5400
+\i (00:15:20) pick grid 2.2248 2.5766
+\t (00:15:20) last pick:  2.5400 2.5400
+\i (00:15:20) pick grid 2.2248 2.5766
+\t (00:15:20) last pick:  2.5400 2.5400
+\i (00:15:25) pick grid 2.2118 2.4331
+\t (00:15:25) last pick:  1.9050 2.5400
+\i (00:15:25) prepopup 2.2118 2.4331
+\i (00:15:31) pop dyn_option_select 'Application Mode@:@General Edit' 
+\i (00:15:31) generaledit 
+\i (00:15:34) pick grid 0.4828 -0.1506
+\t (00:15:34) last pick:  0.6350 0.0000
+\i (00:15:35) drag_start grid 0.5285 0.0191
+\i (00:15:35) slide 
+\t (00:15:35) Selected item not valid for current operation, ignored: Vertical Line Segment "Package Geometry/Assembly_Top"
+\t (00:15:35) No valid items selected for the current operation, exiting.
+\i (00:15:36) generaledit 
+\i (00:15:36) drag_stop grid 2.1791 0.3192
+\i (00:15:37) pick grid 0.9069 -0.0527
+\t (00:15:37) last pick:  0.6350 0.0000
+\i (00:15:38) pick grid 0.4306 -0.0201
+\t (00:15:38) last pick:  0.6350 0.0000
+\i (00:15:38) prepopup 0.4306 -0.0201
+\i (00:15:41) pop dyn_option_select @:@Move 
+\i (00:15:41) move 
+\t (00:15:41) last pick:  0.6350 0.0000
+\t (00:15:41) last pick:  -1.0850 -1.2550
+\t (00:15:41) Pick new location for the element(s).
+\i (00:15:42) zoom out 1 
+\i (00:15:42) setwindow pcb
+\i (00:15:42) zoom out -1.5985 -0.2941
+\i (00:15:42) trapsize 652
+\i (00:15:42) zoom out 1 
+\i (00:15:42) setwindow pcb
+\i (00:15:42) zoom out -1.5984 -0.2941
+\i (00:15:42) trapsize 1305
+\i (00:15:44) pick grid 8.5469 7.6459
+\t (00:15:44) last pick:  8.2550 7.6200
+\e (00:15:44) ERROR(SPMHA1-73): Text line is outside of the extents.
+\i (00:15:45) pick grid 1.6311 6.0801
+\t (00:15:45) last pick:  1.9050 6.3500
+\i (00:15:45) generaledit 
+\i (00:15:46) pick grid 1.7355 6.1062
+\t (00:15:46) last pick:  1.9050 6.3500
+\i (00:15:47) pick grid 2.2313 -0.6008
+\t (00:15:47) last pick:  2.5400 -0.6350
+\i (00:15:47) prepopup 2.2313 -0.6008
+\i (00:15:49) pop dyn_option_select @:@Delete 
+\i (00:15:49) delete 
+\i (00:15:49) generaledit 
+\i (00:15:50) pick grid 0.5350 0.0777
+\t (00:15:50) last pick:  0.6350 0.0000
+\i (00:15:51) prepopup 0.5350 0.0777
+\i (00:15:53) pop dyn_option_select @:@Move 
+\i (00:15:53) move 
+\t (00:15:53) last pick:  0.6350 0.0000
+\t (00:15:53) last pick:  0.6350 0.0000
+\t (00:15:53) Element has no origin, using pick.
+\t (00:15:53) Pick new location for the element(s).
+\i (00:15:54) pick grid 4.1364 0.2082
+\t (00:15:54) last pick:  4.4450 0.0000
+\i (00:15:54) generaledit 
+\i (00:15:55) undo 
+\i (00:15:55) trapsize 1305
+\i (00:15:55) undo 
+\i (00:15:55) trapsize 1305
+\i (00:15:55) undo 
+\i (00:15:55) trapsize 326
+\i (00:15:55) generaledit 
+\i (00:15:55) undo 
+\i (00:15:56) trapsize 326
+\i (00:15:56) undo 
+\i (00:15:56) trapsize 326
+\i (00:15:56) generaledit 
+\i (00:15:56) undo 
+\i (00:15:56) undo 
+\i (00:15:56) undo 
+\i (00:15:56) generaledit 
+\i (00:15:57) undo 
+\i (00:15:57) undo 
+\i (00:15:57) undo 
+\i (00:15:57) generaledit 
+\i (00:15:57) undo 
+\i (00:15:57) undo 
+\i (00:15:57) undo 
+\i (00:15:57) generaledit 
+\i (00:15:58) undo 
+\i (00:15:58) undo 
+\i (00:15:58) generaledit 
+\i (00:15:58) undo 
+\i (00:15:58) undo 
+\i (00:15:58) undo 
+\i (00:15:58) undo 
+\i (00:15:59) generaledit 
+\i (00:15:59) drag_start grid -1.4093 0.5084
+\i (00:16:00) drag_stop 1.5071 -0.6986
+\i (00:16:01) drag_start grid -1.8529 0.9259
+\i (00:16:02) drag_stop 2.1726 -0.9987
+\i (00:16:03) prepopup 0.5024 -0.0136
+\i (00:16:05) pop dyn_option_select @:@Move 
+\i (00:16:05) move 
+\t (00:16:05) last pick:  0.6350 0.0000
+\t (00:16:05) Element has no origin, using pick.
+\t (00:16:05) Element has no origin, using pick.
+\t (00:16:05) Element has no origin, using pick.
+\t (00:16:05) Element has no origin, using pick.
+\t (00:16:05) Element has no origin, using pick.
+\t (00:16:05) Element has no origin, using pick.
+\t (00:16:05) Element has no origin, using pick.
+\t (00:16:05) Element has no origin, using pick.
+\t (00:16:05) Element has no origin, using pick.
+\t (00:16:05) Pick new location for the element(s).
+\i (00:16:08) pick grid 2.2248 2.0351
+\t (00:16:08) last pick:  2.5400 1.9050
+\i (00:16:08) generaledit 
+\i (00:16:09) drag_start grid -0.9982 0.5279
+\i (00:16:09) drag_stop 1.9116 -1.1814
+\i (00:16:10) pick grid 0.7307 -0.0658
+\t (00:16:10) last pick:  0.6350 0.0000
+\i (00:16:10) pick grid 0.4698 -0.0658
+\t (00:16:10) last pick:  0.6350 0.0000
+\i (00:16:11) prepopup 0.4698 -0.0658
+\i (00:16:27) pick grid -0.4893 -0.1310
+\t (00:16:27) last pick:  -0.6350 0.0000
+\i (00:16:27) pick grid dbl -0.4893 -0.1310
+\t (00:16:27) last pick:  -0.6350 0.0000
+\i (00:16:28) pick grid -0.4893 -0.1310
+\t (00:16:28) last pick:  -0.6350 0.0000
+\i (00:16:29) prepopup -0.3262 -0.1114
+\i (00:16:40) undo 
+\i (00:16:40) trapsize 326
+\i (00:16:40) generaledit 
+\i (00:16:41) prepopup 0.2023 0.1039
+\i (00:16:43) pick grid 2.8968 1.7089
+\t (00:16:43) last pick:  3.1750 1.9050
+\i (00:16:44) prepopup 2.8968 1.7089
+\i (00:16:50) pick grid 2.2313 0.2344
+\t (00:16:50) last pick:  2.5400 0.0000
+\i (00:16:54) drag_start grid -2.1922 2.8376
+\i (00:16:54) roam y 48
+\i (00:16:54) roam y 16
+\i (00:16:54) roam y 16
+\i (00:16:54) roam y 48
+\i (00:16:54) roam y 16
+\i (00:16:54) roam y 16
+\i (00:16:55) drag_stop 3.5688 -2.1862
+\i (00:17:03) padeditdb 
+\i (00:17:05) pick grid 0.5154 0.0386
+\t (00:17:05) last pick:  0.6350 0.0000
+\i (00:17:07) pick grid 0.5807 0.0843
+\t (00:17:07) last pick:  0.6350 0.0000
+\i (00:17:09) pick grid -0.6394 -0.0136
+\t (00:17:09) last pick:  -0.6350 0.0000
+\i (00:17:11) pick grid tgl 0.6002 -0.2419
+\t (00:17:11) last pick:  0.6350 0.0000
+\i (00:17:13) pick grid ext -0.7177 0.0060
+\t (00:17:13) last pick:  -0.6350 0.0000
+\i (00:17:14) pick grid ext 0.2610 -0.2093
+\t (00:17:14) last pick:  0.0000 0.0000
+\i (00:17:46) pick grid -0.4828 -0.0788
+\t (00:17:46) last pick:  -0.6350 0.0000
+\i (00:17:50) prepopup 0.2610 -0.0005
+\i (00:17:51) padeditcur 
+\i (00:21:45) prepopup 0.4045 -0.0005
+\i (00:21:46) padeditcur 
+\i (00:29:42) undo 
+\i (00:29:42) generaledit 
+\i (00:36:17) exit 
+\e (00:36:17) Do you want to save the changes you made to CAPC1005X56.dra?
+\i (00:36:18) fillin no 
+\t (00:36:19)     Journal end - Sun Sep 11 17:01:45 2022

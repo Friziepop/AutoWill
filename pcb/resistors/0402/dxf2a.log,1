@@ -1,0 +1,15 @@
+Reading Layer Conversion File 
+Reading DXF file...
+done.
+WARNING: DXF extents are too large to for Allegro.
+  Continuing at maximum db extents.
+  DXF entities outside these extents will be lost.
+Layer conversion file: C:/Users/lavi/Downloads/WilkinsonPowerDivider_l.cnv
+DXF file: C:/Users/lavi/Downloads/WilkinsonPowerDivider.dxf
+BRD file: C:/Users/lavi/Desktop/project_wil/AutoWill/pcb/resistors/0402/#Taaaaae08156.dra
+Update existing design?: NO
+Use default text?: NO
+DXF units: MILLIMETERS
+Design units: MILS
+Design precision: 4
+dxf2a complete.
