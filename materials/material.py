@@ -13,6 +13,9 @@ class Material:
     start_freq: float
     end_freq: float
     padding_length: float
+    pad_a: float
+    pad_b: float
+    pad_c: float
     description: str
 
     def __init__(self,
@@ -26,6 +29,9 @@ class Material:
                  start_freq: float,
                  end_freq: float,
                  padding_length: float,
+                 pad_a: float,
+                 pad_b: float,
+                 pad_c: float,
                  description: str = "",
                  ):
         self.id = id
@@ -39,3 +45,6 @@ class Material:
         self.er = er
         self.name = name
         self.padding_length = padding_length
+        self.pad_a = pad_a
+        self.pad_b = pad_b
+        self.pad_c = pad_c
