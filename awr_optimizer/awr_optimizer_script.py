@@ -12,7 +12,7 @@ from materials.materials_db import MaterialDB
 from copy import deepcopy
 
 
-def run_simulations(ids, freqs):
+def run_simulations(ids, step_size):
     extractor = Extractor()
     extractor.connect()
     optimizer = AwrOptimizer()
@@ -24,13 +24,16 @@ def run_simulations(ids, freqs):
     eq_manager.connect()
 
     for id in [2, 1, 3]:
-        for freq in freqs[9:]:
-            set_meshing(freq)
-            bandwidth = 0.5
+        chosen_mat = deepcopy(MaterialDB().get_by_id(id))
+        freqs = [float(freq) for freq in np.arange(chosen_mat.start_freq, chosen_mat.end_freq, step_size)]
+        print(f"freqs from :{freqs[0]} , to :{freqs[-1]} ,step :{step_size}")
 
-            chosen_mat = deepcopy(MaterialDB().get_by_id(id))
+        for freq in freqs:
+            set_meshing(freq)
+            bandwidth = freq / 10
+
             quarter_wavelength = prev_quarter if prev_quarter else extractor.extract_quarter_wavelength(frequency=freq)
-            print(f"starting -- freq:{freq} , wavelength:{quarter_wavelength * 4}")
+            print(f"starting -- freq:{freq} , wavelength:{extractor.extract_quarter_wavelength(frequency=freq)}")
 
             start_width = MicroStripCopiedCalc().calc(er=chosen_mat.er, height=chosen_mat.height,
                                                       thickness=chosen_mat.thickness, z0=50, freq=freq)
@@ -66,7 +69,7 @@ def run_simulations(ids, freqs):
                             constraints=constraints,
                             material=chosen_mat)
 
-            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=5)
 
             # constraints = [
             #     OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height)]
@@ -84,7 +87,7 @@ def run_simulations(ids, freqs):
             extractor.extract_results(frequency=freq, bandwidth=bandwidth, material=chosen_mat)
 
             prev_quarter = float(
-                eq_manager.get_equation_by_name("QUARTER").equation_value) + chosen_mat.padding_length / 2
+                eq_manager.get_equation_by_name("QUARTER").equation_value) + input_padding / 2
 
 
 def set_meshing(freq):
@@ -101,16 +104,12 @@ def set_meshing(freq):
 
 
 if __name__ == '__main__':
-    start_freq = 1
-    end_freq = 40
-    step_size = 1
+    step_size = 0.5
 
     ids = [1, 2, 3]
 
-    freqs = [float(freq) for freq in np.arange(start_freq, end_freq, step_size)]
     print("starting dataset generation using awr optimization")
     print(f"ids:{ids}")
-    print(f"freqs from :{start_freq} , to :{end_freq} ,step :{step_size}")
 
-    run_simulations(ids=ids, freqs=freqs)
+    run_simulations(ids=ids, step_size=step_size)
     x = 5
