@@ -1,0 +1,67 @@
+(ExpressProject "wilkinson"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 S028 (4018475)  [3/9/2022]-[09/16/22]")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\library1.olb"
+        (Type "Schematic Library")))
+    ("Allegro Netlist Directory" "allegro")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420")
+    (NoModify)
+    (File ".\wilkinson.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    ("Allegro Netlist Output Board File" ".\board\wilkinson.brd"))
+  (Folder "Layout"
+    (File ".\board\wilkinson.brd"
+      (Type "Board File")
+      (OutputBoard ".\board\wilkinson.brd")
+      (NetListPath ".\allegro")
+      (ActiveBoard "1")))
+  (Folder "Outputs"
+    (File ".\allegro\pstxnet.dat"
+      (Type "Report")
+      (DisplayName "pstxnet.dat"))
+    (File ".\allegro\pstxprt.dat"
+      (Type "Report")
+      (DisplayName "pstxprt.dat"))
+    (File ".\allegro\pstchip.dat"
+      (Type "Report")
+      (DisplayName "pstchip.dat")))
+  (Folder "Referenced Projects")
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles")
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (Folder "Logs"
+    (File ".\allegro\netlist.log"
+      (Type "Log File")
+      (LogFile
+         "C:\Users\shvmo\PycharmProjects\AutoWill\orcad\allegro\netlist.log"))
+    (File ".\allegro\netrev.lst"
+      (Type "Log File")
+      (LogFile
+         "C:\Users\shvmo\PycharmProjects\AutoWill\orcad\allegro\netrev.lst"))
+    (File ".\allegro\eco.txt"
+      (Type "Log File")
+      (LogFile "C:\Users\shvmo\PycharmProjects\AutoWill\orcad\allegro\eco.txt")))
+  (PartMRUSelector
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (ioport
+      (FullPartName "ioport.Normal")
+      (LibraryName "C:\USERS\SHVMO\PYCHARMPROJECTS\AUTOWILL\ORCAD\LIBRARY1.OLB")
+      (DeviceIndex "0")))
+  (MPSSessionName "shvmo")
+  (LastUsedLibraryBrowseDirectory
+     "C:\Cadence\SPB_17.4\tools\capture\library\pspice"))

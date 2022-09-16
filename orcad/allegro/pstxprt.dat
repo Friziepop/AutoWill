@@ -1,0 +1,50 @@
+FILE_TYPE = EXPANDEDPARTLIST;
+{ Using PSTWRITER 17.4.0 d001Sep-16-2022 at 17:10:18 }
+DIRECTIVES
+ PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
+ ROOT_DRAWING='WILKINSON';
+ POST_TIME='Mar  9 2022 22:03:45';
+ SOURCE_TOOL='CAPTURE_WRITER';
+END_DIRECTIVES;
+
+PART_NAME
+ R1 'R_AXRC05_100':;
+
+SECTION_NUMBER 1
+ '@WILKINSON.SCHEMATIC1(SCH_1):INS96@ANALOG.R.NORMAL(CHIPS)':
+ C_PATH='@wilkinson.schematic1(sch_1):ins96@analog.\r.normal\(chips)',
+ P_PATH='@wilkinson.schematic1(sch_1):page1_ins96@analog.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U1 'IOPORT_IO_IOPORT':;
+
+SECTION_NUMBER 1
+ '@WILKINSON.SCHEMATIC1(SCH_1):INS24@LIBRARY1.IOPORT.NORMAL(CHIPS)':
+ C_PATH='@wilkinson.schematic1(sch_1):ins24@library1.\ioport.normal\(chips)',
+ P_PATH='@wilkinson.schematic1(sch_1):page1_ins24@library1.\ioport.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U2 'IOPORT_IO_IOPORT':;
+
+SECTION_NUMBER 1
+ '@WILKINSON.SCHEMATIC1(SCH_1):INS59@LIBRARY1.IOPORT.NORMAL(CHIPS)':
+ C_PATH='@wilkinson.schematic1(sch_1):ins59@library1.\ioport.normal\(chips)',
+ P_PATH='@wilkinson.schematic1(sch_1):page1_ins59@library1.\ioport.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U3 'IOPORT_IO_IOPORT':;
+
+SECTION_NUMBER 1
+ '@WILKINSON.SCHEMATIC1(SCH_1):INS73@LIBRARY1.IOPORT.NORMAL(CHIPS)':
+ C_PATH='@wilkinson.schematic1(sch_1):ins73@library1.\ioport.normal\(chips)',
+ P_PATH='@wilkinson.schematic1(sch_1):page1_ins73@library1.\ioport.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+END.

@@ -1,0 +1,30 @@
+FILE_TYPE=LIBRARY_PARTS;
+{ Using PSTWRITER 17.4.0 d001Sep-16-2022 at 17:10:18}
+primitive 'R_AXRC05_100';
+  pin
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='R';
+    JEDEC_TYPE='AXRC05';
+    VALUE='100';
+  end_body;
+end_primitive;
+primitive 'IOPORT_IO_IOPORT';
+  pin
+    'IOPIN':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='ioport';
+    JEDEC_TYPE='io';
+    VALUE='ioport';
+  end_body;
+end_primitive;
+END.

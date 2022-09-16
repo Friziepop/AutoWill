@@ -1,0 +1,235 @@
+\t (04:52:26) allegro 17.4 S028 Windows SPB 64-bit Edition
+\t (04:52:26)     Journal start - Fri Sep 16 16:28:35 2022
+\t (04:52:26)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=13704 CPUs=8
+\t (04:52:26) CmdLine= C:\Cadence\SPB_17.4\tools\bin\allegro.exe
+\t (04:52:26) 
+\t (04:52:26) Starting new design...
+\i (04:52:26) trapsize 882441
+\i (04:52:27) trapsize 909182
+\i (04:52:27) trapsize 882441
+\i (04:52:27) trapsize 1182551
+\i (04:52:27) trapsize 1182551
+\i (04:52:27) package symbol wizard 
+   (04:52:32) Loading cmds.cxt 
+\i (04:52:32) setwindow form.sym_wizard
+\i (04:52:32) FORM sym_wizard rca_smd YES 
+\i (04:52:35) FORM sym_wizard wiz_next  
+\i (04:52:38) FORM sym_wizard load_template  
+\t (04:52:38) Opening existing design...
+\t (04:52:39) Grids are drawn 200, 200 apart for enhanced viewing.
+\i (04:52:39) setwindow pcb
+\i (04:52:39) trapsize 185
+\i (04:52:39) trapsize 199
+\i (04:52:39) trapsize 208
+\i (04:52:39) trapsize 199
+\t (04:52:39) Grids are drawn 200, 200 apart for enhanced viewing.
+\i (04:52:39) trapsize 199
+\d (04:52:39) Design opened: C:/Cadence/SPB_17.4/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (04:52:39) trapsize 191
+\i (04:52:45) setwindow form.sym_wizard
+\i (04:52:45) FORM sym_wizard wiz_next  
+\i (04:52:49) FORM sym_wizard pack_units Millimeter 
+\i (04:52:51) FORM sym_wizard pack_units_create Millimeter 
+\i (04:52:56) FORM sym_wizard wiz_next  
+\i (04:53:10) FORM sym_wizard wiz_next  
+\i (04:53:14) FORM sym_wizard wiz_back  
+\i (04:53:30) FORM sym_wizard cancel  
+\t (04:53:30) Starting new design...
+\i (04:53:31) setwindow pcb
+\i (04:53:31) trapsize 185
+\i (04:53:31) trapsize 199
+\i (04:53:31) trapsize 208
+\i (04:53:31) trapsize 199
+\t (04:53:31) Grids are drawn 25600, 25600 apart for enhanced viewing.
+\i (04:53:31) trapsize 199
+\i (04:53:31) trapsize 199
+\i (04:53:31) trapsize 191
+\i (04:53:31) etchedit 
+\t (04:53:36) last pick:  44606 32009
+\w (04:53:36) WARNING(SPMHUT-40): Pick is outside the extent of the drawing ... pick again.
+\i (04:57:29) save 
+\i (04:57:29) etchedit 
+\i (04:58:58) enved 
+\i (04:58:58) setwindow form.prfedit
+\i (04:58:58) FORM prfedit treelist  My_favorites 
+\i (04:58:58) setwindow pcb
+\i (04:58:58) etchedit 
+\i (04:59:03) setwindow form.prfedit
+\i (04:59:03) FORM prfedit treelist  Paths 
+\i (04:59:07) FORM prfedit treelist  Config Paths 
+\i (04:59:09) FORM prfedit treelist  Library Paths 
+\i (04:59:14) FORM prfedit padpath  
+\i (04:59:30) FORM prfedit padpath  
+\i (04:59:34) FORM prfedit done  
+\i (04:59:37) setwindow pcb
+\i (04:59:37) new 
+\i (04:59:55) newdrawfillin "io.dra" "Package Symbol (Wizard)"
+\t (04:59:55) Starting new design...
+\i (04:59:56) trapsize 170
+\i (04:59:56) trapsize 175
+\i (04:59:56) trapsize 170
+\i (04:59:56) trapsize 191
+\i (04:59:56) trapsize 191
+\i (04:59:56) trapsize 191
+\i (04:59:56) package symbol wizard 
+\i (04:59:59) setwindow form.sym_wizard
+\i (04:59:59) FORM sym_wizard rca_smd YES 
+\i (05:00:02) FORM sym_wizard wiz_next  
+\i (05:00:06) FORM sym_wizard load_template  
+\t (05:00:06) Opening existing design...
+\t (05:00:06) Grids are drawn 200, 200 apart for enhanced viewing.
+\i (05:00:06) setwindow pcb
+\i (05:00:06) trapsize 185
+\i (05:00:06) trapsize 199
+\i (05:00:06) trapsize 208
+\i (05:00:06) trapsize 199
+\t (05:00:06) Grids are drawn 200, 200 apart for enhanced viewing.
+\i (05:00:06) trapsize 199
+\d (05:00:07) Design opened: C:/Cadence/SPB_17.4/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (05:00:07) trapsize 191
+\i (05:00:09) setwindow form.sym_wizard
+\i (05:00:09) FORM sym_wizard wiz_next  
+\i (05:00:11) FORM sym_wizard pack_units Millimeter 
+\i (05:00:12) FORM sym_wizard pack_units_create Millimeter 
+\i (05:00:16) setwindow pcb
+\i (05:00:16) prmed 
+\i (05:00:17) FORM prmedit design 
+\i (05:00:17) setwindow form.prmedit
+\i (05:00:17) FORM prmedit design  
+\i (05:00:17) setwindow pcb
+\i (05:00:17) trapsize 191
+\i (05:00:23) setwindow form.prmedit
+\i (05:00:23) FORM prmedit units Millimeter 
+   (05:00:23) Accuracy or unit changes can cause design round-off issues. DRCs and physical changes should be checked.
+\i (05:00:24) fillin confirm
+\e (05:00:24) Change may cause round-off; run dbcheck.
+\i (05:00:27) FORM prmedit cancel  
+\i (05:00:31) setwindow form.sym_wizard
+\i (05:00:31) FORM sym_wizard wiz_back  
+\i (05:00:33) FORM sym_wizard load_template  
+\i (05:00:34) fillin yes 
+\t (05:00:34) Opening existing design...
+\t (05:00:34) Grids are drawn 200, 200 apart for enhanced viewing.
+\i (05:00:34) setwindow pcb
+\i (05:00:34) trapsize 185
+\i (05:00:35) trapsize 199
+\i (05:00:35) trapsize 208
+\i (05:00:35) trapsize 199
+\t (05:00:35) Grids are drawn 25600, 25600 apart for enhanced viewing.
+\t (05:00:35) Grids are drawn 200, 200 apart for enhanced viewing.
+\i (05:00:35) trapsize 199
+\d (05:00:35) Design opened: C:/Cadence/SPB_17.4/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (05:00:35) trapsize 191
+\i (05:00:37) setwindow form.sym_wizard
+\i (05:00:37) FORM sym_wizard wiz_next  
+\i (05:00:40) FORM sym_wizard cancel  
+\i (05:00:40) setwindow pcb
+\i (05:00:40) updateport CVPane
+\i (05:00:40) etchedit 
+\i (05:00:41) prmed 
+\i (05:00:41) FORM prmedit design 
+\i (05:00:41) trapsize 191
+\i (05:00:43) setwindow form.prmedit
+\i (05:00:43) FORM prmedit units Millimeter 
+   (05:00:43) Accuracy or unit changes can cause design round-off issues. DRCs and physical changes should be checked.
+\i (05:00:45) fillin confirm
+\e (05:00:45) Change may cause round-off; run dbcheck.
+\i (05:00:47) FORM prmedit apply  
+\w (05:00:47) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (05:00:47) Grids are drawn 5.080, 5.080 apart for enhanced viewing.
+\i (05:00:47) setwindow pcb
+\i (05:00:47) trapsize 4863
+\t (05:00:47) Performing DRC...
+\t (05:00:47) No DRC errors detected.
+\i (05:00:47) trapsize 5062
+\i (05:00:47) trapsize 5279
+\i (05:00:47) trapsize 5062
+\i (05:00:48) trapsize 4863
+\i (05:00:48) setwindow form.prmedit
+\i (05:00:48) FORM prmedit done  
+\i (05:00:48) setwindow pcb
+\i (05:00:48) etchedit 
+\i (05:00:50) new 
+\e (05:00:50) Do you want to save the changes you made to io.dra?
+\i (05:00:52) fillin no 
+\i (05:01:10) newdrawfillin "io.dra" "Package Symbol (Wizard)"
+\t (05:01:10) Starting new design...
+\t (05:01:10) Grids are drawn 650.240, 650.240 apart for enhanced viewing.
+\i (05:01:10) trapsize 4863
+\i (05:01:10) trapsize 4863
+\i (05:01:10) package symbol wizard 
+\i (05:01:12) setwindow form.sym_wizard
+\i (05:01:12) FORM sym_wizard rca_smd YES 
+\i (05:01:14) FORM sym_wizard wiz_next  
+\i (05:01:16) FORM sym_wizard load_template  
+\t (05:01:16) Opening existing design...
+\t (05:01:16) Grids are drawn 200, 200 apart for enhanced viewing.
+\i (05:01:16) setwindow pcb
+\i (05:01:16) trapsize 185
+\i (05:01:16) trapsize 199
+\i (05:01:16) trapsize 208
+\i (05:01:17) trapsize 199
+\t (05:01:17) Grids are drawn 200, 200 apart for enhanced viewing.
+\i (05:01:17) trapsize 199
+\d (05:01:17) Design opened: C:/Cadence/SPB_17.4/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (05:01:17) trapsize 191
+\i (05:01:23) setwindow form.sym_wizard
+\i (05:01:23) FORM sym_wizard wiz_next  
+\i (05:01:25) FORM sym_wizard pack_units Millimeter 
+\i (05:01:27) FORM sym_wizard pack_units_create Millimeter 
+\i (05:01:31) FORM sym_wizard wiz_next  
+\i (05:01:35) FORM sym_wizard wiz_next  
+\i (05:01:37) FORM sym_wizard default_pad_browse  
+\t (05:01:42) No valid name selected.
+\i (05:01:44) fillin "Iopad"
+\i (05:01:46) FORM sym_wizard wiz_next  
+\i (05:01:57) setwindow pcb
+\i (05:01:57) prmed 
+\i (05:01:57) FORM prmedit design 
+\i (05:01:57) trapsize 191
+\i (05:01:59) setwindow form.prmedit
+\i (05:01:59) FORM prmedit units Millimeter 
+   (05:01:59) Accuracy or unit changes can cause design round-off issues. DRCs and physical changes should be checked.
+\i (05:02:01) fillin confirm
+\e (05:02:01) Change may cause round-off; run dbcheck.
+\i (05:02:02) FORM prmedit apply  
+\w (05:02:02) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (05:02:02) Grids are drawn 5.080, 5.080 apart for enhanced viewing.
+\i (05:02:02) setwindow pcb
+\i (05:02:02) trapsize 4863
+\t (05:02:02) Performing DRC...
+\t (05:02:02) No DRC errors detected.
+\i (05:02:02) trapsize 5062
+\i (05:02:02) trapsize 5279
+\i (05:02:03) trapsize 5062
+\i (05:02:03) trapsize 4863
+\i (05:02:03) setwindow form.prmedit
+\i (05:02:03) FORM prmedit done  
+\i (05:02:07) setwindow form.sym_wizard
+\i (05:02:07) FORM sym_wizard wiz_next  
+\i (05:02:10) FORM sym_wizard wiz_finish  
+\i (05:02:10) setwindow pcb
+\i (05:02:10) trapsize 4863
+\t (05:02:10) Performing DRC...
+\t (05:02:10) No DRC errors detected.
+\w (05:02:10) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\i (05:02:10) trapsize 4863
+\i (05:02:11) trapsize 86
+\i (05:02:11) trapsize 34
+\i (05:02:11) trapsize 34
+\i (05:02:11) trapsize 34
+\t (05:02:11) Performing DRC...
+\t (05:02:11) No DRC errors detected.
+\t (05:02:11) Creating package symbol 'C:/Users/shvmo/PycharmProjects/AutoWill/orcad/costumDesign/io.psm'.
+\t (05:02:11) Starting Create symbol...
+\i (05:02:12) etchedit 
+\i (05:02:18) prepopup 2.506 -0.034
+\i (05:02:19) pop dyn_option_select @:@Delete 
+\i (05:02:19) delete 
+\i (05:02:19) etchedit 
+\i (05:02:35) save 
+\i (05:02:40) fillin yes 
+\t (05:02:40) Symbol 'io.psm' created.
+\i (05:02:40) etchedit 
+\i (05:03:02) exit 
+\t (05:03:02)     Journal end - Fri Sep 16 16:39:11 2022

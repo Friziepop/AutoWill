@@ -1,0 +1,7 @@
+A!NET_NAME!REFDES!PIN_NUMBER!FUNC_LOGICAL_PATH!COMP_DEVICE_TYPE!FUNC_SCH_SIZE!FUNC_HAS_FIXED_SIZE!FUNC_DES!PIN_CDS_PINID!PIN_TERMINATION!PIN_TERM_IDENT!PIN_NET_SHORT!PIN_XNET_PINS!
+J!C:/Users/shvmo/PycharmProjects/AutoWill/orcad/board/wilkinson.brd!Fri Sep 16 17:10:16 2022!0.00!0.00!21000.00!17000.00!0.01!mils!WILKINSON!10.400000 mil!2!UP TO DATE!
+S!!R1!1!@wilkinson.schematic1(sch_1):ins96@analog.\r.normal\(chips)!R_AXRC05_100!!!TF-4!!!!!!
+S!!R1!2!@wilkinson.schematic1(sch_1):ins96@analog.\r.normal\(chips)!R_AXRC05_100!!!TF-4!!!!!!
+S!!U1!1!@wilkinson.schematic1(sch_1):ins24@library1.\ioport.normal\(chips)!IOPORT_IO_IOPORT!!!TF-3!!!!!!
+S!!U2!1!@wilkinson.schematic1(sch_1):ins59@library1.\ioport.normal\(chips)!IOPORT_IO_IOPORT!!!TF-2!!!!!!
+S!!U3!1!@wilkinson.schematic1(sch_1):ins73@library1.\ioport.normal\(chips)!IOPORT_IO_IOPORT!!!TF-1!!!!!!
