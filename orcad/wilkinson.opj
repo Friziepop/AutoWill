@@ -1,6 +1,6 @@
 (ExpressProject "wilkinson"
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S028 (4018475)  [3/9/2022]-[09/16/22]")
+  (SoftwareVersion "17.4-2019 P001 (3823098) [10/7/2019]-[09/16/22]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
@@ -62,6 +62,6 @@
       (FullPartName "ioport.Normal")
       (LibraryName "C:\USERS\SHVMO\PYCHARMPROJECTS\AUTOWILL\ORCAD\LIBRARY1.OLB")
       (DeviceIndex "0")))
-  (MPSSessionName "shvmo")
+  (MPSSessionName "lavi")
   (LastUsedLibraryBrowseDirectory
      "C:\Cadence\SPB_17.4\tools\capture\library\pspice"))
