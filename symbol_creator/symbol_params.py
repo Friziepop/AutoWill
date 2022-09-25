@@ -9,7 +9,7 @@ class SymbolParams:
 
 
 @dataclass
-class SymbolGenerationParams:
+class DxfGenerationParams:
     height: float
     thickness: float
     width: float
@@ -17,3 +17,17 @@ class SymbolGenerationParams:
     res: float
     radius: float
     quarter: float
+    out_path: str
+
+
+@dataclass
+class FootprintParams:
+    macro_path: str
+    dxf_file: str
+    dxf_mapping_file: str
+    material_name: str
+    pad_name: str
+    material_er: float
+    material_tanl: float
+    draw_path: str
+    allegro_exe_path: str
