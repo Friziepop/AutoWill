@@ -1,0 +1,31 @@
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/dxfImport.scr
+#	start time: Sat Sep 24 12:18:44 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 1182551
+generaledit
+# Macro file: coordinates are relative to pick on replay.
+dxf in 
+setwindow form.dxfInMain
+FORM dxfInMain browsedxf  
+fillin "C:/Users/shvmo/PycharmProjects/AutoWill/WilkinsonPowerDivider.dxf"
+FORM dxfInMain fillshapes YES 
+FORM dxfInMain browselyrcnv  
+fillin "C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/resources/mapping_setup.cnv"
+FORM dxfInMain import  
+setwindow pcb
+trapsize 1182551
+setwindow form.dxfInMain
+FORM dxfInMain cancel  
+setwindow pcb
+generaledit 
+setwindow pcb
+pick 0 0
+drag_start rel grid 0.0000 0.0000
+drag_stop rel -26914.8533 -20765.5899
+zoom selection
+
+#	stop time: Sat Sep 24 12:19:37 2022

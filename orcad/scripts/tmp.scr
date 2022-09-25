@@ -1,0 +1,17 @@
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/tmp.scr
+#	start time: Sat Sep 24 12:25:45 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 1182551
+generaledit
+# Macro file: coordinates are relative to pick on replay.
+pick_origin
+drag_start rel grid 0.0000 0.0000
+drag_stop rel -26914.8533 -20765.5899
+zoom selection 
+trapsize 503
+
+#	stop time: Sat Sep 24 12:25:59 2022

@@ -1,0 +1,54 @@
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/errorFix.scr
+#	start time: Sun Sep 25 12:21:29 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 225
+generaledit
+# Macro file: coordinates are relative to pick on replay.
+cmgr_spac 
+QtSignal m_domainSelector WS_Spacing itemSelectionChanged
+QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged Electrical
+QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged
+QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged Electrical
+QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged Spacing
+QtSignal m_domainSelector WS_Spacing itemSelectionChanged "Spacing Constraint Set" +
+QtSignal "All Layers"
+QtSignal CCMViewHost167 All_Layers_WorksheetView167 expand "(WIL_SYM,NAME)"
+QtSignal All_Layers_WorksheetView167 Frozen_All_Layers_WorksheetView167 expand "(WIL_SYM,NAME)"
+QtSignal Frozen_All_Layers_WorksheetView167 Frozen_All_Layers_WorksheetView167Header sectionMoved +
+QtSignal 0 0 1
+QtSignal Frozen_All_Layers_WorksheetView167 Frozen_All_Layers_WorksheetView167Header sectionMoved +
+QtSignal 1 1 0
+QtSignal All_Layers_WorksheetView167 All_Layers_WorksheetView167Header sectionMoved +
+QtSignal 0 0 1
+QtSignal All_Layers_WorksheetView167 All_Layers_WorksheetView167Header sectionMoved +
+QtSignal 1 1 0
+QtSignal Frozen_All_Layers_WorksheetView167 Frozen_All_Layers_WorksheetView167Header sectionMoved +
+QtSignal 0 1 3
+QtSignal Frozen_All_Layers_WorksheetView167 Frozen_All_Layers_WorksheetView167Header sectionMoved +
+QtSignal 3 3 1
+QtSignal All_Layers_WorksheetView167 All_Layers_WorksheetView167Header sectionMoved +
+QtSignal 0 1 3
+QtSignal All_Layers_WorksheetView167 All_Layers_WorksheetView167Header sectionMoved +
+QtSignal 3 3 1
+QtSignal CCMViewHost167 tableWidget currentChanged "wil_sym"
+generaledit 
+QtSignal CCMViewHost167 All_Layers_WorksheetView167 MBP "(WIL_SYM.DEFAULT,SMDPIN_TO_TESTPIN_SPACING)" +
+QtSignal "(2,1,1,0)"
+QtSignal CCMViewHost167 All_Layers_WorksheetView167 MBR "(WIL_SYM.DEFAULT,SMDPIN_TO_TESTPIN_SPACING)" +
+QtSignal "(3,1,0,0)"
+QtSignal inCell text editingFinished "0.0400"
+QtSignal CCMViewHost167 All_Layers_WorksheetView167 MBP "(WIL_SYM.DEFAULT,SHAPE_TO_SMDPIN_SPACING)" +
+QtSignal "(2,1,1,0)"
+QtSignal CCMViewHost167 All_Layers_WorksheetView167 MBR "(WIL_SYM.DEFAULT,SHAPE_TO_SMDPIN_SPACING)" +
+QtSignal "(3,1,0,0)"
+QtSignal inCell text editingFinished "0.0400"
+setwindow cmgr
+cm exit
+drc update 
+generaledit 
+
+#	stop time: Sun Sep 25 12:22:11 2022
