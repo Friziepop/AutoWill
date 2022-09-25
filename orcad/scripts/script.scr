@@ -273,3 +273,96 @@ drc update
 generaledit 
 
 #	stop time: Sun Sep 25 12:22:11 2022
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/addPads.scr
+#	start time: Sun Sep 25 14:15:30 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 225
+add pin 
+setwindow form.mini
+FORM mini pad_name s_r28t30m38_40p28_30 
+setwindow pcb
+pick grid -0.6530 0.0162
+prepopup -0.6440 0.0072
+oops 
+pick grid -0.6800 -0.0018
+prepopup -0.6800 -0.0018
+done 
+generaledit 
+add pin 
+prepopup 2.6878 0.2725
+done 
+generaledit 
+add pin 
+pick grid 2.6743 0.2770
+pick grid 2.6563 -0.2221
+prepopup 1.9909 -0.4424
+done 
+generaledit 
+
+#	stop time: Sun Sep 25 14:16:11 2022
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/addPads2.scr
+#	start time: Sun Sep 25 14:32:48 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 225
+generaledit
+add pin 
+prepopup 3.3533 0.6052
+rotate 
+iangle 10.879
+pick grid 3.3083 0.6052
+prepopup 3.3578 -0.6268
+rotate 
+iangle -21.109
+pick grid 3.2858 -0.6403
+prepopup 3.1734 -0.2626
+done 
+generaledit 
+
+#	stop time: Sun Sep 25 14:33:23 2022
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/addRefs.scr
+#	start time: Sun Sep 25 14:36:57 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 225
+generaledit
+label refdes 
+setwindow pcb
+prepopup -0.8733 -1.1978
+setwindow pcb
+pick -0.8870 -1.1890
+text 1
+done 
+setwindow pcb
+generaledit 
+
+#	stop time: Sun Sep 25 14:37:21 2022
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/save.scr
+#	start time: Sun Sep 25 14:38:39 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 225
+generaledit
+save 
+fillin yes 
+generaledit 
+
+#	stop time: Sun Sep 25 14:38:48 2022
+
