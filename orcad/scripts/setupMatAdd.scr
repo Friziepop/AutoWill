@@ -1,0 +1,43 @@
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/setupMatAdd.scr
+#	start time: Sat Sep 24 11:45:54 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 1182551
+generaledit
+# Macro file: coordinates are relative to pick on replay.
+define materials 
+QtSignal MaterialDlgUI m_materialView MBP "(ZIRCON,MATERIAL_INUSE)" "(2,2,2,0)"
+QtSignal MaterialDlgUI m_materialView MBR "(ZIRCON,MATERIAL_INUSE)" "(3,2,0,0)"
+QtSignal MaterialDlgUI m_materialView ContextMenu "(ZIRCON,MATERIAL_INUSE)"
+QtSignal MaterialDlgUI m_materialView MBP "(ZINC,MATERIAL_NAME)" "(2,2,2,0)"
+QtSignal MaterialDlgUI m_materialView MBR "(ZINC,MATERIAL_NAME)" "(3,2,0,0)"
+QtSignal MaterialDlgUI m_materialView ContextMenu "(ZINC,MATERIAL_NAME)"
+QtFillin "Create New"
+QtSignal inCell text editingFinished 4350B-USER # {{MATERIAL_NAME_UPPER}}
+QtSignal MaterialDlgUI m_materialView MBP "(4350B-USER,MATERIAL_THICKNESS)" "(2,1,1,0)"
+QtSignal MaterialDlgUI m_materialView MBR "(4350B-USER,MATERIAL_THICKNESS)" "(3,1,0,0)"
+QtSignal inCell text editingFinished "0.1" # {{MATERIAL_HEIGHT}}
+QtSignal MaterialDlgUI m_materialView MBP "(4350B-USER,MATERIAL_DIEL_CONST)" "(2,1,1,0)"
+QtSignal MaterialDlgUI m_materialView MBR "(4350B-USER,MATERIAL_DIEL_CONST)" "(3,1,0,0)"
+QtSignal SubModelTabDlgUI m_tabWidget doAddNewTab
+QtSignal m_tabWidget MaterialSubDataView_20C MBP "(_ADD_ROW_,MATERIAL_FREQUENCY)" +
+QtSignal "(2,1,1,0)"
+QtSignal m_tabWidget MaterialSubDataView_20C MBR "(_ADD_ROW_,MATERIAL_FREQUENCY)" +
+QtSignal "(3,1,0,0)"
+QtSignal inCell text editingFinished 6000
+QtSignal m_tabWidget MaterialSubDataView_20C MBP "(6000,MATERIAL_REL_PERMITTIVITY)" +
+QtSignal "(2,1,1,0)"
+QtSignal m_tabWidget MaterialSubDataView_20C MBR "(6000,MATERIAL_REL_PERMITTIVITY)" +
+QtSignal "(3,1,0,0)"
+QtSignal inCell text editingFinished "3.66" # {{MATERIAL_ER}}
+QtSignal m_tabWidget MaterialSubDataView_20C MBP "(6000,MATERIAL_LOSS_TANGENT)" "(2,1,1,0)"
+QtSignal m_tabWidget MaterialSubDataView_20C MBR "(6000,MATERIAL_LOSS_TANGENT)" "(3,1,0,0)"
+QtSignal inCell text editingFinished "0.0037" # {{MATERIAL_TAN_L}}
+QtSignal SubModelTabDlgUI m_okBtn clicked
+QtSignal frame_3 m_okBtn clicked
+generaledit 
+
+#	stop time: Sat Sep 24 11:47:35 2022

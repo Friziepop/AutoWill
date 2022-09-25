@@ -1,0 +1,24 @@
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/setupMat.scr
+#	start time: Sat Sep 24 11:27:36 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 1182551
+generaledit
+# Macro file: coordinates are relative to pick on replay.
+xsection 
+QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged
+QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged Electrical
+QtSignal m_stackupsTab m_stackupsTabXSectionView MBP "(DIELECTRIC__2_,VALUE)" "(2,1,1,0)"
+QtSignal m_stackupsTab m_stackupsTabXSectionView MBR "(DIELECTRIC__2_,VALUE)" "(3,1,0,0)"
+QtSignal inCell text editingFinished "0.1"
+QtSignal m_stackupsTab XSectionWidget_PRIMARY keyPressEvent 16777220 0 false 1 ""
+QtSignal CCMQtXSectionDlg m_ApplyBtn clicked
+QtSignal CCMQtXSectionDlg AddLayerDlg closed
+QtSignal CCMQtXSectionDlg m_OkBtn clicked
+QtSignal CCMQtXSectionDlg AddLayerDlg closed
+generaledit 
+
+#	stop time: Sat Sep 24 11:28:01 2022

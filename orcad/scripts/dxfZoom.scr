@@ -1,0 +1,17 @@
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/dxfZoom.scr
+#	start time: Sat Sep 24 12:40:06 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 1182551
+generaledit
+# Macro file: coordinates are relative to pick on replay.
+pick 0 0
+drag_start rel grid 0.0000 0.0000
+drag_stop rel -26441.8331 -20718.2878
+zoom selection 
+trapsize 503
+
+#	stop time: Sat Sep 24 12:40:23 2022

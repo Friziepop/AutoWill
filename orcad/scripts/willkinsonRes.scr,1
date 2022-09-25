@@ -1,0 +1,33 @@
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/willkinsonRes.scr
+#	start time: Sun Sep 18 15:31:22 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 840
+generaledit
+done 
+place manual 
+FORM plc_manual placement_list 
+FORM plc_manual categories Components by refdes 
+trapsize 840
+generaledit 
+done 
+place manual 
+FORM plc_manual placement_list 
+FORM plc_manual categories Components by refdes 
+trapsize 840
+generaledit 
+pick grid 285.8579 248.6541
+drag_start grid 286.5131 249.2590
+drag_stop 284.5810 251.6279
+prepopup 285.2867 251.3759
+pop dyn_option_select @:@Move 
+move 
+pick grid 285.4211 250.9895
+generaledit 
+exit 
+fillin no 
+
+#	stop time: Sun Sep 18 15:31:38 2022

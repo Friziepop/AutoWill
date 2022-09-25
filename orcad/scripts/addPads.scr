@@ -1,0 +1,35 @@
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/addPads.scr
+#	start time: Sun Sep 25 13:57:16 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 225
+generaledit
+# Macro file: coordinates are relative to pick on replay.
+pick_origin 2.6430 0.0250
+pick rel grid 0.0000 0.0000
+add pin 
+setwindow form.mini
+FORM mini pad_name s_r28t30m38_40p28_30 
+setwindow pcb
+pick rel grid -3.3048 -0.0270
+prepopup rel 0.0000 0.0000
+oops 
+pick rel grid -0.0270 0.0000
+pick rel grid 3.3543 0.2518
+pick rel grid -0.0180 -0.4676
+prepopup rel 0.8004 0.8453
+rotate 
+iangle 13.094
+pick rel grid -0.1259 0.0000
+prepopup rel 0.2248 -1.2410
+rotate 
+iangle -203.871
+pick rel grid -0.2428 -0.0135
+prepopup rel -0.2248 0.5126
+done 
+generaledit 
+
+#	stop time: Sun Sep 25 13:58:32 2022

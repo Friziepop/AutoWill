@@ -1,0 +1,24 @@
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/setupGrid.scr
+#	start time: Sat Sep 24 11:55:03 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 1182551
+generaledit
+# Macro file: coordinates are relative to pick on replay.
+pick 0 0
+prepopup rel 0.0000 0.0000
+pop dyn_option_select 'Quick Utilities@:@Grids...' 
+define grid 
+setwindow form.grid
+FORM grid non_etch non_etch_x_grids 0.001 
+FORM grid non_etch non_etch_y_grids 0.001 
+FORM grid all_etch all_etch_x_grids 0.001 
+FORM grid all_etch all_etch_y_grids 0.001 
+FORM grid apply  
+FORM grid done  
+setwindow pcb
+
+#	stop time: Sat Sep 24 11:55:27 2022
