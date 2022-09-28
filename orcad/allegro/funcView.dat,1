@@ -1,6 +1,4 @@
 A!FUNC_LOGICAL_PATH!COMP_DEVICE_TYPE!REFDES!FUNC_PRIM_FILE!COMP_PARENT_PPT!COMP_PARENT_PPT_PART!COMP_PARENT_PART_TYPE!FUNC_SCH_SIZE!FUNC_HAS_FIXED_SIZE!FUNC_DES!FUNC_GROUP!FUNC_ROOM!FUNC_CDS_FSP_UID!FUNC_NO_SWAP_PIN!FUNC_HARD_LOCATION!FUNC_NO_SWAP_GATE_EXT!FUNC_CDS_FSP_MAPPED_CELL!FUNC_CDS_FSP_FPGA_SYMBOL!FUNC_CDS_FSP_TERM_TYPE!FUNC_CDS_FSP_TERM_NAME!FUNC_ROOM!FUNC_GROUP!FUNC_CDS_FSP_TERM_INDEX!FUNC_CDS_FSP_INSTANCE_ID!FUNC_NO_SWAP_GATE!FUNC_NO_XNET_CONNECTION!FUNC_CDS_FSP_IS_FPGA!
-J!C:/Users/shvmo/PycharmProjects/AutoWill/orcad/board/wilkinson.brd!Fri Sep 16 17:04:21 2022!0.00!0.00!21000.00!17000.00!0.01!mils!WILKINSON!10.400000 mil!2!UP TO DATE!
-S!@wilkinson.schematic1(sch_1):ins96@analog.\r.normal\(chips)!R_AXRC05_100!R1!.\chipsView.dat!!!!!!TF-4!!!!!!!!!!!!!!!!!!
-S!@wilkinson.schematic1(sch_1):ins24@library1.\ioport.normal\(chips)!IOPORT_IO_IOPORT!U1!.\chipsView.dat!!!!!!TF-3!!!!!!!!!!!!!!!!!!
-S!@wilkinson.schematic1(sch_1):ins59@library1.\ioport.normal\(chips)!IOPORT_IO_IOPORT!U2!.\chipsView.dat!!!!!!TF-2!!!!!!!!!!!!!!!!!!
-S!@wilkinson.schematic1(sch_1):ins73@library1.\ioport.normal\(chips)!IOPORT_IO_IOPORT!U3!.\chipsView.dat!!!!!!TF-1!!!!!!!!!!!!!!!!!!
+J!C:/USERS/LAVI/DESKTOP/PROJECT_WIL/AUTOWILL/ORCAD/board/wilkinson.brd!Wed Sep 28 15:50:04 2022!0.00!0.00!21000.00!17000.00!0.01!mils!WILKINSON!10.400000 mil!2!UP TO DATE!
+S!@wilkinson.schematic1(sch_1):ins352@library1.\wilkinson.normal\(chips)!WILKINSON_WIL_SYM_WILKINSON!U1!.\chipsView.dat!!!!!!F0!!!!!!!!!!!!!!!!!!
+S!@wilkinson.schematic1(sch_1):ins96@analog.\r.normal\(chips)!R_WIL_R_100!R1!.\chipsView.dat!!!!!!F1!!!!!!!!!!!!!!!!!!

@@ -1,259 +1,202 @@
-\t (00:00:02) allegro 17.4 S028 Windows SPB 64-bit Edition
-\t (00:00:02)     Journal start - Wed Sep 28 12:07:35 2022
-\t (00:00:02)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=12124 CPUs=8
-\t (00:00:02) CmdLine= c:\cadence\spb_17.4\tools\bin\allegro.exe C:\Users\shvmo\PycharmProjects\AutoWill\orcad\package\wil_sym.dra
-\t (00:00:02) 
-   (00:00:02) Loading axlcore.cxt 
-\t (00:00:04) Opening existing design...
-\i (00:00:04) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged "wil_sym"
-\d (00:00:04) Design opened: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/package/wil_sym.dra
-\i (00:00:05) trapsize 266
-\i (00:00:05) trapsize 273
-\i (00:00:05) trapsize 266
-\i (00:00:05) trapsize 225
-\i (00:00:05) trapsize 231
-\i (00:00:06) generaledit 
-\i (00:00:07) prepopup -0.6775 -0.0100
-\i (00:00:16) pop dyn_option_select '@:@Add connect' 
-\i (00:00:16) add connect 
-\w (00:00:16) WARNING(SPMHUT-48): Scaled value has been rounded off.
-\t (00:00:16) Pick first element.
-\t (00:00:16) last pick:  -0.6800 -0.0020
-\i (00:00:16) mouse_pos -0.5023 -0.0653
-\i (00:00:16) mouse_pos -0.4654 -0.0377
-\i (00:00:16) mouse_pos -0.4608 -0.0377
-\i (00:00:16) mouse_pos -0.4562 -0.0377
-\i (00:00:16) mouse_pos -0.4516 -0.0377
-\i (00:00:17) mouse_pos -0.4516 -0.0330
-\i (00:00:17) mouse_pos -0.4470 -0.0330
-\i (00:00:17) mouse_pos -0.4470 -0.0284
-\i (00:00:17) mouse_pos -0.4423 -0.0284
-\i (00:00:17) mouse_pos -0.4423 -0.0238
-\i (00:00:17) mouse_pos -0.4377 -0.0238
-\i (00:00:17) mouse_pos -0.4331 -0.0192
-\i (00:00:17) mouse_pos -0.4285 -0.0146
-\i (00:00:17) mouse_pos -0.4285 -0.0100
-\i (00:00:17) mouse_pos -0.4285 -0.0054
-\i (00:00:17) mouse_pos -0.4285 -0.0008
-\i (00:00:17) mouse_pos -0.4285 0.0038
-\i (00:00:17) mouse_pos -0.4331 0.0038
-\i (00:00:17) mouse_pos -0.4470 0.0085
-\i (00:00:18) mouse_pos -0.5023 0.0038
-\i (00:00:18) mouse_pos -0.4654 -0.0054
-\i (00:00:18) mouse_pos -0.4608 -0.0054
-\i (00:00:18) mouse_pos -0.4562 -0.0054
-\i (00:00:19) mouse_pos -0.4562 -0.0008
-\i (00:00:19) mouse_pos -0.4608 -0.0008
-\i (00:00:19) mouse_pos -0.4654 -0.0008
-\i (00:00:19) mouse_pos -0.4700 0.0038
-\i (00:00:19) mouse_pos -0.4746 0.0038
-\i (00:00:19) pick grid -0.4746 0.0038
-\t (00:00:19) last pick:  -0.4750 0.0040
-\t (00:00:19) No DRC errors detected.
-\t (00:00:19) Pick first element.
-\i (00:00:19) generaledit 
-\i (00:00:21) prepopup 2.7206 0.2390
-\i (00:00:22) pop dyn_option_select '@:@Add connect' 
-\i (00:00:22) add connect 
-\t (00:00:22) Pick first element.
-\t (00:00:22) last pick:  2.6740 0.2770
-\i (00:00:22) mouse_pos 2.6699 0.4880
-\i (00:00:22) mouse_pos 2.6699 0.4972
-\i (00:00:23) mouse_pos 2.6699 0.5018
-\i (00:00:23) mouse_pos 2.6699 0.5064
-\i (00:00:23) mouse_pos 2.6699 0.5110
-\i (00:00:23) mouse_pos 2.6745 0.5110
-\i (00:00:23) mouse_pos 2.6745 0.5156
-\i (00:00:23) mouse_pos 2.6745 0.5202
-\i (00:00:23) mouse_pos 2.6745 0.5156
-\i (00:00:23) mouse_pos 2.6745 0.5064
-\i (00:00:23) mouse_pos 2.6745 0.5018
-\i (00:00:23) mouse_pos 2.6745 0.4972
-\i (00:00:23) mouse_pos 2.6745 0.4926
-\i (00:00:23) mouse_pos 2.6745 0.4880
-\i (00:00:24) pick grid 2.6745 0.4880
-\t (00:00:24) last pick:  2.6750 0.4880
-\t (00:00:24) No DRC errors detected.
-\t (00:00:24) Pick first element.
-\i (00:00:24) generaledit 
-\i (00:00:25) prepopup 3.2601 0.5617
-\i (00:00:27) pop dyn_option_select '@:@Add connect' 
-\i (00:00:27) add connect 
-\t (00:00:27) Pick first element.
-\t (00:00:27) last pick:  3.3080 0.6050
-\i (00:00:27) mouse_pos 2.9742 0.6908
-\i (00:00:27) mouse_pos 2.9742 0.6816
-\i (00:00:27) mouse_pos 2.9742 0.6770
-\i (00:00:27) mouse_pos 2.9742 0.6724
-\i (00:00:27) mouse_pos 2.9742 0.6678
-\i (00:00:27) mouse_pos 2.9742 0.6586
-\i (00:00:27) mouse_pos 2.9742 0.6540
-\i (00:00:27) mouse_pos 2.9696 0.6493
-\i (00:00:27) mouse_pos 2.9696 0.6447
-\i (00:00:27) mouse_pos 2.9650 0.6401
-\i (00:00:27) mouse_pos 2.9650 0.6355
-\i (00:00:27) mouse_pos 2.9650 0.6309
-\i (00:00:27) mouse_pos 2.9650 0.6263
-\i (00:00:27) mouse_pos 2.9696 0.6125
-\i (00:00:27) mouse_pos 2.9742 0.6125
-\i (00:00:27) mouse_pos 2.9834 0.6032
-\i (00:00:27) mouse_pos 2.9834 0.5986
-\i (00:00:27) mouse_pos 2.9880 0.5986
-\i (00:00:27) mouse_pos 2.9926 0.5986
-\i (00:00:27) mouse_pos 2.9972 0.5940
-\i (00:00:27) mouse_pos 3.0065 0.5848
-\i (00:00:28) mouse_pos 3.0157 0.5802
-\i (00:00:28) mouse_pos 3.0203 0.5756
-\i (00:00:28) mouse_pos 3.0249 0.5710
-\i (00:00:28) mouse_pos 3.0295 0.5617
-\i (00:00:28) mouse_pos 3.0341 0.5571
-\i (00:00:28) mouse_pos 3.0387 0.5571
-\i (00:00:28) mouse_pos 3.0434 0.5571
-\i (00:00:28) mouse_pos 3.0480 0.5571
-\i (00:00:28) mouse_pos 3.0526 0.5571
-\i (00:00:28) mouse_pos 3.0572 0.5571
-\i (00:00:28) mouse_pos 3.0618 0.5617
-\i (00:00:28) mouse_pos 3.0618 0.5664
-\i (00:00:28) mouse_pos 3.0664 0.5664
-\i (00:00:28) mouse_pos 3.0710 0.5664
-\i (00:00:28) mouse_pos 3.0710 0.5710
-\i (00:00:28) mouse_pos 3.0756 0.5756
-\i (00:00:28) mouse_pos 3.0756 0.5802
-\i (00:00:28) mouse_pos 3.0756 0.5848
-\i (00:00:28) mouse_pos 3.0802 0.5848
-\i (00:00:28) mouse_pos 3.0848 0.5848
-\i (00:00:28) mouse_pos 3.0895 0.5848
-\i (00:00:28) mouse_pos 3.0941 0.5848
-\i (00:00:29) mouse_pos 3.0941 0.5894
-\i (00:00:29) mouse_pos 3.0987 0.5894
-\i (00:00:29) mouse_pos 3.1356 0.5894
-\i (00:00:29) mouse_pos 3.1310 0.5894
-\i (00:00:29) mouse_pos 3.0895 0.5940
-\i (00:00:29) mouse_pos 3.0848 0.5940
-\i (00:00:29) mouse_pos 3.0895 0.5940
-\i (00:00:29) mouse_pos 3.0941 0.5940
-\i (00:00:29) mouse_pos 3.0987 0.5940
-\i (00:00:30) pick grid 3.0987 0.5940
-\t (00:00:30) last pick:  3.0990 0.5940
-\t (00:00:30) No DRC errors detected.
-\t (00:00:30) Pick first element.
-\i (00:00:30) generaledit 
-\i (00:00:31) prepopup 3.3753 -0.6509
-\i (00:00:33) pop dyn_option_select '@:@Add connect' 
-\i (00:00:33) add connect 
-\t (00:00:33) Pick first element.
-\t (00:00:33) last pick:  3.2860 -0.6400
-\i (00:00:33) mouse_pos 3.1171 -0.5079
-\i (00:00:34) mouse_pos 3.0848 -0.5356
-\i (00:00:34) mouse_pos 3.0802 -0.5402
-\i (00:00:34) mouse_pos 3.0756 -0.5448
-\i (00:00:34) mouse_pos 3.0756 -0.5494
-\i (00:00:34) mouse_pos 3.0710 -0.5494
-\i (00:00:34) mouse_pos 3.0710 -0.5541
-\i (00:00:34) mouse_pos 3.0664 -0.5541
-\i (00:00:34) mouse_pos 3.0618 -0.5587
-\i (00:00:34) mouse_pos 3.0618 -0.5633
-\i (00:00:34) mouse_pos 3.0618 -0.5679
-\i (00:00:34) mouse_pos 3.0572 -0.5679
-\i (00:00:34) mouse_pos 3.0572 -0.5725
-\i (00:00:34) mouse_pos 3.0618 -0.5771
-\i (00:00:34) mouse_pos 3.0664 -0.5817
-\i (00:00:34) mouse_pos 3.0710 -0.5817
-\i (00:00:34) mouse_pos 3.0756 -0.5863
-\i (00:00:34) mouse_pos 3.0756 -0.5909
-\i (00:00:34) mouse_pos 3.0802 -0.5955
-\i (00:00:34) mouse_pos 3.0802 -0.6002
-\i (00:00:34) mouse_pos 3.0802 -0.6048
-\i (00:00:34) mouse_pos 3.0848 -0.6048
-\i (00:00:35) mouse_pos 3.0756 -0.5955
-\i (00:00:35) mouse_pos 3.0710 -0.5955
-\i (00:00:35) mouse_pos 3.0664 -0.5955
-\i (00:00:36) pick grid 3.0664 -0.5955
-\t (00:00:36) last pick:  3.0660 -0.5950
-\t (00:00:36) No DRC errors detected.
-\t (00:00:36) Pick first element.
-\i (00:00:36) generaledit 
-\i (00:00:39) zoom in 1 
-\i (00:00:39) setwindow pcb
-\i (00:00:39) zoom in 2.6745 0.5018
-\i (00:00:39) trapsize 115
-\i (00:00:39) zoom in 1 
-\i (00:00:39) setwindow pcb
-\i (00:00:39) zoom in 2.6745 0.5018
-\i (00:00:39) trapsize 58
-\i (00:00:39) zoom in 1 
-\i (00:00:39) setwindow pcb
-\i (00:00:39) zoom in 2.6745 0.5019
-\i (00:00:39) trapsize 29
-\i (00:00:40) drag_start grid 2.6619 0.5187
-\i (00:00:40) slide 
-\t (00:00:40) last pick:  2.6750 0.4880
-\t (00:00:40) Waiting for the destination pick.
-\t (00:00:40) Start slide location has pre-existing DRC errors.
-\i (00:00:40) drag_stop grid 2.7080 0.4789
-\t (00:00:40) No DRC errors detected.
-\i (00:00:40) generaledit 
-\i (00:00:41) prepopup 2.6953 0.4858
-\i (00:00:43) pop dyn_option_select @:@Move 
-\i (00:00:43) move 
-\t (00:00:43) last pick:  2.6950 0.4860
-\t (00:00:43) last pick:  2.6950 0.4860
-\t (00:00:43) Element has no origin, using pick.
-\t (00:00:43) Pick new location for the element(s).
-\i (00:00:44) pick grid 2.3991 0.5302
-\t (00:00:44) last pick:  2.3990 0.5300
-\i (00:00:44) generaledit 
-\i (00:00:44) prepopup 2.3904 0.5244
-\i (00:00:45) pop dyn_option_select @:@Delete 
-\i (00:00:45) delete 
-\i (00:00:45) generaledit 
-\i (00:00:46) pick grid 2.6965 0.5071
-\t (00:00:46) last pick:  2.6970 0.5070
-\i (00:00:46) prepopup 2.6965 0.5071
-\i (00:00:47) pop dyn_option_select @:@Delete 
-\i (00:00:47) delete 
+\t (00:00:00) allegro 17.4 P001 Windows SPB 64-bit Edition
+\t (00:00:00)     Journal start - Wed Sep 28 16:02:07 2022
+\t (00:00:00)         Host=DESKTOP-1JKGU2H User=lavi Pid=1364 CPUs=8
+\t (00:00:00) CmdLine= c:\cadence\spb_17.4\tools\bin\allegro.exe C:\Users\lavi\Desktop\project_wil\AutoWill\orcad\package\wil_sym.dra
+\t (00:00:00) 
+   (00:00:00) Loading axlcore.cxt 
+\t (00:00:03) Opening existing design...
+\i (00:00:03) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged wil_sym
+\d (00:00:03) Design opened: C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/package/wil_sym.dra
+\i (00:00:03) trapsize 1351
+\i (00:00:03) trapsize 1497
+\i (00:00:03) trapsize 1351
+\i (00:00:03) trapsize 1770
+\i (00:00:03) trapsize 1770
+\i (00:00:03) trapsize 1744
+\i (00:00:04) generaledit 
+\i (00:00:10) trapsize 1770
+\i (00:00:10) trapsize 434
+\i (00:00:12) zoom out 1 
+\i (00:00:12) setwindow pcb
+\i (00:00:12) zoom out 2.9192 -4.9463
+\i (00:00:12) trapsize 869
+\i (00:00:12) zoom out 1 
+\i (00:00:12) setwindow pcb
+\i (00:00:12) zoom out 2.9193 -4.9463
+\i (00:00:12) trapsize 1738
+\i (00:00:12) zoom out 1 
+\i (00:00:12) setwindow pcb
+\i (00:00:12) zoom out 2.9192 -4.9462
+\i (00:00:12) trapsize 3476
+\i (00:00:13) zoom in 1 
+\i (00:00:13) setwindow pcb
+\i (00:00:13) zoom in 1.6678 1.5191
+\i (00:00:13) trapsize 1738
+\i (00:00:13) zoom in 1 
+\i (00:00:13) setwindow pcb
+\i (00:00:13) zoom in 1.6678 1.5192
+\i (00:00:13) trapsize 869
+\i (00:00:13) zoom in 1 
+\i (00:00:13) setwindow pcb
+\i (00:00:13) zoom in 1.6678 1.5192
+\i (00:00:13) trapsize 434
+\i (00:00:14) zoom in 1 
+\i (00:00:14) setwindow pcb
+\i (00:00:14) zoom in 2.3891 0.4851
+\i (00:00:14) trapsize 217
+\i (00:00:14) zoom in 1 
+\i (00:00:14) setwindow pcb
+\i (00:00:14) zoom in 2.3891 0.4851
+\i (00:00:14) trapsize 109
+\i (00:00:14) zoom in 1 
+\i (00:00:14) setwindow pcb
+\i (00:00:14) zoom in 2.3892 0.4851
+\i (00:00:14) trapsize 54
+\i (00:00:15) zoom out 1 
+\i (00:00:15) setwindow pcb
+\i (00:00:15) zoom out 2.2545 0.4613
+\i (00:00:15) trapsize 109
+\i (00:00:15) zoom out 1 
+\i (00:00:15) setwindow pcb
+\i (00:00:15) zoom out 2.2545 0.4612
+\i (00:00:15) trapsize 217
+\i (00:00:16) zoom out 1 
+\i (00:00:16) setwindow pcb
+\i (00:00:16) zoom out -0.3569 -0.0080
+\i (00:00:16) trapsize 434
+\i (00:00:16) zoom out 1 
+\i (00:00:16) setwindow pcb
+\i (00:00:16) zoom out -0.3569 -0.0080
+\i (00:00:16) trapsize 869
+\i (00:00:19) zoom in 1 
+\i (00:00:19) setwindow pcb
+\i (00:00:19) zoom in -0.7565 0.8436
+\i (00:00:19) trapsize 434
+\i (00:00:19) zoom in 1 
+\i (00:00:19) setwindow pcb
+\i (00:00:19) zoom in -0.7565 0.8436
+\i (00:00:19) trapsize 217
+\i (00:00:20) zoom out 1 
+\i (00:00:20) setwindow pcb
+\i (00:00:20) zoom out -0.7565 0.8436
+\i (00:00:20) trapsize 434
+\i (00:00:20) zoom out 1 
+\i (00:00:20) setwindow pcb
+\i (00:00:20) zoom out -0.7565 0.8436
+\i (00:00:20) trapsize 869
+\i (00:00:20) zoom out 1 
+\i (00:00:20) setwindow pcb
+\i (00:00:20) zoom out -0.7565 0.8436
+\i (00:00:20) trapsize 1738
+\i (00:00:21) zoom out 1 
+\i (00:00:21) setwindow pcb
+\i (00:00:21) zoom out 17.4923 -2.7714
+\i (00:00:21) trapsize 3476
+\i (00:00:21) zoom out 1 
+\i (00:00:21) setwindow pcb
+\i (00:00:21) zoom out 17.4924 -2.7715
+\i (00:00:21) trapsize 6952
+\i (00:00:22) zoom in 1 
+\i (00:00:22) setwindow pcb
+\i (00:00:22) zoom in -6.9786 -1.9372
+\i (00:00:22) trapsize 3476
+\i (00:00:22) zoom in 1 
+\i (00:00:22) setwindow pcb
+\i (00:00:22) zoom in -6.9786 -1.9372
+\i (00:00:22) trapsize 1738
+\i (00:00:22) zoom in 1 
+\i (00:00:22) setwindow pcb
+\i (00:00:22) zoom in -6.9786 -1.9372
+\i (00:00:22) trapsize 869
+\i (00:00:24) zoom in 1 
+\i (00:00:24) setwindow pcb
+\i (00:00:24) zoom in 1.3291 -0.1470
+\i (00:00:24) trapsize 434
+\i (00:00:24) zoom in 1 
+\i (00:00:24) setwindow pcb
+\i (00:00:24) zoom in 1.3291 -0.1470
+\i (00:00:24) trapsize 217
+\i (00:00:25) prepopup -0.4784 -0.0297
+\i (00:00:26) pop dyn_option_select '@:@Add connect' 
+\i (00:00:26) add connect 
+\t (00:00:26) Pick first element.
+\t (00:00:26) last pick:  -0.5750 0.0020
+\i (00:00:27) mouse_pos -0.3828 -0.0297
+\i (00:00:27) mouse_pos -0.3394 -0.0297
+\i (00:00:27) mouse_pos -0.3350 -0.0297
+\i (00:00:27) mouse_pos -0.3307 -0.0297
+\i (00:00:27) mouse_pos -0.3263 -0.0297
+\i (00:00:27) mouse_pos -0.3220 -0.0297
+\i (00:00:27) mouse_pos -0.3133 -0.0297
+\i (00:00:27) mouse_pos -0.3046 -0.0297
+\i (00:00:27) mouse_pos -0.2959 -0.0297
+\i (00:00:27) mouse_pos -0.2916 -0.0297
+\i (00:00:27) mouse_pos -0.2829 -0.0297
+\i (00:00:27) mouse_pos -0.2786 -0.0297
+\i (00:00:27) mouse_pos -0.2699 -0.0297
+\i (00:00:27) mouse_pos -0.2655 -0.0297
+\i (00:00:27) mouse_pos -0.2612 -0.0297
+\i (00:00:27) mouse_pos -0.2612 -0.0253
+\i (00:00:28) mouse_pos -0.2612 -0.0210
+\i (00:00:28) mouse_pos -0.2568 -0.0210
+\i (00:00:28) mouse_pos -0.2525 -0.0210
+\i (00:00:28) mouse_pos -0.2481 -0.0210
+\i (00:00:28) mouse_pos -0.2438 -0.0210
+\i (00:00:28) mouse_pos -0.2394 -0.0210
+\i (00:00:29) pick grid -0.2003 0.0008
+\t (00:00:29) last pick:  -0.2000 0.0010
+\t (00:00:29) No DRC errors detected.
+\t (00:00:29) Pick first element.
+\i (00:00:29) generaledit 
+\i (00:00:31) prepopup 2.2893 0.4570
+\i (00:00:33) pick grid 1.5594 0.5917
+\t (00:00:33) last pick:  1.5590 0.5920
+\i (00:00:34) drag_start grid 1.7549 1.5867
+\i (00:00:35) drag_stop 1.4334 1.0522
+\i (00:00:36) prepopup 1.6506 1.2738
+\i (00:00:38) pop dyn_option_select '@:@Assign net' 
+\i (00:00:38) shape assign net 
+\i (00:00:40) setwindow form.mini
+\i (00:00:40) FORM mini netname_list  
+\i (00:00:42) fillin "menu_cancel"
+\i (00:00:44) setwindow pcb
+\i (00:00:44) pick grid -0.5523 -0.3382
+\t (00:00:44) last pick:  -0.5520 -0.3380
+\i (00:00:46) prepopup 2.2850 0.4657
+\i (00:00:47) done 
 \i (00:00:47) generaledit 
-\i (00:00:48) zoom out 1 
-\i (00:00:48) setwindow pcb
-\i (00:00:48) zoom out 2.4267 0.4777
-\i (00:00:48) trapsize 58
-\i (00:00:48) zoom out 1 
-\i (00:00:48) setwindow pcb
-\i (00:00:48) zoom out 2.4279 0.4766
-\i (00:00:48) trapsize 115
-\i (00:00:48) zoom out 1 
-\i (00:00:48) setwindow pcb
-\i (00:00:48) zoom out 2.4279 0.4766
-\i (00:00:48) trapsize 231
-\i (00:00:49) zoom in 1 
-\i (00:00:49) setwindow pcb
-\i (00:00:49) zoom in 2.4280 0.4766
-\i (00:00:49) trapsize 115
-\i (00:00:50) zoom out 1 
-\i (00:00:50) setwindow pcb
-\i (00:00:50) zoom out 2.6148 0.4144
-\i (00:00:50) trapsize 231
-\i (00:01:20) save 
-\i (00:01:23) fillin yes 
-\t (00:01:24) Symbol 'wil_sym.psm' created.
-\i (00:01:24) generaledit 
-\i (00:18:17) pick grid 0.3831 -0.4479
-\t (00:18:17) last pick:  0.3830 -0.4480
-\i (01:13:35) zoom in 1 
-\i (01:13:35) setwindow pcb
-\i (01:13:35) zoom in 1.3652 0.2345
-\i (01:13:35) trapsize 115
-\i (01:13:36) zoom out 1 
-\i (01:13:36) setwindow pcb
-\i (01:13:36) zoom out 1.3652 0.2323
-\i (01:13:36) trapsize 231
-\i (01:13:36) zoom out 1 
-\i (01:13:36) setwindow pcb
-\i (01:13:36) zoom out 0.9779 0.3336
-\i (01:13:36) trapsize 461
-\i (01:13:37) zoom in 1 
-\i (01:13:37) setwindow pcb
-\i (01:13:37) zoom in -0.8112 0.4813
-\i (01:13:37) trapsize 231
-\i (01:35:28) exit 
-\t (01:35:28)     Journal end - Wed Sep 28 13:43:02 2022
+\i (00:00:48) pick grid 2.2198 0.4874
+\t (00:00:48) last pick:  2.2200 0.4870
+\i (00:00:48) prepopup 2.2198 0.4874
+\i (00:00:49) pick grid 2.2720 0.9784
+\t (00:00:49) last pick:  2.2720 0.9780
+\i (00:00:51) add connect 
+\t (00:00:51) Pick first element.
+\i (00:00:52) pick grid 2.2328 0.4439
+\t (00:00:52) last pick:  2.2330 0.4440
+\t (00:00:52) last pick:  2.2330 0.4440
+\i (00:00:52) mouse_pos 2.3284 0.4787
+\i (00:00:54) pick grid 2.5196 0.5004
+\t (00:00:54) last pick:  2.5200 0.5000
+\t (00:00:54) DRC error(s) created.
+\t (00:00:54) Pick first element.
+\i (00:00:55) prepopup 2.5196 0.5004
+\i (00:00:56) cancel 
+\i (00:00:56) generaledit 
+\i (00:00:57) prepopup 2.2198 0.5178
+\i (00:00:59) add connect 
+\t (00:00:59) Pick first element.
+\i (00:01:01) pick grid 2.2546 0.5135
+\t (00:01:01) last pick:  2.2550 0.5140
+\t (00:01:01) last pick:  2.2550 0.5140
+\i (00:01:01) mouse_pos 2.3111 0.5221
+\i (00:01:04) pick grid 2.4153 0.5308
+\t (00:01:04) last pick:  2.4150 0.5310
+\t (00:01:04) No DRC errors detected.
+\t (00:01:04) Pick first element.
+\i (00:01:07) save 
+\i (00:01:08) fillin yes 
+\t (00:01:08) Symbol 'wil_sym.psm' created.
+\i (00:01:08) generaledit 
+\i (00:12:39) exit 
+\t (00:12:39)     Journal end - Wed Sep 28 16:14:46 2022

@@ -1,6 +1,6 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.4.0 d001Sep-16-2022 at 17:10:18}
-primitive 'R_AXRC05_100';
+{ Using PSTWRITER 17.4.0 d001Sep-28-2022 at 16:28:09}
+primitive 'R_WIL_R_100';
   pin
     '2':
       PIN_NUMBER='(2)';
@@ -11,20 +11,32 @@ primitive 'R_AXRC05_100';
   end_pin;
   body
     PART_NAME='R';
-    JEDEC_TYPE='AXRC05';
+    JEDEC_TYPE='wil_r';
     VALUE='100';
   end_body;
 end_primitive;
-primitive 'IOPORT_IO_IOPORT';
+primitive 'WILKINSON_WIL_SYM_WILKINSON';
   pin
-    'IOPIN':
+    'INPUT':
       PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    'OUTPUT_1':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    'OUTPUT_2':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    'R_1':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+    'R_2':
+      PIN_NUMBER='(5)';
       PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='ioport';
-    JEDEC_TYPE='io';
-    VALUE='ioport';
+    PART_NAME='wilkinson';
+    JEDEC_TYPE='wil_sym';
+    VALUE='wilkinson';
   end_body;
 end_primitive;
 END.

@@ -4,7 +4,7 @@
 (                                                                     )
 (    Drawing          : wilkinson.brd                                 )
 (    Software Version : unreleased                                    )
-(    Date/Time        : Wed Sep 28 16:14:57 2022                      )
+(    Date/Time        : Wed Sep 28 16:28:09 2022                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -18,11 +18,11 @@ Ripup symbols:               Always
 Missing symbol has error:    No
 DRC update:                  Yes
 Schematic directory:         'C:\USERS\LAVI\DESKTOP\PROJECT_WIL\AUTOWILL\ORCAD\allegro'
-Design Directory:            'C:/USERS/LAVI/DESKTOP/PROJECT_WIL/AUTOWILL/ORCAD/board'
-Old design name:             'C:/USERS/LAVI/DESKTOP/PROJECT_WIL/AUTOWILL/ORCAD/board/wilkinson.brd'
-New design name:             'C:/USERS/LAVI/DESKTOP/PROJECT_WIL/AUTOWILL/ORCAD/board/wilkinson.brd'
+Design Directory:            'C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/board'
+Old design name:             'C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/board/wilkinson.brd'
+New design name:             'C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/board/wilkinson.brd'
 
-CmdLine: netrev -i C:\USERS\LAVI\DESKTOP\PROJECT_WIL\AUTOWILL\ORCAD\allegro -y 1 -q netrev_constraint_report.xml C:/USERS/LAVI/DESKTOP/PROJECT_WIL/AUTOWILL/ORCAD/board/#Taaaaag08608.tmp
+CmdLine: netrev.exe -y 1 -n -i C:\USERS\LAVI\DESKTOP\PROJECT_WIL\AUTOWILL\ORCAD\allegro C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/board/wilkinson.brd C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/board/wilkinson.brd
 
 ------ Preparing to read pst files ------
 
@@ -70,7 +70,7 @@ PADPATH =  .
 ------ Summary Statistics ------
 
 
-netrev run on Sep 28 16:14:57 2022
+netrev run on Sep 28 16:28:09 2022
    DESIGN NAME : 'WILKINSON'
    PACKAGING ON Oct  7 2019 04:16:49
 
@@ -95,6 +95,6 @@ netrev run on Sep 28 16:14:57 2022
  No oversight detected
   1 warnings detected
 
-cpu time      0:02:08
-elapsed time  0:00:01
+cpu time      0:02:07
+elapsed time  0:00:02
 

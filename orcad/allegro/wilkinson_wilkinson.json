@@ -8,42 +8,30 @@
 	"Component" : [],
 	"Net" : [
 		{
-			"Name" : "N00184",
-			"C_PATH" : "@wilkinson.schematic1(sch_1):n00184",
-			"Logical" : "N00184",
-			"Physical" : null
+			"Name" : "OUTPUT_1",
+			"C_PATH" : "@wilkinson.schematic1(sch_1):output_1",
+			"Logical" : null,
+			"Physical" : "OUTPUT_1"
+		},
+		{
+			"Name" : "OUTPUT_2",
+			"C_PATH" : "@wilkinson.schematic1(sch_1):output_2",
+			"Logical" : null,
+			"Physical" : "OUTPUT_2"
 		}
 	],
 	"Connection" : [
 		{
-			"Name" : "R1.2",
-			"C_PATH" : "@wilkinson.schematic1(sch_1):ins96@analog.\\r.normal\\(chips):\\2\\",
-			"Logical" : "N00184",
-			"Physical" : "NC"
+			"Name" : "U1.2",
+			"C_PATH" : "@wilkinson.schematic1(sch_1):ins352@library1.\\wilkinson.normal\\(chips):OUTPUT_1",
+			"Logical" : "INPUT",
+			"Physical" : "OUTPUT_1"
 		},
 		{
-			"Name" : "R1.1",
-			"C_PATH" : "@wilkinson.schematic1(sch_1):ins96@analog.\\r.normal\\(chips):\\1\\",
-			"Logical" : "N00184",
-			"Physical" : "NC"
-		},
-		{
-			"Name" : "U1.1",
-			"C_PATH" : "@wilkinson.schematic1(sch_1):ins24@library1.\\ioport.normal\\(chips):IOPIN",
-			"Logical" : "N00184",
-			"Physical" : "NC"
-		},
-		{
-			"Name" : "U2.1",
-			"C_PATH" : "@wilkinson.schematic1(sch_1):ins59@library1.\\ioport.normal\\(chips):IOPIN",
-			"Logical" : "N00184",
-			"Physical" : "NC"
-		},
-		{
-			"Name" : "U3.1",
-			"C_PATH" : "@wilkinson.schematic1(sch_1):ins73@library1.\\ioport.normal\\(chips):IOPIN",
-			"Logical" : "N00184",
-			"Physical" : "NC"
+			"Name" : "U1.3",
+			"C_PATH" : "@wilkinson.schematic1(sch_1):ins352@library1.\\wilkinson.normal\\(chips):OUTPUT_2",
+			"Logical" : "INPUT",
+			"Physical" : "OUTPUT_2"
 		}
 	]
 }

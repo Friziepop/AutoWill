@@ -1,5 +1,58 @@
 FILE_TYPE=LIBRARY_PARTS;
-primitive 'R_AXRC05_100';
+primitive 'WILKINSON_WIL_SYM_WILKINSON';
+  pin
+	 'R_2':
+	   PIN_NUMBER='(5)';
+	   PINUSE='UNSPEC';
+	   NO_LOAD_CHECK='Both';
+	   NO_IO_CHECK='Both';
+	   NO_ASSERT_CHECK='TRUE';
+	   NO_DIR_CHECK='TRUE';
+	   ALLOW_CONNECT='TRUE';
+	 'R_1':
+	   PIN_NUMBER='(4)';
+	   PINUSE='UNSPEC';
+	   NO_LOAD_CHECK='Both';
+	   NO_IO_CHECK='Both';
+	   NO_ASSERT_CHECK='TRUE';
+	   NO_DIR_CHECK='TRUE';
+	   ALLOW_CONNECT='TRUE';
+	 'OUTPUT_2':
+	   PIN_NUMBER='(3)';
+	   PINUSE='UNSPEC';
+	   NO_LOAD_CHECK='Both';
+	   NO_IO_CHECK='Both';
+	   NO_ASSERT_CHECK='TRUE';
+	   NO_DIR_CHECK='TRUE';
+	   ALLOW_CONNECT='TRUE';
+	 'OUTPUT_1':
+	   PIN_NUMBER='(2)';
+	   PINUSE='UNSPEC';
+	   NO_LOAD_CHECK='Both';
+	   NO_IO_CHECK='Both';
+	   NO_ASSERT_CHECK='TRUE';
+	   NO_DIR_CHECK='TRUE';
+	   ALLOW_CONNECT='TRUE';
+	 'INPUT':
+	   PIN_NUMBER='(1)';
+	   PINUSE='UNSPEC';
+	   NO_LOAD_CHECK='Both';
+	   NO_IO_CHECK='Both';
+	   NO_ASSERT_CHECK='TRUE';
+	   NO_DIR_CHECK='TRUE';
+	   ALLOW_CONNECT='TRUE';
+  end_pin;
+  body
+	 PART_NAME='wilkinson';
+	 VALUE='wilkinson';
+	 BODY_NAME='WILKINSON_WIL_SYM_WILKINSON';
+	 JEDEC_TYPE='WIL_SYM';
+	 PHYS_DES_PREFIX='U';
+	 CLASS='IC';
+  end_body;
+end_primitive;
+
+primitive 'R_WIL_R_100';
   pin
 	 '2':
 	   PIN_NUMBER='(2)';
@@ -21,30 +74,9 @@ primitive 'R_AXRC05_100';
   body
 	 PART_NAME='R';
 	 VALUE='100';
-	 BODY_NAME='R_AXRC05_100';
-	 JEDEC_TYPE='AXRC05';
+	 BODY_NAME='R_WIL_R_100';
+	 JEDEC_TYPE='WIL_R';
 	 PHYS_DES_PREFIX='R';
-	 CLASS='IC';
-  end_body;
-end_primitive;
-
-primitive 'IOPORT_IO_IOPORT';
-  pin
-	 'IOPIN':
-	   PIN_NUMBER='(1)';
-	   PINUSE='UNSPEC';
-	   NO_LOAD_CHECK='Both';
-	   NO_IO_CHECK='Both';
-	   NO_ASSERT_CHECK='TRUE';
-	   NO_DIR_CHECK='TRUE';
-	   ALLOW_CONNECT='TRUE';
-  end_pin;
-  body
-	 PART_NAME='ioport';
-	 VALUE='ioport';
-	 BODY_NAME='IOPORT_IO_IOPORT';
-	 JEDEC_TYPE='IO';
-	 PHYS_DES_PREFIX='U';
 	 CLASS='IC';
   end_body;
 end_primitive;

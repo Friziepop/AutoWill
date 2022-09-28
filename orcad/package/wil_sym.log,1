@@ -3,21 +3,22 @@
 (    CREATE SYMBOL                                                    )
 (                                                                     )
 (    Drawing          : wil_sym.dra                                   )
-(    Software Version : 17.4S028                                      )
-(    Date/Time        : Wed Sep 28 11:39:36 2022                      )
+(    Software Version : unreleased                                    )
+(    Date/Time        : Wed Sep 28 15:39:38 2022                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
 
 Create Symbol of type: PACKAGE
-    Directory = C:/Users/shvmo/PycharmProjects/AutoWill/orcad/package
+    Directory = C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/package
     Name      = wil_sym.psm
-    User      = shvmo
-    Machine   = LAPTOP-5J2D8Q51
+    User      = lavi
+    Machine   = DESKTOP-1JKGU2H
 
 
 Create symbol started.
  
+ WARNING(SPMHA1-301): Create symbol DRC errors exist. 
 
 Create symbol completed.
 

@@ -2,21 +2,22 @@
 |                                 ECO   REPORT                                 |
 |                                                                    Page   1  |
 |------------------------------------------------------------------------------|
-|  C:/Users/shvmo/PycharmProjects/AutoWill/orcad/board/wilkinson.brd           |
-|                                                    Fri Sep 16 17:10:19 2022  |
+|  C:/USERS/LAVI/DESKTOP/PROJECT_WIL/AUTOWILL/ORCAD/board/wilkinson.brd        |
+|                                                    Wed Sep 28 16:14:57 2022  |
 |------------------------------------------------------------------------------|
 | NET CHANGES                                                                  |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
 |   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-  N00184       pins ADDED TO this new net
-                                 R1.1            5100.00 9400.00
-                                 R1.2            5100.00 9700.00
-                                 U1.1            5402.52 9800.00
-                                 U2.1            5402.52 9300.00
-                                 U3.1            4597.48 9500.00
+  OUTPUT_1     pins MOVED FROM this net (to net name listed on right)
+                                 U1.2                           
+                                                                          INPUT
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  OUTPUT_2     pins MOVED FROM this net (to net name listed on right)
+                                 U1.3                           
+                                                                          INPUT
 |------------------------------------------------------------------------------|
-|       Nets changed          :       5                                        |
+|       Nets changed          :       2                                        |
 |                                                                              |
-|   Total ECO changes reported:       5                                        |
+|   Total ECO changes reported:       2                                        |
 |------------------------------------------------------------------------------|

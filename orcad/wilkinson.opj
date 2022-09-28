@@ -1,6 +1,6 @@
 (ExpressProject "wilkinson"
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 P001 (3823098) [10/7/2019]-[09/25/22]")
+  (SoftwareVersion "17.4-2019 P001 (3823098) [10/7/2019]-[09/28/22]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
@@ -14,7 +14,21 @@
       (Type "Schematic Design"))
     (BuildFileAddedOrDeleted "x")
     (CompileFileAddedOrDeleted "x")
-    ("Allegro Netlist Output Board File" ".\board\wilkinson.brd"))
+    ("Allegro Netlist Output Board File" ".\board\wilkinson.brd")
+    (Netlist_TAB "0")
+    ("Create Allegro Netlist" "TRUE")
+    ("View Allegro Netlist Files" "TRUE")
+    ("Allegro Netlist Create DCF File" "FALSE")
+    ("Update Allegro Board" "FALSE")
+    ("Allegro Netlist Remove Etch" "FALSE")
+    ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
+    ("Allegro Netlist Open Board in Allegro" "ALLEGRO")
+    ("Allegro Setup Backup Versions" "3")
+    ("Allegro Setup Ignore Constraints" "FALSE")
+    ("Allegro Setup Part Type Length" "255")
+    ("Allegro Netlist Combine Property String" "PCB Footprint")
+    ("Allegro Netlist Ignore Fixed Property" "FALSE")
+    ("Allegro Netlist User Defined Property" "FALSE"))
   (Folder "Layout"
     (File ".\board\wilkinson.brd"
       (Type "Board File")
@@ -64,4 +78,38 @@
       (DeviceIndex "0")))
   (MPSSessionName "lavi")
   (LastUsedLibraryBrowseDirectory
-     "C:\Cadence\SPB_17.4\tools\capture\library\pspice"))
+     "C:\Cadence\SPB_17.4\tools\capture\library\pspice")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\wilkinson.dsn")
+      (Path "Design Resources" ".\wilkinson.dsn" "SCHEMATIC1")
+      (Path "Design Resources" ".\wilkinson.dsn" "Design Cache")
+      (Path "Design Resources" "Library")
+      (Path "Design Resources" "Library" ".\library1.olb")
+      (Path "Layout")
+      (Select "Design Resources" ".\wilkinson.dsn" "Design Cache" "wilkinson"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 386 0 469"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 5 24 5 1104 24 487")
+        (Scroll "0 168")
+        (Zoom "118")
+        (Occurrence "/"))
+      (Path "C:\USERS\LAVI\DESKTOP\PROJECT_WIL\AUTOWILL\ORCAD\WILKINSON.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))
+    (Doc
+      (Type "COrPrmBrowserDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 5 24 5 1104 24 487"))
+      (Path "C:\USERS\LAVI\DESKTOP\PROJECT_WIL\AUTOWILL\ORCAD\LIBRARY1.OLB")
+      (Package "WILKINSON")
+      (PartType "1")))
+  (ISPCBBASICLICENSE "false"))

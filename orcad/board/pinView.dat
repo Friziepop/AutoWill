@@ -1,0 +1,9 @@
+A!NET_NAME!REFDES!PIN_NUMBER!FUNC_LOGICAL_PATH!COMP_DEVICE_TYPE!FUNC_SCH_SIZE!FUNC_HAS_FIXED_SIZE!FUNC_DES!PIN_CDS_PINID!PIN_TERMINATION!PIN_TERM_IDENT!PIN_NET_SHORT!PIN_XNET_PINS!
+J!C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/board/wilkinson.brd!Wed Sep 28 13:43:10 2022!0.00!0.00!21000.00!17000.00!0.01!mils!WILKINSON!10.400000 mil!2!UP TO DATE!
+S!N00574!R1!1!@wilkinson.schematic1(sch_1):ins96@analog.\r.normal\(chips)!R_WIL_R_100!!!F1!!!!!!
+S!N00578!R1!2!@wilkinson.schematic1(sch_1):ins96@analog.\r.normal\(chips)!R_WIL_R_100!!!F1!!!!!!
+S!INPUT!U1!1!@wilkinson.schematic1(sch_1):ins352@library1.\wilkinson.normal\(chips)!WILKINSON_WIL_SYM_WILKINSON!!!F0!!!!!!
+S!OUTPUT_1!U1!2!@wilkinson.schematic1(sch_1):ins352@library1.\wilkinson.normal\(chips)!WILKINSON_WIL_SYM_WILKINSON!!!F0!!!!!!
+S!OUTPUT_2!U1!3!@wilkinson.schematic1(sch_1):ins352@library1.\wilkinson.normal\(chips)!WILKINSON_WIL_SYM_WILKINSON!!!F0!!!!!!
+S!N00578!U1!4!@wilkinson.schematic1(sch_1):ins352@library1.\wilkinson.normal\(chips)!WILKINSON_WIL_SYM_WILKINSON!!!F0!!!!!!
+S!N00574!U1!5!@wilkinson.schematic1(sch_1):ins352@library1.\wilkinson.normal\(chips)!WILKINSON_WIL_SYM_WILKINSON!!!F0!!!!!!

@@ -1,0 +1,7 @@
+A!NET_NAME!NET_LOGICAL_PATH!NET_VOLTAGE!
+J!C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/board/wilkinson.brd!Wed Sep 28 13:43:10 2022!0.00!0.00!21000.00!17000.00!0.01!mils!WILKINSON!10.400000 mil!2!UP TO DATE!
+S!OUTPUT_2!@wilkinson.schematic1(sch_1):output_2!!
+S!OUTPUT_1!@wilkinson.schematic1(sch_1):output_1!!
+S!INPUT!@wilkinson.schematic1(sch_1):input!!
+S!N00578!@wilkinson.schematic1(sch_1):n00578!!
+S!N00574!@wilkinson.schematic1(sch_1):n00574!!

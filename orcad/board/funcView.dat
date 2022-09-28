@@ -1,0 +1,4 @@
+A!FUNC_LOGICAL_PATH!COMP_DEVICE_TYPE!REFDES!FUNC_PRIM_FILE!COMP_PARENT_PPT!COMP_PARENT_PPT_PART!COMP_PARENT_PART_TYPE!FUNC_SCH_SIZE!FUNC_HAS_FIXED_SIZE!FUNC_DES!FUNC_GROUP!FUNC_ROOM!FUNC_TERM_IDENT!FUNC_CDS_FSP_INSTANCE_ID!FUNC_CDS_FSP_IS_FPGA!FUNC_CDS_FSP_UID!
+J!C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/board/wilkinson.brd!Wed Sep 28 13:43:10 2022!0.00!0.00!21000.00!17000.00!0.01!mils!WILKINSON!10.400000 mil!2!UP TO DATE!
+S!@wilkinson.schematic1(sch_1):ins96@analog.\r.normal\(chips)!R_WIL_R_100!R1!.\pstchip.dat!!!!!!F1!!!!!!!
+S!@wilkinson.schematic1(sch_1):ins352@library1.\wilkinson.normal\(chips)!WILKINSON_WIL_SYM_WILKINSON!U1!.\pstchip.dat!!!!!!F0!!!!!!!
