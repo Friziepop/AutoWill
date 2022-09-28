@@ -1,6 +1,6 @@
 (ExpressProject "wilkinson"
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 P001 (3823098) [10/7/2019]-[09/16/22]")
+  (SoftwareVersion "17.4-2019 P001 (3823098) [10/7/2019]-[09/25/22]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
