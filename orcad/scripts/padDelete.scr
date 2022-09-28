@@ -1,25 +1,31 @@
 # Allegro script
 #	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/padDelete.scr
-#	start time: Sun Sep 25 12:00:13 2022
+#	start time: Sun Sep 25 14:09:54 2022
 #	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
 version 17.4
 
 setwindow pcb
 trapsize 225
-generaledit
-# Macro file: coordinates are relative to pick on replay.
-pick_origin 2.6560 0.0120
-drag_start rel grid 0.0000 0.0000
-drag_stop rel -0.1933 0.2608
-prepopup rel 0.1753 0.0720
-pop dyn_option_select @:@Delete 
-delete 
-generaledit 
-drag_start rel grid 0.0630 -0.3553
-drag_stop rel -0.2473 -0.2203
-prepopup rel 0.1619 -0.0359
-pop dyn_option_select @:@Delete 
-delete 
+add pin 
+setwindow form.mini
+FORM mini pad_name s_r28t30m38_40p28_30 
+setwindow pcb
+pick grid -0.6620 -0.0063
+prepopup -0.6620 -0.0063
+oops 
+pick grid -0.6980 -0.0063
+pick grid 2.7103 0.2680
+pick grid 2.6608 -0.2176
+prepopup 3.3892 0.6232
+rotate 
+iangle 15.411
+pick grid 3.3263 0.6277
+prepopup 3.4612 -0.7032
+rotate 
+iangle -28.633
+pick grid 3.2993 -0.6492
+prepopup 1.0376 -0.4064
+done 
 generaledit 
 
-#	stop time: Sun Sep 25 12:00:40 2022
+#	stop time: Sun Sep 25 14:10:34 2022

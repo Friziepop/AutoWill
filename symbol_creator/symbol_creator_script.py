@@ -1,21 +1,22 @@
-import math
 import os
+
+from materials.materials_db import MaterialDB
 from symbol_creator.dxf_generator import DxfAwrGenerator
 from symbol_creator.footprint_generator import FootprintGenerator
-from symbol_creator.predictors import ModelPredictor, CsvPredictor, WidthPredictor, ConstPredictor
-from symbol_creator.symbol_params import SymbolParams, DxfGenerationParams, FootprintParams
-from materials.materials_db import MaterialDB
+from symbol_creator.symbol_params import SymbolParams, FootprintParams, DxfGenerationParams
 
 MODELS_DIR = "../learning/models"
 MATERIALS_DB = "../materials/materials_db.csv"
 
 
 def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str = MATERIALS_DB):
-    print(f"creating symbol for material_id:{params.material_id} , frequency:{params.frequency}, bandwidth:{params.bandwidth}")
+    print(
+        f"creating symbol for material_id:{params.material_id} , frequency:{params.frequency}, bandwidth:{params.bandwidth}")
     material_db = MaterialDB(csv_path=materials_db)
 
     material = material_db.get_by_id(params.material_id)
 
+    '''
     height_predictor = ModelPredictor(models_dir=models_dir, model_feature="HEIGHT")
     thickness_predictor = CsvPredictor(material_db=material_db)
     quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="QUARTER")
@@ -34,28 +35,32 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     print(f"rootwidth_predictor:{rootwidth_predictor.predict(symbol_input_params=params)}")
     print(f"res_predictor:{res_predictor.predict(symbol_input_params=params)}")
     print(f"radius_predictor:{radius_predictor.predict(symbol_input_params=params)}")
+    
+    '''
 
     out_path = os.getcwd()
+
     dxf_params = DxfGenerationParams(
-        height=height_predictor.predict(symbol_input_params=params),
-        thickness=thickness_predictor.predict(symbol_input_params=params),
-        quarter=thickness_predictor.predict(symbol_input_params=params),
-        width=width_predictor.predict(symbol_input_params=params),
-        rootwidth=width_predictor.predict(symbol_input_params=params),
-        res=res_predictor.predict(symbol_input_params=params),
-        radius=radius_predictor.predict(symbol_input_params=params),
-        out_path=out_path
+        height=0.1,
+        thickness=0.01,
+        quarter= 3.1176007026386072,
+        width= 0.20863645369886577,
+        rootwidth= 0.10838520376208859,
+        res=100,
+        out_path=out_path,
     )
+
     footprint_params = FootprintParams(
-        macro_path="",
-        dxf_file=os.path.join(out_path,"out.dxf"),
-        dxf_mapping_file="",
+        macro_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\scripts\\wil_symbol_macro.scr",
+        dxf_file=os.path.join(out_path, "out2.dxf"),
+        dxf_mapping_file="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\scripts\\resources\\mapping_setup.cnv",
         material_name=material.name,
         pad_name="s_r28t30m38_40p28_30",
         material_er=material.er,
         material_tanl=material.tanl,
-        draw_path="",
-        allegro_exe_path="",
+        draw_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\package\\wil_sym.dra",
+        allegro_exe_path="C:\\Cadence\\SPB_17.4\\tools\\bin\\allegro.exe",
+        material_height=material.height
     )
     print(f"Generating dxf file out:{out_path}")
     DxfAwrGenerator(params=dxf_params).generate()

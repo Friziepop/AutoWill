@@ -28,7 +28,7 @@ def run_simulations(ids, step_size):
         freqs = [float(freq) for freq in np.arange(chosen_mat.start_freq, chosen_mat.end_freq, step_size)]
         print(f"freqs from :{freqs[0]} , to :{freqs[-1]} ,step :{step_size}")
 
-        for freq in freqs:
+        for freq in [10.0]:
             set_meshing(freq)
             bandwidth = freq / 10
 
@@ -38,7 +38,11 @@ def run_simulations(ids, step_size):
             start_width = MicroStripCopiedCalc().calc(er=chosen_mat.er, height=chosen_mat.height,
                                                       thickness=chosen_mat.thickness, z0=50, freq=freq)
 
-            input_padding = (2 * chosen_mat.pad_b + chosen_mat.pad_c - start_width) / 2
+            root_width = MicroStripCopiedCalc().calc(er=chosen_mat.er, height=chosen_mat.height,
+                                                     thickness=chosen_mat.thickness, z0=70.7, freq=freq)
+
+            input_padding = (2 * chosen_mat.pad_b + chosen_mat.pad_c + 2 * root_width - start_width) / 2
+
             quarter_wavelength = quarter_wavelength - input_padding
 
             constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False),

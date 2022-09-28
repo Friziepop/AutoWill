@@ -17,10 +17,10 @@ QtSignal MaterialDlgUI m_materialView MBP "(ZINC,MATERIAL_NAME)" "(2,2,2,0)"
 QtSignal MaterialDlgUI m_materialView MBR "(ZINC,MATERIAL_NAME)" "(3,2,0,0)"
 QtSignal MaterialDlgUI m_materialView ContextMenu "(ZINC,MATERIAL_NAME)"
 QtFillin "Create New"
-QtSignal inCell text editingFinished  {MATERIAL_NAME_UPPER} #4350B-USER
+QtSignal inCell text editingFinished  {MATERIAL_NAME_UPPER}
 QtSignal MaterialDlgUI m_materialView MBP "({MATERIAL_NAME_UPPER},MATERIAL_THICKNESS)" "(2,1,1,0)"
 QtSignal MaterialDlgUI m_materialView MBR "({MATERIAL_NAME_UPPER},MATERIAL_THICKNESS)" "(3,1,0,0)"
-QtSignal inCell text editingFinished {MATERIAL_HEIGHT} #"0.1"
+QtSignal inCell text editingFinished {MATERIAL_HEIGHT}
 QtSignal MaterialDlgUI m_materialView MBP "({MATERIAL_NAME_UPPER},MATERIAL_DIEL_CONST)" "(2,1,1,0)"
 QtSignal MaterialDlgUI m_materialView MBR "({MATERIAL_NAME_UPPER},MATERIAL_DIEL_CONST)" "(3,1,0,0)"
 QtSignal SubModelTabDlgUI m_tabWidget doAddNewTab
@@ -28,15 +28,15 @@ QtSignal m_tabWidget MaterialSubDataView_20C MBP "(_ADD_ROW_,MATERIAL_FREQUENCY)
 QtSignal "(2,1,1,0)"
 QtSignal m_tabWidget MaterialSubDataView_20C MBR "(_ADD_ROW_,MATERIAL_FREQUENCY)" +
 QtSignal "(3,1,0,0)"
-QtSignal inCell text editingFinished 6000 #frequency
+QtSignal inCell text editingFinished 6000
 QtSignal m_tabWidget MaterialSubDataView_20C MBP "(6000,MATERIAL_REL_PERMITTIVITY)" +
 QtSignal "(2,1,1,0)"
 QtSignal m_tabWidget MaterialSubDataView_20C MBR "(6000,MATERIAL_REL_PERMITTIVITY)" +
 QtSignal "(3,1,0,0)"
-QtSignal inCell text editingFinished {MATERIAL_ER} #"3.66"
+QtSignal inCell text editingFinished {MATERIAL_ER}
 QtSignal m_tabWidget MaterialSubDataView_20C MBP "(6000,MATERIAL_LOSS_TANGENT)" "(2,1,1,0)"
 QtSignal m_tabWidget MaterialSubDataView_20C MBR "(6000,MATERIAL_LOSS_TANGENT)" "(3,1,0,0)"
-QtSignal inCell text editingFinished {MATERIAL_TAN_L} #"0.0037"
+QtSignal inCell text editingFinished {MATERIAL_TAN_L}
 QtSignal SubModelTabDlgUI m_okBtn clicked
 QtSignal frame_3 m_okBtn clicked
 generaledit
@@ -59,8 +59,8 @@ QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged Electrical
 QtSignal m_stackupsTab m_stackupsTabXSectionView MBP "(DIELECTRIC__2_,MATERIAL)" "(2,1,1,0)"
 QtSignal m_stackupsTab m_stackupsTabXSectionView MBR "(DIELECTRIC__2_,MATERIAL)" "(3,1,0,0)"
 # QtSignal inCell combo CurrentIndexChanged "3m Interface Pad 5592"
-QtSignal inCell combo CurrentIndexChanged {MATERIAL_NAME_LOWER} #"4350b-user"
-QtSignal inCell combo activated {MATERIAL_NAME_LOWER} #"4350b-user"
+QtSignal inCell combo CurrentIndexChanged {MATERIAL_NAME_LOWER}
+QtSignal inCell combo activated {MATERIAL_NAME_LOWER}
 QtSignal CCMQtXSectionDlg m_ApplyBtn clicked
 QtSignal CCMQtXSectionDlg AddLayerDlg closed
 QtSignal CCMQtXSectionDlg m_OkBtn clicked
@@ -83,10 +83,10 @@ generaledit
 dxf in 
 setwindow form.dxfInMain
 FORM dxfInMain browsedxf  
-fillin "{DXF_FILE}" #"C:/Users/shvmo/PycharmProjects/AutoWill/WilkinsonPowerDivider.dxf"
+fillin "{DXF_FILE}"
 FORM dxfInMain fillshapes YES 
 FORM dxfInMain browselyrcnv  
-fillin  "{DXF_MAPPING_FILE}" #"C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/resources/mapping_setup.cnv"
+fillin  "{DXF_MAPPING_FILE}"
 FORM dxfInMain import  
 setwindow pcb
 trapsize 1182551
@@ -356,7 +356,7 @@ setwindow pcb
 trapsize 225
 add pin 
 setwindow form.mini
-FORM mini pad_name {PAD_NAME} ##s_r28t30m38_40p28_30
+FORM mini pad_name {PAD_NAME}
 setwindow pcb
 pick grid -0.6530 0.0162
 prepopup -0.6440 0.0072

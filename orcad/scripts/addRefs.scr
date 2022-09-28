@@ -1,156 +1,20 @@
 # Allegro script
 #	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/addRefs.scr
-#	start time: Sun Sep 25 12:27:36 2022
+#	start time: Sun Sep 25 14:36:57 2022
 #	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
 version 17.4
 
 setwindow pcb
 trapsize 225
 generaledit
-# Macro file: coordinates are relative to pick on replay.
-add pin 
-label refdes 
-pick_origin
-pick rel grid 0.0000 0.0000
-setwindow pcb
-pick rel grid 0.4856 -0.1439
-setwindow form.mini
-FORM mini text_marker_size 0.0500 
-setwindow pcb
-pick rel grid 0.1799 0.3148
-setwindow pcb
-pick rel grid -0.1843 -0.2383
-setwindow pcb
-pick rel grid -0.0630 -0.0945
-setwindow pcb
-pick rel grid -0.1124 -0.1394
-setwindow pcb
-pick rel grid 0.0045 -0.1304
-setwindow pcb
-pick rel grid 0.1439 -0.2203
-setwindow pcb
-pick rel grid 0.0270 0.1484
-setwindow pcb
-prepopup rel 0.3777 -0.2158
-setwindow form.mini
-FORM mini text_block 2 
-FORM mini text_block 1 
-FORM mini text_justification Right 
-setwindow pcb
-pick rel grid 0.0224 0.4856
-setwindow pcb
-pick rel grid 0.3193 0.0629
-setwindow pcb
-pick rel grid 0.5531 0.2383
-setwindow pcb
-pick rel grid 0.3687 0.4137
-setwindow form.mini
-FORM mini text_justification Left 
-setwindow pcb
-pick rel grid 0.2473 0.2248
-setwindow pcb
-prepopup rel -0.3642 -0.7149
-done 
-generaledit 
-save 
-fillin yes 
-generaledit 
-setwindow text
-close
-setwindow pcb
-setwindow pcb
-trapsize 450
-setwindow pcb
-trapsize 225
-fillin "C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/script.scr"
-replay C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/script.scr 
-trapsize 225
-setwindow pcb
-prepopup rel -3.8938 -0.4090
-pick rel grid -0.2023 0.2518
-setwindow pcb
-trapsize 112
-setwindow pcb
-trapsize 225
-setwindow pcb
-trapsize 450
-setwindow pcb
-trapsize 225
-label refdes 
-pick rel grid -0.0448 -1.6591
-setwindow pcb
-prepopup rel -0.0539 0.1663
-done 
-generaledit 
-pick rel grid 0.1798 1.6188
-setwindow pcb
-trapsize 450
-setwindow pcb
-trapsize 899
-drag_start rel grid 6.6729 2.1223
-drag_stop rel -8.9031 -5.5937
-label refdes 
-pick rel grid 1.5648 1.2051
-setwindow pcb
-prepopup rel 0.0000 0.0000
-done 
-generaledit 
 label refdes 
 setwindow pcb
-trapsize 450
-prepopup rel 1.0433 2.5001
-pick rel grid -0.0540 0.1529
+prepopup -0.8733 -1.1978
 setwindow pcb
-pick rel grid -0.6025 0.4586
-setwindow pcb
-pick rel grid 0.0000 0.0000
-setwindow pcb
-pick rel grid 5.9174 0.3418
-setwindow pcb
-pick rel grid 0.3237 -1.6997
-setwindow pcb
-pick rel grid -0.8633 -2.0954
-setwindow pcb
-prepopup rel -0.0899 0.0360
-done 
-generaledit 
-new 
-fillin yes 
-newdrawfillin "menu_cancel"
-generaledit 
-setwindow text
-close
-setwindow pcb
-pick rel grid -6.2592 -0.0540
-drag_start rel grid 1.1781 1.6458
-drag_stop rel -0.5396 -1.9515
-prepopup rel -0.0180 0.1978
-label refdes 
-pick rel grid 5.9175 1.7627
-setwindow pcb
-prepopup rel -0.4857 0.0809
-setwindow pcb
+pick -0.8870 -1.1890
 text 1
 done 
 setwindow pcb
 generaledit 
-drag_start rel grid 0.5215 0.9083
-drag_stop rel -1.1331 -1.5019
-pick rel grid 1.4569 1.7087
-drag_start rel grid 0.0000 0.0000
-drag_stop rel -1.7177 -1.4299
-drag_start rel grid 1.0702 0.7104
-move 
-drag_stop rel grid -5.9534 -2.3202
-generaledit 
-label refdes 
-pick rel grid 6.3311 2.6890
-pick rel grid -0.0450 -0.0990
-pick rel grid 0.0000 0.0000
-fillin "C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/script.scr"
-replay C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/script.scr 
-trapsize 225
-setwindow pcb
-fillin "C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/addPads.scr"
 
-#	stop time: Sun Sep 25 13:53:29 2022
+#	stop time: Sun Sep 25 14:37:21 2022

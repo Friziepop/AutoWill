@@ -15,7 +15,6 @@ class DxfGenerationParams:
     width: float
     rootwidth: float
     res: float
-    radius: float
     quarter: float
     out_path: str
 
@@ -28,6 +27,7 @@ class FootprintParams:
     material_name: str
     pad_name: str
     material_er: float
+    material_height: float
     material_tanl: float
     draw_path: str
     allegro_exe_path: str

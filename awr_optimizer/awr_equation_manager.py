@@ -1,5 +1,5 @@
-from awr_connector import AwrConnector
-from optimization_constraint import OptimizationConstraint
+from awr_optimizer.awr_connector import AwrConnector
+from awr_optimizer.optimization_constraint import OptimizationConstraint
 
 
 class AwrEquationManager(AwrConnector):
