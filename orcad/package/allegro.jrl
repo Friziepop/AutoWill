@@ -1,0 +1,144 @@
+\t (00:00:01) allegro 17.4 S028 Windows SPB 64-bit Edition
+\t (00:00:01)     Journal start - Wed Sep 28 13:43:23 2022
+\t (00:00:01)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=23008 CPUs=8
+\t (00:00:01) CmdLine= C:\Cadence\SPB_17.4\tools\bin\allegro.exe -s C:\Users\shvmo\PycharmProjects\AutoWill\symbol_creator\f1664fa8-f9b5-4d49-939a-bc045d493b0a__tmp.scr C:\Users\shvmo\PycharmProjects\AutoWill\orcad\package\wil_sym.dra
+\t (00:00:01) 
+   (00:00:01) Loading axlcore.cxt 
+\t (00:00:04) Opening existing design...
+\i (00:00:04) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged "wil_sym"
+\d (00:00:04) Design opened: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/package/wil_sym.dra
+\i (00:00:04) trapsize 273
+\i (00:00:04) trapsize 280
+\i (00:00:04) trapsize 273
+\i (00:00:04) trapsize 231
+\i (00:00:04) trapsize 236
+\i (00:00:04) replay 'C:`\Users`\shvmo`\PycharmProjects`\AutoWill`\symbol_creator`\f1664fa8-f9b5-4d49-939a-bc045d493b0a__tmp.scr' 
+\i (00:00:04) version 17.4 
+\t (00:00:04) Script version: 17.4
+\i (00:00:04) setwindow pcb 
+\i (00:00:04) trapsize 1182551 
+\i (00:00:04) generaledit 
+\i (00:00:04) define materials 
+\i (00:00:05) generaledit 
+\i (00:00:05) version 17.4 
+\t (00:00:05) Script version: 17.4
+\i (00:00:05) setwindow pcb 
+\i (00:00:05) trapsize 1182551 
+\i (00:00:05) generaledit 
+\i (00:00:05) xsection 
+\i (00:00:06) QtSignal CCMQtXSectionDlg AddLayerDlg closed 
+\i (00:00:06) generaledit 
+\i (00:00:06) version 17.4 
+\t (00:00:06) Script version: 17.4
+\i (00:00:06) setwindow pcb 
+\i (00:00:06) trapsize 1182551 
+\i (00:00:06) generaledit 
+\i (00:00:06) dxf in 
+\i (00:00:06) setwindow form.dxfInMain 
+\i (00:00:06) FORM dxfInMain browsedxf 
+\i (00:00:06) fillin 'C:`\Users`\shvmo`\PycharmProjects`\AutoWill`\symbol_creator`\out2.dxf' 
+   (00:00:06) Loading consmgr.cxt 
+   (00:00:06) Loading acns_formula.cxt 
+   (00:00:06) Loading mfg.cxt 
+\i (00:00:06) FORM dxfInMain fillshapes YES 
+\i (00:00:06) FORM dxfInMain browselyrcnv 
+\i (00:00:06) fillin 'C:`\Users`\shvmo`\PycharmProjects`\AutoWill`\orcad`\scripts`\resources`\mapping_setup.cnv' 
+\i (00:00:06) FORM dxfInMain import 
+\t (00:00:06) Starting dxf2a...
+\t (00:00:07) Opening existing design...
+\i (00:00:07) trapsize 685895
+\i (00:00:07) trapsize 701942
+\i (00:00:07) trapsize 685895
+\i (00:00:07) trapsize 1231073
+\i (00:00:07) trapsize 1182551
+\w (00:00:07) Incremental option off, existing design was replaced. Re-open design to restore.
+\i (00:00:07) setwindow pcb 
+\i (00:00:08) trapsize 1182551 
+\i (00:00:08) setwindow form.dxfInMain 
+\i (00:00:08) FORM dxfInMain cancel 
+\i (00:00:08) setwindow pcb 
+\i (00:00:08) generaledit 
+\i (00:00:08) setwindow pcb 
+\i (00:00:08) pick 0 0 
+\t (00:00:08) last pick:  0.0000 0.0000
+\i (00:00:08) drag_start rel grid 0.0000 0.0000 
+\i (00:00:08) drag_stop rel -26914.8533 -20765.5899 
+\i (00:00:08) zoom selection 
+\i (00:00:08) trapsize 225
+\i (00:00:08) version 17.4 
+\t (00:00:08) Script version: 17.4
+\i (00:00:08) setwindow pcb 
+\i (00:00:08) trapsize 1182551 
+\i (00:00:08) generaledit 
+\i (00:00:08) pick 0 0 
+\t (00:00:08) last pick:  0.0000 0.0000
+\i (00:00:08) prepopup rel 0.0000 0.0000 
+\i (00:00:08) prepopup 0.0000 0.0000
+\i (00:00:08) pop dyn_option_select 'Quick Utilities@:@Grids...' 
+\i (00:00:08) define grid 
+\t (00:00:08) Spacing fields allow simple equations to aid calculations; prefix with =
+\i (00:00:08) setwindow form.grid 
+\i (00:00:08) FORM grid non_etch non_etch_x_grids 0.001 
+\i (00:00:08) FORM grid non_etch non_etch_y_grids 0.001 
+\i (00:00:08) FORM grid all_etch all_etch_x_grids 0.001 
+\i (00:00:08) FORM grid all_etch all_etch_y_grids 0.001 
+\i (00:00:08) FORM grid apply 
+\i (00:00:08) FORM grid done 
+\i (00:00:08) setwindow pcb 
+\i (00:00:08) version 17.4 
+\t (00:00:08) Script version: 17.4
+\i (00:00:08) setwindow pcb 
+\i (00:00:08) trapsize 225 
+\i (00:00:08) generaledit 
+\i (00:00:08) cmgr_spac 
+\i (00:00:09) QtSignal m_domainSelector WS_Spacing itemSelectionChanged 
+\i (00:00:09) QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged Electrical 
+\i (00:00:09) QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged 
+\i (00:00:09) QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged Electrical 
+\i (00:00:09) QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged Spacing 
+\i (00:00:09) QtSignal m_domainSelector WS_Spacing itemSelectionChanged 'Spacing Constraint Set' + 
+\i (00:00:09) QtSignal 'All Layers' 
+\i (00:00:09) QtSignal CCMViewHost167 All_Layers_WorksheetView167 expand (WIL_SYM,NAME) 
+\i (00:00:09) QtSignal All_Layers_WorksheetView167 Frozen_All_Layers_WorksheetView167 expand (WIL_SYM,NAME) 
+\i (00:00:09) QtSignal Frozen_All_Layers_WorksheetView167 Frozen_All_Layers_WorksheetView167Header sectionMoved + 
+\i (00:00:09) QtSignal 0 0 1 
+\i (00:00:09) QtSignal Frozen_All_Layers_WorksheetView167 Frozen_All_Layers_WorksheetView167Header sectionMoved + 
+\i (00:00:09) QtSignal 1 1 0 
+\i (00:00:09) QtSignal All_Layers_WorksheetView167 All_Layers_WorksheetView167Header sectionMoved + 
+\i (00:00:09) QtSignal 0 0 1 
+\i (00:00:09) QtSignal All_Layers_WorksheetView167 All_Layers_WorksheetView167Header sectionMoved + 
+\i (00:00:09) QtSignal 1 1 0 
+\i (00:00:09) QtSignal Frozen_All_Layers_WorksheetView167 Frozen_All_Layers_WorksheetView167Header sectionMoved + 
+\i (00:00:09) QtSignal 0 1 3 
+\i (00:00:09) QtSignal Frozen_All_Layers_WorksheetView167 Frozen_All_Layers_WorksheetView167Header sectionMoved + 
+\i (00:00:09) QtSignal 3 3 1 
+\i (00:00:09) QtSignal All_Layers_WorksheetView167 All_Layers_WorksheetView167Header sectionMoved + 
+\i (00:00:09) QtSignal 0 1 3 
+\i (00:00:09) QtSignal All_Layers_WorksheetView167 All_Layers_WorksheetView167Header sectionMoved + 
+\i (00:00:09) QtSignal 3 3 1 
+\i (00:00:09) QtSignal CCMViewHost167 tableWidget currentChanged wil_sym 
+\i (00:00:09) generaledit 
+\i (00:00:09) QtSignal CCMViewHost167 All_Layers_WorksheetView167 MBP (WIL_SYM.DEFAULT,SMDPIN_TO_TESTPIN_SPACING) + 
+\i (00:00:09) QtSignal (2,1,1,0) 
+\i (00:00:09) QtSignal CCMViewHost167 All_Layers_WorksheetView167 MBR (WIL_SYM.DEFAULT,SMDPIN_TO_TESTPIN_SPACING) + 
+\i (00:00:09) QtSignal (3,1,0,0) 
+\i (00:00:09) QtSignal inCell text editingFinished 0.0400 
+\i (00:00:09) QtSignal CCMViewHost167 All_Layers_WorksheetView167 MBP (WIL_SYM.DEFAULT,SHAPE_TO_SMDPIN_SPACING) + 
+\i (00:00:09) QtSignal (2,1,1,0) 
+\i (00:00:09) QtSignal CCMViewHost167 All_Layers_WorksheetView167 MBR (WIL_SYM.DEFAULT,SHAPE_TO_SMDPIN_SPACING) + 
+\i (00:00:09) QtSignal (3,1,0,0) 
+\i (00:00:09) QtSignal inCell text editingFinished 0.0400 
+\i (00:00:09) setwindow cmgr 
+\i (00:00:09) cm exit 
+\i (00:00:09) drc update 
+\t (00:00:09) Performing DRC...
+\t (00:00:09) DRC done; 23 errors detected.
+\i (00:00:09) generaledit 
+\i (00:00:09) version 17.4 
+\t (00:00:09) Script version: 17.4
+\i (00:00:09) setwindow pcb 
+\i (00:00:09) trapsize 225 
+\i (00:00:09) generaledit 
+\i (00:00:09) save 
+\i (00:00:09) fillin yes 
+\e (00:00:10) ERROR(SPMHGE-7): Error(s) occurred, check logfile.
