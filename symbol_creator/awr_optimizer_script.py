@@ -28,7 +28,7 @@ def run_simulations(ids, step_size):
         freqs = [float(freq) for freq in np.arange(chosen_mat.start_freq, chosen_mat.end_freq, step_size)]
         print(f"freqs from :{freqs[0]} , to :{freqs[-1]} ,step :{step_size}")
 
-        for freq in [10.0]:
+        for freq in [1.0]:
             set_meshing(freq)
             bandwidth = freq / 10
 
