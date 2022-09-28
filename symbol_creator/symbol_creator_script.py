@@ -52,7 +52,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
 
     footprint_params = FootprintParams(
         macro_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\scripts\\wil_symbol_macro.scr",
-        dxf_file=os.path.join(out_path, "out2.dxf"),
+        dxf_file=os.path.join(out_path, "out.dxf"),
         dxf_mapping_file="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\scripts\\resources\\mapping_setup.cnv",
         material_name=material.name,
         pad_name="s_r28t30m38_40p28_30",
