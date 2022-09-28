@@ -1,0 +1,21 @@
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/deletePads.scr
+#	start time: Wed Sep 28 15:25:28 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 175
+generaledit
+pick grid 1.98573293162 -0.1047 # X=2*QUARTER/3.14
+prepopup 1.98573293162 -0.1047 # X=2*QUARTER/3.14
+pop dyn_option_select @:@Delete 
+delete 
+generaledit 
+pick grid 1.98573293162 0.1047 # X=2*QUARTER/3.14
+prepopup 1.98573293162 0.1047 # X=2*QUARTER/3.14
+pop dyn_option_select @:@Delete 
+delete 
+generaledit 
+
+#	stop time: Wed Sep 28 15:25:44 2022

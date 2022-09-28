@@ -1,0 +1,167 @@
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/setupMatAdd.scr
+#	start time: Sat Sep 24 11:45:54 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 1182551
+generaledit
+# Macro file: coordinates are relative to pick on replay.
+define materials
+QtSignal MaterialDlgUI m_materialView MBP "(ZIRCON,MATERIAL_INUSE)" "(2,2,2,0)"
+QtSignal MaterialDlgUI m_materialView MBR "(ZIRCON,MATERIAL_INUSE)" "(3,2,0,0)"
+QtSignal MaterialDlgUI m_materialView ContextMenu "(ZIRCON,MATERIAL_INUSE)"
+QtSignal MaterialDlgUI m_materialView MBP "(ZINC,MATERIAL_NAME)" "(2,2,2,0)"
+QtSignal MaterialDlgUI m_materialView MBR "(ZINC,MATERIAL_NAME)" "(3,2,0,0)"
+QtSignal MaterialDlgUI m_materialView ContextMenu "(ZINC,MATERIAL_NAME)"
+QtFillin "Create New"
+QtSignal inCell text editingFinished  {MATERIAL_NAME_UPPER}
+QtSignal MaterialDlgUI m_materialView MBP "({MATERIAL_NAME_UPPER},MATERIAL_THICKNESS)" "(2,1,1,0)"
+QtSignal MaterialDlgUI m_materialView MBR "({MATERIAL_NAME_UPPER},MATERIAL_THICKNESS)" "(3,1,0,0)"
+QtSignal inCell text editingFinished {MATERIAL_HEIGHT}
+QtSignal MaterialDlgUI m_materialView MBP "({MATERIAL_NAME_UPPER},MATERIAL_DIEL_CONST)" "(2,1,1,0)"
+QtSignal MaterialDlgUI m_materialView MBR "({MATERIAL_NAME_UPPER},MATERIAL_DIEL_CONST)" "(3,1,0,0)"
+QtSignal SubModelTabDlgUI m_tabWidget doAddNewTab
+QtSignal m_tabWidget MaterialSubDataView_20C MBP "(_ADD_ROW_,MATERIAL_FREQUENCY)" +
+QtSignal "(2,1,1,0)"
+QtSignal m_tabWidget MaterialSubDataView_20C MBR "(_ADD_ROW_,MATERIAL_FREQUENCY)" +
+QtSignal "(3,1,0,0)"
+QtSignal inCell text editingFinished 6000
+QtSignal m_tabWidget MaterialSubDataView_20C MBP "(6000,MATERIAL_REL_PERMITTIVITY)" +
+QtSignal "(2,1,1,0)"
+QtSignal m_tabWidget MaterialSubDataView_20C MBR "(6000,MATERIAL_REL_PERMITTIVITY)" +
+QtSignal "(3,1,0,0)"
+QtSignal inCell text editingFinished {MATERIAL_ER}
+QtSignal m_tabWidget MaterialSubDataView_20C MBP "(6000,MATERIAL_LOSS_TANGENT)" "(2,1,1,0)"
+QtSignal m_tabWidget MaterialSubDataView_20C MBR "(6000,MATERIAL_LOSS_TANGENT)" "(3,1,0,0)"
+QtSignal inCell text editingFinished {MATERIAL_TAN_L}
+QtSignal SubModelTabDlgUI m_okBtn clicked
+QtSignal frame_3 m_okBtn clicked
+generaledit
+
+#	stop time: Sat Sep 24 11:47:35 2022
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/setupMat.scr
+#	start time: Sat Sep 24 12:01:04 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 1182551
+generaledit
+# Macro file: coordinates are relative to pick on replay.
+xsection
+QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged
+QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged Electrical
+QtSignal m_stackupsTab m_stackupsTabXSectionView MBP "(DIELECTRIC__2_,MATERIAL)" "(2,1,1,0)"
+QtSignal m_stackupsTab m_stackupsTabXSectionView MBR "(DIELECTRIC__2_,MATERIAL)" "(3,1,0,0)"
+# QtSignal inCell combo CurrentIndexChanged "3m Interface Pad 5592"
+QtSignal inCell combo CurrentIndexChanged {MATERIAL_NAME_LOWER}
+QtSignal inCell combo activated {MATERIAL_NAME_LOWER}
+QtSignal CCMQtXSectionDlg m_ApplyBtn clicked
+QtSignal CCMQtXSectionDlg AddLayerDlg closed
+QtSignal CCMQtXSectionDlg m_OkBtn clicked
+QtSignal CCMQtXSectionDlg AddLayerDlg closed
+generaledit
+
+#	stop time: Sat Sep 24 12:01:29 2022
+
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/dxfImport.scr
+#	start time: Sat Sep 24 12:18:44 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 1182551
+generaledit
+# Macro file: coordinates are relative to pick on replay.
+dxf in 
+setwindow form.dxfInMain
+FORM dxfInMain browsedxf  
+fillin "{DXF_FILE}"
+FORM dxfInMain fillshapes YES 
+FORM dxfInMain browselyrcnv  
+fillin  "{DXF_MAPPING_FILE}"
+FORM dxfInMain import  
+setwindow pcb
+trapsize 1182551
+setwindow form.dxfInMain
+FORM dxfInMain cancel  
+setwindow pcb
+generaledit 
+setwindow pcb
+pick 0 0
+drag_start rel grid 0.0000 0.0000
+drag_stop rel -26914.8533 -20765.5899
+zoom selection
+
+#	stop time: Sat Sep 24 12:19:37 2022
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/setupGrid.scr
+#	start time: Sat Sep 24 11:55:03 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 1182551
+generaledit
+# Macro file: coordinates are relative to pick on replay.
+pick 0 0
+prepopup rel 0.0000 0.0000
+pop dyn_option_select 'Quick Utilities@:@Grids...' 
+define grid 
+setwindow form.grid
+FORM grid non_etch non_etch_x_grids 0.001 
+FORM grid non_etch non_etch_y_grids 0.001 
+FORM grid all_etch all_etch_x_grids 0.001 
+FORM grid all_etch all_etch_y_grids 0.001 
+FORM grid apply  
+FORM grid done  
+setwindow pcb
+
+#	stop time: Sat Sep 24 11:55:27 2022
+
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/refdef.scr
+#	start time: Sun Sep 25 14:35:31 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 225
+generaledit
+label refdes
+setwindow pcb
+prepopup -0.4777 -0.8246
+setwindow pcb
+pick -0.8730 -0.9860
+text 1
+done
+setwindow pcb
+generaledit
+
+#	stop time: Sun Sep 25 14:35:46 2022
+
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/save.scr
+#	start time: Sun Sep 25 14:38:39 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 225
+generaledit
+save 
+fillin yes 
+generaledit 
+
+#	stop time: Sun Sep 25 14:38:48 2022
+

@@ -1,0 +1,18 @@
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/mergeShapes.scr
+#	start time: Wed Sep 28 16:14:44 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 180
+generaledit
+shape merge shapes
+pick grid 0 0.50842186063 # y=WIDTH/2 + INPUT_PADDING
+pick grid 0 0.50842186063 # y=WIDTH/2 + INPUT_PADDING
+pick grid 0 0.10431822684 # Y=WIDTH/2
+pick grid -0.05419260188 0 # X=ROOTWIDTH/2
+pick grid 0 -0.10431822684 # Y=-WIDTH/2
+pick grid 0 -0.50842186063 # y=-(WIDTH/2 + INPUT_PADDING)
+
+#	stop time: Wed Sep 28 16:15:13 2022
