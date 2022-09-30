@@ -1,0 +1,23 @@
+# Allegro script
+#	file: C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/package/connectPads.scr
+#	start time: Fri Sep 30 16:18:09 2022
+#	Version: 17.4-2019 P001 (3823098) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+generaledit
+add connect 
+pick grid -0.7042 -0.0232 # pad 1 x = -root/2 - QURTER/10 - PADSTACK_MID_PADDING , y=0
+pick grid -0.4386 -0.0021 # pad 1 x = -root/2 - QURTER/10 , y =0
+pick grid 2.6734 0.2593 # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root - PADSTACK_MID_PADDING
+pick grid 2.6734 0.4913 # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root
+pick grid 2.6692 -0.2973 # pad 5  x = 2*R , y = -(width/2 +INPUT_PADDING -root - PADSTACK_MID_PADDING)
+pick grid 2.6481 -0.5081 # pad 5  x = 2*R , y = -(width/2 +INPUT_PADDING -root)
+pick grid 3.2806 -0.6135 # pad 3 x = DXF_X + (QURTER/20 + PADSTACK_MID_PADDING) *cos , y = -DXF_Y + (QURTER/20 + PADSTACK_MID_PADDING) *sin
+pick grid 3.0614 -0.6220 # pad 3 x = DXF_X + (QURTER/20) *cos , y = -DXF_Y + (QURTER/20) *sin
+pick grid 3.1331 0.5630 # pad 2 x = DXF_X + (QURTER/20 + PADSTACK_MID_PADDING) *cos , y = DXF_Y + (QURTER/20 + PADSTACK_MID_PADDING) *sin
+pick grid 3.0782 0.6093 #pad 2 x = DXF_X + (QURTER/20) *cos , y = DXF_Y + (QURTER/20) *sin
+done
+generaledit
+
+#	stop time: Fri Sep 30 16:19:15 2022

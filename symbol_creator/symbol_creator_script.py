@@ -1,4 +1,5 @@
 import os
+from time import sleep
 
 from materials.materials_db import MaterialDB
 from symbol_creator.dxf_generator import DxfAwrGenerator
@@ -44,7 +45,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     dxf_params = DxfGenerationParams(
         height=0.1,
         thickness=0.01,
-        quarter=3.1176007026386072,
+        quarter=20.123,
         width=0.20863645369886577,
         rootwidth=0.10838520376208859,
         res=100,
@@ -54,7 +55,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     print(f"Generating dxf file out:{out_path}")
     DxfAwrGenerator(params=dxf_params).generate()
     print("generated dxf")
-
+    sleep(1)
     dxf_extractor = WilDxfExtractor(os.path.join(out_path, "out.dxf"))
     upper_mid_point = dxf_extractor.extract_layout_angle_mid()
     footprint_params = FootprintParams(
@@ -71,7 +72,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
         quarter=dxf_params.quarter,
         width=dxf_params.width,
         rootwidth=dxf_params.rootwidth,
-        input_padding=0.40410363378651054,
+        input_padding=0.6,
         upper_mid_point=upper_mid_point,
     )
     print(f"Generating symbol footprint")

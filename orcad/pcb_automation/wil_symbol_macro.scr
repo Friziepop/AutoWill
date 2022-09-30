@@ -134,13 +134,13 @@ version 17.4
 setwindow pcb
 trapsize 175
 generaledit
-pick grid {{2*QUARTER/3.14}} -0.1047 # X=2*QUARTER/3.14
-prepopup {{2*QUARTER/3.14}} -0.1047 # X=2*QUARTER/3.14
+pick grid {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - ROOTWIDTH - PADSTACK_MID_PADDING}} # X=2*QUARTER/3.14
+prepopup {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - ROOTWIDTH - PADSTACK_MID_PADDING}} # X=2*QUARTER/3.14
 pop dyn_option_select @:@Delete 
 delete 
 generaledit 
-pick grid {{2*QUARTER/3.14}} 0.1047 # X=2*QUARTER/3.14
-prepopup {{2*QUARTER/3.14}} 0.1047 # X=2*QUARTER/3.14
+pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + ROOTWIDTH + PADSTACK_MID_PADDING)}} # X=2*QUARTER/3.14
+prepopup {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + ROOTWIDTH + PADSTACK_MID_PADDING)}} # X=2*QUARTER/3.14
 pop dyn_option_select @:@Delete 
 delete 
 generaledit 
@@ -201,11 +201,35 @@ FORM mini rotate_pin 0.000
 setwindow pcb
 prepopup 0.0000 0.0000
 pick grid {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - ROOTWIDTH - PADSTACK_MID_PADDING}} # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root - PADSTACK_MID_PADDING
-pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + ROOTWIDTH + PADSTACK_MID_PADDING)}}# pad 5 x = 2*R , y = -(width/2 +INPUT_PADDING -root - PADSTACK_MID_PADDING)
+pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + ROOTWIDTH + PADSTACK_MID_PADDING)}} # pad 5 x = 2*R , y = -(width/2 +INPUT_PADDING -root - PADSTACK_MID_PADDING)
 done 
 generaledit 
 
 #	stop time: Fri Sep 30 15:12:39 2022
+
+# Allegro script
+#	file: C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/package/connectPads.scr
+#	start time: Fri Sep 30 16:18:09 2022
+#	Version: 17.4-2019 P001 (3823098) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+generaledit
+add connect 
+pick grid {{(-ROOTWIDTH/2 - QUARTER/10 - PADSTACK_MID_PADDING)}} 0 # pad 1 x = -root/2 - QURTER/10 - PADSTACK_MID_PADDING , y=0
+pick grid {{(-ROOTWIDTH/2 - QUARTER/10)}} 0 # pad 1 x = -root/2 - QURTER/10 , y =0
+pick grid {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - ROOTWIDTH - PADSTACK_MID_PADDING}} # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root - PADSTACK_MID_PADDING
+pick grid {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - ROOTWIDTH}} # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root
+pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + ROOTWIDTH + PADSTACK_MID_PADDING)}} # pad 5  x = 2*R , y = -(width/2 +INPUT_PADDING -root - PADSTACK_MID_PADDING)
+pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2-INPUT_PADDING+ROOTWIDTH)}} # pad 5  x = 2*R , y = -(width/2 +INPUT_PADDING -root)
+pick grid {{UPPER_MID_POINT[0] + (QUARTER/20 + PADSTACK_MID_PADDING) *cos(radians(ANGLE))}} {{(-UPPER_MID_POINT[1] + (QUARTER/20 + PADSTACK_MID_PADDING) *sin(-radians(ANGLE)))}} # pad 3 x = DXF_X + (QURTER/20 + PADSTACK_MID_PADDING) *cos , y = -DXF_Y + (QURTER/20 + PADSTACK_MID_PADDING) *sin
+pick grid {{UPPER_MID_POINT[0]+ (QUARTER/20) *cos(radians(ANGLE))}} {{(-UPPER_MID_POINT[1] + (QUARTER/20) *sin(-radians(ANGLE)))}} # pad 3 x = DXF_X + (QURTER/20) *cos , y = -DXF_Y + (QURTER/20) *sin
+pick grid {{UPPER_MID_POINT[0] + (QUARTER/20 + PADSTACK_MID_PADDING) *cos(radians(ANGLE))}} {{UPPER_MID_POINT[1] + (QUARTER/20 + PADSTACK_MID_PADDING) *sin(radians(ANGLE))}} # pad 2 x = DXF_X + (QURTER/20 + PADSTACK_MID_PADDING) *cos , y = DXF_Y + (QURTER/20 + PADSTACK_MID_PADDING) *sin
+pick grid {{UPPER_MID_POINT[0] + (QUARTER/20) *cos(radians(ANGLE))}} {{UPPER_MID_POINT[1] + (QUARTER/20) *sin(radians(ANGLE))}} #pad 2 x = DXF_X + (QURTER/20) *cos , y = DXF_Y + (QURTER/20) *sin
+done
+generaledit
+
+#	stop time: Fri Sep 30 16:19:15 2022
 
 
 # Allegro script
