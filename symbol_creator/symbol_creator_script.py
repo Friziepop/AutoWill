@@ -60,7 +60,12 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
         material_tanl=material.tanl,
         draw_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\package\\wil_sym.dra",
         allegro_exe_path="C:\\Cadence\\SPB_17.4\\tools\\bin\\allegro.exe",
-        material_height=material.height
+        material_height=material.height,
+        quarter=dxf_params.quarter,
+        width=dxf_params.width,
+        rootwidth=dxf_params.rootwidth,
+        input_padding=0.40410363378651054
+
     )
     print(f"Generating dxf file out:{out_path}")
     DxfAwrGenerator(params=dxf_params).generate()

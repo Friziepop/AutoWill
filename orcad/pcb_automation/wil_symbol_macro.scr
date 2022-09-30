@@ -17,12 +17,12 @@ QtSignal MaterialDlgUI m_materialView MBP "(ZINC,MATERIAL_NAME)" "(2,2,2,0)"
 QtSignal MaterialDlgUI m_materialView MBR "(ZINC,MATERIAL_NAME)" "(3,2,0,0)"
 QtSignal MaterialDlgUI m_materialView ContextMenu "(ZINC,MATERIAL_NAME)"
 QtFillin "Create New"
-QtSignal inCell text editingFinished  {MATERIAL_NAME_UPPER}
-QtSignal MaterialDlgUI m_materialView MBP "({MATERIAL_NAME_UPPER},MATERIAL_THICKNESS)" "(2,1,1,0)"
-QtSignal MaterialDlgUI m_materialView MBR "({MATERIAL_NAME_UPPER},MATERIAL_THICKNESS)" "(3,1,0,0)"
-QtSignal inCell text editingFinished {MATERIAL_HEIGHT}
-QtSignal MaterialDlgUI m_materialView MBP "({MATERIAL_NAME_UPPER},MATERIAL_DIEL_CONST)" "(2,1,1,0)"
-QtSignal MaterialDlgUI m_materialView MBR "({MATERIAL_NAME_UPPER},MATERIAL_DIEL_CONST)" "(3,1,0,0)"
+QtSignal inCell text editingFinished  {{MATERIAL_NAME_UPPER}}
+QtSignal MaterialDlgUI m_materialView MBP "({{MATERIAL_NAME_UPPER}},MATERIAL_THICKNESS)" "(2,1,1,0)"
+QtSignal MaterialDlgUI m_materialView MBR "({{MATERIAL_NAME_UPPER}},MATERIAL_THICKNESS)" "(3,1,0,0)"
+QtSignal inCell text editingFinished {{MATERIAL_HEIGHT}}
+QtSignal MaterialDlgUI m_materialView MBP "({{MATERIAL_NAME_UPPER}},MATERIAL_DIEL_CONST)" "(2,1,1,0)"
+QtSignal MaterialDlgUI m_materialView MBR "({{MATERIAL_NAME_UPPER}},MATERIAL_DIEL_CONST)" "(3,1,0,0)"
 QtSignal SubModelTabDlgUI m_tabWidget doAddNewTab
 QtSignal m_tabWidget MaterialSubDataView_20C MBP "(_ADD_ROW_,MATERIAL_FREQUENCY)" +
 QtSignal "(2,1,1,0)"
@@ -33,10 +33,10 @@ QtSignal m_tabWidget MaterialSubDataView_20C MBP "(6000,MATERIAL_REL_PERMITTIVIT
 QtSignal "(2,1,1,0)"
 QtSignal m_tabWidget MaterialSubDataView_20C MBR "(6000,MATERIAL_REL_PERMITTIVITY)" +
 QtSignal "(3,1,0,0)"
-QtSignal inCell text editingFinished {MATERIAL_ER}
+QtSignal inCell text editingFinished {{MATERIAL_ER}}
 QtSignal m_tabWidget MaterialSubDataView_20C MBP "(6000,MATERIAL_LOSS_TANGENT)" "(2,1,1,0)"
 QtSignal m_tabWidget MaterialSubDataView_20C MBR "(6000,MATERIAL_LOSS_TANGENT)" "(3,1,0,0)"
-QtSignal inCell text editingFinished {MATERIAL_TAN_L}
+QtSignal inCell text editingFinished {{MATERIAL_TAN_L}}
 QtSignal SubModelTabDlgUI m_okBtn clicked
 QtSignal frame_3 m_okBtn clicked
 generaledit
@@ -59,8 +59,8 @@ QtSignal m_dockWsQtWidgetContents m_domainSelector currentChanged Electrical
 QtSignal m_stackupsTab m_stackupsTabXSectionView MBP "(DIELECTRIC__2_,MATERIAL)" "(2,1,1,0)"
 QtSignal m_stackupsTab m_stackupsTabXSectionView MBR "(DIELECTRIC__2_,MATERIAL)" "(3,1,0,0)"
 # QtSignal inCell combo CurrentIndexChanged "3m Interface Pad 5592"
-QtSignal inCell combo CurrentIndexChanged {MATERIAL_NAME_LOWER}
-QtSignal inCell combo activated {MATERIAL_NAME_LOWER}
+QtSignal inCell combo CurrentIndexChanged {{MATERIAL_NAME_LOWER}}
+QtSignal inCell combo activated {{MATERIAL_NAME_LOWER}}
 QtSignal CCMQtXSectionDlg m_ApplyBtn clicked
 QtSignal CCMQtXSectionDlg AddLayerDlg closed
 QtSignal CCMQtXSectionDlg m_OkBtn clicked
@@ -83,10 +83,10 @@ generaledit
 dxf in 
 setwindow form.dxfInMain
 FORM dxfInMain browsedxf  
-fillin "{DXF_FILE}"
+fillin "{{DXF_FILE}}"
 FORM dxfInMain fillshapes YES 
 FORM dxfInMain browselyrcnv  
-fillin  "{DXF_MAPPING_FILE}"
+fillin  "{{DXF_MAPPING_FILE}}"
 FORM dxfInMain import  
 setwindow pcb
 trapsize 1182551
@@ -126,6 +126,53 @@ FORM grid done
 setwindow pcb
 
 #	stop time: Sat Sep 24 11:55:27 2022
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/deletePads.scr
+#	start time: Wed Sep 28 15:25:28 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 175
+generaledit
+pick grid {{2*QUARTER/3.14}} -0.1047 # X=2*QUARTER/3.14
+prepopup {{2*QUARTER/3.14}} -0.1047 # X=2*QUARTER/3.14
+pop dyn_option_select @:@Delete 
+delete 
+generaledit 
+pick grid {{2*QUARTER/3.14}} 0.1047 # X=2*QUARTER/3.14
+prepopup {{2*QUARTER/3.14}} 0.1047 # X=2*QUARTER/3.14
+pop dyn_option_select @:@Delete 
+delete 
+generaledit 
+
+#	stop time: Wed Sep 28 15:25:44 2022
+
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/scripts/mergeShapes.scr
+#	start time: Wed Sep 28 16:14:44 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+trapsize 180
+generaledit
+shape merge shapes
+pick grid 0 {{WIDTH/2 + INPUT_PADDING}} # y=WIDTH/2 + INPUT_PADDING
+pick grid 0 {{WIDTH/2 + INPUT_PADDING}} # y=WIDTH/2 + INPUT_PADDING
+pick grid 0 {{WIDTH/2}} # Y=WIDTH/2
+pick grid {{(-ROOTWIDTH/2)}} 0 # X=-ROOTWIDTH/2
+pick grid 0 {{(-WIDTH/2)}} # Y=-WIDTH/2
+pick grid 0 {{(-WIDTH/2 - INPUT_PADDING)}} # y=-(WIDTH/2 + INPUT_PADDING)
+pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING)}} # X=2*QUARTER/3.14, Y=-(WIDTH/2 + INPUT_PADDING)
+pick grid {{2*QUARTER/3.14}}  {{(WIDTH/2 + INPUT_PADDING)}} # X=2*QUARTER/3.14, Y=WIDTH/2 + INPUT_PADDING
+pick grid {{2*QUARTER/3.14 + ROOTWIDTH/2}} {{(-WIDTH/2 - INPUT_PADDING)}} # X=2*QUARTER/3.14 + ROOTWIDTH/2 Y=-(WIDTH/2 + INPUT_PADDING)
+pick grid {{2*QUARTER/3.14 + ROOTWIDTH/2}} {{WIDTH/2 + INPUT_PADDING}} # X=2*QUARTER/3.14 + ROOTWIDTH/2  Y=WIDTH/2 + INPUT_PADDING
+done 
+
+#	stop time: Wed Sep 28 16:15:13 2022
 
 
 # Allegro script

@@ -2,11 +2,12 @@ import math
 
 import numpy as np
 
-from awr_equation_manager import AwrEquationManager
-from awr_optimizer import AwrOptimizer
-from extractor import Extractor
+from awr_optimizer.awr_equation_manager import AwrEquationManager
+from awr_optimizer.awr_optimizer import AwrOptimizer
+from awr_optimizer.extractor import Extractor
+from awr_optimizer.optimization_constraint import OptimizationConstraint
 from microstip_freq_calc.copied_calc import MicroStripCopiedCalc
-from optimization_constraint import OptimizationConstraint
+
 
 from materials.materials_db import MaterialDB
 from copy import deepcopy
@@ -28,7 +29,7 @@ def run_simulations(ids, step_size):
         freqs = [float(freq) for freq in np.arange(chosen_mat.start_freq, chosen_mat.end_freq, step_size)]
         print(f"freqs from :{freqs[0]} , to :{freqs[-1]} ,step :{step_size}")
 
-        for freq in [1.0]:
+        for freq in [10.0]:
             set_meshing(freq)
             bandwidth = freq / 10
 

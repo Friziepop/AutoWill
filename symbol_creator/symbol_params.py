@@ -31,3 +31,7 @@ class FootprintParams:
     material_tanl: float
     draw_path: str
     allegro_exe_path: str
+    quarter: float
+    rootwidth: float
+    width: float
+    input_padding: float
