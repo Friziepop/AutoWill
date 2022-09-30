@@ -4,6 +4,7 @@ from materials.materials_db import MaterialDB
 from symbol_creator.dxf_generator import DxfAwrGenerator
 from symbol_creator.footprint_generator import FootprintGenerator
 from symbol_creator.symbol_params import SymbolParams, FootprintParams, DxfGenerationParams
+from symbol_creator.wil_dxf_extractor import WilDxfExtractor
 
 MODELS_DIR = "../learning/models"
 MATERIALS_DB = "../materials/materials_db.csv"
@@ -43,18 +44,24 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     dxf_params = DxfGenerationParams(
         height=0.1,
         thickness=0.01,
-        quarter= 3.1176007026386072,
-        width= 0.20863645369886577,
-        rootwidth= 0.10838520376208859,
+        quarter=3.1176007026386072,
+        width=0.20863645369886577,
+        rootwidth=0.10838520376208859,
         res=100,
         out_path=out_path,
     )
 
+    print(f"Generating dxf file out:{out_path}")
+    DxfAwrGenerator(params=dxf_params).generate()
+    print("generated dxf")
+
+    dxf_extractor = WilDxfExtractor(os.path.join(out_path, "out.dxf"))
+    upper_mid_point = dxf_extractor.extract_layout_angle_mid()
     footprint_params = FootprintParams(
         macro_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\pcb_automation\\wil_symbol_macro.scr",
         dxf_file=os.path.join(out_path, "out.dxf"),
         dxf_mapping_file="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\pcb_automation\\resources\\mapping_setup.cnv",
-        material_name=material.name,
+        material_name=f"{material.name}-USER",
         pad_name="s_r28t30m38_40p28_30",
         material_er=material.er,
         material_tanl=material.tanl,
@@ -64,12 +71,9 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
         quarter=dxf_params.quarter,
         width=dxf_params.width,
         rootwidth=dxf_params.rootwidth,
-        input_padding=0.40410363378651054
-
+        input_padding=0.40410363378651054,
+        upper_mid_point=upper_mid_point,
     )
-    print(f"Generating dxf file out:{out_path}")
-    DxfAwrGenerator(params=dxf_params).generate()
-    print("generated dxf")
     print(f"Generating symbol footprint")
     FootprintGenerator(params=footprint_params).generate()
     print("generated footprint")

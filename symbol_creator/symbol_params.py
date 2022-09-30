@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Tuple
 
 
 @dataclass
@@ -35,3 +36,4 @@ class FootprintParams:
     rootwidth: float
     width: float
     input_padding: float
+    upper_mid_point: Tuple[float, float]
