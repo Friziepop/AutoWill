@@ -191,15 +191,18 @@ pick grid {{(-ROOTWIDTH/2 - QUARTER/10 - PADSTACK_MID_PADDING)}} 0.0000 # pad 1 
 prepopup 0.0000 0.0000
 setwindow form.mini
 FORM mini rotate_pin {{ANGLE}}
+FORM mini offsetx 1.2700
 setwindow pcb
 pick grid {{UPPER_MID_POINT[0] + (QUARTER/20 + PADSTACK_MID_PADDING) *cos(radians(ANGLE))}} {{UPPER_MID_POINT[1] + (QUARTER/20 + PADSTACK_MID_PADDING) *sin(radians(ANGLE))}} #pad 2 x = DXF_X + (QURTER/20 + PADSTACK_MID_PADDING) *cos , y = DXF_Y + (QUARTER/20 + PADSTACK_MID_PADDING) *sin
 prepopup 0.0000 0.0000
 setwindow form.mini
 FORM mini rotate_pin {{(-ANGLE)}}
+FORM mini offsetx 1.2700
 setwindow pcb
 pick grid {{UPPER_MID_POINT[0] + (QUARTER/20 + PADSTACK_MID_PADDING) *cos(radians(ANGLE))}} {{(-UPPER_MID_POINT[1] + (QUARTER/20 + PADSTACK_MID_PADDING) *sin(-radians(ANGLE)))}} # pad 3 x = DXF_X + (QURTER/20 + PADSTACK_MID_PADDING) *cos , y = -DXF_Y + (QUARTER/20 + PADSTACK_MID_PADDING) *sin
 setwindow form.mini
 FORM mini rotate_pin 0.000 
+FORM mini offsetx -1.2700
 setwindow pcb
 prepopup 0.0000 0.0000
 pick grid {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - ROOTWIDTH - PADSTACK_MID_PADDING}} # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root - PADSTACK_MID_PADDING
@@ -208,28 +211,6 @@ done
 generaledit 
 
 #	stop time: Fri Sep 30 15:12:39 2022
-
-# Allegro script
-#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/pcb_automation/number_move.scr
-#	start time: Sat Oct  1 11:59:52 2022
-#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
-version 17.4
-
-setwindow pcb
-generaledit
-setwindow pcb
-prepopup {{UPPER_MID_POINT[0] + (QUARTER/20 + PADSTACK_MID_PADDING - 1.27) *cos(radians(ANGLE))}} {{UPPER_MID_POINT[1] + (QUARTER/20 + PADSTACK_MID_PADDING - 1.27) *sin(radians(ANGLE))}} # pad2
-pop dyn_option_select @:@Move 
-move
-setwindow pcb
-pick grid {{UPPER_MID_POINT[0] + (QUARTER/20 + PADSTACK_MID_PADDING + 1.27) *cos(radians(ANGLE))}} {{UPPER_MID_POINT[1] + (QUARTER/20 + PADSTACK_MID_PADDING + 1.27) *sin(radians(ANGLE))}}
-prepopup {{UPPER_MID_POINT[0] + (QUARTER/20 + PADSTACK_MID_PADDING - 1.27) *cos(radians(ANGLE))}} {{(-UPPER_MID_POINT[1] + (QUARTER/20 + PADSTACK_MID_PADDING - 1.27) *sin(-radians(ANGLE)))}} # pad3
-pop dyn_option_select @:@Move 
-move 
-pick grid {{UPPER_MID_POINT[0] + (QUARTER/20 + PADSTACK_MID_PADDING + 1.27) *cos(radians(ANGLE))}} {{(-UPPER_MID_POINT[1] + (QUARTER/20 + PADSTACK_MID_PADDING + 1.27) *sin(-radians(ANGLE)))}}
-generaledit 
-
-#	stop time: Sat Oct  1 12:00:13 2022
 
 
 # Allegro script

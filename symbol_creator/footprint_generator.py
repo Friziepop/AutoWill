@@ -36,7 +36,7 @@ class FootprintGenerator:
                                          ROOTWIDTH=self._params.rootwidth,
                                          INPUT_PADDING=self._params.input_padding,
                                          UPPER_MID_POINT=self._params.upper_mid_point,
-                                         PADSTACK_MID_PADDING=0.2,
+                                         PADSTACK_MID_PADDING=0.3,
                                          ANGLE=9.0000,
                                          PAD_B=self._params.pad_b)
         tmp_name = Path(os.getcwd()) / f"{uuid.uuid4()}__tmp.scr"
