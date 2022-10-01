@@ -24,8 +24,8 @@ class FootprintGenerator:
         compiled_macro = template.render(DXF_FILE=self._params.dxf_file,
                                          DXF_MAPPING_FILE=self._params.dxf_mapping_file,
                                          MATERIAL_NAME_LOWER=
-                                                        f"{self._params.material_name[0]}"
-                                                        f"{self._params.material_name.lower()[1:]}",
+                                         f"{self._params.material_name[0]}"
+                                         f"{self._params.material_name.lower()[1:]}",
                                          MATERIAL_NAME_UPPER=self._params.material_name.upper(),
                                          MATERIAL_ER=self._params.material_er,
                                          MATERIAL_TAN_L=self._params.material_tanl,
