@@ -8,7 +8,6 @@ from awr_optimizer.extractor import Extractor
 from awr_optimizer.optimization_constraint import OptimizationConstraint
 from microstip_freq_calc.copied_calc import MicroStripCopiedCalc
 
-
 from materials.materials_db import MaterialDB
 from copy import deepcopy
 
@@ -20,7 +19,7 @@ def run_simulations(ids, step_size):
     optimizer.connect()
 
     prev_quarter = None
-
+    prev_rootwidth = None
     eq_manager = AwrEquationManager()
     eq_manager.connect()
 
@@ -29,18 +28,20 @@ def run_simulations(ids, step_size):
         freqs = [float(freq) for freq in np.arange(chosen_mat.start_freq, chosen_mat.end_freq, step_size)]
         print(f"freqs from :{freqs[0]} , to :{freqs[-1]} ,step :{step_size}")
 
-        for freq in [10.0]:
+        for freq in freqs:
             set_meshing(freq)
-            bandwidth = freq / 10
+            bandwidth = freq / 15
 
             quarter_wavelength = prev_quarter if prev_quarter else extractor.extract_quarter_wavelength(frequency=freq)
             print(f"starting -- freq:{freq} , wavelength:{extractor.extract_quarter_wavelength(frequency=freq)}")
 
-            start_width = MicroStripCopiedCalc().calc(er=chosen_mat.er, height=chosen_mat.height,
-                                                      thickness=chosen_mat.thickness, z0=50, freq=freq)
+            micro_strip_calc = MicroStripCopiedCalc()
+            start_width = micro_strip_calc.calc(er=chosen_mat.er, height=chosen_mat.height,
+                                                thickness=chosen_mat.thickness, z0=50, freq=freq)
 
-            root_width = MicroStripCopiedCalc().calc(er=chosen_mat.er, height=chosen_mat.height,
-                                                     thickness=chosen_mat.thickness, z0=70.7, freq=freq)
+            root_width = micro_strip_calc.calc(er=chosen_mat.er, height=chosen_mat.height,
+                                               thickness=chosen_mat.thickness, z0=70.7,
+                                               freq=freq) if not prev_rootwidth else prev_rootwidth
 
             input_padding = (2 * chosen_mat.pad_b + chosen_mat.pad_c + 2 * root_width - start_width) / 2
 
@@ -63,6 +64,9 @@ def run_simulations(ids, step_size):
                                                   should_optimize=False),
                            OptimizationConstraint(name='INPUT_PADDING', max=input_padding, min=0,
                                                   start=input_padding,
+                                                  should_optimize=False),
+                           OptimizationConstraint(name='ROOTWIDTH', max=5, min=0,
+                                                  start=root_width,
                                                   should_optimize=False)
                            ]
 
@@ -89,10 +93,27 @@ def run_simulations(ids, step_size):
             #
             # optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
 
+            constraints = [OptimizationConstraint(name='ROOTWIDTH', max=5, min=0,
+                                                  start=root_width,
+                                                  should_optimize=True)
+                           ]
+
+            optimizer.setup(max_iter=15,
+                            optimization_type="Gradient Optimization",
+                            optimization_properties={"Converge Tolerance": 0.01,
+                                                     "Step Size": 0.001
+                                                     },
+                            constraints=constraints,
+                            material=chosen_mat)
+
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=5)
+
             extractor.extract_results(frequency=freq, bandwidth=bandwidth, material=chosen_mat)
 
             prev_quarter = float(
                 eq_manager.get_equation_by_name("QUARTER").equation_value) + input_padding / 2
+
+            prev_rootwidth = float(eq_manager.get_equation_by_name("ROOTWIDTH").equation_value)
 
 
 def set_meshing(freq):

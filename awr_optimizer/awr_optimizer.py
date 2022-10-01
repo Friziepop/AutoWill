@@ -85,9 +85,6 @@ class AwrOptimizer(AwrConnector):
         self._eq_manager.set_equation_value(eq_name="WIDTH", eq_val=str(
             self._width_calc.calc(er=self._material.er, thickness=self._material.thickness, z0=Z0,
                                   height=self._material.height, freq=freq)))
-        self._eq_manager.set_equation_value(eq_name="ROOTWIDTH", eq_val=str(
-            self._width_calc.calc(er=self._material.er, thickness=self._material.thickness, z0=Z0 * math.sqrt(2),
-                                  height=self._material.height, freq=freq)))
 
     def cleanup(self):
         shutil.rmtree("../DATA_SETS")
