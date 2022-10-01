@@ -74,6 +74,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
         rootwidth=dxf_params.rootwidth,
         input_padding=0.6,
         upper_mid_point=upper_mid_point,
+        pad_b=0.3
     )
     print(f"Generating symbol footprint")
     FootprintGenerator(params=footprint_params).generate()

@@ -134,13 +134,13 @@ version 17.4
 setwindow pcb
 trapsize 175
 generaledit
-pick grid {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - ROOTWIDTH - PADSTACK_MID_PADDING}} # X=2*QUARTER/3.14
-prepopup {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - ROOTWIDTH - PADSTACK_MID_PADDING}} # X=2*QUARTER/3.14
+pick grid {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - ROOTWIDTH - PAD_B}} # X=2*QUARTER/3.14
+prepopup {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - ROOTWIDTH - PAD_B}} # X=2*QUARTER/3.14
 pop dyn_option_select @:@Delete 
 delete 
 generaledit 
-pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + ROOTWIDTH + PADSTACK_MID_PADDING)}} # X=2*QUARTER/3.14
-prepopup {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + ROOTWIDTH + PADSTACK_MID_PADDING)}} # X=2*QUARTER/3.14
+pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + ROOTWIDTH + PAD_B)}} # X=2*QUARTER/3.14
+prepopup {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + ROOTWIDTH + PAD_B)}} # X=2*QUARTER/3.14
 pop dyn_option_select @:@Delete 
 delete 
 generaledit 
@@ -206,6 +206,29 @@ done
 generaledit 
 
 #	stop time: Fri Sep 30 15:12:39 2022
+
+# Allegro script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/pcb_automation/number_move.scr
+#	start time: Sat Oct  1 11:59:52 2022
+#	Version: 17.4-2019 S028 (4018475) Windows SPB 64-bit Edition
+version 17.4
+
+setwindow pcb
+generaledit
+setwindow pcb
+prepopup {{UPPER_MID_POINT[0] + (QUARTER/20 + PADSTACK_MID_PADDING - 1.27) *cos(radians(ANGLE))}} {{UPPER_MID_POINT[1] + (QUARTER/20 + PADSTACK_MID_PADDING - 1.27) *sin(radians(ANGLE))}} # pad2
+pop dyn_option_select @:@Move 
+move
+setwindow pcb
+pick grid {{UPPER_MID_POINT[0] + (QUARTER/20 + PADSTACK_MID_PADDING + 1.27) *cos(radians(ANGLE))}} {{UPPER_MID_POINT[1] + (QUARTER/20 + PADSTACK_MID_PADDING + 1.27) *sin(radians(ANGLE))}}
+prepopup {{UPPER_MID_POINT[0] + (QUARTER/20 + PADSTACK_MID_PADDING - 1.27) *cos(radians(ANGLE))}} {{(-UPPER_MID_POINT[1] + (QUARTER/20 + PADSTACK_MID_PADDING - 1.27) *sin(-radians(ANGLE)))}} # pad3
+pop dyn_option_select @:@Move 
+move 
+pick grid {{UPPER_MID_POINT[0] + (QUARTER/20 + PADSTACK_MID_PADDING + 1.27) *cos(radians(ANGLE))}} {{(-UPPER_MID_POINT[1] + (QUARTER/20 + PADSTACK_MID_PADDING + 1.27) *sin(-radians(ANGLE)))}}
+generaledit 
+
+#	stop time: Sat Oct  1 12:00:13 2022
+
 
 # Allegro script
 #	file: C:/Users/lavi/Desktop/project_wil/AutoWill/orcad/package/connectPads.scr

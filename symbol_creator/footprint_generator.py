@@ -37,7 +37,8 @@ class FootprintGenerator:
                                          INPUT_PADDING=self._params.input_padding,
                                          UPPER_MID_POINT=self._params.upper_mid_point,
                                          PADSTACK_MID_PADDING=0.2,
-                                         ANGLE=9.0000, )
+                                         ANGLE=9.0000,
+                                         PAD_B=self._params.pad_b)
         tmp_name = Path(os.getcwd()) / f"{uuid.uuid4()}__tmp.scr"
         with open(tmp_name, "w") as f:
             f.write(compiled_macro)

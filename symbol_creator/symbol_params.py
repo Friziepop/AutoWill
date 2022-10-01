@@ -37,3 +37,4 @@ class FootprintParams:
     width: float
     input_padding: float
     upper_mid_point: Tuple[float, float]
+    pad_b: float
