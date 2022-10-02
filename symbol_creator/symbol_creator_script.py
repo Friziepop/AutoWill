@@ -102,7 +102,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
 
 if __name__ == '__main__':
     material_id = 2
-    frequency = 15
+    frequency = 10.1
     bandwidth = 0.5
     params = SymbolParams(material_id=material_id, frequency=frequency, bandwidth=bandwidth)
     create(params=params)

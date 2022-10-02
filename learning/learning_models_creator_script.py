@@ -32,7 +32,7 @@ def learn_models(materials_ids: List[int], csv_dir: str = CSV_DIR, models_dir: s
             quarter_learner.draw_graph(csv_data_path=vars_path, title="quarter", x_col="frequency",
                                        y_col="quarter",
                                        coefficients=coeff_quarter)
-        learn_poly(degree=1, material_id=mat_id, feature="root_width", vars_path=vars_path, models_dir=models_dir,
+        learn_poly(degree=0, material_id=mat_id, feature="root_width", vars_path=vars_path, models_dir=models_dir,
                    show_graph=show_graph)
 
 
