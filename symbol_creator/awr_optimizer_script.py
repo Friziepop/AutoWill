@@ -28,7 +28,7 @@ def run_simulations(ids, step_size):
         freqs = [float(freq) for freq in np.arange(chosen_mat.start_freq, chosen_mat.end_freq, step_size)]
         print(f"freqs from :{freqs[0]} , to :{freqs[-1]} ,step :{step_size}")
 
-        for freq in freqs:
+        for freq in freqs[18:]:
             set_meshing(freq)
             bandwidth = freq / 15
 
@@ -50,7 +50,7 @@ def run_simulations(ids, step_size):
             constraints = [OptimizationConstraint(name='Res', max=100, min=20, start=100, should_optimize=False),
                            OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2,
                                                   min=quarter_wavelength / 3,
-                                                  start=quarter_wavelength),
+                                                  start=quarter_wavelength, should_optimize=True),
                            OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height,
                                                   should_optimize=False),
                            OptimizationConstraint(name='PAD_A', max=10, min=0,
@@ -67,18 +67,16 @@ def run_simulations(ids, step_size):
                                                   should_optimize=False),
                            OptimizationConstraint(name='ROOTWIDTH', max=5, min=0,
                                                   start=root_width,
+                                                  should_optimize=False),
+                           OptimizationConstraint(name='OUTPUT_PADDING', max=quarter_wavelength * 2,
+                                                  min=quarter_wavelength / 10,
+                                                  start=quarter_wavelength,
+                                                  should_optimize=False),
+                           OptimizationConstraint(name='PORT_1_PADDING', max=quarter_wavelength * 2,
+                                                  min=quarter_wavelength / 10,
+                                                  start=quarter_wavelength,
                                                   should_optimize=False)
                            ]
-
-            optimizer.setup(max_iter=15,
-                            optimization_type="Gradient Optimization",
-                            optimization_properties={"Converge Tolerance": 0.01,
-                                                     "Step Size": 0.001
-                                                     },
-                            constraints=constraints,
-                            material=chosen_mat)
-
-            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=5)
 
             # constraints = [
             #     OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height)]
@@ -93,27 +91,32 @@ def run_simulations(ids, step_size):
             #
             # optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
 
-            constraints = [OptimizationConstraint(name='ROOTWIDTH', max=5, min=0,
-                                                  start=root_width,
-                                                  should_optimize=True)
-                           ]
-
             optimizer.setup(max_iter=15,
-                            optimization_type="Gradient Optimization",
+                            optimization_type="Simplex Optimizer",
                             optimization_properties={"Converge Tolerance": 0.01,
                                                      "Step Size": 0.001
                                                      },
                             constraints=constraints,
                             material=chosen_mat)
 
-            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=5)
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
+
+            constraints = [OptimizationConstraint(name='ROOTWIDTH', max=root_width * 2, min=root_width / 2,
+                                                  start=root_width,
+                                                  should_optimize=True)
+                           ]
+
+            optimizer.setup(max_iter=15,
+                            optimization_type="Simplex Optimizer",
+                            optimization_properties={"Converge Tolerance": 0.01,
+                                                     "Step Size": 0.001
+                                                     },
+                            constraints=constraints,
+                            material=chosen_mat)
+
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
 
             extractor.extract_results(frequency=freq, bandwidth=bandwidth, material=chosen_mat)
-
-            prev_quarter = float(
-                eq_manager.get_equation_by_name("QUARTER").equation_value) + input_padding / 2
-
-            prev_rootwidth = float(eq_manager.get_equation_by_name("ROOTWIDTH").equation_value)
 
 
 def set_meshing(freq):

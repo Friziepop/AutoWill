@@ -34,7 +34,9 @@ CLASS_FIELD_TO_VARS = {
     "quarter": "QUARTER",
     "height": "HEIGHT",
     "root_width": "ROOTWIDTH",
-    "width": "WIDTH"
+    "width": "WIDTH",
+    "output_padding": "OUTPUT_PADDING",
+    "port_1_padding": "PORT_1_PADDING"
 }
 
 SPARAM_ZERO_THRESHOLD = -30
@@ -64,8 +66,10 @@ class Vars:
     height: float
     root_width: float
     width: float
+    output_padding: float
+    port_1_padding: float
 
-    def __init__(self, name, id, frequency, quarter, res, height, root_width, width):
+    def __init__(self, name, id, frequency, quarter, res, height, root_width, width, output_padding, port_1_padding):
         self.name = name
         self.id = id
         self.frequency = frequency
@@ -74,6 +78,8 @@ class Vars:
         self.height = height
         self.root_width = root_width
         self.width = width
+        self.output_padding = output_padding
+        self.port_1_padding = port_1_padding
 
 
 @dataclass
