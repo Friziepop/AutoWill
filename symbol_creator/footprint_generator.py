@@ -35,6 +35,8 @@ class FootprintGenerator:
                                          QUARTER=self._params.quarter,
                                          ROOTWIDTH=self._params.rootwidth,
                                          INPUT_PADDING=self._params.input_padding,
+                                         PORT_1_PADDING = self._params.port_1_padding,
+                                         OUTPUT_PADDING = self._params.output_padding,
                                          UPPER_MID_POINT=self._params.upper_mid_point,
                                          PADSTACK_MID_PADDING=0.3,
                                          ANGLE=9.0000,

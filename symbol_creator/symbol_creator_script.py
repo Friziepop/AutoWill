@@ -48,6 +48,8 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
         quarter=5,
         width=0.20863645369886577,
         rootwidth=0.10838520376208859,
+        port_1_padding =5/10,
+        output_padding=5/10,
         res=100,
         out_path=out_path,
     )
@@ -73,6 +75,8 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
         width=dxf_params.width,
         rootwidth=dxf_params.rootwidth,
         input_padding=0.6,
+        port_1_padding=dxf_params.port_1_padding,
+        output_padding=dxf_params.output_padding,
         upper_mid_point=upper_mid_point,
         pad_b=0.3
     )
