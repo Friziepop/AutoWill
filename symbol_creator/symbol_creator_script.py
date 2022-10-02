@@ -45,11 +45,11 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     dxf_params = DxfGenerationParams(
         height=0.1,
         thickness=0.01,
-        quarter=5,
-        width=0.20863645369886577,
-        rootwidth=0.10838520376208859,
-        port_1_padding =5/10,
-        output_padding=5/10,
+        quarter=4.19686030733857,
+        width=0.208636453698865,
+        rootwidth=0.108421860635943,
+        port_1_padding=3.51349706885209,
+        output_padding=3.51349706885209/2,
         res=100,
         out_path=out_path,
     )
