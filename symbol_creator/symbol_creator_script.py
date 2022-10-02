@@ -83,7 +83,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
         output_padding=dxf_params.output_padding,
         upper_mid_point=upper_mid_point,
         pad_b=material.resistor.pad_b,
-        padstack_padding=material.resistor.padstck_padding,
+        padstack_padding=material.resistor.padstack_padding,
         angle=9.0
     )
     print(f"Generating symbol footprint")

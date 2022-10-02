@@ -17,4 +17,5 @@ class MaterialDB(CSVDb):
         resistor = ResistorDB().get_by_id(id=config_dict["resistor_id"])
         new_dict = copy(config_dict)
         new_dict["resistor"] = resistor
-        return Material(**config_dict)
+        del new_dict["resistor_id"]
+        return Material(**new_dict)
