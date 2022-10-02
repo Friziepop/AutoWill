@@ -1,9 +1,12 @@
+import math
 import os
 from time import sleep
 
 from materials.materials_db import MaterialDB
 from symbol_creator.dxf_generator import DxfAwrGenerator
 from symbol_creator.footprint_generator import FootprintGenerator
+from symbol_creator.predictors import ModelPredictor, CsvPredictor, WidthPredictor, ConstPredictor, PaddingPredictor, \
+    InputPaddingPredictor
 from symbol_creator.symbol_params import SymbolParams, FootprintParams, DxfGenerationParams
 from symbol_creator.wil_dxf_extractor import WilDxfExtractor
 
@@ -18,17 +21,22 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
 
     material = material_db.get_by_id(params.material_id)
 
-    '''
-    height_predictor = ModelPredictor(models_dir=models_dir, model_feature="HEIGHT")
-    thickness_predictor = CsvPredictor(material_db=material_db)
+    height_predictor = CsvPredictor(material_db=material_db, field="height")
+    thickness_predictor = CsvPredictor(material_db=material_db, field="thickness")
     quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="QUARTER")
     width_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor, z0=50,
                                      material_db=material_db)
     rootwidth_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor,
                                          z0=50 * math.sqrt(2),
                                          material_db=material_db)
+
     res_predictor = ConstPredictor(value=100.0)
-    radius_predictor = ConstPredictor(value=0.5)
+    angle_predictor = ConstPredictor(value=9.0)
+
+    port_1_padding_predictor = PaddingPredictor(coefficient=0.1, material_db=material_db)
+    output_padding_predictor = PaddingPredictor(coefficient=0.5, material_db=material_db)
+    input_padding_predictor = InputPaddingPredictor(rootwidth_predictor=rootwidth_predictor,
+                                                    width_predictor=width_predictor, material_db=material_db)
 
     print(f"height_predictor:{height_predictor.predict(symbol_input_params=params)}")
     print(f"thickness_predictor:{thickness_predictor.predict(symbol_input_params=params)}")
@@ -36,22 +44,23 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     print(f"width_predictor:{width_predictor.predict(symbol_input_params=params)}")
     print(f"rootwidth_predictor:{rootwidth_predictor.predict(symbol_input_params=params)}")
     print(f"res_predictor:{res_predictor.predict(symbol_input_params=params)}")
-    print(f"radius_predictor:{radius_predictor.predict(symbol_input_params=params)}")
-    
-    '''
+    print(f"angle_predictor:{angle_predictor.predict(symbol_input_params=params)}")
+    print(f"port_1_padding_predictor:{port_1_padding_predictor.predict(symbol_input_params=params)}")
+    print(f"output_padding_predictor:{output_padding_predictor.predict(symbol_input_params=params)}")
+    print(f"input_padding_predictor:{input_padding_predictor.predict(symbol_input_params=params)}")
 
     out_path = os.getcwd()
 
     dxf_params = DxfGenerationParams(
-        height=0.1,
-        thickness=0.01,
-        quarter=4.19686030733857,
-        width=0.208636453698865,
-        rootwidth=0.108421860635943,
-        input_padding=0.6,
-        port_1_padding=3.51349706885209,
-        output_padding=3.51349706885209 / 2,
-        res=100,
+        height=height_predictor.predict(params),
+        thickness=thickness_predictor.predict(params),
+        quarter=quarter_predictor.predict(params),
+        width=width_predictor.predict(params),
+        rootwidth=rootwidth_predictor.predict(params),
+        input_padding=input_padding_predictor.predict(params),
+        port_1_padding=port_1_padding_predictor.predict(params),
+        output_padding=output_padding_predictor.predict(params),
+        res=res_predictor.predict(params),
         pad_a=material.resistor.pad_a,
         pad_b=material.resistor.pad_b,
         pad_c=material.resistor.pad_c,
@@ -84,7 +93,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
         upper_mid_point=upper_mid_point,
         pad_b=material.resistor.pad_b,
         padstack_padding=material.resistor.padstack_padding,
-        angle=9.0
+        angle=angle_predictor.predict(params)
     )
     print(f"Generating symbol footprint")
     FootprintGenerator(params=footprint_params).generate()

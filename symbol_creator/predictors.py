@@ -30,13 +30,14 @@ class ConstPredictor(BasePredictor):
 
 
 class CsvPredictor(BasePredictor):
-    def __init__(self, material_db: MaterialDB):
+    def __init__(self, field: str, material_db: MaterialDB):
         super(CsvPredictor, self).__init__()
+        self._field = field
         self._material_db = material_db
 
     def predict(self, symbol_input_params: SymbolParams) -> float:
         mat = self._material_db.get_by_id(symbol_input_params.material_id)
-        return mat.thickness
+        return dict(mat)[self._field]
 
 
 class ModelPredictor(BasePredictor):
@@ -74,11 +75,26 @@ class WidthPredictor(BasePredictor):
 
 
 class PaddingPredictor(BasePredictor):
-    def __init__(self, coefficient : float, material_db: MaterialDB):
+    def __init__(self, coefficient: float, material_db: MaterialDB):
         super(PaddingPredictor, self).__init__()
         self._coefficient = coefficient
         self._material_db = material_db
 
     def predict(self, symbol_input_params: SymbolParams) -> float:
         mat = self._material_db.get_by_id(id=symbol_input_params.material_id)
-        return self._coefficient * CalculationsUtils.extract_quarter_wavelength(frequency=symbol_input_params.frequency, er=mat.er)
+        return self._coefficient * CalculationsUtils.extract_quarter_wavelength(frequency=symbol_input_params.frequency,
+                                                                                er=mat.er)
+
+
+class InputPaddingPredictor(BasePredictor):
+    def __init__(self, material_db: MaterialDB, width_predictor: WidthPredictor, rootwidth_predictor: WidthPredictor):
+        super(InputPaddingPredictor, self).__init__()
+        self._width_predictor = width_predictor
+        self._rootwidth_predictor = rootwidth_predictor
+        self._material_db = material_db
+
+    def predict(self, symbol_input_params: SymbolParams) -> float:
+        mat = self._material_db.get_by_id(id=symbol_input_params.material_id)
+        return CalculationsUtils.calculate_padding(resistor=mat.resistor,
+                                                   root_width=self._rootwidth_predictor.predict(symbol_input_params),
+                                                   start_width=self._width_predictor.predict(symbol_input_params))
