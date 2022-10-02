@@ -26,9 +26,11 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="QUARTER")
     width_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor, z0=50,
                                      material_db=material_db)
-    rootwidth_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor,
-                                         z0=50 * math.sqrt(2),
-                                         material_db=material_db)
+    # rootwidth_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor,
+    #                                     z0=50 * math.sqrt(2),
+    #                                     material_db=material_db)
+
+    rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width")
 
     res_predictor = ConstPredictor(value=100.0)
     angle_predictor = ConstPredictor(value=9.0)
@@ -102,7 +104,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
 
 if __name__ == '__main__':
     material_id = 2
-    frequency = 10.1
+    frequency = 15
     bandwidth = 0.5
     params = SymbolParams(material_id=material_id, frequency=frequency, bandwidth=bandwidth)
     create(params=params)
