@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 from learning.learners import InverseLearner, PolyLearner
 
-CSV_DIR = "../"
+CSV_DIR = "../awr_optimizer"
 MODELS_DIR = "models"
 
 
@@ -32,15 +32,17 @@ def learn_models(materials_ids: List[int], csv_dir: str = CSV_DIR, models_dir: s
             quarter_learner.draw_graph(csv_data_path=vars_path, title="quarter", x_col="frequency",
                                        y_col="quarter",
                                        coefficients=coeff_quarter)
-        learn_poly(degree=1, material_id=mat_id, feature="height", vars_path=vars_path, models_dir=models_dir,
+        learn_poly(degree=3, material_id=mat_id, feature="root_width", vars_path=vars_path, models_dir=models_dir,
                    show_graph=show_graph)
-        learn_poly(degree=1, material_id=mat_id, feature="width", vars_path=vars_path, models_dir=models_dir,
+        learn_poly(degree=3, material_id=mat_id, feature="output_padding", vars_path=vars_path, models_dir=models_dir,
+                   show_graph=show_graph)
+        learn_poly(degree=3, material_id=mat_id, feature="prot_1_padding", vars_path=vars_path, models_dir=models_dir,
                    show_graph=show_graph)
 
 
 def main():
     show_graph = True
-    ids = [1]
+    ids = [2]
     print("starting to learn models")
     learn_models(materials_ids=ids, show_graph=show_graph)
     if show_graph:
