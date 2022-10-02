@@ -28,7 +28,7 @@ def run_simulations(ids, step_size):
         freqs = [float(freq) for freq in np.arange(chosen_mat.start_freq, chosen_mat.end_freq, step_size)]
         print(f"freqs from :{freqs[0]} , to :{freqs[-1]} ,step :{step_size}")
 
-        for freq in freqs[18:]:
+        for freq in freqs:
             set_meshing(freq)
             bandwidth = freq / 15
 
@@ -43,7 +43,8 @@ def run_simulations(ids, step_size):
                                                thickness=chosen_mat.thickness, z0=70.7,
                                                freq=freq) if not prev_rootwidth else prev_rootwidth
 
-            input_padding = (2 * chosen_mat.pad_b + chosen_mat.pad_c + 2 * root_width - start_width) / 2
+            input_padding = \
+                (2 * chosen_mat.resistor.pad_b + chosen_mat.resistor.pad_c + 2 * root_width - start_width) / 2
 
             quarter_wavelength = quarter_wavelength - input_padding
 
@@ -54,13 +55,13 @@ def run_simulations(ids, step_size):
                            OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height,
                                                   should_optimize=False),
                            OptimizationConstraint(name='PAD_A', max=10, min=0,
-                                                  start=chosen_mat.pad_a,
+                                                  start=chosen_mat.resistor.pad_a,
                                                   should_optimize=False),
-                           OptimizationConstraint(name='PAD_B', max=chosen_mat.pad_b, min=0,
-                                                  start=chosen_mat.pad_b,
+                           OptimizationConstraint(name='PAD_B', max=chosen_mat.resistor.pad_b, min=0,
+                                                  start=chosen_mat.resistor.pad_b,
                                                   should_optimize=False),
-                           OptimizationConstraint(name='PAD_C', max=chosen_mat.pad_c, min=0,
-                                                  start=chosen_mat.pad_c,
+                           OptimizationConstraint(name='PAD_C', max=chosen_mat.resistor.pad_c, min=0,
+                                                  start=chosen_mat.resistor.pad_c,
                                                   should_optimize=False),
                            OptimizationConstraint(name='INPUT_PADDING', max=input_padding, min=0,
                                                   start=input_padding,
@@ -123,7 +124,7 @@ def set_meshing(freq):
     equation_manager = AwrEquationManager()
     equation_manager.connect()
     if 0 <= freq < 10:
-        equation_manager.set_equation_value("MESHING", 0.1)
+        equation_manager.set_equation_value("MESHING", 0.01)
     if 10 <= freq < 20:
         equation_manager.set_equation_value("MESHING", 0.01)
     if 20 <= freq < 30:
