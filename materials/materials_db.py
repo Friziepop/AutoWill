@@ -1,23 +1,20 @@
-from typing import List, Optional
+from copy import copy
+from typing import Optional
 
-import pandas as pd
-
+from materials.csv_db import CSVDb
 from materials.material import Material
+from materials.resistors_db import ResistorDB
 
 DEFAULT_DB_PATH = '../materials/materials_db.csv'
 
 
-class MaterialDB:
+class MaterialDB(CSVDb):
     def __init__(self, csv_path: Optional[str] = None):
         csv_path = csv_path if csv_path else DEFAULT_DB_PATH
-        materials_csv = pd.read_csv(csv_path)
-        self._inner_materials_mapping = {}
-        for config_dict in materials_csv.to_dict('records'):
-            mat = Material(**config_dict)
-            self._inner_materials_mapping[mat.id] = mat
+        super().__init__(csv_path=csv_path)
 
-    def get_by_id(self, material_id: int) -> Material:
-        return self._inner_materials_mapping[material_id]
-
-    def get_by_name(self, name: str) -> List[Material]:
-        return [mat for mat in self._inner_materials_mapping.values() if mat.name == name]
+    def create(self, config_dict):
+        resistor = ResistorDB().get_by_id(id=config_dict["resistor_id"])
+        new_dict = copy(config_dict)
+        new_dict["resistor"] = resistor
+        return Material(**config_dict)

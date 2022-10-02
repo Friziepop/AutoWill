@@ -66,7 +66,7 @@ class WidthPredictor(BasePredictor):
         self._calculator = MicroStripCopiedCalc()
 
     def predict(self, symbol_input_params: SymbolParams) -> float:
-        mat = self._material_db.get_by_id(material_id=symbol_input_params.material_id)
+        mat = self._material_db.get_by_id(id=symbol_input_params.material_id)
         return self._calculator.calc(er=mat.er, height=self._height_predictor.predict(symbol_input_params),
                                      thickness=self._thickness_predictor.predict(symbol_input_params), z0=self._z0,
                                      freq=symbol_input_params.frequency)

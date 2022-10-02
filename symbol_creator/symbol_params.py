@@ -19,6 +19,10 @@ class DxfGenerationParams:
     quarter: float
     port_1_padding: float
     output_padding: float
+    input_padding: float
+    pad_a: float
+    pad_b: float
+    pad_c: float
     out_path: str
 
 
@@ -42,3 +46,5 @@ class FootprintParams:
     output_padding: float
     upper_mid_point: Tuple[float, float]
     pad_b: float
+    padstack_padding: float
+    angle: float

@@ -48,9 +48,13 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
         quarter=4.19686030733857,
         width=0.208636453698865,
         rootwidth=0.108421860635943,
+        input_padding=0.6,
         port_1_padding=3.51349706885209,
-        output_padding=3.51349706885209/2,
+        output_padding=3.51349706885209 / 2,
         res=100,
+        pad_a=material.resistor.pad_a,
+        pad_b=material.resistor.pad_b,
+        pad_c=material.resistor.pad_c,
         out_path=out_path,
     )
 
@@ -65,7 +69,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
         dxf_file=os.path.join(out_path, "out.dxf"),
         dxf_mapping_file="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\pcb_automation\\resources\\mapping_setup.cnv",
         material_name=f"{material.name}-USER",
-        pad_name="s_r28t30m38_40p28_30",
+        pad_name=material.resistor.pad_name,  # "s_r28t30m38_40p28_30",
         material_er=material.er,
         material_tanl=material.tanl,
         draw_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\package\\wil_sym.dra",
@@ -74,11 +78,13 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
         quarter=dxf_params.quarter,
         width=dxf_params.width,
         rootwidth=dxf_params.rootwidth,
-        input_padding=0.6,
+        input_padding=dxf_params.input_padding,
         port_1_padding=dxf_params.port_1_padding,
         output_padding=dxf_params.output_padding,
         upper_mid_point=upper_mid_point,
-        pad_b=0.3
+        pad_b=material.resistor.pad_b,
+        padstack_padding=material.resistor.padstck_padding,
+        angle=9.0
     )
     print(f"Generating symbol footprint")
     FootprintGenerator(params=footprint_params).generate()

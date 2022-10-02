@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from materials.resistor import Resistor
+
 
 @dataclass
 class Material:
@@ -12,9 +14,7 @@ class Material:
     thickness: float
     start_freq: float
     end_freq: float
-    pad_a: float
-    pad_b: float
-    pad_c: float
+    resistor: Resistor
     description: str
 
     def __init__(self,
@@ -27,9 +27,7 @@ class Material:
                  thickness: float,
                  start_freq: float,
                  end_freq: float,
-                 pad_a: float,
-                 pad_b: float,
-                 pad_c: float,
+                 resistor: Resistor,
                  description: str = "",
                  ):
         self.id = id
@@ -42,6 +40,4 @@ class Material:
         self.tanl = tanl
         self.er = er
         self.name = name
-        self.pad_a = pad_a
-        self.pad_b = pad_b
-        self.pad_c = pad_c
+        self.resistor = resistor
