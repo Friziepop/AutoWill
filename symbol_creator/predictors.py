@@ -4,6 +4,7 @@ from abc import ABC, abstractmethod
 import numpy
 import numpy as np
 
+from microstip_freq_calc.utils import CalculationsUtils
 from symbol_creator.symbol_params import SymbolParams
 from learning.learnings_util import get_learning_model_name
 from materials.materials_db import MaterialDB
@@ -70,3 +71,14 @@ class WidthPredictor(BasePredictor):
         return self._calculator.calc(er=mat.er, height=self._height_predictor.predict(symbol_input_params),
                                      thickness=self._thickness_predictor.predict(symbol_input_params), z0=self._z0,
                                      freq=symbol_input_params.frequency)
+
+
+class PaddingPredictor(BasePredictor):
+    def __init__(self, coefficient : float, material_db: MaterialDB):
+        super(PaddingPredictor, self).__init__()
+        self._coefficient = coefficient
+        self._material_db = material_db
+
+    def predict(self, symbol_input_params: SymbolParams) -> float:
+        mat = self._material_db.get_by_id(id=symbol_input_params.material_id)
+        return self._coefficient * CalculationsUtils.extract_quarter_wavelength(frequency=symbol_input_params.frequency, er=mat.er)
