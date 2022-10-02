@@ -37,7 +37,7 @@ class CsvPredictor(BasePredictor):
 
     def predict(self, symbol_input_params: SymbolParams) -> float:
         mat = self._material_db.get_by_id(symbol_input_params.material_id)
-        return dict(mat)[self._field]
+        return getattr(mat, self._field)
 
 
 class ModelPredictor(BasePredictor):

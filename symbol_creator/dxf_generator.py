@@ -22,6 +22,7 @@ class DxfAwrGenerator(AwrConnector):
         self._eq_manager.set_equation_value("Res", self._params.res)
         self._eq_manager.set_equation_value("QUARTER", self._params.quarter)
         self._eq_manager.set_equation_value("HEIGHT", self._params.height)
+        self._eq_manager.set_equation_value("INPUT_PADDING", self._params.input_padding)
         self._eq_manager.set_equation_value("OUTPUT_PADDING", self._params.output_padding)
         self._eq_manager.set_equation_value("PORT_1_PADDING", self._params.port_1_padding)
         path = os.path.join(self._params.out_path, "out.dxf")
