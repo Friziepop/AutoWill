@@ -37,7 +37,7 @@ class BaseLearner(ABC):
         x, y = self.extract_xy(csv_data_path, x_col, y_col)
         max_x = np.max(x) * 1.1
         max_y = np.max(y) * 1.1
-        inerop_x = np.arange(0, max_x, max_x / (10 * len(x)))
+        inerop_x = np.arange(0.00001, max_x, max_x / (10 * len(x)))
         calculated_y = self.get_calculated_y(x=inerop_x, coefficients=coefficients)
         # plot
         fig, ax = plt.subplots()
