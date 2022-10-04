@@ -26,9 +26,10 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="QUARTER")
     width_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor, z0=50,
                                      material_db=material_db)
-    calculated_rootwidth_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor,
-                                        z0=50 * math.sqrt(2),
-                                        material_db=material_db)
+    calculated_rootwidth_predictor = WidthPredictor(height_predictor=height_predictor,
+                                                    thickness_predictor=thickness_predictor,
+                                                    z0=50 * math.sqrt(2),
+                                                    material_db=material_db)
 
     rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width")
 
@@ -95,8 +96,9 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
         output_padding=dxf_params.output_padding,
         upper_mid_point=upper_mid_point,
         pad_b=material.resistor.pad_b,
+        pad_a=material.resistor.pad_a,
         padstack_padding=material.resistor.padstack_padding,
-        angle=angle_predictor.predict(params)
+        angle=angle_predictor.predict(params),
     )
     print(f"Generating symbol footprint")
     FootprintGenerator(params=footprint_params).generate()
@@ -105,7 +107,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
 
 if __name__ == '__main__':
     material_id = 2
-    frequency = 15
+    frequency = 20
     bandwidth = 1
     params = SymbolParams(material_id=material_id, frequency=frequency, bandwidth=bandwidth)
     create(params=params)

@@ -46,6 +46,7 @@ class FootprintParams:
     port_1_padding: float
     output_padding: float
     upper_mid_point: Tuple[float, float]
+    pad_a: float
     pad_b: float
     padstack_padding: float
     angle: float

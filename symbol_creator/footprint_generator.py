@@ -8,6 +8,8 @@ from jinja2 import Template
 
 from symbol_creator.symbol_params import FootprintParams
 
+def format_float(val: float, num_digits: int):
+    return f"{val:.{num_digits}}"
 
 class FootprintGenerator:
     def __init__(self, params: FootprintParams):
@@ -20,6 +22,7 @@ class FootprintGenerator:
         template.globals["cos"] = math.cos
         template.globals["sin"] = math.sin
         template.globals["radians"] = math.radians
+        template.globals["format"] = format_float
 
         compiled_macro = template.render(DXF_FILE=self._params.dxf_file,
                                          DXF_MAPPING_FILE=self._params.dxf_mapping_file,
@@ -40,6 +43,7 @@ class FootprintGenerator:
                                          UPPER_MID_POINT=self._params.upper_mid_point,
                                          PADSTACK_MID_PADDING=self._params.padstack_padding,
                                          ANGLE=self._params.angle,
+                                         PAD_A=self._params.pad_a,
                                          PAD_B=self._params.pad_b)
         tmp_name = Path(os.getcwd()) / f"{uuid.uuid4()}__tmp.scr"
         with open(tmp_name, "w") as f:
