@@ -73,9 +73,9 @@ def run_simulations(ids, step_size):
                                                   min=quarter_wavelength / 10,
                                                   start=quarter_wavelength,
                                                   should_optimize=False),
-                           OptimizationConstraint(name='PORT_1_PADDING', max=quarter_wavelength * 2,
-                                                  min=quarter_wavelength / 10,
-                                                  start=quarter_wavelength,
+                           OptimizationConstraint(name='PORT_1_PADDING', max=quarter_wavelength,
+                                                  min=quarter_wavelength / 100,
+                                                  start=quarter_wavelength/10,
                                                   should_optimize=False)
                            ]
 
