@@ -24,6 +24,7 @@ class DxfGenerationParams:
     pad_b: float
     pad_c: float
     out_path: str
+    symbol_params: SymbolParams
 
 
 @dataclass

@@ -1,5 +1,7 @@
 import os
 
+import numpy as np
+
 from awr_optimizer.awr_connector import AwrConnector
 from awr_optimizer.awr_equation_manager import AwrEquationManager
 from symbol_creator.symbol_params import DxfGenerationParams
@@ -29,3 +31,7 @@ class DxfAwrGenerator(AwrConnector):
         self._eq_manager.set_equation_value("EXPORT_PATH", f'"{path}"')
         # self._awrde.GlobalScripts('Import_Load_Pull_Files').Routines('Import_Load_Pull_Files').Run()
         self._awrde.Project.ProjectScripts("DXFExporter").Routines("Main").Run()
+
+        freq_array = np.linspace(self._params.symbol_params.frequency - self._params.symbol_params.bandwidth / 2,
+                                 self._params.symbol_params.frequency + self._params.symbol_params.bandwidth / 2, 5)
+        self._proj.set_project_frequencies(project_freq_ay=freq_array, units_str='GHz')
