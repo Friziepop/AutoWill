@@ -26,9 +26,9 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="QUARTER")
     width_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor, z0=50,
                                      material_db=material_db)
-    # rootwidth_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor,
-    #                                     z0=50 * math.sqrt(2),
-    #                                     material_db=material_db)
+    calculated_rootwidth_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor,
+                                        z0=50 * math.sqrt(2),
+                                        material_db=material_db)
 
     rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width")
 
@@ -37,7 +37,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
 
     port_1_padding_predictor = PaddingPredictor(coefficient=0.1, material_db=material_db)
     output_padding_predictor = PaddingPredictor(coefficient=0.5, material_db=material_db)
-    input_padding_predictor = InputPaddingPredictor(rootwidth_predictor=rootwidth_predictor,
+    input_padding_predictor = InputPaddingPredictor(rootwidth_predictor=calculated_rootwidth_predictor,
                                                     width_predictor=width_predictor, material_db=material_db)
 
     print(f"height_predictor:{height_predictor.predict(symbol_input_params=params)}")
