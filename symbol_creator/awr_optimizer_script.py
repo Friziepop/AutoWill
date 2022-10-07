@@ -141,7 +141,7 @@ def set_meshing(freq):
     equation_manager = AwrEquationManager()
     equation_manager.connect()
     if 0 <= freq < 10:
-        equation_manager.set_equation_value("MESHING", 0.1)
+        equation_manager.set_equation_value("MESHING", 0.05)
     if 10 <= freq < 20:
         equation_manager.set_equation_value("MESHING", 0.01)
     if 20 <= freq < 30:
