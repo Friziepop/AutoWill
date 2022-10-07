@@ -23,7 +23,7 @@ def run_simulations(ids, step_size):
     eq_manager = AwrEquationManager()
     eq_manager.connect()
 
-    for id in [2, 1, 3]:
+    for id in [2, 1, 3, 4]:
         chosen_mat = deepcopy(MaterialDB().get_by_id(id))
         freqs = [float(freq) for freq in np.arange(chosen_mat.start_freq, chosen_mat.end_freq, step_size)]
         print(f"freqs from :{freqs[0]} , to :{freqs[-1]} ,step :{step_size}")
@@ -63,20 +63,21 @@ def run_simulations(ids, step_size):
                            OptimizationConstraint(name='PAD_C', max=chosen_mat.resistor.pad_c, min=0,
                                                   start=chosen_mat.resistor.pad_c,
                                                   should_optimize=False),
-                           OptimizationConstraint(name='INPUT_PADDING', max=input_padding, min=0,
-                                                  start=input_padding,
-                                                  should_optimize=False),
                            OptimizationConstraint(name='ROOTWIDTH', max=5, min=0,
                                                   start=root_width,
                                                   should_optimize=False),
-                           OptimizationConstraint(name='OUTPUT_PADDING', max=quarter_wavelength * 2,
-                                                  min=quarter_wavelength / 10,
-                                                  start=quarter_wavelength,
+                           OptimizationConstraint(name='OUTPUT_PADDING', max=quarter_wavelength,
+                                                  min=quarter_wavelength / 100,
+                                                  start=quarter_wavelength / 10,
                                                   should_optimize=False),
                            OptimizationConstraint(name='PORT_1_PADDING', max=quarter_wavelength,
                                                   min=quarter_wavelength / 100,
-                                                  start=quarter_wavelength/10,
-                                                  should_optimize=False)
+                                                  start=quarter_wavelength / 10,
+                                                  should_optimize=False),
+                           OptimizationConstraint(name='WIDTH_2', max=start_width * 2,
+                                                  min=start_width / 2,
+                                                  start=start_width,
+                                                  should_optimize=False),
                            ]
 
             # constraints = [
@@ -117,6 +118,22 @@ def run_simulations(ids, step_size):
 
             optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
 
+            constraints = [OptimizationConstraint(name='WIDTH_2', max=start_width * 2,
+                                                  min=start_width / 2,
+                                                  start=start_width,
+                                                  should_optimize=True)
+                           ]
+
+            optimizer.setup(max_iter=15,
+                            optimization_type="Simplex Optimizer",
+                            optimization_properties={"Converge Tolerance": 0.01,
+                                                     "Step Size": 0.001
+                                                     },
+                            constraints=constraints,
+                            material=chosen_mat)
+
+            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
+
             extractor.extract_results(frequency=freq, bandwidth=bandwidth, material=chosen_mat)
 
 
@@ -124,7 +141,7 @@ def set_meshing(freq):
     equation_manager = AwrEquationManager()
     equation_manager.connect()
     if 0 <= freq < 10:
-        equation_manager.set_equation_value("MESHING", 0.01)
+        equation_manager.set_equation_value("MESHING", 0.1)
     if 10 <= freq < 20:
         equation_manager.set_equation_value("MESHING", 0.01)
     if 20 <= freq < 30:
