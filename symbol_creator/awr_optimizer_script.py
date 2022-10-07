@@ -23,7 +23,7 @@ def run_simulations(ids, step_size):
     eq_manager = AwrEquationManager()
     eq_manager.connect()
 
-    for id in [2, 1, 3, 4]:
+    for id in ids:
         chosen_mat = deepcopy(MaterialDB().get_by_id(id))
         freqs = [float(freq) for freq in np.arange(chosen_mat.start_freq, chosen_mat.end_freq, step_size)]
         print(f"freqs from :{freqs[0]} , to :{freqs[-1]} ,step :{step_size}")
@@ -153,7 +153,7 @@ def set_meshing(freq):
 if __name__ == '__main__':
     step_size = 0.5
 
-    ids = [1, 2, 3]
+    ids = [1, 2, 3, 4]
 
     print("starting dataset generation using awr optimization")
     print(f"ids:{ids}")
