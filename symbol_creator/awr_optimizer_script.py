@@ -74,10 +74,6 @@ def run_simulations(ids, step_size):
                                                   min=quarter_wavelength / 100,
                                                   start=quarter_wavelength / 10,
                                                   should_optimize=False),
-                           OptimizationConstraint(name='WIDTH_2', max=start_width * 2,
-                                                  min=start_width / 2,
-                                                  start=start_width,
-                                                  should_optimize=False),
                            ]
 
             # constraints = [
@@ -118,22 +114,6 @@ def run_simulations(ids, step_size):
 
             optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
 
-            constraints = [OptimizationConstraint(name='WIDTH_2', max=start_width * 2,
-                                                  min=start_width / 2,
-                                                  start=start_width,
-                                                  should_optimize=True)
-                           ]
-
-            optimizer.setup(max_iter=15,
-                            optimization_type="Simplex Optimizer",
-                            optimization_properties={"Converge Tolerance": 0.01,
-                                                     "Step Size": 0.001
-                                                     },
-                            constraints=constraints,
-                            material=chosen_mat)
-
-            optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
-
             extractor.extract_results(frequency=freq, bandwidth=bandwidth, material=chosen_mat)
 
 
@@ -141,7 +121,7 @@ def set_meshing(freq):
     equation_manager = AwrEquationManager()
     equation_manager.connect()
     if 0 <= freq < 10:
-        equation_manager.set_equation_value("MESHING", 0.1)
+        equation_manager.set_equation_value("MESHING", 0.01)
     if 10 <= freq < 20:
         equation_manager.set_equation_value("MESHING", 0.01)
     if 20 <= freq < 30:
@@ -153,7 +133,7 @@ def set_meshing(freq):
 if __name__ == '__main__':
     step_size = 0.5
 
-    ids = [1, 2, 3, 4]
+    ids = [1, 2, 3, 4, 5, 6]
 
     print("starting dataset generation using awr optimization")
     print(f"ids:{ids}")
