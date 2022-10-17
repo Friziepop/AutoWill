@@ -34,10 +34,10 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width")
 
     res_predictor = ConstPredictor(value=100.0)
-    angle_predictor = ConstPredictor(value=9.0)
+    angle_predictor = ConstPredictor(value=1.0)
 
     port_1_padding_predictor = PaddingPredictor(coefficient=0.1, material_db=material_db)
-    output_padding_predictor = PaddingPredictor(coefficient=0.5, material_db=material_db)
+    output_padding_predictor = PaddingPredictor(coefficient=0.1, material_db=material_db)
     input_padding_predictor = InputPaddingPredictor(rootwidth_predictor=calculated_rootwidth_predictor,
                                                     width_predictor=width_predictor, material_db=material_db)
 
