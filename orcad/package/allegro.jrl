@@ -1,0 +1,16 @@
+\t (00:00:10) allegro 17.4 S028 Windows SPB 64-bit Edition
+\t (00:00:10)     Journal start - Sat Oct 15 13:47:22 2022
+\t (00:00:10)         Host=DESKTOP-N3LG4LM User=Mike Pid=2456 CPUs=16
+\t (00:00:10) CmdLine= c:\cadence\spb_17.4\tools\bin\allegro.exe C:\Users\Mike\Documents\AutoWill\orcad\package\wil_sym.dra
+\t (00:00:10) 
+   (00:00:10) Loading axlcore.cxt 
+\t (00:00:10) Opening existing design...
+\i (00:00:10) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged "wil_sym"
+\d (00:00:11) Design opened: C:/Users/Mike/Documents/AutoWill/orcad/package/wil_sym.dra
+\i (00:00:11) trapsize 90
+\i (00:00:11) trapsize 92
+\i (00:00:11) trapsize 90
+\i (00:00:11) trapsize 99
+\i (00:00:12) generaledit 
+\i (00:00:31) exit 
+\t (00:00:31)     Journal end - Sat Oct 15 13:47:43 2022

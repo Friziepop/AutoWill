@@ -44,7 +44,7 @@ def run_simulations(ids, step_size):
                                                freq=freq) if not prev_rootwidth else prev_rootwidth
 
             input_padding = \
-                (2 * chosen_mat.resistor.pad_b + chosen_mat.resistor.pad_c + 2 * root_width - start_width) / 2
+                (2 * chosen_mat.resistor.pad_b + chosen_mat.resistor.pad_c + 2 * start_width - start_width) / 2
 
             quarter_wavelength = quarter_wavelength - input_padding
 
@@ -118,7 +118,7 @@ def run_simulations(ids, step_size):
 
             optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
 
-            constraints = [OptimizationConstraint(name='WIDTH_2', max=start_width * 2,
+            constraints = [OptimizationConstraint(name='WIDTH_2', max=start_width * 3,
                                                   min=start_width / 2,
                                                   start=start_width,
                                                   should_optimize=True)
@@ -153,7 +153,7 @@ def set_meshing(freq):
 if __name__ == '__main__':
     step_size = 0.5
 
-    ids = [1, 2, 3, 4]
+    ids = [4, 6]
 
     print("starting dataset generation using awr optimization")
     print(f"ids:{ids}")
