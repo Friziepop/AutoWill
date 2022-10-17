@@ -23,12 +23,12 @@ def run_simulations(ids, step_size):
     eq_manager = AwrEquationManager()
     eq_manager.connect()
 
-    for id in [2, 1, 3]:
+    for id in [1, 2, 3]:
         chosen_mat = deepcopy(MaterialDB().get_by_id(id))
         freqs = [float(freq) for freq in np.arange(chosen_mat.start_freq, chosen_mat.end_freq, step_size)]
         print(f"freqs from :{freqs[0]} , to :{freqs[-1]} ,step :{step_size}")
 
-        for freq in freqs:
+        for freq in [19.5]:
             set_meshing(freq)
             bandwidth = freq / 15
 
@@ -70,12 +70,12 @@ def run_simulations(ids, step_size):
                                                   start=root_width,
                                                   should_optimize=False),
                            OptimizationConstraint(name='OUTPUT_PADDING', max=quarter_wavelength * 2,
-                                                  min=quarter_wavelength / 10,
-                                                  start=quarter_wavelength,
+                                                  min=quarter_wavelength / 100,
+                                                  start=quarter_wavelength/10,
                                                   should_optimize=False),
                            OptimizationConstraint(name='PORT_1_PADDING', max=quarter_wavelength,
                                                   min=quarter_wavelength / 100,
-                                                  start=quarter_wavelength/10,
+                                                  start=quarter_wavelength / 10,
                                                   should_optimize=False)
                            ]
 
