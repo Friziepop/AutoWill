@@ -40,23 +40,6 @@ class CsvPredictor(BasePredictor):
         return getattr(mat, self._field)
 
 
-class ModelPredictor(BasePredictor):
-    def __init__(self, models_dir: str, model_feature: str):
-        super(ModelPredictor, self).__init__()
-        self._model_feature = model_feature
-        self._models_dir = models_dir
-
-    def load_model(self, symbol_input_params: SymbolParams):
-        model_path = get_learning_model_name(models_dir=self._models_dir, material_id=symbol_input_params.material_id,
-                                             input_name="frequency",
-                                             output_name=self._model_feature)
-        with open(model_path, "rb") as input_file:
-            return pickle.load(input_file)
-
-    def predict(self, symbol_input_params: SymbolParams) -> float:
-        return self.load_model(symbol_input_params).predict(np.array([symbol_input_params.frequency]))[0]
-
-
 class WidthPredictor(BasePredictor):
     def __init__(self, height_predictor: BasePredictor, thickness_predictor: BasePredictor, z0: float,
                  material_db: MaterialDB):
@@ -74,20 +57,25 @@ class WidthPredictor(BasePredictor):
                                      freq=symbol_input_params.frequency)
 
 
-class PaddingPredictor(BasePredictor):
-    def __init__(self, coefficient: float, material_db: MaterialDB):
-        super(PaddingPredictor, self).__init__()
-        self._coefficient = coefficient
-        self._material_db = material_db
+class ModelPredictor(BasePredictor):
+    def __init__(self, models_dir: str, model_feature: str):
+        super(ModelPredictor, self).__init__()
+        self._model_feature = model_feature
+        self._models_dir = models_dir
+
+    def load_model(self, symbol_input_params: SymbolParams):
+        model_path = get_learning_model_name(models_dir=self._models_dir, material_id=symbol_input_params.material_id,
+                                             input_name="frequency",
+                                             output_name=self._model_feature)
+        with open(model_path, "rb") as input_file:
+            return pickle.load(input_file)
 
     def predict(self, symbol_input_params: SymbolParams) -> float:
-        mat = self._material_db.get_by_id(id=symbol_input_params.material_id)
-        return self._coefficient * CalculationsUtils.extract_quarter_wavelength(frequency=symbol_input_params.frequency,
-                                                                                er=mat.er)
+        return self.load_model(symbol_input_params).predict(np.array([symbol_input_params.frequency]))[0]
 
 
 class InputPaddingPredictor(BasePredictor):
-    def __init__(self, material_db: MaterialDB, width_predictor: WidthPredictor, rootwidth_predictor: WidthPredictor):
+    def __init__(self, material_db: MaterialDB, width_predictor: WidthPredictor, rootwidth_predictor: ModelPredictor):
         super(InputPaddingPredictor, self).__init__()
         self._width_predictor = width_predictor
         self._rootwidth_predictor = rootwidth_predictor
@@ -98,3 +86,18 @@ class InputPaddingPredictor(BasePredictor):
         return CalculationsUtils.calculate_padding(resistor=mat.resistor,
                                                    root_width=self._rootwidth_predictor.predict(symbol_input_params),
                                                    start_width=self._width_predictor.predict(symbol_input_params))
+
+
+class PaddingPredictor(BasePredictor):
+    def __init__(self, coefficient: float, material_db: MaterialDB, input_padding_predictor: InputPaddingPredictor):
+        super(PaddingPredictor, self).__init__()
+        self._coefficient = coefficient
+        self._material_db = material_db
+        self._input_padding_predictor = input_padding_predictor
+
+    def predict(self, symbol_input_params: SymbolParams) -> float:
+        mat = self._material_db.get_by_id(id=symbol_input_params.material_id)
+        return self._coefficient * (
+                CalculationsUtils.extract_quarter_wavelength(frequency=symbol_input_params.frequency,
+                                                             er=mat.er) - self._input_padding_predictor.predict(
+            symbol_input_params))

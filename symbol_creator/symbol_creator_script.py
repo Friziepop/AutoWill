@@ -34,12 +34,14 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width")
 
     res_predictor = ConstPredictor(value=100.0)
-    angle_predictor = ConstPredictor(value=1.0)
+    angle_predictor = ConstPredictor(value=5.0)
 
-    port_1_padding_predictor = PaddingPredictor(coefficient=0.1, material_db=material_db)
-    output_padding_predictor = PaddingPredictor(coefficient=0.1, material_db=material_db)
-    input_padding_predictor = InputPaddingPredictor(rootwidth_predictor=calculated_rootwidth_predictor,
+    input_padding_predictor = InputPaddingPredictor(rootwidth_predictor=rootwidth_predictor,
                                                     width_predictor=width_predictor, material_db=material_db)
+    port_1_padding_predictor = PaddingPredictor(coefficient=0.1, material_db=material_db,
+                                                input_padding_predictor=input_padding_predictor)
+    output_padding_predictor = PaddingPredictor(coefficient=0.1, material_db=material_db,
+                                                input_padding_predictor=input_padding_predictor)
 
     print(f"height_predictor:{height_predictor.predict(symbol_input_params=params)}")
     print(f"thickness_predictor:{thickness_predictor.predict(symbol_input_params=params)}")
@@ -106,8 +108,8 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
 
 
 if __name__ == '__main__':
-    material_id = 4
-    frequency = 20
-    bandwidth = 1
+    material_id = 2
+    frequency = 19
+    bandwidth = frequency / 15
     params = SymbolParams(material_id=material_id, frequency=frequency, bandwidth=bandwidth)
     create(params=params)
