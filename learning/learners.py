@@ -1,6 +1,7 @@
 import numpy as np
 
 from learning.base_learner import BaseLearner
+import itertools
 
 
 class InverseLearner(BaseLearner):
@@ -16,9 +17,15 @@ class PolyLearner(BaseLearner):
         self._degree = degree
 
     def create_feature(self, x):
-        bias_ones = np.ones(len(x))
+        numer_of_params = len(x)
+        bias_ones = np.ones(len(x[0]))
         tmp = np.array([bias_ones])
-        for deg in range(1, self._degree + 1):
-            tmp = np.vstack((tmp, np.power(x, deg)))
+        ls = [list(range(0, self._degree + 1) for i in range(numer_of_params))]
+        all_deg_permutations = itertools.product(*ls)
+        for degs in all_deg_permutations:
+            x_tmp = 1
+            for i in range(len(degs)):
+                x_tmp = x_tmp * np.power(x[i], degs[i])
+            tmp = np.vstack((tmp, x_tmp))
 
         return tmp.T
