@@ -62,6 +62,8 @@ class Vars:
     name: str
     id: int
     frequency: float
+    er: float
+    tanl: float
     quarter: float
     res: float
     height: float
@@ -71,11 +73,14 @@ class Vars:
     port_1_padding: float
     width_2: float
 
-    def __init__(self, name, id, frequency, quarter, res, height, root_width, width, output_padding, port_1_padding,
+    def __init__(self, name, id, frequency, er, tanl, quarter, res, height, root_width, width, output_padding,
+                 port_1_padding,
                  width_2):
         self.name = name
         self.id = id
         self.frequency = frequency
+        self.er = er
+        self.tanl = tanl
         self.quarter = quarter
         self.res = res
         self.height = height
@@ -173,8 +178,8 @@ class Extractor(AwrConnector):
 
         return result
 
-    def extract_vars_to_csv(self, frequency: float, id: int, name: str):
-        vars_dict = {"frequency": frequency, "id": id, "name": name}
+    def extract_vars_to_csv(self, frequency: float, material: Material):
+        vars_dict = {"frequency": frequency, "id": material.id, "name": material.name ,"er":material.er,"tanl":material.tanl}
         for field, eq_name in CLASS_FIELD_TO_VARS.items():
             vars_dict[field] = float(self._eq_manager.get_equation_by_name(eq_name).equation_value)
 

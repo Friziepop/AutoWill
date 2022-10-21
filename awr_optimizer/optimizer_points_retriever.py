@@ -1,0 +1,24 @@
+# MATERIALS_DB_CSV_PATH = "materials/materials_db.csv"
+from typing import List, Tuple
+
+import numpy as np
+
+from materials.material import Material
+
+
+class OptimizerPointsRetriever:
+    def __init__(self, material: Material):
+        # TODO:change to mat
+        self._permutations = self._create_permutations(freq_start=5, freq_end=10, freq_points=4, er_start=material.er - 0.5,
+                                                       er_end=material.er - 0.5, er_points=10, tanl_start=material.tanl - 0.001,
+                                                       tanl_end=material.tanl + 0.001, tanl_points=10)
+
+    def _create_permutations(self, freq_start, freq_end, freq_points: int, er_start, er_end, er_points: int, tanl_start,
+                             tanl_end, tanl_points: int) -> List[Tuple[float, float, float]]:
+        freq_ls = list(np.linspace(start=freq_start, endpoint=freq_end, num=freq_points))
+        tanl_ls = list(np.linspace(start=tanl_start, endpoint=tanl_end, num=tanl_points))
+        er_ls = list(np.linspace(start=er_start, endpoint=er_end, num=er_points))
+        return [(i, j, k) for i in freq_ls for j in er_ls for k in tanl_ls]
+
+    def get_points(self):
+        return self._permutations

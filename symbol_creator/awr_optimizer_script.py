@@ -6,6 +6,7 @@ from awr_optimizer.awr_equation_manager import AwrEquationManager
 from awr_optimizer.awr_optimizer import AwrOptimizer
 from awr_optimizer.extractor import Extractor
 from awr_optimizer.optimization_constraint import OptimizationConstraint
+from awr_optimizer.optimizer_points_retriever import OptimizerPointsRetriever
 from microstip_freq_calc.copied_calc import MicroStripCopiedCalc
 
 from materials.materials_db import MaterialDB
@@ -25,10 +26,13 @@ def run_simulations(ids, step_size):
 
     for id in ids:
         chosen_mat = deepcopy(MaterialDB().get_by_id(id))
-        freqs = [float(freq) for freq in np.arange(chosen_mat.start_freq, chosen_mat.end_freq, step_size)]
-        print(f"freqs from :{freqs[0]} , to :{freqs[-1]} ,step :{step_size}")
 
-        for freq in freqs:
+        simulation_points = OptimizerPointsRetriever(material=chosen_mat).get_points()
+        print(f"freqs from :{simulation_points[0][0]} , to :{simulation_points[-1][0]}")
+
+        for freq, er, tanl in simulation_points:
+            chosen_mat.er = er
+            chosen_mat.tabl = tanl
             set_meshing(freq)
             bandwidth = freq / 15
 
