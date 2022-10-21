@@ -32,7 +32,7 @@ def run_simulations(ids, step_size):
 
         for freq, er, tanl in simulation_points:
             chosen_mat.er = er
-            chosen_mat.tabl = tanl
+            chosen_mat.tanl = tanl
             set_meshing(freq)
             bandwidth = freq / 15
 
@@ -77,7 +77,15 @@ def run_simulations(ids, step_size):
                            OptimizationConstraint(name='PORT_1_PADDING', max=quarter_wavelength,
                                                   min=quarter_wavelength / 100,
                                                   start=quarter_wavelength / 10,
-                                                  should_optimize=False)
+                                                  should_optimize=False),
+                           OptimizationConstraint(name='Er', max=chosen_mat.er,
+                                                  min=chosen_mat.er,
+                                                  start=chosen_mat.er,
+                                                  should_optimize=False),
+                           OptimizationConstraint(name='Tanl', max=chosen_mat.tanl,
+                                                  min=chosen_mat.tanl,
+                                                  start=chosen_mat.tanl,
+                                                  should_optimize=False),
                            ]
 
             # constraints = [

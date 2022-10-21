@@ -37,7 +37,6 @@ CLASS_FIELD_TO_VARS = {
     "width": "WIDTH",
     "output_padding": "OUTPUT_PADDING",
     "port_1_padding": "PORT_1_PADDING",
-    "width_2": "WIDTH_2"
 }
 
 SPARAM_ZERO_THRESHOLD = -30
@@ -71,11 +70,9 @@ class Vars:
     width: float
     output_padding: float
     port_1_padding: float
-    width_2: float
 
     def __init__(self, name, id, frequency, er, tanl, quarter, res, height, root_width, width, output_padding,
-                 port_1_padding,
-                 width_2):
+                 port_1_padding):
         self.name = name
         self.id = id
         self.frequency = frequency
@@ -88,7 +85,6 @@ class Vars:
         self.width = width
         self.output_padding = output_padding
         self.port_1_padding = port_1_padding
-        self.width_2 = width_2
 
 
 @dataclass
@@ -174,12 +170,13 @@ class Extractor(AwrConnector):
 
         if save_csv:
             self.extract_s_params_to_csv(material.id, bandwidth, material.name, frequency, result)
-            self.extract_vars_to_csv(frequency, material.id, material.name)
+            self.extract_vars_to_csv(frequency, material)
 
         return result
 
     def extract_vars_to_csv(self, frequency: float, material: Material):
-        vars_dict = {"frequency": frequency, "id": material.id, "name": material.name ,"er":material.er,"tanl":material.tanl}
+        vars_dict = {"frequency": frequency, "id": material.id, "name": material.name, "er": material.er,
+                     "tanl": material.tanl}
         for field, eq_name in CLASS_FIELD_TO_VARS.items():
             vars_dict[field] = float(self._eq_manager.get_equation_by_name(eq_name).equation_value)
 

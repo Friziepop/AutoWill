@@ -57,10 +57,8 @@ class AwrOptimizer(AwrConnector):
         params = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict[
             'MSUB.SUBSTRATE'].parameters_dict
 
-        params['Er'].value = self._material.er
         params['T'].value = self._material.thickness / 1000
         params['Rho'].value = self._material.rho
-        params['Tand'].value = self._material.tanl
         params['ErNom'].value = self._material.er
 
         self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict['STACKUP.SUB1'].parameters_dict[
