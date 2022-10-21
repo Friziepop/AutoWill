@@ -38,7 +38,7 @@ def learn_models(materials_ids: List[int], csv_dir: str = CSV_DIR, models_dir: s
 
 def main():
     show_graph = True
-    ids = [2]
+    ids = [5]
     print("starting to learn models")
     learn_models(materials_ids=ids, show_graph=show_graph)
     if show_graph:

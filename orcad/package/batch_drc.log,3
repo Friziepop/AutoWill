@@ -4,7 +4,7 @@
 (                                                                     )
 (    Drawing          : wil_sym.dra                                   )
 (    Software Version : 17.4S028                                      )
-(    Date/Time        : Wed Sep 28 11:41:22 2022                      )
+(    Date/Time        : Wed Sep 28 13:56:16 2022                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -20,7 +20,7 @@
  ========= check standalone text              0:00:00
  ========= check standalone rectangles        0:00:00
 
- ..... Total number of DRC errors  0
+ ..... Total number of DRC errors  25
 
  ..... DRC update completed, total CPU time   0:00:00
  *************************************************************************

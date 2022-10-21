@@ -34,7 +34,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width")
 
     res_predictor = ConstPredictor(value=100.0)
-    angle_predictor = ConstPredictor(value=5.0)
+    angle_predictor = ConstPredictor(value=45)
 
     input_padding_predictor = InputPaddingPredictor(rootwidth_predictor=rootwidth_predictor,
                                                     width_predictor=width_predictor, material_db=material_db)
@@ -108,8 +108,8 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
 
 
 if __name__ == '__main__':
-    material_id = 2
-    frequency = 19
+    material_id = 5
+    frequency = 5
     bandwidth = frequency / 15
     params = SymbolParams(material_id=material_id, frequency=frequency, bandwidth=bandwidth)
     create(params=params)

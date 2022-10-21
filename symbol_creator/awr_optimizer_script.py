@@ -44,7 +44,7 @@ def run_simulations(ids, step_size):
                                                freq=freq) if not prev_rootwidth else prev_rootwidth
 
             input_padding = \
-                (2 * chosen_mat.resistor.pad_b + chosen_mat.resistor.pad_c + 2 * root_width - start_width) / 2
+                (2 * chosen_mat.resistor.pad_b + chosen_mat.resistor.pad_c - start_width) / 2
 
             quarter_wavelength = quarter_wavelength - input_padding
 
@@ -62,9 +62,6 @@ def run_simulations(ids, step_size):
                                                   should_optimize=False),
                            OptimizationConstraint(name='PAD_C', max=chosen_mat.resistor.pad_c, min=0,
                                                   start=chosen_mat.resistor.pad_c,
-                                                  should_optimize=False),
-                           OptimizationConstraint(name='INPUT_PADDING', max=input_padding, min=0,
-                                                  start=input_padding,
                                                   should_optimize=False),
                            OptimizationConstraint(name='ROOTWIDTH', max=5, min=0,
                                                   start=root_width,
@@ -102,7 +99,7 @@ def run_simulations(ids, step_size):
 
             optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
 
-            constraints = [OptimizationConstraint(name='ROOTWIDTH', max=root_width * 2, min=root_width / 2,
+            constraints = [OptimizationConstraint(name='ROOTWIDTH', max=root_width * 1.5, min=root_width / 1.5,
                                                   start=root_width,
                                                   should_optimize=True)
                            ]
@@ -124,7 +121,7 @@ def set_meshing(freq):
     equation_manager = AwrEquationManager()
     equation_manager.connect()
     if 0 <= freq < 10:
-        equation_manager.set_equation_value("MESHING", 0.01)
+        equation_manager.set_equation_value("MESHING", 0.1)
     if 10 <= freq < 20:
         equation_manager.set_equation_value("MESHING", 0.01)
     if 20 <= freq < 30:
@@ -136,7 +133,7 @@ def set_meshing(freq):
 if __name__ == '__main__':
     step_size = 0.5
 
-    ids = [1, 2, 3]
+    ids = [5]
 
     print("starting dataset generation using awr optimization")
     print(f"ids:{ids}")
