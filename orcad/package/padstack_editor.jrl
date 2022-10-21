@@ -1,7 +1,10 @@
 \t (00:00:01) padstack_editor 17.4 S028 Windows SPB 64-bit Edition
-\t (00:00:01)     Journal start - Tue Oct  4 15:11:26 2022
-\t (00:00:01)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=18116 CPUs=8
-\t (00:00:01) CmdLine= padstack_editor -mpssession shvmo -file C:/Users/shvmo/AppData/Local/Temp/#Taaaabc20700.tmp -pname S_R28T30M38_40P28_30 -data C:/Users/shvmo/AppData/Local/Temp/#Taaaabf20700.tmp
+\t (00:00:01)     Journal start - Fri Oct 21 16:32:12 2022
+\t (00:00:01)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=5284 CPUs=8
+\t (00:00:01) CmdLine= padstack_editor -mpssession shvmo -file C:/Users/shvmo/AppData/Local/Temp/#Taaaaan18452.tmp -pname IOPORT -data C:/Users/shvmo/AppData/Local/Temp/#Taaaaaq18452.tmp -s C:/Users/shvmo/PycharmProjects/AutoWill/symbol_creator/4bd80279-2f26-472d-8954-66948ce0c6f5__tmp.scr
 \t (00:00:01) 
-\d (00:00:03) QtSignal GuidedTabsParent GuidedTabs currentChanged "Mask Layers"
-\t (00:01:48)     Journal end - Tue Oct  4 15:13:13 2022
+\d (00:00:01) QtSignal GuidedDesignLayersTab PadHeight editingFinished "0.54380121132051"
+\d (00:00:01) QtSignal MainWindow Save triggered
+\d (00:00:01) QtSignal MainWindow UpdateToDesign triggered
+\d (00:00:01) QtSignal MainWindow Exit triggered
+\t (00:00:01)     Journal end - Fri Oct 21 16:32:12 2022

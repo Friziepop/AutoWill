@@ -81,6 +81,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     upper_mid_point = dxf_extractor.extract_layout_angle_mid()
     footprint_params = FootprintParams(
         macro_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\pcb_automation\\wil_symbol_macro.scr",
+        pad_stack_macro_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\pcb_automation\\padstack_change.scr",
         dxf_file=os.path.join(out_path, "out.dxf"),
         dxf_mapping_file="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\pcb_automation\\resources\\mapping_setup.cnv",
         material_name=f"{material.name}-USER",

@@ -1,0 +1,9 @@
+# Padstack Editor script
+#	file: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/pcb_automation/padstack_change_1.scr
+#	start time: Fri Oct 21 2022 15:24:21
+#	Version: 17.4 S028 (4018475) Windows SPB 64-bit Edition
+
+QtSignal GuidedDesignLayersTab PadHeight editingFinished "{{WIDTH}}"
+QtSignal MainWindow Save triggered
+QtSignal MainWindow UpdateToDesign triggered
+QtSignal MainWindow Exit triggered

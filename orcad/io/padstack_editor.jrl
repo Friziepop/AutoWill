@@ -1,0 +1,12 @@
+\t (00:00:00) padstack_editor 17.4 S028 Windows SPB 64-bit Edition
+\t (00:00:00)     Journal start - Fri Oct 21 15:56:19 2022
+\t (00:00:00)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=15708 CPUs=8
+\t (00:00:00) CmdLine= c:\cadence\spb_17.4\tools\bin\padstack_editor.exe C:\Users\shvmo\PycharmProjects\AutoWill\orcad\io\ioport.pad
+\t (00:00:00) 
+\d (00:00:03) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
+\d (00:00:08) QtSignal GuidedTabsParent GuidedDesignLayersTab keyPressEvent 16777249 67108864 false +
+\d (00:00:08) QtSignal 1
+\d (00:00:08) QtSignal GuidedDesignLayersTab PadHeight editingFinished "0.5438"
+\d (00:00:09) QtSignal GuidedDesignLayersTab LayersTable itemSelectionChanged
+\d (00:00:11) QtSignal MainWindow Save triggered
+\t (00:00:13)     Journal end - Fri Oct 21 15:56:32 2022

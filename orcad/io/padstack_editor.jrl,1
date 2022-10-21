@@ -1,0 +1,7 @@
+\t (00:00:00) padstack_editor 17.4 S028 Windows SPB 64-bit Edition
+\t (00:00:00)     Journal start - Fri Oct 21 15:56:08 2022
+\t (00:00:00)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=6704 CPUs=8
+\t (00:00:00) CmdLine= c:\cadence\spb_17.4\tools\bin\padstack_editor.exe C:\Users\shvmo\PycharmProjects\AutoWill\orcad\io\ioport.pad
+\t (00:00:00) 
+\d (00:00:02) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
+\t (00:00:03)     Journal end - Fri Oct 21 15:56:11 2022
