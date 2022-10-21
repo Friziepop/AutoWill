@@ -48,7 +48,7 @@ class FootprintGenerator:
                                          ANGLE=self._params.angle,
                                          PAD_A=self._params.pad_a,
                                          PAD_B=self._params.pad_b,
-                                         PAD_STACK_SCRIPT=tmp_pad_stack_macro_name)
+                                         PAD_STACK_SCRIPT=tmp_pad_stack_macro_name.name)
         tmp_name = Path(os.getcwd()) / f"{uuid.uuid4()}__tmp.scr"
         with open(tmp_name, "w") as f:
             f.write(compiled_macro)

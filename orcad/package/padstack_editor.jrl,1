@@ -1,18 +1,10 @@
 \t (00:00:00) padstack_editor 17.4 S028 Windows SPB 64-bit Edition
-\t (00:00:00)     Journal start - Fri Oct 21 15:54:43 2022
-\t (00:00:00)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=7716 CPUs=8
-\t (00:00:00) CmdLine= padstack_editor -mpssession shvmo -file C:/Users/shvmo/AppData/Local/Temp/#Taaaaca11384.tmp -pname IOPORT -data C:/Users/shvmo/AppData/Local/Temp/#Taaaacd11384.tmp
+\t (00:00:00)     Journal start - Fri Oct 21 16:30:11 2022
+\t (00:00:00)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=12084 CPUs=8
+\t (00:00:00) CmdLine= padstack_editor -mpssession shvmo -file C:/Users/shvmo/AppData/Local/Temp/#Taaaaan03716.tmp -pname IOPORT -data C:/Users/shvmo/AppData/Local/Temp/#Taaaaaq03716.tmp -s C:/Users/shvmo/PycharmProjects/AutoWill/symbol_creator/b745f77f-167b-4e2f-850b-3799599a6937__tmp.scr
 \t (00:00:00) 
-\d (00:00:04) QtSignal GuidedTabsParent GuidedTabs currentChanged Summary
-\d (00:00:05) QtSignal GuidedTabsParent GuidedTabs currentChanged "Mask Layers"
-\d (00:00:05) QtSignal GuidedTabsParent GuidedTabs currentChanged "Design Layers"
-\d (00:00:18) QtSignal GuidedTabsParent GuidedDesignLayersTab keyPressEvent 16777249 67108864 false +
-\d (00:00:18) QtSignal 1
-\d (00:00:18) QtSignal GuidedTabsParent GuidedDesignLayersTab keyPressEvent 83 67108864 false 1 +
-\d (00:00:18) QtSignal ""
-\d (00:00:18) QtSignal GuidedDesignLayersTab PadHeight editingFinished "0.3000"
-\d (00:00:19) QtSignal GuidedDesignLayersTab LayersTable itemSelectionChanged
-\d (00:00:21) QtSignal MainWindow SaveAs triggered
-\d (00:00:24) QtFillin "ioport.pad"
-\d (00:00:25) QtFillin Yes
-\t (00:00:29)     Journal end - Fri Oct 21 15:55:12 2022
+\d (00:00:01) QtSignal GuidedDesignLayersTab PadHeight editingFinished "0.54380121132051"
+\d (00:00:01) QtSignal MainWindow Save triggered
+\d (00:00:01) QtSignal MainWindow UpdateToDesign triggered
+\d (00:00:01) QtSignal MainWindow Exit triggered
+\t (00:00:01)     Journal end - Fri Oct 21 16:30:11 2022

@@ -4,5 +4,6 @@
 #	Version: 17.4 S028 (4018475) Windows SPB 64-bit Edition
 
 QtSignal GuidedDesignLayersTab PadHeight editingFinished "{{WIDTH}}"
-QtSignal GuidedTabsParent GuidedDesignLayersTab keyPressEvent 16777220 0 false 1 ""
 QtSignal MainWindow Save triggered
+QtSignal MainWindow UpdateToDesign triggered
+QtSignal MainWindow Exit triggered
