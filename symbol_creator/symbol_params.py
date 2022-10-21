@@ -30,6 +30,7 @@ class DxfGenerationParams:
 @dataclass
 class FootprintParams:
     macro_path: str
+    pad_stack_macro_path: str
     dxf_file: str
     dxf_mapping_file: str
     material_name: str
