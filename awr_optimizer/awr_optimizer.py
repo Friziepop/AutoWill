@@ -8,7 +8,6 @@ import json
 import numpy as np
 from tqdm import tqdm
 
-
 from awr_optimizer.awr_connector import AwrConnector
 from awr_optimizer.awr_equation_manager import AwrEquationManager
 from awr_optimizer.optimization_constraint import OptimizationConstraint
@@ -30,13 +29,6 @@ class AwrOptimizer(AwrConnector):
         super(AwrOptimizer, self).connect()
         self._eq_manager.connect()
 
-    def get_sub_mapping(self, material_name: str):
-        sub_dielectric_list = json.loads(
-            self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict['STACKUP.SUB1'].parameters_dict[
-                'MatName'].value_str.replace("{", "[").replace("}", "]"))
-        sub_dielectric = {x: i for i, x in enumerate(sub_dielectric_list)}
-        return "{" + f"{sub_dielectric['Air']},{sub_dielectric[material_name]}" + "}"
-
     def setup(self, max_iter: int, optimization_type: str,
               optimization_properties: Dict,
               constraints: List[OptimizationConstraint],
@@ -57,12 +49,9 @@ class AwrOptimizer(AwrConnector):
         params = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict[
             'MSUB.SUBSTRATE'].parameters_dict
 
-        params['T'].value = self._material.thickness / 1000
+        params['T'].value = self._material.thickness / 1000  # convert between units
         params['Rho'].value = self._material.rho
         params['ErNom'].value = self._material.er
-
-        self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict['STACKUP.SUB1'].parameters_dict[
-            'DieInd'].value_str = self.get_sub_mapping(material_name=self._material.name)
 
     def run_optimizer(self, freq: float, bandwidth: float, num_points: int, ):
         self.set_proj_params(bandwidth, freq, num_points)

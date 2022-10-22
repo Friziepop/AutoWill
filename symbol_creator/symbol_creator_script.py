@@ -1,7 +1,9 @@
 import math
 import os
+from copy import deepcopy
 from time import sleep
 
+from materials.material import Material
 from materials.materials_db import MaterialDB
 from symbol_creator.dxf_generator import DxfAwrGenerator
 from symbol_creator.footprint_generator import FootprintGenerator
@@ -14,24 +16,17 @@ MODELS_DIR = "../learning/models"
 MATERIALS_DB = "../materials/materials_db.csv"
 
 
-def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str = MATERIALS_DB):
+def create(params: SymbolParams, models_dir: str = MODELS_DIR):
     print(
-        f"creating symbol for material_id:{params.material_id} , frequency:{params.frequency}, bandwidth:{params.bandwidth}")
-    material_db = MaterialDB(csv_path=materials_db)
+        f"creating symbol for material_id:{params.material.id} , frequency:{params.frequency},er:{params.material.er} , tanl:{params.material.tanl} bandwidth:{params.bandwidth}")
 
-    material = material_db.get_by_id(params.material_id)
-    material.er = params.er
-    material.tanl = params.tanl
-
-    height_predictor = CsvPredictor(material_db=material_db, field="height")
-    thickness_predictor = CsvPredictor(material_db=material_db, field="thickness")
+    height_predictor = CsvPredictor(field="height")
+    thickness_predictor = CsvPredictor(field="thickness")
     quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="quarter", material_db=material_db)
-    width_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor, z0=50,
-                                     material_db=material_db)
+    width_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor, z0=50)
     calculated_rootwidth_predictor = WidthPredictor(height_predictor=height_predictor,
                                                     thickness_predictor=thickness_predictor,
-                                                    z0=50 * math.sqrt(2),
-                                                    material_db=material_db)
+                                                    z0=50 * math.sqrt(2),)
 
     rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width", material_db=material_db)
 
@@ -39,11 +34,9 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     angle_predictor = ConstPredictor(value=45)
 
     input_padding_predictor = InputPaddingPredictor(rootwidth_predictor=rootwidth_predictor,
-                                                    width_predictor=width_predictor, material_db=material_db)
-    port_1_padding_predictor = PaddingPredictor(coefficient=0.1, material_db=material_db,
-                                                input_padding_predictor=input_padding_predictor)
-    output_padding_predictor = PaddingPredictor(coefficient=0.1, material_db=material_db,
-                                                input_padding_predictor=input_padding_predictor)
+                                                    width_predictor=width_predictor)
+    port_1_padding_predictor = PaddingPredictor(coefficient=0.1,input_padding_predictor=input_padding_predictor)
+    output_padding_predictor = PaddingPredictor(coefficient=0.1, input_padding_predictor=input_padding_predictor)
 
     print(f"height_predictor:{height_predictor.predict(symbol_input_params=params)}")
     print(f"thickness_predictor:{thickness_predictor.predict(symbol_input_params=params)}")
@@ -113,6 +106,13 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
 if __name__ == '__main__':
     material_id = 5
     frequency = 5
+    er = 3.8
+    tanl = 0.0021
     bandwidth = frequency / 15
-    params = SymbolParams(material_id=material_id, frequency=frequency, bandwidth=bandwidth, er=3.8, tanl=0.0021)
+    material_db = MaterialDB(csv_path=MATERIALS_DB)
+
+    material: Material = deepcopy(material_db.get_by_id(material_id))
+    material.er = er
+    material.tabl = tanl
+    params = SymbolParams(material=material, frequency=frequency, bandwidth=bandwidth)
     create(params=params)

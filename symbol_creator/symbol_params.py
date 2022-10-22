@@ -1,13 +1,13 @@
 from dataclasses import dataclass
 from typing import Tuple
 
+from materials.material import Material
+
 
 @dataclass
 class SymbolParams:
-    material_id: int
+    material: Material
     frequency: float
-    er:float
-    tanl:float
     bandwidth: float
 
 
