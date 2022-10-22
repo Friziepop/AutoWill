@@ -52,6 +52,8 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR):
     out_path = os.getcwd()
 
     dxf_params = DxfGenerationParams(
+        er=material.er,
+        tanl=material.tanl,
         height=height_predictor.predict(params),
         thickness=thickness_predictor.predict(params),
         quarter=quarter_predictor.predict(params),
@@ -113,6 +115,6 @@ if __name__ == '__main__':
 
     material: Material = deepcopy(material_db.get_by_id(material_id))
     material.er = er
-    material.tabl = tanl
+    material.tanl = tanl
     params = SymbolParams(material=material, frequency=frequency, bandwidth=bandwidth)
     create(params=params)

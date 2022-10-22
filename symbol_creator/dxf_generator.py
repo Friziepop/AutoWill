@@ -20,6 +20,8 @@ class DxfAwrGenerator(AwrConnector):
     def generate(self):
         self.connect()
         self._eq_manager.set_equation_value("WIDTH", self._params.width)
+        self._eq_manager.set_equation_value("Er", self._params.er)
+        self._eq_manager.set_equation_value("Tanl", self._params.tanl)
         self._eq_manager.set_equation_value("ROOTWIDTH", self._params.rootwidth)
         self._eq_manager.set_equation_value("Res", self._params.res)
         self._eq_manager.set_equation_value("QUARTER", self._params.quarter)

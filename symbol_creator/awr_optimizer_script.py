@@ -1,6 +1,7 @@
 import math
 
 import numpy as np
+from scipy.constants import speed_of_light
 
 from awr_optimizer.awr_equation_manager import AwrEquationManager
 from awr_optimizer.awr_optimizer import AwrOptimizer
@@ -36,7 +37,8 @@ def run_simulations(ids, step_size):
             set_meshing(freq)
             bandwidth = freq / 15
 
-            quarter_wavelength = prev_quarter if prev_quarter else extractor.extract_quarter_wavelength(frequency=freq)
+            quarter_wavelength = 10 ** 3 * ((speed_of_light / (freq * 10 ** 9 * math.sqrt(er))) / 4)
+
             print(f"starting -- freq:{freq} , wavelength:{extractor.extract_quarter_wavelength(frequency=freq)}")
 
             micro_strip_calc = MicroStripCopiedCalc()
@@ -56,6 +58,9 @@ def run_simulations(ids, step_size):
                            OptimizationConstraint(name='QUARTER', max=quarter_wavelength * 2,
                                                   min=quarter_wavelength / 3,
                                                   start=quarter_wavelength, should_optimize=True),
+                           OptimizationConstraint(name='INPUT_PADDING', max=input_padding,
+                                                  min=input_padding,
+                                                  start=input_padding, should_optimize=False),
                            OptimizationConstraint(name='HEIGHT', max=10, min=0.01, start=chosen_mat.height,
                                                   should_optimize=False),
                            OptimizationConstraint(name='PAD_A', max=10, min=0,
@@ -111,7 +116,7 @@ def run_simulations(ids, step_size):
 
             optimizer.run_optimizer(freq=freq, bandwidth=bandwidth, num_points=3)
 
-            constraints = [OptimizationConstraint(name='ROOTWIDTH', max=root_width * 1.5, min=root_width / 1.5,
+            constraints = [OptimizationConstraint(name='ROOTWIDTH', max=root_width * 1.2, min=root_width / 1.2,
                                                   start=root_width,
                                                   should_optimize=True)
                            ]

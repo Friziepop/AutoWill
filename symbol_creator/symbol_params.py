@@ -13,6 +13,8 @@ class SymbolParams:
 
 @dataclass
 class DxfGenerationParams:
+    er: float
+    tanl: float
     height: float
     thickness: float
     width: float

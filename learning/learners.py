@@ -14,11 +14,10 @@ class InverseLearner(BaseLearner):
         er = x[1]
         tanl = x[2]
         speed_of_light_normalized = speed_of_light / 10e9
-        c_pow = math.pow(speed_of_light_normalized, 2)
 
         tmp = np.array([bias_ones, speed_of_light_normalized / (f * np.sqrt(
             er * 0.5 * (np.sqrt(
-                1 + np.power((2 * c_pow * np.power(tanl, 2) / (np.power(2 * math.pi * f, 2)) * er), 2)) + 1)))])
+                1 + np.power(tanl/2, 2)) + 1)))])
 
         return tmp.T
 
