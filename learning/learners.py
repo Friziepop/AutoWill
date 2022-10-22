@@ -1,4 +1,7 @@
+import math
+
 import numpy as np
+from scipy.constants import speed_of_light
 
 from learning.base_learner import BaseLearner
 import itertools
@@ -7,7 +10,15 @@ import itertools
 class InverseLearner(BaseLearner):
     def create_feature(self, x):
         bias_ones = np.ones(len(x[0]))
-        tmp = np.array([bias_ones, 1 / (x[0]*np.sqrt(x[1]))])
+        f = x[0]
+        er = x[1]
+        tanl = x[2]
+        speed_of_light_normalized = speed_of_light / 10e9
+        c_pow = math.pow(speed_of_light_normalized, 2)
+
+        tmp = np.array([bias_ones, speed_of_light_normalized / (f * np.sqrt(
+            er * 0.5 * (np.sqrt(
+                1 + np.power((2 * c_pow * np.power(tanl, 2) / (np.power(2 * math.pi * f, 2)) * er), 2)) + 1)))])
 
         return tmp.T
 
