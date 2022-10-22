@@ -6,8 +6,9 @@ import itertools
 
 class InverseLearner(BaseLearner):
     def create_feature(self, x):
-        bias_ones = np.ones(len(x))
-        tmp = np.array([bias_ones, 1 / x])
+        bias_ones = np.ones(len(x[0]))
+        tmp = np.array([bias_ones, 1 / (x[0]*np.sqrt(x[1]))])
+
         return tmp.T
 
 
@@ -20,7 +21,7 @@ class PolyLearner(BaseLearner):
         numer_of_params = len(x)
         bias_ones = np.ones(len(x[0]))
         tmp = np.array([bias_ones])
-        ls = [list(range(0, self._degree + 1) for i in range(numer_of_params))]
+        ls = [list(range(0, self._degree + 1)) for i in range(numer_of_params)]
         all_deg_permutations = itertools.product(*ls)
         for degs in all_deg_permutations:
             x_tmp = 1

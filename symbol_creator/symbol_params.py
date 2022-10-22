@@ -6,6 +6,8 @@ from typing import Tuple
 class SymbolParams:
     material_id: int
     frequency: float
+    er:float
+    tanl:float
     bandwidth: float
 
 

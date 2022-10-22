@@ -20,10 +20,12 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
     material_db = MaterialDB(csv_path=materials_db)
 
     material = material_db.get_by_id(params.material_id)
+    material.er = params.er
+    material.tanl = params.tanl
 
     height_predictor = CsvPredictor(material_db=material_db, field="height")
     thickness_predictor = CsvPredictor(material_db=material_db, field="thickness")
-    quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="QUARTER")
+    quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="quarter", material_db=material_db)
     width_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor, z0=50,
                                      material_db=material_db)
     calculated_rootwidth_predictor = WidthPredictor(height_predictor=height_predictor,
@@ -31,7 +33,7 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR, materials_db: str
                                                     z0=50 * math.sqrt(2),
                                                     material_db=material_db)
 
-    rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width")
+    rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width", material_db=material_db)
 
     res_predictor = ConstPredictor(value=100.0)
     angle_predictor = ConstPredictor(value=45)
@@ -112,5 +114,5 @@ if __name__ == '__main__':
     material_id = 5
     frequency = 5
     bandwidth = frequency / 15
-    params = SymbolParams(material_id=material_id, frequency=frequency, bandwidth=bandwidth)
+    params = SymbolParams(material_id=material_id, frequency=frequency, bandwidth=bandwidth, er=3.8, tanl=0.0021)
     create(params=params)

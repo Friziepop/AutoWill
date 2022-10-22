@@ -58,20 +58,23 @@ class WidthPredictor(BasePredictor):
 
 
 class ModelPredictor(BasePredictor):
-    def __init__(self, models_dir: str, model_feature: str):
+    def __init__(self, models_dir: str, model_feature: str, material_db: MaterialDB):
         super(ModelPredictor, self).__init__()
         self._model_feature = model_feature
         self._models_dir = models_dir
+        self._material_db = material_db
 
     def load_model(self, symbol_input_params: SymbolParams):
         model_path = get_learning_model_name(models_dir=self._models_dir, material_id=symbol_input_params.material_id,
-                                             input_name="frequency",
+                                             input_name=["frequency"],
                                              output_name=self._model_feature)
         with open(model_path, "rb") as input_file:
             return pickle.load(input_file)
 
     def predict(self, symbol_input_params: SymbolParams) -> float:
-        return self.load_model(symbol_input_params).predict(np.array([symbol_input_params.frequency]))[0]
+        mat = self._material_db.get_by_id(id=symbol_input_params.material_id)
+        return self.load_model(symbol_input_params).predict(
+            np.array([[symbol_input_params.frequency], [mat.er], [mat.tanl]]))[0]
 
 
 class InputPaddingPredictor(BasePredictor):

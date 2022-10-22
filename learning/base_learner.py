@@ -64,13 +64,15 @@ class BaseLearner(ABC):
         model = model.fit(features, y)
         print(model.coef_)
 
+        self._model = model
+
         if save_model:
             path = get_learning_model_name(models_dir=self._model_dir, material_id=self._material_id, input_name=x_cols,
                                            output_name=y_col)
-            self._model = model
             print(f"saving model: {path}")
             with open(path, 'wb') as handle:
                 pickle.dump(self, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
 
         return model
 

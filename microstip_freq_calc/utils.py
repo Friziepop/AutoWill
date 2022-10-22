@@ -12,4 +12,4 @@ class CalculationsUtils:
 
     @staticmethod
     def calculate_padding(resistor: Resistor, root_width: float, start_width: float):
-        return (2 * resistor.pad_b + resistor.pad_c - start_width) / 2
+        return (2 * resistor.pad_b + 2*resistor.pad_c - start_width) / 2
