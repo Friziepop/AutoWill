@@ -195,3 +195,5 @@ fabric.properties
 /awr_optimizer/vars.csv
 /awr_optimizer/vars_train.csv
 /awr_optimizer/vars_val.csv
+/symbol_creator/sparams.csv
+/symbol_creator/vars.csv

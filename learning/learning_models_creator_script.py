@@ -49,7 +49,7 @@ def learn_poly(degree: int, material_id: int, feature, vars_path: str, models_di
     generate_test_validate()
     poly = PolyLearner(degree=degree, material_id=material_id, models_dir=models_dir)
     x, y = extract_xy(vars_path, x_cols=X_COLS, y_col=feature, material_id=material_id)
-    model = poly.train(vars_path, x, y)
+    model = poly.train(x, y)
     if save_model:
         poly.save_model(feature=feature)
     if show_graph:
