@@ -189,8 +189,8 @@ add pin
 setwindow form.mini
 FORM mini pad_browse
 fillin "{{PAD_NAME}}"
-pick grid {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - PAD_A/2}} # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root - PAD_A/2
-pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + PAD_A/2)}} # pad 5 x = 2*R , y = -(width/2 +INPUT_PADDING -root - PAD_A/2)
+pick grid {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - PAD_B + PAD_A/2}} # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root - PAD_A/2
+pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + PAD_B) - PAD_A/2}} # pad 5 x = 2*R , y = -(width/2 +INPUT_PADDING -root - PAD_A/2)
 done 
 generaledit
 
@@ -226,9 +226,9 @@ generaledit
 add connect 
 pick grid {{(-ROOTWIDTH/2 - PORT_1_PADDING - 0.1)}} 0 # pad 1 x = -root/2 - PORT_1_PADDING - PAD_A/2 , y=0
 pick grid {{(-ROOTWIDTH/2 - PORT_1_PADDING + PADSTACK_MID_PADDING)}} 0 # pad 1 x = -root/2 - PORT_1_PADDING , y =0
-pick grid {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - PAD_A/2}} # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root - PAD_A/2
+pick grid {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING - PAD_B + PAD_A/2}} # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root - PAD_A/2
 pick grid {{2*QUARTER/3.14}} {{WIDTH/2 +INPUT_PADDING + PADSTACK_MID_PADDING}} # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root
-pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + PAD_A/2)}} # pad 5  x = 2*R , y = -(width/2 +INPUT_PADDING -root - PAD_A/2)
+pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING + PAD_B - PAD_A/2)}} # pad 5  x = 2*R , y = -(width/2 +INPUT_PADDING -root - PAD_A/2)
 pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2-INPUT_PADDING - PADSTACK_MID_PADDING)}} # pad 5  x = 2*R , y = -(width/2 +INPUT_PADDING -root)
 pick grid {{UPPER_MID_POINT[0] + (OUTPUT_PADDING + 0.1) *cos(radians(ANGLE))}} {{(-UPPER_MID_POINT[1] + (OUTPUT_PADDING + 0.1) *sin(-radians(ANGLE)))}} # pad 3 x = DXF_X + (OUTPUT_PADDING + PAD_A/2) *cos , y = -DXF_Y + (OUTPUT_PADDING + PAD_A/2) *sin
 pick grid {{UPPER_MID_POINT[0]+ (OUTPUT_PADDING - PADSTACK_MID_PADDING) *cos(radians(ANGLE))}} {{(-UPPER_MID_POINT[1] + (OUTPUT_PADDING - PADSTACK_MID_PADDING) *sin(-radians(ANGLE)))}} # pad 3 x = DXF_X + (OUTPUT_PADDING) *cos , y = -DXF_Y + (OUTPUT_PADDING) *sin

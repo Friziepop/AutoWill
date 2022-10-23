@@ -108,8 +108,8 @@ def create(params: SymbolParams, models_dir: str = MODELS_DIR):
 if __name__ == '__main__':
     material_id = 5
     frequency = 5
-    er = 3.8
-    tanl = 0.0021
+    er = 3.66
+    tanl = 0.0037
     bandwidth = frequency / 15
     material_db = MaterialDB(csv_path=MATERIALS_DB)
 
