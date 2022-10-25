@@ -16,7 +16,7 @@ materials_names = list(set([mat.name for mat in materials]))
 
 # Define the window's contents
 layout = [[sg.Text("output")],
-          [sg.Output(size=(50,10), key='-OUTPUT-')],
+          [sg.Output(size=(50, 10), key='-OUTPUT-')],
           [sg.Text("Enter frequency [GHZ]")],
           [sg.Input(key='-FREQUENCY-')],
           [sg.Text("Enter material")],
@@ -34,23 +34,26 @@ window = sg.Window('Symbol creator', layout)
 
 # Display and interact with the Window using an Event Loop
 while True:
-    event, values = window.read()
+    event, values = window.read(timeout=1000)
     # See if user wants to quit or window was closed
     if event == 'Ok':
         print("start to generate")
         possible_matches = [mat for mat in materials if
-                            mat.name == window['-MATERIAL_NAME-'].get() and mat.resistor.name == window['-RESISTOR_NAME-'].get()]
+                            mat.name == window['-MATERIAL_NAME-'].get() and mat.resistor.name == window[
+                                '-RESISTOR_NAME-'].get()]
         if len(possible_matches) != 1:
             print("Error matching material")
             break
         selected_mat = possible_matches[0]
-        print(f"chose frequency : {window['-FREQUENCY-']},e_r:{window['-E_R-']} ,tanl:{window['-TANL-']} , material id : {selected_mat.id}")
-        SymbolCreator().create(material_id=selected_mat.id, frequency=float(window['-FREQUENCY-'].get()),
-                               er=float(window['-E_R-'].get()), tanl=float(window['-TANL-'].get()))
+        print(
+            f"chose frequency : {window['-FREQUENCY-'].get()},e_r:{window['-E_R-'].get()} ,tanl:{window['-TANL-'].get()} , material id : {selected_mat.id}")
+        try:
+            SymbolCreator().create(material_id=selected_mat.id, frequency=float(window['-FREQUENCY-'].get()),
+                                   er=float(window['-E_R-'].get()), tanl=float(window['-TANL-'].get()))
+        except:
+            print("error in synbol creator")
 
-        break
     # Output a message to the window
 
 # Finish up by removing from the screen
-time.sleep(10)
 window.close()
