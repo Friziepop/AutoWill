@@ -15,7 +15,9 @@ resistors_names = list(set([mat.resistor.name for mat in materials]))
 materials_names = list(set([mat.name for mat in materials]))
 
 # Define the window's contents
-layout = [[sg.Text("Enter frequency [GHZ]")],
+layout = [[sg.Text("output")],
+          [sg.Output(size=(50,10), key='-OUTPUT-')],
+          [sg.Text("Enter frequency [GHZ]")],
           [sg.Input(key='-FREQUENCY-')],
           [sg.Text("Enter material")],
           [sg.Combo(materials_names, key='-MATERIAL_NAME-', readonly=True)],
@@ -25,7 +27,6 @@ layout = [[sg.Text("Enter frequency [GHZ]")],
           [sg.Input(key='-E_R-')],
           [sg.Text("Enter tanl")],
           [sg.Input(key='-TANL-')],
-          [sg.Text(size=(40, 1), key='-OUTPUT-')],
           [sg.Button('Ok')]]
 
 # Create the window
@@ -43,12 +44,13 @@ while True:
             print("Error matching material")
             break
         selected_mat = possible_matches[0]
-        window['-OUTPUT-'].update(
-            f"chose frequency : {window['-FREQUENCY-']},e_r:{window['-E_R-']} ,tanl:{window['-TANL-']} , material id : {selected_mat.id}")
-        # SymbolCreator().create(material_id=selected_mat.id, frequency=float(window['-FREQUENCY-'].get()),
-        #                        er=float(window['-E_R-'].get()), tanl=float(window['-TANL-'].get()))
+        print(f"chose frequency : {window['-FREQUENCY-']},e_r:{window['-E_R-']} ,tanl:{window['-TANL-']} , material id : {selected_mat.id}")
+        SymbolCreator().create(material_id=selected_mat.id, frequency=float(window['-FREQUENCY-'].get()),
+                               er=float(window['-E_R-'].get()), tanl=float(window['-TANL-'].get()))
+
         break
     # Output a message to the window
 
 # Finish up by removing from the screen
+time.sleep(10)
 window.close()
