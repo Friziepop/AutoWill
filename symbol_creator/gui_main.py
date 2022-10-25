@@ -5,8 +5,9 @@ import PySimpleGUI as sg
 
 from materials.material import Material
 from materials.materials_db import MaterialDB
+from symbol_creator.symbol_creator import MATERIALS_DB, SymbolCreator
 
-material_db = MaterialDB(csv_path="../materials/materials_db.csv")
+material_db = MaterialDB(MATERIALS_DB)
 materials: List[Material] = material_db.get_all()
 
 resistors = {mat.resistor.id: mat.resistor.name for mat in materials}
@@ -36,13 +37,16 @@ while True:
     # See if user wants to quit or window was closed
     if event == 'Ok':
         print("start to generate")
-        possible_matches = [mat for mat in materials if mat.name == window['-MATERIAL_NAME-'] and mat.resistor.name == window['-RESISTOR_NAME-']]
+        possible_matches = [mat for mat in materials if
+                            mat.name == window['-MATERIAL_NAME-'] and mat.resistor.name == window['-RESISTOR_NAME-']]
         if len(possible_matches) != 1:
             print("Error matching material")
             break
         selected_mat = possible_matches[0]
         window['-OUTPUT-'].update(
             f"chose frequency : {window['-FREQUENCY-']},e_r:{window['-E_R-']} ,tanl:{window['-TANL-']} , material id : {selected_mat.id}")
+        SymbolCreator().create(material_id=selected_mat.id, frequency=float(window['-FREQUENCY-']),
+                               er=float(window['-E_R-']), tanl=float(window['-TANL-']))
         break
     # Output a message to the window
 

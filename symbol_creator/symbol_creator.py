@@ -16,7 +16,7 @@ MATERIALS_DB = "../materials/materials_db.csv"
 
 class SymbolCreator:
     def __init__(self):
-        self._material = None
+        pass
 
     def _create(self, params: SymbolParams, models_dir: str = MODELS_DIR):
         print(
@@ -24,11 +24,13 @@ class SymbolCreator:
 
         height_predictor = CsvPredictor(field="height")
         thickness_predictor = CsvPredictor(field="thickness")
-        quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="quarter", material_db=self._material_db)
+        quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="quarter",
+                                           material_db=self._material_db)
         width_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor,
                                          z0=50)
 
-        rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width", material_db=self._material_db)
+        rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width",
+                                             material_db=self._material_db)
 
         res_predictor = ConstPredictor(value=100.0)
         angle_predictor = ConstPredictor(value=45)
@@ -105,13 +107,13 @@ class SymbolCreator:
         print("generated footprint")
 
     def create(self, material_id: int, frequency: float, er: float, tanl: float):
-        self._material_db = MaterialDB(csv_path=MATERIALS_DB)
+        material_db = MaterialDB(csv_path=MATERIALS_DB)
 
-        self._material = deepcopy(self._material_db.get_by_id(material_id))
-        self._material.er = er
-        self._material.tanl = tanl
+        mat = deepcopy(material_db.get_by_id(material_id))
+        mat.er = er
+        mat.tanl = tanl
         bandwidth = frequency / 15
 
-        params = SymbolParams(material=self._material, frequency=frequency, bandwidth=bandwidth)
+        params = SymbolParams(material=mat, frequency=frequency, bandwidth=bandwidth)
 
         self._create(params=params)
