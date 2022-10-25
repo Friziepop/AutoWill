@@ -5,7 +5,7 @@ import numpy
 import numpy as np
 
 from microstip_freq_calc.utils import CalculationsUtils
-from symbol_creator.symbol_params import SymbolParams
+from symbol_params import SymbolParams
 from learning.learnings_util import get_learning_model_name
 from materials.materials_db import MaterialDB
 from microstip_freq_calc.copied_calc import MicroStripCopiedCalc

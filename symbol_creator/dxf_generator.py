@@ -4,7 +4,7 @@ import numpy as np
 
 from awr_optimizer.awr_connector import AwrConnector
 from awr_optimizer.awr_equation_manager import AwrEquationManager
-from symbol_creator.symbol_params import DxfGenerationParams
+from symbol_params import DxfGenerationParams
 
 
 class DxfAwrGenerator(AwrConnector):
