@@ -40,27 +40,11 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources"
-         "Z:\CommLab\Management\my students\Design Automatization\Tom and Lavi Distributed Components Design, Optimization and Automation\distributed component.dsn")
-      (Path "Design Resources"
-         "Z:\CommLab\Management\my students\Design Automatization\Tom and Lavi Distributed Components Design, Optimization and Automation\distributed component.dsn"
-         "SCHEMATIC1")
       (Select "Design Resources"
-         "Z:\CommLab\Management\my students\Design Automatization\Tom and Lavi Distributed Components Design, Optimization and Automation\distributed component.dsn"))
+         "C:\Users\lavi\Desktop\project_wil\AutoWill\orcad_denis\distributed component.dsn"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 493"))
-      (Tab 0))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1034 24 511")
-        (Scroll "-13 0")
-        (Zoom "100")
-        (Occurrence "/"))
-      (Path
-         "Z:\COMMLAB\MANAGEMENT\MY STUDENTS\DESIGN AUTOMATIZATION\TOM AND LAVI DISTRIBUTED COMPONENTS DESIGN, OPTIMIZATION AND AUTOMATION\DISTRIBUTED COMPONENT.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "Willkinson 5GHz RO4350B 10mil"))))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 325"))
+      (Tab 0))))

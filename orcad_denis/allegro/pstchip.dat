@@ -1,0 +1,66 @@
+FILE_TYPE=LIBRARY_PARTS;
+{ Using PSTWRITER 17.4.0 d001Oct-25-2022 at 11:48:31}
+primitive 'SMA5_SMA_PCB_END_LAUNCH_6_35MM_';
+  pin
+    'CENTER':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    'SHIELD':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    'SHIELD#3':
+      PIN_NUMBER='(3)';
+      PINUSE='POWER';
+    'SHIELD#4':
+      PIN_NUMBER='(4)';
+      PINUSE='POWER';
+    'SHIELD#5':
+      PIN_NUMBER='(5)';
+      PINUSE='POWER';
+  end_pin;
+  body
+    PART_NAME='SMA5';
+    JEDEC_TYPE='SMA_PCB_End_Launch_6_35mm';
+    VALUE='SMA8400M1-0000';
+  end_body;
+end_primitive;
+primitive 'RESISTOR_0402HD_100';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='RESISTOR';
+    JEDEC_TYPE='0402HD';
+    VALUE='100';
+  end_body;
+end_primitive;
+primitive 'WILKINSON_WIL_SYM_WILKINSON';
+  pin
+    'INPUT':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    'OUTPUT_1':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    'OUTPUT_2':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    'R_1':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+    'R_2':
+      PIN_NUMBER='(5)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='wilkinson';
+    JEDEC_TYPE='wil_sym';
+    VALUE='wilkinson';
+  end_body;
+end_primitive;
+END.

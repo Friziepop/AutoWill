@@ -1,0 +1,60 @@
+FILE_TYPE = EXPANDEDPARTLIST;
+{ Using PSTWRITER 17.4.0 d001Oct-25-2022 at 11:48:31 }
+DIRECTIVES
+ PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
+ ROOT_DRAWING='DISTRIBUTED COMPONENT';
+ POST_TIME='Oct  7 2019 04:16:49';
+ SOURCE_TOOL='CAPTURE_WRITER';
+END_DIRECTIVES;
+
+PART_NAME
+ J1 'SMA5_SMA_PCB_END_LAUNCH_6_35MM_':;
+
+SECTION_NUMBER 1
+ '@DISTRIBUTED COMPONENT.SCHEMATIC1(SCH_1):INS52@DISCRETECOMMLAB.SMA5.NORMAL(CHIPS)':
+ C_PATH='@\distributed component\.schematic1(sch_1):ins52@discretecommlab.\sma5.normal\(chips)',
+ P_PATH='@\distributed component\.schematic1(sch_1):page1_ins52@discretecommlab.\sma5.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J2 'SMA5_SMA_PCB_END_LAUNCH_6_35MM_':;
+
+SECTION_NUMBER 1
+ '@DISTRIBUTED COMPONENT.SCHEMATIC1(SCH_1):INS323@DISCRETECOMMLAB.SMA5.NORMAL(CHIPS)':
+ C_PATH='@\distributed component\.schematic1(sch_1):ins323@discretecommlab.\sma5.normal\(chips)',
+ P_PATH='@\distributed component\.schematic1(sch_1):page1_ins323@discretecommlab.\sma5.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J3 'SMA5_SMA_PCB_END_LAUNCH_6_35MM_':;
+
+SECTION_NUMBER 1
+ '@DISTRIBUTED COMPONENT.SCHEMATIC1(SCH_1):INS604@DISCRETECOMMLAB.SMA5.NORMAL(CHIPS)':
+ C_PATH='@\distributed component\.schematic1(sch_1):ins604@discretecommlab.\sma5.normal\(chips)',
+ P_PATH='@\distributed component\.schematic1(sch_1):page1_ins604@discretecommlab.\sma5.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R1 'RESISTOR_0402HD_100':;
+
+SECTION_NUMBER 1
+ '@DISTRIBUTED COMPONENT.SCHEMATIC1(SCH_1):INS721@DISCRETECOMMLAB.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\distributed component\.schematic1(sch_1):ins721@discretecommlab.\resistor.normal\(chips)',
+ P_PATH='@\distributed component\.schematic1(sch_1):page1_ins721@discretecommlab.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U1 'WILKINSON_WIL_SYM_WILKINSON':;
+
+SECTION_NUMBER 1
+ '@DISTRIBUTED COMPONENT.SCHEMATIC1(SCH_1):INS890@LIBRARY1.WILKINSON.NORMAL(CHIPS)':
+ C_PATH='@\distributed component\.schematic1(sch_1):ins890@library1.\wilkinson.normal\(chips)',
+ P_PATH='@\distributed component\.schematic1(sch_1):page1_ins890@library1.\wilkinson.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+END.
