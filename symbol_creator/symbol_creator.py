@@ -24,13 +24,11 @@ class SymbolCreator:
 
         height_predictor = CsvPredictor(field="height")
         thickness_predictor = CsvPredictor(field="thickness")
-        quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="quarter",
-                                           material_db=self._material_db)
+        quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="quarter")
         width_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor,
                                          z0=50)
 
-        rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width",
-                                             material_db=self._material_db)
+        rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width")
 
         res_predictor = ConstPredictor(value=100.0)
         angle_predictor = ConstPredictor(value=45)
@@ -54,8 +52,8 @@ class SymbolCreator:
         out_path = os.getcwd()
 
         dxf_params = DxfGenerationParams(
-            er=self._material.er,
-            tanl=self._material.tanl,
+            er=params.material.er,
+            tanl=params.material.tanl,
             height=height_predictor.predict(params),
             thickness=thickness_predictor.predict(params),
             quarter=quarter_predictor.predict(params),
@@ -65,9 +63,9 @@ class SymbolCreator:
             port_1_padding=port_1_padding_predictor.predict(params),
             output_padding=output_padding_predictor.predict(params),
             res=res_predictor.predict(params),
-            pad_a=self._material.resistor.pad_a,
-            pad_b=self._material.resistor.pad_b,
-            pad_c=self._material.resistor.pad_c,
+            pad_a=params.material.resistor.pad_a,
+            pad_b=params.material.resistor.pad_b,
+            pad_c=params.material.resistor.pad_c,
             out_path=out_path,
             symbol_params=params,
         )
@@ -83,13 +81,13 @@ class SymbolCreator:
             pad_stack_macro_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\pcb_automation\\padstack_change.scr",
             dxf_file=os.path.join(out_path, "out.dxf"),
             dxf_mapping_file="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\pcb_automation\\resources\\mapping_setup.cnv",
-            material_name=f"{self._material.name}-USER",
-            pad_name=self._material.resistor.pad_name,  # "s_r28t30m38_40p28_30",
-            material_er=self._material.er,
-            material_tanl=self._material.tanl,
+            material_name=f"{params.material.name}-USER",
+            pad_name=params.material.resistor.pad_name,  # "s_r28t30m38_40p28_30",
+            material_er=params.material.er,
+            material_tanl=params.material.tanl,
             draw_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\package\\wil_sym.dra",
             allegro_exe_path="C:\\Cadence\\SPB_17.4\\tools\\bin\\allegro.exe",
-            material_height=self._material.height,
+            material_height=params.material.height,
             quarter=dxf_params.quarter,
             width=dxf_params.width,
             rootwidth=dxf_params.rootwidth,
@@ -97,9 +95,9 @@ class SymbolCreator:
             port_1_padding=dxf_params.port_1_padding,
             output_padding=dxf_params.output_padding,
             upper_mid_point=upper_mid_point,
-            pad_b=self._material.resistor.pad_b,
-            pad_a=self._material.resistor.pad_a,
-            padstack_padding=self._material.resistor.padstack_padding,
+            pad_b=params.material.resistor.pad_b,
+            pad_a=params.material.resistor.pad_a,
+            padstack_padding=params.material.resistor.padstack_padding,
             angle=angle_predictor.predict(params),
         )
         print(f"Generating symbol footprint")

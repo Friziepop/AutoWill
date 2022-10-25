@@ -54,11 +54,10 @@ class WidthPredictor(BasePredictor):
 
 
 class ModelPredictor(BasePredictor):
-    def __init__(self, models_dir: str, model_feature: str, material_db: MaterialDB):
+    def __init__(self, models_dir: str, model_feature: str):
         super(ModelPredictor, self).__init__()
         self._model_feature = model_feature
         self._models_dir = models_dir
-        self._material_db = material_db
 
     def load_model(self, symbol_input_params: SymbolParams):
         model_path = get_learning_model_name(models_dir=self._models_dir, material_id=symbol_input_params.material.id,

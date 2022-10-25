@@ -5,7 +5,7 @@ import PySimpleGUI as sg
 
 from materials.material import Material
 from materials.materials_db import MaterialDB
-from symbol_creator.symbol_creator import MATERIALS_DB, SymbolCreator
+from symbol_creator import MATERIALS_DB, SymbolCreator
 
 material_db = MaterialDB(MATERIALS_DB)
 materials: List[Material] = material_db.get_all()
