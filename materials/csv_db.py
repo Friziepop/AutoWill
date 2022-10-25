@@ -1,4 +1,5 @@
 from abc import ABC
+from typing import List
 
 import pandas as pd
 
@@ -24,3 +25,6 @@ class CSVDb(ABC):
         item = self.get_by_id(id=id)
         for key, val in update_dict.items():
             setattr(item, key, val)
+
+    def get_all(self) -> List:
+        return list(self._inner_materials_mapping.values())
