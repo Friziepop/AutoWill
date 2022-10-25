@@ -5,8 +5,8 @@ import pandas as pd
 
 
 class CSVDb(ABC):
-    def __init__(self, csv_path: str):
-        materials_csv = pd.read_csv(csv_path)
+    def __init__(self, csv_path: str, dtypes):
+        materials_csv = pd.read_csv(csv_path, dtype=dtypes)
         self._inner_materials_mapping = {}
         for config_dict in materials_csv.to_dict('records'):
             mat = self.create(config_dict)

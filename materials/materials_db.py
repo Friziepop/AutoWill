@@ -11,7 +11,7 @@ DEFAULT_DB_PATH = '../materials/materials_db.csv'
 class MaterialDB(CSVDb):
     def __init__(self, csv_path: Optional[str] = None):
         csv_path = csv_path if csv_path else DEFAULT_DB_PATH
-        super().__init__(csv_path=csv_path)
+        super().__init__(csv_path=csv_path, dtypes={'name': str})
 
     def create(self, config_dict):
         resistor = ResistorDB().get_by_id(id=config_dict["resistor_id"])
