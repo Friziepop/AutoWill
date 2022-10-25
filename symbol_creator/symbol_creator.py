@@ -24,14 +24,11 @@ class SymbolCreator:
 
         height_predictor = CsvPredictor(field="height")
         thickness_predictor = CsvPredictor(field="thickness")
-        quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="quarter", material_db=material_db)
+        quarter_predictor = ModelPredictor(models_dir=models_dir, model_feature="quarter", material_db=self._material_db)
         width_predictor = WidthPredictor(height_predictor=height_predictor, thickness_predictor=thickness_predictor,
                                          z0=50)
-        calculated_rootwidth_predictor = WidthPredictor(height_predictor=height_predictor,
-                                                        thickness_predictor=thickness_predictor,
-                                                        z0=50 * math.sqrt(2), )
 
-        rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width", material_db=material_db)
+        rootwidth_predictor = ModelPredictor(models_dir=models_dir, model_feature="root_width", material_db=self._material_db)
 
         res_predictor = ConstPredictor(value=100.0)
         angle_predictor = ConstPredictor(value=45)
@@ -108,9 +105,9 @@ class SymbolCreator:
         print("generated footprint")
 
     def create(self, material_id: int, frequency: float, er: float, tanl: float):
-        material_db = MaterialDB(csv_path=MATERIALS_DB)
+        self._material_db = MaterialDB(csv_path=MATERIALS_DB)
 
-        self._material = deepcopy(material_db.get_by_id(material_id))
+        self._material = deepcopy(self._material_db.get_by_id(material_id))
         self._material.er = er
         self._material.tanl = tanl
         bandwidth = frequency / 15
