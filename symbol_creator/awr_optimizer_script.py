@@ -140,7 +140,7 @@ def set_meshing(freq):
     if 0 <= freq < 10:
         equation_manager.set_equation_value("MESHING", 0.1)
     if 10 <= freq < 20:
-        equation_manager.set_equation_value("MESHING", 0.1)
+        equation_manager.set_equation_value("MESHING", 0.01)
     if 20 <= freq < 30:
         equation_manager.set_equation_value("MESHING", 0.005)
     if 30 <= freq < 40:

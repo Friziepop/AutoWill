@@ -1,10 +1,10 @@
 \t (00:00:01) padstack_editor 17.4 S028 Windows SPB 64-bit Edition
-\t (00:00:01)     Journal start - Tue Oct 25 13:00:44 2022
-\t (00:00:01)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=20760 CPUs=8
-\t (00:00:01) CmdLine= padstack_editor -mpssession shvmo -file C:/Users/shvmo/AppData/Local/Temp/#Taaaaan14768.tmp -pname IOPORT -data C:/Users/shvmo/AppData/Local/Temp/#Taaaaaq14768.tmp -s C:/Users/shvmo/PycharmProjects/AutoWill/symbol_creator/3c11bd24-fa67-466a-83b7-f791c357ab80__tmp.scr
+\t (00:00:01)     Journal start - Fri Nov  4 09:25:48 2022
+\t (00:00:01)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=6124 CPUs=8
+\t (00:00:01) CmdLine= padstack_editor -mpssession shvmo -file C:/Users/shvmo/AppData/Local/Temp/#Taaaaan12540.tmp -pname IOPORT -data C:/Users/shvmo/AppData/Local/Temp/#Taaaaaq12540.tmp -s C:/Users/shvmo/PycharmProjects/AutoWill/symbol_creator/17aa39c2-c0dd-4c6d-9f16-3bae2562e5a2__tmp.scr
 \t (00:00:01) 
 \d (00:00:01) QtSignal GuidedDesignLayersTab PadHeight editingFinished "0.54380121132051"
 \d (00:00:01) QtSignal MainWindow Save triggered
 \d (00:00:01) QtSignal MainWindow UpdateToDesign triggered
 \d (00:00:01) QtSignal MainWindow Exit triggered
-\t (00:00:01)     Journal end - Tue Oct 25 13:00:45 2022
+\t (00:00:01)     Journal end - Fri Nov  4 09:25:48 2022
