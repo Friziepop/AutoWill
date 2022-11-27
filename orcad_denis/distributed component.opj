@@ -40,11 +40,23 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Select "Design Resources"
-         "C:\Users\lavi\Desktop\project_wil\AutoWill\orcad_denis\distributed component.dsn"))
+      (Path "Design Resources" ".\distributed component.dsn")
+      (Path "Design Resources" ".\distributed component.dsn" "SCHEMATIC1")
+      (Select "Design Resources" ".\distributed component.dsn" "Design Cache"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -1 -1 0 200 0 325"))
-      (Tab 0))))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 1034 24 343")
+        (Scroll "-13 0")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path
+         "C:\USERS\LAVI\DESKTOP\PROJECT_WIL\AUTOWILL\ORCAD_DENIS\DISTRIBUTED COMPONENT.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "Willkinson 5GHz RO4350B 10mil"))))

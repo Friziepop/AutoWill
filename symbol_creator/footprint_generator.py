@@ -6,7 +6,7 @@ from pathlib import Path
 
 from jinja2 import Template
 
-from symbol_creator.symbol_params import FootprintParams
+from symbol_params import FootprintParams
 
 
 def format_float(val: float, num_digits: int):

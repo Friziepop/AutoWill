@@ -93,23 +93,23 @@
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 386 0 469"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 325"))
       (Tab 0))
+    (Doc
+      (Type "COrPrmBrowserDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 5 1034 24 343"))
+      (Path "C:\USERS\LAVI\DESKTOP\PROJECT_WIL\AUTOWILL\ORCAD\LIBRARY1.OLB")
+      (Package "WILKINSON")
+      (PartType "1"))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 5 24 5 1104 24 487")
+        (Placement "44 0 1 -1 -1 5 24 5 1034 24 343")
         (Scroll "0 168")
         (Zoom "118")
         (Occurrence "/"))
       (Path "C:\USERS\LAVI\DESKTOP\PROJECT_WIL\AUTOWILL\ORCAD\WILKINSON.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "PAGE1"))
-    (Doc
-      (Type "COrPrmBrowserDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 5 24 5 1104 24 487"))
-      (Path "C:\USERS\LAVI\DESKTOP\PROJECT_WIL\AUTOWILL\ORCAD\LIBRARY1.OLB")
-      (Package "WILKINSON")
-      (PartType "1")))
+      (Page "PAGE1")))
   (ISPCBBASICLICENSE "false"))
