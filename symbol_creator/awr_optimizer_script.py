@@ -150,7 +150,7 @@ def set_meshing(freq):
 if __name__ == '__main__':
     step_size = 0.5
 
-    ids = [5]
+    ids = [7]
 
     print("starting dataset generation using awr optimization")
     print(f"ids:{ids}")
