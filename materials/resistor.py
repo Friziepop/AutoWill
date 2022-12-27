@@ -10,4 +10,5 @@ class Resistor:
     pad_b: float
     pad_c: float
     padstack_padding: float
+    actual_res_pad: float
     description: str

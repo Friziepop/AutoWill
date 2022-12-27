@@ -96,7 +96,7 @@ class SymbolCreator:
             output_padding=dxf_params.output_padding,
             upper_mid_point=upper_mid_point,
             pad_b=params.material.resistor.pad_b,
-            pad_a=params.material.resistor.pad_a,
+            pad_a=params.material.resistor.actual_res_pad,
             padstack_padding=params.material.resistor.padstack_padding,
             angle=angle_predictor.predict(params),
         )
