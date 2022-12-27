@@ -1,6 +1,6 @@
-id,name,pad_name,pad_a,pad_b,pad_c,padstack_padding,description
-1,01005,s_r28t30m38_40p28_30,0.29,0.3,0.3,0.06,desc
-2,0201,smt14s,0.3556,0.5,0.2,0.051,in metric
-3,1005,smt24s,0.6096,1.2,0.508,0.051,in metric
-4,1005,smt24s,1,1.7,0.508,0.051,in metric
-5,1005,smt24s,0.6096,0.6096,0.508,0.051,in metric
+id,name,pad_name,pad_a,pad_b,pad_c,padstack_padding,actual_res_pad,description
+1,01005,s_r28t30m38_40p28_30,0.29,0.3,0.3,0.06,0.29,desc
+2,0201,smt14s,0.3556,0.5,0.2,0.051,0.3556,in metric
+3,1005,smt24s,0.6096,1.2,0.508,0.051,0.6096,in metric
+4,1005,smt24s,1,1.7,0.508,0.051,0.6096,in metric
+5,1005,smt24s,0.6096,0.6096,0.508,0.051,0.6096,in metric
