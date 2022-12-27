@@ -32,7 +32,7 @@ def extract_xy(csv_data_path: str, x_cols: List[str], y_col: str, material_id: i
     return x_ls, y
 
 
-def generate_test_validate(force_override: bool = False):
+def generate_test_validate(force_override: bool = True):
     if not force_override and Path(get_vars_path(mode='tr')):
         return
     df_all = pd.read_csv(get_vars_path(mode='a'))
@@ -98,7 +98,7 @@ def learn_models(materials_ids: List[int], models_dir: str = MODELS_DIR,
 
 def main():
     show_graph = True
-    ids = [5]
+    ids = [7]
     print("starting to learn models")
     learn_models(materials_ids=ids, show_graph=show_graph)
     if show_graph:

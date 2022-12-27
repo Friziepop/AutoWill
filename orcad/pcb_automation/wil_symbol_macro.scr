@@ -138,17 +138,18 @@ shape merge shapes
 pick grid 0 {{WIDTH/2 + INPUT_PADDING}} # y=WIDTH/2 + INPUT_PADDING
 pick grid 0 {{WIDTH/2 + INPUT_PADDING}} # y=WIDTH/2 + INPUT_PADDING
 pick grid 0 {{WIDTH/2}} # Y=WIDTH/2
-pick grid {{(-ROOTWIDTH/2)}} 0 # X=-ROOTWIDTH/2
+pick grid {{(-ROOTWIDTH/2)}} 0 # X=-ROOTWIDTH/2s
 pick grid 0 {{(-WIDTH/2)}} # Y=-WIDTH/2
 pick grid 0 {{(-WIDTH/2 - INPUT_PADDING)}} # y=-(WIDTH/2 + INPUT_PADDING)
 pick grid {{2*QUARTER/3.14}} {{(-WIDTH/2 - INPUT_PADDING)}} # X=2*QUARTER/3.14, Y=-(WIDTH/2 + INPUT_PADDING)
 pick grid {{2*QUARTER/3.14}}  {{(WIDTH/2 + INPUT_PADDING)}} # X=2*QUARTER/3.14, Y=WIDTH/2 + INPUT_PADDING
 pick grid {{2*QUARTER/3.14 + ROOTWIDTH/2}} {{(-WIDTH/2 - INPUT_PADDING)}} # X=2*QUARTER/3.14 + ROOTWIDTH/2 Y=-(WIDTH/2 + INPUT_PADDING)
 pick grid {{2*QUARTER/3.14 + ROOTWIDTH/2}} {{WIDTH/2 + INPUT_PADDING}} # X=2*QUARTER/3.14 + ROOTWIDTH/2  Y=WIDTH/2 + INPUT_PADDING
-pick grid {{UPPER_MID_POINT[0]}} {{UPPER_MID_POINT[1]}}
-pick grid {{UPPER_MID_POINT[0]}} {{UPPER_MID_POINT[1]}}
-pick grid {{UPPER_MID_POINT[0]}} {{(-UPPER_MID_POINT[1])}}
-pick grid {{UPPER_MID_POINT[0]}} {{(-UPPER_MID_POINT[1])}}
+pick grid {{UPPER_MID_POINT[0]-0.01}} {{UPPER_MID_POINT[1]}}
+pick grid {{UPPER_MID_POINT[0]+0.01}} {{UPPER_MID_POINT[1]}}
+pick grid {{UPPER_MID_POINT[0]-0.01}} {{(-UPPER_MID_POINT[1])}}
+pick grid {{UPPER_MID_POINT[0]+0.01}} {{(-UPPER_MID_POINT[1])}}
+
 done 
 
 #	stop time: Wed Sep 28 16:15:13 2022
