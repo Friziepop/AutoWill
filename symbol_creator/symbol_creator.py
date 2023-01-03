@@ -1,5 +1,6 @@
 import os
 from copy import deepcopy
+from pathlib import Path
 from time import sleep
 
 from materials.materials_db import MaterialDB
@@ -77,15 +78,15 @@ class SymbolCreator:
         dxf_extractor = WilDxfExtractor(os.path.join(out_path, "out.dxf"))
         upper_mid_point = dxf_extractor.extract_layout_angle_mid()
         footprint_params = FootprintParams(
-            macro_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\pcb_automation\\wil_symbol_macro.scr",
-            pad_stack_macro_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\pcb_automation\\padstack_change.scr",
+            macro_path=str(Path(os.getcwd()).parent / "orcad/pcb_automation/wil_symbol_macro.scr"),
+            pad_stack_macro_path=str(Path(os.getcwd()).parent / "orcad/pcb_automation/padstack_change.scr"),
             dxf_file=os.path.join(out_path, "out.dxf"),
-            dxf_mapping_file="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\pcb_automation\\resources\\mapping_setup.cnv",
+            dxf_mapping_file=str(Path(os.getcwd()).parent / "orcad/pcb_automation/resources/mapping_setup.cnv"),
             material_name=f"{params.material.name}-USER",
             pad_name=params.material.resistor.pad_name,  # "s_r28t30m38_40p28_30",
             material_er=params.material.er,
             material_tanl=params.material.tanl,
-            draw_path="C:\\Users\\shvmo\\PycharmProjects\\AutoWill\\orcad\\package\\wil_sym.dra",
+            draw_path=str(Path(os.getcwd()).parent / "orcad/package/wil_sym.dra"),
             allegro_exe_path="C:\\Cadence\\SPB_17.4\\tools\\bin\\allegro.exe",
             material_height=params.material.height,
             quarter=dxf_params.quarter,
