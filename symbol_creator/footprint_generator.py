@@ -49,8 +49,8 @@ class FootprintGenerator:
                                          PAD_A=self._params.pad_a,
                                          PAD_B=self._params.pad_b,
                                          PAD_STACK_SCRIPT=tmp_pad_stack_macro_name.name)
-        tmp_name = Path(os.getcwd()) / f"{uuid.uuid4()}__tmp.scr"
-        with open(tmp_name, "w") as f:
+        tmp_macro_path = Path(os.getcwd()) / f"{uuid.uuid4()}__tmp.scr"
+        with open(tmp_macro_path, "w") as f:
             f.write(compiled_macro)
 
         with open(self._params.pad_stack_macro_path, "r") as f:
@@ -58,7 +58,11 @@ class FootprintGenerator:
 
         template = Template(macro_content)
         compiled_macro = template.render(WIDTH=self._params.width)
-        with open(tmp_pad_stack_macro_name, "w") as f:
-            f.write(compiled_macro)
+        try:
+            with open(tmp_pad_stack_macro_name, "w") as f:
+                f.write(compiled_macro)
 
-        subprocess.run(f"{self._params.allegro_exe_path} -orcad -s {tmp_name} {self._params.draw_path}".split())
+            subprocess.run(f"{self._params.allegro_exe_path} -orcad -s {tmp_macro_path} {self._params.draw_path}".split())
+        finally:
+            tmp_pad_stack_macro_name.unlink()
+            tmp_macro_path.unlink()

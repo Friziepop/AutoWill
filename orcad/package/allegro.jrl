@@ -1,7 +1,7 @@
 \t (00:00:01) allegro 17.4 S028 Windows SPB 64-bit Edition
-\t (00:00:01)     Journal start - Tue Jan  3 13:39:16 2023
-\t (00:00:01)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=1768 CPUs=8
-\t (00:00:01) CmdLine= C:\Cadence\SPB_17.4\tools\bin\allegro.exe -s C:\Users\shvmo\PycharmProjects\AutoWill\symbol_creator\78b34116-8d07-418a-85d4-18b6507d0559__tmp.scr C:\Users\shvmo\PycharmProjects\AutoWill\orcad\package\wil_sym.dra
+\t (00:00:01)     Journal start - Tue Jan  3 13:53:25 2023
+\t (00:00:01)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=15600 CPUs=8
+\t (00:00:01) CmdLine= C:\Cadence\SPB_17.4\tools\bin\allegro.exe -s C:\Users\shvmo\PycharmProjects\AutoWill\symbol_creator\5784ed18-57bf-41a5-94f2-348df4fd3822__tmp.scr C:\Users\shvmo\PycharmProjects\AutoWill\orcad\package\wil_sym.dra
 \t (00:00:01) 
    (00:00:01) Loading axlcore.cxt 
 \t (00:00:04) Opening existing design...
@@ -12,7 +12,7 @@
 \i (00:00:05) trapsize 816
 \i (00:00:05) trapsize 888
 \i (00:00:05) trapsize 911
-\i (00:00:05) replay 'C:`\Users`\shvmo`\PycharmProjects`\AutoWill`\symbol_creator`\78b34116-8d07-418a-85d4-18b6507d0559__tmp.scr' 
+\i (00:00:05) replay 'C:`\Users`\shvmo`\PycharmProjects`\AutoWill`\symbol_creator`\5784ed18-57bf-41a5-94f2-348df4fd3822__tmp.scr' 
 \i (00:00:05) version 17.4 
 \t (00:00:05) Script version: 17.4
 \i (00:00:05) setwindow pcb 
@@ -36,7 +36,7 @@
 \i (00:00:06) trapsize 1182551
 \w (00:00:06) Incremental option off, existing design was replaced. Re-open design to restore.
 \i (00:00:06) setwindow pcb 
-\i (00:00:06) trapsize 1182551 
+\i (00:00:07) trapsize 1182551 
 \i (00:00:07) setwindow form.dxfInMain 
 \i (00:00:07) FORM dxfInMain cancel 
 \i (00:00:07) setwindow pcb 
@@ -198,7 +198,7 @@
 \i (00:00:09) setwindow form.mini 
 \i (00:00:09) FORM mini padlist IOPORT 
 \i (00:00:09) setwindow pcb 
-\i (00:00:09) padeditcur b64324a0-c1e2-427a-9319-4656b5657529__tmp.scr 
+\i (00:00:09) padeditcur d97b0e2b-3a63-4b19-a2a0-ebaeb33846cc__tmp.scr 
 \i (00:00:11) version 17.4 
 \t (00:00:11) Script version: 17.4
 \i (00:00:11) setwindow pcb 
@@ -253,16 +253,16 @@
 \i (00:00:11) trapsize 225 
 \i (00:00:11) generaledit 
 \i (00:00:11) label refdes 
-\t (00:00:11) Pick text location.
-\i (00:00:11) setwindow pcb 
-\i (00:00:11) prepopup -0.4777 -0.8246 
-\i (00:00:11) prepopup -0.4777 -0.8246
-\i (00:00:11) setwindow pcb 
-\i (00:00:11) pick -0.8730 -0.9860 
-\t (00:00:11) last pick:  -0.8730 -0.9860
-\t (00:00:11) Enter text string.
-\i (00:00:11) text 1 
-\i (00:00:11) done 
+\t (00:00:12) Pick text location.
+\i (00:00:12) setwindow pcb 
+\i (00:00:12) prepopup -0.4777 -0.8246 
+\i (00:00:12) prepopup -0.4777 -0.8246
+\i (00:00:12) setwindow pcb 
+\i (00:00:12) pick -0.8730 -0.9860 
+\t (00:00:12) last pick:  -0.8730 -0.9860
+\t (00:00:12) Enter text string.
+\i (00:00:12) text 1 
+\i (00:00:12) done 
 \i (00:00:12) setwindow pcb 
 \i (00:00:12) generaledit 
 \i (00:00:12) version 17.4 
@@ -277,4 +277,4 @@
 \t (00:00:12) Symbol 'wil_sym.psm' created.
 \i (00:00:12) generaledit 
 \i (00:00:12) exit 
-\t (00:00:12)     Journal end - Tue Jan  3 13:39:26 2023
+\t (00:00:12)     Journal end - Tue Jan  3 13:53:36 2023
