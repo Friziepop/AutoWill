@@ -18,8 +18,13 @@ def copy_files(pad_name: str, dst_path: str):
 
 
 def run_script(mat_id: int, freq: float, er: float, tanl: float):
-    SymbolCreator().create(material_id=mat_id, frequency=freq,
-                           er=er, tanl=tanl)
+    try:
+        SymbolCreator().create(material_id=mat_id, frequency=freq,
+                               er=er, tanl=tanl)
+
+    except Exception as e:
+        print(f"error in symbol creator : {e}")
+        raise
 
 
 def get_material_match(mat_name: str, resistor_name: str):
