@@ -3,12 +3,12 @@ from copy import deepcopy
 from time import sleep
 
 from materials.materials_db import MaterialDB
-from predictors import CsvPredictor, WidthPredictor, ModelPredictor, ConstPredictor, \
+from symbol_creator.predictors import CsvPredictor, WidthPredictor, ModelPredictor, ConstPredictor, \
     InputPaddingPredictor, PaddingPredictor
-from dxf_generator import DxfAwrGenerator
-from footprint_generator import FootprintGenerator
-from wil_dxf_extractor import WilDxfExtractor
-from symbol_params import SymbolParams, DxfGenerationParams, FootprintParams
+from symbol_creator.dxf_generator import DxfAwrGenerator
+from symbol_creator.footprint_generator import FootprintGenerator
+from symbol_creator.wil_dxf_extractor import WilDxfExtractor
+from symbol_creator.symbol_params import SymbolParams, DxfGenerationParams, FootprintParams
 
 MODELS_DIR = "../learning/models"
 MATERIALS_DB = "../materials/materials_db.csv"

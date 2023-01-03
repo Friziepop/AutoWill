@@ -1,5 +1,5 @@
 
-from symbol_creator import SymbolCreator
+from symbol_creator.symbol_creator import SymbolCreator
 
 MODELS_DIR = "../learning/models"
 MATERIALS_DB = "../materials/materials_db.csv"

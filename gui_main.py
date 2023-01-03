@@ -1,5 +1,4 @@
 import shutil
-import time
 from threading import Thread
 from typing import List
 
@@ -7,14 +6,16 @@ import PySimpleGUI as sg
 
 from materials.material import Material
 from materials.materials_db import MaterialDB
-from symbol_creator import MATERIALS_DB, SymbolCreator
+from symbol_creator.symbol_creator import SymbolCreator
+
+MATERIALS_DB = "./materials/materials_db.csv"
 
 
 def copy_files(pad_name: str, dst_path: str):
-    shutil.copy2(src="../orcad/io/ioport.pad", dst=dst_path)
+    shutil.copy2(src="orcad/io/ioport.pad", dst=dst_path)
     shutil.copy2(src=f"../orcad/resistor/{pad_name}.pad", dst=dst_path)
-    shutil.copy2(src=f"../orcad/package/wil_sym.dra", dst=dst_path)
-    shutil.copy2(src=f"../orcad/package/wil_sym.psm", dst=dst_path)
+    shutil.copy2(src=f"orcad/package/wil_sym.dra", dst=dst_path)
+    shutil.copy2(src=f"orcad/package/wil_sym.psm", dst=dst_path)
 
 
 def run_script(mat_id: int, freq: float, er: float, tanl: float):
