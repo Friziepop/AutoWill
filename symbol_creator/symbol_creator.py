@@ -77,6 +77,9 @@ class SymbolCreator:
         sleep(1)
         dxf_extractor = WilDxfExtractor(os.path.join(out_path, "out.dxf"))
         upper_mid_point = dxf_extractor.extract_layout_angle_mid()
+
+        allegro_license_file_path = os.environ['CDS_LIC_FILE']
+        allegro_dir = Path(allegro_license_file_path).parent
         footprint_params = FootprintParams(
             macro_path=str(Path(os.getcwd())/ "orcad/pcb_automation/wil_symbol_macro.scr"),
             pad_stack_macro_path=str(Path(os.getcwd())/ "orcad/pcb_automation/padstack_change.scr"),
@@ -87,7 +90,7 @@ class SymbolCreator:
             material_er=params.material.er,
             material_tanl=params.material.tanl,
             draw_path=str(Path(os.getcwd()) / "orcad/package/wil_sym.dra"),
-            allegro_exe_path="C:\\Cadence\\SPB_17.4\\tools\\bin\\allegro.exe",
+            allegro_exe_path=str(allegro_dir / "tools\\bin\\allegro.exe"),
             material_height=params.material.height,
             quarter=dxf_params.quarter,
             width=dxf_params.width,

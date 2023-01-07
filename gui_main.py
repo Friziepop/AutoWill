@@ -15,18 +15,20 @@ MATERIALS_DB = "./materials/materials_db.csv"
 
 wil_proc = subprocess.Popen(["start", "WilkingsonPowerDivider.emp"], shell=True)
 
+
 def copy_files(pad_name: str, dst_path: str):
-    shutil.copy2(src="orcad/io/ioport.pad", dst=dst_path)
-    shutil.copy2(src=f"orcad/resistor/{pad_name}.pad", dst=dst_path)
+    shutil.copy2(src="orcad/package/ioport.pad", dst=dst_path)
+    shutil.copy2(src=f"orcad/package/{pad_name}.pad", dst=dst_path)
     shutil.copy2(src=f"orcad/package/wil_sym.dra", dst=dst_path)
     shutil.copy2(src=f"orcad/package/wil_sym.psm", dst=dst_path)
 
 
-def run_script(mat_id: int, freq: float, er: float, tanl: float):
+def run_script(mat_id: int, freq: float, er: float, tanl: float, dst_folder: str):
     try:
         SymbolCreator().create(material_id=mat_id, frequency=freq,
                                er=er, tanl=tanl)
 
+        copy_files(pad_name=selected_mat.resistor.pad_name, dst_path=dst_folder)
     except Exception as e:
         print(f"error in symbol creator : {e}", sys.stderr)
         raise
@@ -97,11 +99,10 @@ while True:
         try:
             ryn_script_thread = Thread(target=run_script, args=(
                 selected_mat.id, float(window['-FREQUENCY-'].get()), float(window['-E_R-'].get()),
-                float(window['-TANL-'].get())))
+                float(window['-TANL-'].get()),window["-DST_FOLDER-"].get()))
             window['-STATUS_BAR-'].update(value="running", background_color="yellow")
             ryn_script_thread.start()
-            dst_folder = window["-DST_FOLDER-"].get()
-            copy_files(pad_name=selected_mat.resistor.pad_name, dst_path=dst_folder)
+
             # window.refresh()
         except Exception as e:
             print(f"error in symbol creator : {e}", sys.stderr)
