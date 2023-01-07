@@ -1,7 +1,7 @@
 from abc import ABC
 
 from pyawr_utils import awrde_utils
-
+import pyawr.mwoffice as mwoffice
 
 class AwrConnector (ABC):
     def __init__(self):

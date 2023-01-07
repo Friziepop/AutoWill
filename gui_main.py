@@ -1,4 +1,7 @@
+import os
 import shutil
+import subprocess
+import sys
 from threading import Thread
 from typing import List
 
@@ -10,10 +13,11 @@ from symbol_creator.symbol_creator import SymbolCreator
 
 MATERIALS_DB = "./materials/materials_db.csv"
 
+wil_proc = subprocess.Popen(["start", "WilkingsonPowerDivider.emp"], shell=True)
 
 def copy_files(pad_name: str, dst_path: str):
     shutil.copy2(src="orcad/io/ioport.pad", dst=dst_path)
-    shutil.copy2(src=f"../orcad/resistor/{pad_name}.pad", dst=dst_path)
+    shutil.copy2(src=f"orcad/resistor/{pad_name}.pad", dst=dst_path)
     shutil.copy2(src=f"orcad/package/wil_sym.dra", dst=dst_path)
     shutil.copy2(src=f"orcad/package/wil_sym.psm", dst=dst_path)
 
@@ -24,7 +28,7 @@ def run_script(mat_id: int, freq: float, er: float, tanl: float):
                                er=er, tanl=tanl)
 
     except Exception as e:
-        print(f"error in symbol creator : {e}")
+        print(f"error in symbol creator : {e}", sys.stderr)
         raise
 
 
@@ -54,7 +58,7 @@ layout = [
     [sg.Text("Enter e_r"), sg.Input(key='-E_R-')],
     [sg.Text("Enter tanl"), sg.Input(key='-TANL-')],
     [sg.Text('Select a folder:'), sg.In(key='-DST_FOLDER-'), sg.FolderBrowse("Select")],
-    [sg.Multiline(size=(50, 10), key='-OUTPUT-', reroute_stdout=True),
+    [sg.Multiline(size=(50, 10), key='-OUTPUT-', reroute_stdout=True, reroute_stderr=True),
      sg.StatusBar("done", background_color="green", text_color="black", key="-STATUS_BAR-")],
     [sg.Button('Ok')]]
 
@@ -100,10 +104,11 @@ while True:
             copy_files(pad_name=selected_mat.resistor.pad_name, dst_path=dst_folder)
             # window.refresh()
         except Exception as e:
-            print(f"error in symbol creator : {e}")
+            print(f"error in symbol creator : {e}", sys.stderr)
     if not ryn_script_thread.is_alive():
         window['-STATUS_BAR-'].update(value="done", background_color="green", text_color="black")
     window.refresh()
 
 # Finish up by removing from the screen
 window.close()
+os.system("taskkill /F /IM MWOffice.exe")
