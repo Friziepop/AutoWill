@@ -33,7 +33,7 @@ def run_script(mat_id: int, freq: float, er: float, tanl: float, dst_folder: str
 
         copy_files(pad_name=selected_mat.resistor.pad_name, dst_path=dst_folder)
     except Exception as e:
-        print(f"error in symbol creator : {e}", sys.stderr)
+        print(f"error in symbol creator : {e}", file=sys.stderr)
         raise
 
 
@@ -41,7 +41,8 @@ def get_material_match(mat_name: str, resistor_name: str):
     possible_matches = [mat for mat in materials if
                         mat.name == mat_name and mat.resistor.name == resistor_name]
     if len(possible_matches) != 1:
-        raise Exception("Error matching material")
+        print("Error matching material", file=sys.stderr)
+        return None
     return possible_matches[0]
 
 
@@ -63,7 +64,7 @@ layout = [
     [sg.Text("Enter e_r"), sg.Input(key='-E_R-')],
     [sg.Text("Enter tanl"), sg.Input(key='-TANL-')],
     [sg.Text('Select a folder:'), sg.In(key='-DST_FOLDER-'), sg.FolderBrowse("Select")],
-    [sg.Multiline(size=(50, 10), key='-OUTPUT-', reroute_stdout=True, reroute_stderr=True),
+    [sg.Multiline(size=(50, 10), key='-OUTPUT-', reroute_stdout=True),
      sg.StatusBar("done", background_color="green", text_color="black", key="-STATUS_BAR-")],
     [sg.Button('Ok')]]
 
@@ -85,21 +86,23 @@ with redirect_stderr(error_redirector):
 
             match = get_material_match(mat_name=window['-MATERIAL_NAME-'].get(),
                                        resistor_name=window['-RESISTOR_NAME-'].get())
-            window['-E_R-'].update(value=str(match.er))
-            window['-TANL-'].update(value=str(match.tanl))
+            if match:
+                window['-E_R-'].update(value=str(match.er))
+                window['-TANL-'].update(value=str(match.tanl))
 
         if event == '-RESISTOR_NAME-':
             match = get_material_match(mat_name=window['-MATERIAL_NAME-'].get(),
                                        resistor_name=window['-RESISTOR_NAME-'].get())
-            window['-E_R-'].update(value=str(match.er))
-            window['-TANL-'].update(value=str(match.tanl))
+            if match:
+                window['-E_R-'].update(value=str(match.er))
+                window['-TANL-'].update(value=str(match.tanl))
 
         if event == 'Ok' and not ryn_script_thread.is_alive():
             selected_mat = get_material_match(mat_name=window['-MATERIAL_NAME-'].get(),
                                               resistor_name=window['-RESISTOR_NAME-'].get())
-            print(
-                f"chose frequency : {window['-FREQUENCY-'].get()},e_r:{window['-E_R-'].get()} ,tanl:{window['-TANL-'].get()} , material id : {selected_mat.id} , destination folder :{window['-DST_FOLDER-'].get()}")
             try:
+                print(
+                    f"chose frequency : {window['-FREQUENCY-'].get()},e_r:{window['-E_R-'].get()} ,tanl:{window['-TANL-'].get()} , material id : {selected_mat.id} , destination folder :{window['-DST_FOLDER-'].get()}")
                 ryn_script_thread = Thread(target=run_script, args=(
                     selected_mat.id, float(window['-FREQUENCY-'].get()), float(window['-E_R-'].get()),
                     float(window['-TANL-'].get()), window["-DST_FOLDER-"].get()))
@@ -108,7 +111,7 @@ with redirect_stderr(error_redirector):
 
                 # window.refresh()
             except Exception as e:
-                print(f"error in symbol creator : {e}", sys.stderr)
+                print(f"error in symbol creator : {e}", file=sys.stderr)
         if not ryn_script_thread.is_alive():
             window['-STATUS_BAR-'].update(value="done", background_color="green", text_color="black")
         window.refresh()
