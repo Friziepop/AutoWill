@@ -1,4 +1,5 @@
 import os
+import time
 
 import numpy as np
 
@@ -36,6 +37,9 @@ class DxfAwrGenerator(AwrConnector):
         self._eq_manager.set_equation_value("EXPORT_PATH", f'"{path}"')
         # self._awrde.GlobalScripts('Import_Load_Pull_Files').Routines('Import_Load_Pull_Files').Run()
         self._awrde.Project.ProjectScripts("DXFExporter").Routines("Main").Run()
+
+        time.sleep(2)
+        self._proj.simulate_analyze()
 
         freq_array = np.linspace(self._params.symbol_params.frequency - self._params.symbol_params.bandwidth / 2,
                                  self._params.symbol_params.frequency + self._params.symbol_params.bandwidth / 2, 5)

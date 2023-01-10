@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import math
 from pathlib import Path
 from typing import Dict, List
@@ -154,7 +156,7 @@ class Extractor(AwrConnector):
         qua_meter = (constants.speed_of_light / (frequency * 10 ** 9 * math.sqrt(eps_r))) / 4
         return qua_meter * 10 ** 3
 
-    def extract_results(self, frequency: float, bandwidth: float, material: Material,
+    def extract_results(self, frequency: float, bandwidth: float | None, material: Material,
                         save_csv=True) -> ExtractionResult:
         result = ExtractionResult()
 
@@ -168,8 +170,8 @@ class Extractor(AwrConnector):
 
         result.circuit_vars = self._proj.circuit_schematics_dict['WilkinsonPowerDivider'].elements_dict
 
+        self.extract_s_params_to_csv(material.id, bandwidth, material.name, frequency, result, save_csv)
         if save_csv:
-            self.extract_s_params_to_csv(material.id, bandwidth, material.name, frequency, result)
             self.extract_vars_to_csv(frequency, material)
 
         return result
@@ -193,7 +195,7 @@ class Extractor(AwrConnector):
 
     @staticmethod
     def extract_s_params_to_csv(material_id: int, bandwidth: float, material_name: str, frequency: float,
-                                result: ExtractionResult):
+                                result: ExtractionResult, save_to_csv: bool):
         s_params_dict = {"id": material_id, "name": material_name, "frequency": frequency}
 
         for key, value in result.s_param_to_measurements.items():
@@ -230,12 +232,17 @@ class Extractor(AwrConnector):
 
         s_params = from_dict(data_class=SParams, data=s_params_dict)
 
-        csv_file = Path(S_PARAMS_CSV_FILE)
-        csv_already_exists = csv_file.exists()
+        if save_to_csv:
+            csv_file = Path(S_PARAMS_CSV_FILE)
+            csv_already_exists = csv_file.exists()
 
-        with open(S_PARAMS_CSV_FILE, "a", newline='', encoding='utf-8') as f:
-            w = DataclassWriter(f, [s_params], SParams)
-            for key, value in S_PARAM_FIELD_TO_CLASS_FIELD.items():
-                w.map(value).to(key)
+            with open(S_PARAMS_CSV_FILE, "a", newline='', encoding='utf-8') as f:
+                w = DataclassWriter(f, [s_params], SParams)
+                for key, value in S_PARAM_FIELD_TO_CLASS_FIELD.items():
+                    w.map(value).to(key)
 
-            w.write(skip_header=csv_already_exists)
+                w.write(skip_header=csv_already_exists)
+
+        else:
+            for key, value in s_params_dict.items():
+                print(f"{key}={value}")
