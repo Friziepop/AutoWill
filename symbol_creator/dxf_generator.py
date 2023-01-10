@@ -40,6 +40,7 @@ class DxfAwrGenerator(AwrConnector):
 
         time.sleep(2)
         self._proj.simulate_analyze()
+        self._proj.simulate_analyze()
 
         freq_array = np.linspace(self._params.symbol_params.frequency - self._params.symbol_params.bandwidth / 2,
                                  self._params.symbol_params.frequency + self._params.symbol_params.bandwidth / 2, 5)
