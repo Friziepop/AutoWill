@@ -2,11 +2,13 @@ import os
 import shutil
 import subprocess
 import sys
+from pathlib import Path
 from threading import Thread
 from typing import List
 
 import PySimpleGUI as sg
 
+from awr_optimizer.extractor import Extractor
 from materials.material import Material
 from materials.materials_db import MaterialDB
 from symbol_creator.symbol_creator import SymbolCreator
@@ -21,13 +23,21 @@ def copy_files(pad_name: str, dst_path: str):
     shutil.copy2(src=f"orcad/package/{pad_name}.pad", dst=dst_path)
     shutil.copy2(src=f"orcad/package/wil_sym.dra", dst=dst_path)
     shutil.copy2(src=f"orcad/package/wil_sym.psm", dst=dst_path)
+    shutil.copy2(src=f"orcad/LIBRARY1.OLB", dst=str(Path(dst_path) / "wil_sym.olb"))
 
 
-def run_script(mat_id: int, freq: float, er: float, tanl: float, dst_folder: str):
+def run_script(mat_id: int, freq: float, er: float, tanl: float, dst_folder: str, mat: Material):
     try:
+        bandwidth = freq / 15
         SymbolCreator().create(material_id=mat_id, frequency=freq,
-                               er=er, tanl=tanl)
+                               er=er, tanl=tanl, bandwidth=bandwidth)
 
+        extractor = Extractor()
+        extractor.connect()
+
+        print("Printing s params:")
+        extractor.extract_results(frequency=freq, bandwidth=bandwidth, material=mat,
+                                  save_csv=False)
         copy_files(pad_name=selected_mat.resistor.pad_name, dst_path=dst_folder)
     except Exception as e:
         print(f"error in symbol creator : {e}", sys.stderr)
@@ -99,7 +109,7 @@ while True:
         try:
             ryn_script_thread = Thread(target=run_script, args=(
                 selected_mat.id, float(window['-FREQUENCY-'].get()), float(window['-E_R-'].get()),
-                float(window['-TANL-'].get()),window["-DST_FOLDER-"].get()))
+                float(window['-TANL-'].get()), window["-DST_FOLDER-"].get(), selected_mat))
             window['-STATUS_BAR-'].update(value="running", background_color="yellow")
             ryn_script_thread.start()
 

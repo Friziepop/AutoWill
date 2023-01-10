@@ -108,13 +108,13 @@ class SymbolCreator:
         FootprintGenerator(params=footprint_params).generate()
         print("generated footprint")
 
-    def create(self, material_id: int, frequency: float, er: float, tanl: float):
+    def create(self, material_id: int, frequency: float, er: float, tanl: float, bandwidth):
         material_db = MaterialDB(csv_path=MATERIALS_DB)
 
         mat = deepcopy(material_db.get_by_id(material_id))
         mat.er = er
         mat.tanl = tanl
-        bandwidth = frequency / 15
+
 
         params = SymbolParams(material=mat, frequency=frequency, bandwidth=bandwidth)
 

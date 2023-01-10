@@ -1,10 +1,10 @@
-\t (00:00:01) padstack_editor 17.4 S028 Windows SPB 64-bit Edition
-\t (00:00:01)     Journal start - Sat Jan  7 16:21:23 2023
-\t (00:00:01)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=2272 CPUs=8
-\t (00:00:01) CmdLine= padstack_editor -mpssession shvmo -file C:/Users/shvmo/AppData/Local/Temp/#Taaaaan05180.tmp -pname IOPORT -data C:/Users/shvmo/AppData/Local/Temp/#Taaaaaq05180.tmp -s C:/Users/shvmo/PycharmProjects/AutoWill/d9197833-7067-4762-80e2-d00b00537ea6__tmp.scr
-\t (00:00:01) 
-\d (00:00:01) QtSignal GuidedDesignLayersTab PadHeight editingFinished "1.6535069814436671"
-\d (00:00:01) QtSignal MainWindow Save triggered
-\d (00:00:01) QtSignal MainWindow UpdateToDesign triggered
-\d (00:00:02) QtSignal MainWindow Exit triggered
-\t (00:00:02)     Journal end - Sat Jan  7 16:21:24 2023
+\t (00:00:00) padstack_editor 17.4 S028 Windows SPB 64-bit Edition
+\t (00:00:00)     Journal start - Tue Jan 10 11:48:37 2023
+\t (00:00:00)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=13796 CPUs=8
+\t (00:00:00) CmdLine= padstack_editor -mpssession shvmo -file C:/Users/shvmo/AppData/Local/Temp/#Taaaaan18220.tmp -pname IOPORT -data C:/Users/shvmo/AppData/Local/Temp/#Taaaaaq18220.tmp -s C:/Users/shvmo/PycharmProjects/AutoWill/1c2ac1b1-7a22-4292-999f-0c43da4ac0a0__tmp.scr
+\t (00:00:00) 
+\d (00:00:00) QtSignal GuidedDesignLayersTab PadHeight editingFinished "1.6535069814436671"
+\d (00:00:00) QtSignal MainWindow Save triggered
+\d (00:00:00) QtSignal MainWindow UpdateToDesign triggered
+\d (00:00:01) QtSignal MainWindow Exit triggered
+\t (00:00:01)     Journal end - Tue Jan 10 11:48:38 2023
