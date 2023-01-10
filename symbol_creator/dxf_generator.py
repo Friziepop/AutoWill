@@ -39,9 +39,8 @@ class DxfAwrGenerator(AwrConnector):
         self._awrde.Project.ProjectScripts("DXFExporter").Routines("Main").Run()
 
         time.sleep(2)
-        self._proj.simulate_analyze()
-        self._proj.simulate_analyze()
 
         freq_array = np.linspace(self._params.symbol_params.frequency - self._params.symbol_params.bandwidth / 2,
                                  self._params.symbol_params.frequency + self._params.symbol_params.bandwidth / 2, 5)
         self._proj.set_project_frequencies(project_freq_ay=freq_array, units_str='GHz')
+        self._proj.simulate_analyze()

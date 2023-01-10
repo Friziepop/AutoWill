@@ -1,280 +1,280 @@
-\t (00:00:06) allegro 17.4 S028 Windows SPB 64-bit Edition
-\t (00:00:06)     Journal start - Tue Jan 10 11:48:30 2023
-\t (00:00:06)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=18220 CPUs=8
-\t (00:00:06) CmdLine= C:\Cadence\SPB_17.4\tools\bin\allegro.exe -s C:\Users\shvmo\PycharmProjects\AutoWill\268c5154-b41e-488d-9185-ea6443c2139c__tmp.scr C:\Users\shvmo\PycharmProjects\AutoWill\orcad\package\wil_sym.dra
-\t (00:00:06) 
-   (00:00:06) Loading axlcore.cxt 
+\t (00:00:01) allegro 17.4 S028 Windows SPB 64-bit Edition
+\t (00:00:01)     Journal start - Tue Jan 10 13:05:53 2023
+\t (00:00:01)         Host=LAPTOP-5J2D8Q51 User=shvmo Pid=13044 CPUs=8
+\t (00:00:01) CmdLine= C:\Cadence\SPB_17.4\tools\bin\allegro.exe -s C:\Users\shvmo\PycharmProjects\AutoWill\bc430b5b-3d54-406c-a231-52e75756a4f3__tmp.scr C:\Users\shvmo\PycharmProjects\AutoWill\orcad\package\wil_sym.dra
+\t (00:00:01) 
+   (00:00:01) Loading axlcore.cxt 
+\t (00:00:04) Opening existing design...
+\i (00:00:04) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged "wil_sym"
+\d (00:00:04) Design opened: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/package/wil_sym.dra
+\i (00:00:04) trapsize 816
+\i (00:00:05) trapsize 839
+\i (00:00:05) trapsize 816
+\i (00:00:05) trapsize 888
+\i (00:00:05) trapsize 911
+\i (00:00:05) replay 'C:`\Users`\shvmo`\PycharmProjects`\AutoWill`\bc430b5b-3d54-406c-a231-52e75756a4f3__tmp.scr' 
+\i (00:00:05) version 17.4 
+\t (00:00:05) Script version: 17.4
+\i (00:00:05) setwindow pcb 
+\i (00:00:05) trapsize 1182551 
+\i (00:00:05) generaledit 
+\i (00:00:05) dxf in 
+\i (00:00:05) setwindow form.dxfInMain 
+\i (00:00:05) FORM dxfInMain browsedxf 
+\i (00:00:05) fillin 'C:`\Users`\shvmo`\PycharmProjects`\AutoWill`\out.dxf' 
+   (00:00:05) Loading mfg.cxt 
+\i (00:00:05) FORM dxfInMain fillshapes YES 
+\i (00:00:05) FORM dxfInMain browselyrcnv 
+\i (00:00:05) fillin 'C:`\Users`\shvmo`\PycharmProjects`\AutoWill`\orcad`\pcb_automation`\resources`\mapping_setup.cnv' 
+\i (00:00:05) FORM dxfInMain import 
+\t (00:00:05) Starting dxf2a...
 \t (00:00:06) Opening existing design...
-\i (00:00:07) QtSignal SPBFoldDockArea FoldAreaTabWidget currentChanged "wil_sym"
-\d (00:00:07) Design opened: C:/Users/shvmo/PycharmProjects/AutoWill/orcad/package/wil_sym.dra
-\i (00:00:07) trapsize 798
-\i (00:00:07) trapsize 821
-\i (00:00:07) trapsize 798
-\i (00:00:07) trapsize 869
-\i (00:00:07) trapsize 891
-\i (00:00:08) replay 'C:`\Users`\shvmo`\PycharmProjects`\AutoWill`\268c5154-b41e-488d-9185-ea6443c2139c__tmp.scr' 
+\i (00:00:06) trapsize 882441
+\i (00:00:06) trapsize 909182
+\i (00:00:06) trapsize 882441
+\i (00:00:06) trapsize 1231073
+\i (00:00:06) trapsize 1182551
+\w (00:00:06) Incremental option off, existing design was replaced. Re-open design to restore.
+\i (00:00:07) setwindow pcb 
+\i (00:00:07) trapsize 1182551 
+\i (00:00:07) setwindow form.dxfInMain 
+\i (00:00:07) FORM dxfInMain cancel 
+\i (00:00:07) setwindow pcb 
+\i (00:00:07) generaledit 
+\i (00:00:07) setwindow pcb 
+\i (00:00:07) pick 0 0 
+\t (00:00:07) last pick:  0.0000 0.0000
+\i (00:00:07) drag_start rel grid 0.0000 0.0000 
+\i (00:00:07) drag_stop rel -26914.8533 -20765.5899 
+\i (00:00:07) zoom selection 
+\i (00:00:07) trapsize 888
+\i (00:00:07) version 17.4 
+\t (00:00:07) Script version: 17.4
+\i (00:00:07) setwindow pcb 
+\i (00:00:07) trapsize 1182551 
+\i (00:00:07) generaledit 
+\i (00:00:07) define materials 
+\i (00:00:07) generaledit 
+\i (00:00:07) version 17.4 
+\t (00:00:07) Script version: 17.4
+\i (00:00:07) setwindow pcb 
+\i (00:00:07) trapsize 1182551 
+\i (00:00:07) generaledit 
+\i (00:00:07) xsection 
+\i (00:00:08) QtSignal CCMQtXSectionDlg AddLayerDlg closed 
+\i (00:00:08) generaledit 
 \i (00:00:08) version 17.4 
 \t (00:00:08) Script version: 17.4
 \i (00:00:08) setwindow pcb 
 \i (00:00:08) trapsize 1182551 
 \i (00:00:08) generaledit 
-\i (00:00:08) dxf in 
-\i (00:00:08) setwindow form.dxfInMain 
-\i (00:00:08) FORM dxfInMain browsedxf 
-\i (00:00:08) fillin 'C:`\Users`\shvmo`\PycharmProjects`\AutoWill`\out.dxf' 
-   (00:00:08) Loading mfg.cxt 
-\i (00:00:08) FORM dxfInMain fillshapes YES 
-\i (00:00:08) FORM dxfInMain browselyrcnv 
-\i (00:00:08) fillin 'C:`\Users`\shvmo`\PycharmProjects`\AutoWill`\orcad`\pcb_automation`\resources`\mapping_setup.cnv' 
-\i (00:00:08) FORM dxfInMain import 
-\t (00:00:08) Starting dxf2a...
-\t (00:00:09) Opening existing design...
-\i (00:00:09) trapsize 882441
-\i (00:00:09) trapsize 909182
-\i (00:00:09) trapsize 882441
-\i (00:00:09) trapsize 1231073
-\i (00:00:09) trapsize 1182551
-\w (00:00:09) Incremental option off, existing design was replaced. Re-open design to restore.
-\i (00:00:10) setwindow pcb 
-\i (00:00:10) trapsize 1182551 
-\i (00:00:10) setwindow form.dxfInMain 
-\i (00:00:10) FORM dxfInMain cancel 
-\i (00:00:10) setwindow pcb 
-\i (00:00:10) generaledit 
-\i (00:00:10) setwindow pcb 
-\i (00:00:10) pick 0 0 
-\t (00:00:10) last pick:  0.0000 0.0000
-\i (00:00:10) drag_start rel grid 0.0000 0.0000 
-\i (00:00:10) drag_stop rel -26914.8533 -20765.5899 
-\i (00:00:10) zoom selection 
-\i (00:00:10) trapsize 888
-\i (00:00:10) version 17.4 
-\t (00:00:10) Script version: 17.4
-\i (00:00:10) setwindow pcb 
-\i (00:00:10) trapsize 1182551 
-\i (00:00:10) generaledit 
-\i (00:00:10) define materials 
-\i (00:00:10) generaledit 
-\i (00:00:10) version 17.4 
-\t (00:00:10) Script version: 17.4
-\i (00:00:10) setwindow pcb 
-\i (00:00:10) trapsize 1182551 
-\i (00:00:10) generaledit 
-\i (00:00:10) xsection 
-\i (00:00:12) QtSignal CCMQtXSectionDlg AddLayerDlg closed 
-\i (00:00:12) generaledit 
-\i (00:00:12) version 17.4 
-\t (00:00:12) Script version: 17.4
+\i (00:00:08) pick 0 0 
+\t (00:00:08) last pick:  0.0000 0.0000
+\i (00:00:08) prepopup rel 0.0000 0.0000 
+\i (00:00:08) prepopup 0.0000 0.0000
+\i (00:00:08) pop dyn_option_select 'Quick Utilities@:@Grids...' 
+\i (00:00:08) define grid 
+\t (00:00:08) Spacing fields allow simple equations to aid calculations; prefix with =
+\i (00:00:09) setwindow form.grid 
+\i (00:00:09) FORM grid non_etch non_etch_x_grids 0.001 
+\i (00:00:09) FORM grid non_etch non_etch_y_grids 0.001 
+\i (00:00:09) FORM grid all_etch all_etch_x_grids 0.001 
+\i (00:00:09) FORM grid all_etch all_etch_y_grids 0.001 
+\i (00:00:09) FORM grid apply 
+\i (00:00:09) FORM grid done 
+\i (00:00:09) setwindow pcb 
+\i (00:00:09) version 17.4 
+\t (00:00:09) Script version: 17.4
+\i (00:00:09) setwindow pcb 
+\i (00:00:09) trapsize 180 
+\i (00:00:09) generaledit 
+\i (00:00:09) shape merge shapes 
+\t (00:00:09) Pick primary shape to merge to, or select all shapes to merge all possible combinations.
+\i (00:00:09) pick grid 0 1.9539999999999997 # y=WIDTH/2 + INPUT_PADDING 
+\t (00:00:09) last pick:  0.0000 1.9540
+\t (00:00:09) Pick shapes to be merged
+\i (00:00:09) pick grid 0 1.9539999999999997 # y=WIDTH/2 + INPUT_PADDING 
+\t (00:00:09) last pick:  0.0000 1.9540
+\t (00:00:09) DRC errors detected.
+\i (00:00:09) pick grid 0 0.8267534907218336 # Y=WIDTH/2 
+\t (00:00:09) last pick:  0.0000 0.8270
+\t (00:00:09) DRC errors detected.
+\i (00:00:09) pick grid -0.4541013353968476 0 # X=-ROOTWIDTH/2s 
+\t (00:00:09) last pick:  -0.4540 0.0000
+\t (00:00:09) DRC errors detected.
+\i (00:00:09) pick grid 0 -0.8267534907218336 # Y=-WIDTH/2 
+\t (00:00:09) last pick:  0.0000 -0.8270
+\t (00:00:09) DRC errors detected.
+\i (00:00:09) pick grid 0 -1.9539999999999997 # y=-(WIDTH/2 + INPUT_PADDING) 
+\t (00:00:09) last pick:  0.0000 -1.9540
+\t (00:00:09) DRC errors detected.
+\i (00:00:09) pick grid 10.954471821678633 -1.9539999999999997 # X=2*QUARTER/3.14, Y=-(WIDTH/2 + INPUT_PADDING) 
+\t (00:00:09) last pick:  10.9550 -1.9540
+\t (00:00:09) DRC errors detected.
+\i (00:00:09) pick grid 10.954471821678633 1.9539999999999997 # X=2*QUARTER/3.14, Y=WIDTH/2 + INPUT_PADDING 
+\t (00:00:09) last pick:  10.9550 1.9540
+\t (00:00:09) DRC errors detected.
+\i (00:00:09) pick grid 11.40857315707548 -1.9539999999999997 # X=2*QUARTER/3.14 + ROOTWIDTH/2 Y=-(WIDTH/2 + INPUT_PADDING) 
+\t (00:00:09) last pick:  11.4090 -1.9540
+\i (00:00:09) pick grid 11.40857315707548 1.9539999999999997 # X=2*QUARTER/3.14 + ROOTWIDTH/2 Y=WIDTH/2 + INPUT_PADDING 
+\t (00:00:09) last pick:  11.4090 1.9540
+\i (00:00:09) pick grid 12.029074500000002 1.3461505 
+\t (00:00:09) last pick:  12.0290 1.3460
+\t (00:00:09) DRC errors detected.
+\i (00:00:09) pick grid 12.049074500000001 1.3461505 
+\t (00:00:09) last pick:  12.0490 1.3460
+\t (00:00:09) DRC errors detected.
+\i (00:00:09) pick grid 12.029074500000002 -1.3461505 
+\t (00:00:09) last pick:  12.0290 -1.3460
+\t (00:00:09) DRC errors detected.
+\i (00:00:09) pick grid 12.049074500000001 -1.3461505 
+\t (00:00:09) last pick:  12.0490 -1.3460
+\i (00:00:09) done 
+\i (00:00:09) version 17.4 
+\t (00:00:09) Script version: 17.4
+\i (00:00:09) setwindow pcb 
+\i (00:00:09) generaledit 
+\i (00:00:09) add pin 
+\i (00:00:09) setwindow form.mini 
+\i (00:00:09) FORM mini pad_browse 
+\i (00:00:09) fillin ioport 
+\t (00:00:09) Using 'IOPORT.pad'.
+\i (00:00:09) setwindow pcb 
+\i (00:00:09) pick grid -2.0737103105684507 0.0000 # pad 1 x = -root/2 - PORT_1_PADDING - PAD_A/2 # pad 1 
+\t (00:00:09) last pick:  -2.0740 0.0000
+\t (00:00:09) Using 'IOPORT.pad'.
+\i (00:00:09) prepopup 0.0000 0.0000 
+\i (00:00:09) prepopup 0.0000 0.0000
+\i (00:00:09) setwindow form.mini 
+\i (00:00:09) FORM mini rotate_pin 45 
+\t (00:00:09) Using 'IOPORT.pad'.
+\i (00:00:09) FORM mini offsetx 1.2700 
+\i (00:00:09) setwindow pcb 
+\i (00:00:09) pick grid 13.184310989214437 2.491386989214435 #pad 2 x = DXF_X + (OUTPUT_PADDING + PAD_A/2) *cos , y = DXF_Y + (OUTPUT_PADDING + PAD_A/2) *sin 
+\t (00:00:09) last pick:  13.1840 2.4910
+\t (00:00:09) Using 'IOPORT.pad'.
+\i (00:00:09) prepopup 0.0000 0.0000 
+\i (00:00:09) prepopup 0.0000 0.0000
+\i (00:00:09) setwindow form.mini 
+\i (00:00:09) FORM mini rotate_pin -45 
+\t (00:00:09) Using 'IOPORT.pad'.
+\i (00:00:09) FORM mini offsetx 1.2700 
+\i (00:00:09) setwindow pcb 
+\i (00:00:09) pick grid 13.184310989214437 -2.491386989214435 # pad 3 x = DXF_X + (QURTER/20 + PAD_A/2) *cos , y = -DXF_Y + (OUTPUT_PADDING + PAD_A/2) *sin 
+\t (00:00:09) last pick:  13.1840 -2.4910
+\t (00:00:09) Using 'IOPORT.pad'.
+\i (00:00:09) prepopup 0.0000 0.0000 
+\i (00:00:09) prepopup 0.0000 0.0000
+\i (00:00:09) setwindow form.mini 
+\i (00:00:09) FORM mini rotate_pin 0.000 
+\t (00:00:09) Using 'IOPORT.pad'.
+\i (00:00:09) FORM mini offsetx -5.477 
+\i (00:00:09) setwindow pcb 
+\i (00:00:09) done 
+\t (00:00:09) Exiting from Add Pin.
+\i (00:00:09) add pin 
+\t (00:00:09) Using 'IOPORT.pad'.
+\i (00:00:09) setwindow form.mini 
+\i (00:00:09) FORM mini pad_browse 
+\i (00:00:09) fillin smt24s 
+\w (00:00:09) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:00:09) Using 'SMT24S.pad'.
+\i (00:00:09) pick grid 10.954471821678633 0.5587999999999997 # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root - PAD_A/2 
+\t (00:00:09) last pick:  10.9550 0.5590
+\t (00:00:09) Using 'SMT24S.pad'.
+\i (00:00:09) pick grid 10.954471821678633 -0.5587999999999997 # pad 5 x = 2*R , y = -(width/2 +INPUT_PADDING -root - PAD_A/2) 
+\t (00:00:09) last pick:  10.9550 -0.5590
+\t (00:00:09) Using 'SMT24S.pad'.
+\i (00:00:09) done 
+\e (00:00:09) Form field label not found
+\i (00:00:09) generaledit 
+\t (00:00:09) Exiting from Add Pin.
+\i (00:00:09) version 17.4 
+\t (00:00:09) Script version: 17.4
+\i (00:00:09) setwindow pcb 
+\i (00:00:09) trapsize 368 
+\i (00:00:09) generaledit 
+\i (00:00:09) padeditdb 
+\i (00:00:09) setwindow form.mini 
+\i (00:00:09) FORM mini padlist IOPORT 
+\i (00:00:09) setwindow pcb 
+\i (00:00:09) padeditcur 18ad62e4-0a09-4ce3-869c-10b3f3b6d369__tmp.scr 
+\i (00:00:11) version 17.4 
+\t (00:00:11) Script version: 17.4
+\i (00:00:11) setwindow pcb 
+\i (00:00:11) generaledit 
+\i (00:00:11) add connect 
+\w (00:00:11) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:00:11) Pick first element.
+\i (00:00:11) pick grid -2.0737103105684507 0 # pad 1 x = -root/2 - PORT_1_PADDING - PAD_A/2 , y=0 
+\t (00:00:11) last pick:  -2.0740 0.0000
+\t (00:00:11) last pick:  -2.0740 0.0000
+\i (00:00:11) pick grid -1.9227103105684507 0 # pad 1 x = -root/2 - PORT_1_PADDING , y =0 
+\t (00:00:11) last pick:  -1.9230 0.0000
+\t (00:00:11) No DRC errors detected.
+\t (00:00:11) Pick first element.
+\i (00:00:11) pick grid 10.954471821678633 0.5587999999999997 # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root - PAD_A/2 
+\t (00:00:11) last pick:  10.9550 0.5590
+\t (00:00:11) Pick first element.
+\t (00:00:11) last pick:  10.9550 0.5590
+\i (00:00:11) pick grid 10.954471821678633 2.005 # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root 
+\t (00:00:11) last pick:  10.9550 2.0050
+\t (00:00:11) No DRC errors detected.
+\t (00:00:11) Pick first element.
+\i (00:00:11) pick grid 10.954471821678633 -0.5587999999999997 # pad 5 x = 2*R , y = -(width/2 +INPUT_PADDING -root - PAD_A/2) 
+\t (00:00:11) last pick:  10.9550 -0.5590
+\t (00:00:11) Pick first element.
+\t (00:00:11) last pick:  10.9550 -0.5590
+\i (00:00:11) pick grid 10.954471821678633 -2.005 # pad 5 x = 2*R , y = -(width/2 +INPUT_PADDING -root) 
+\t (00:00:11) last pick:  10.9550 -2.0050
+\t (00:00:11) No DRC errors detected.
+\t (00:00:11) Pick first element.
+\i (00:00:11) pick grid 13.184310989214437 -2.491386989214435 # pad 3 x = DXF_X + (OUTPUT_PADDING + PAD_A/2) *cos , y = -DXF_Y + (OUTPUT_PADDING + PAD_A/2) *sin 
+\t (00:00:11) last pick:  13.1840 -2.4910
+\t (00:00:11) Pick first element.
+\t (00:00:11) last pick:  13.1840 -2.4910
+\i (00:00:11) pick grid 13.077537865255268 -2.3846138652552664 # pad 3 x = DXF_X + (OUTPUT_PADDING) *cos , y = -DXF_Y + (OUTPUT_PADDING) *sin 
+\t (00:00:11) last pick:  13.0780 -2.3850
+\t (00:00:11) No DRC errors detected.
+\t (00:00:11) Pick first element.
+\i (00:00:11) pick grid 13.184310989214437 2.491386989214435 # pad 2 x = DXF_X + (OUTPUT_PADDING + PAD_A/2) *cos , y = DXF_Y + (OUTPUT_PADDING + PAD_A/2) *sin 
+\t (00:00:11) last pick:  13.1840 2.4910
+\t (00:00:11) Pick first element.
+\t (00:00:11) last pick:  13.1840 2.4910
+\i (00:00:11) pick grid 13.077537865255268 2.3846138652552664 #pad 2 x = DXF_X + (OUTPUT_PADDING) *cos , y = DXF_Y + (OUTPUT_PADDING) *sin 
+\t (00:00:11) last pick:  13.0780 2.3850
+\t (00:00:11) No DRC errors detected.
+\t (00:00:11) Pick first element.
+\i (00:00:11) done 
+\i (00:00:11) generaledit 
+\i (00:00:11) version 17.4 
+\t (00:00:11) Script version: 17.4
+\i (00:00:11) setwindow pcb 
+\i (00:00:11) trapsize 225 
+\i (00:00:11) generaledit 
+\i (00:00:11) label refdes 
+\t (00:00:12) Pick text location.
 \i (00:00:12) setwindow pcb 
-\i (00:00:12) trapsize 1182551 
-\i (00:00:12) generaledit 
-\i (00:00:12) pick 0 0 
-\t (00:00:12) last pick:  0.0000 0.0000
-\i (00:00:12) prepopup rel 0.0000 0.0000 
-\i (00:00:12) prepopup 0.0000 0.0000
-\i (00:00:12) pop dyn_option_select 'Quick Utilities@:@Grids...' 
-\i (00:00:12) define grid 
-\t (00:00:12) Spacing fields allow simple equations to aid calculations; prefix with =
-\i (00:00:12) setwindow form.grid 
-\i (00:00:12) FORM grid non_etch non_etch_x_grids 0.001 
-\i (00:00:12) FORM grid non_etch non_etch_y_grids 0.001 
-\i (00:00:12) FORM grid all_etch all_etch_x_grids 0.001 
-\i (00:00:12) FORM grid all_etch all_etch_y_grids 0.001 
-\i (00:00:12) FORM grid apply 
-\i (00:00:12) FORM grid done 
+\i (00:00:12) prepopup -0.4777 -0.8246 
+\i (00:00:12) prepopup -0.4777 -0.8246
 \i (00:00:12) setwindow pcb 
-\i (00:00:12) version 17.4 
-\t (00:00:12) Script version: 17.4
-\i (00:00:12) setwindow pcb 
-\i (00:00:12) trapsize 180 
-\i (00:00:12) generaledit 
-\i (00:00:12) shape merge shapes 
-\t (00:00:12) Pick primary shape to merge to, or select all shapes to merge all possible combinations.
-\i (00:00:12) pick grid 0 1.9539999999999997 # y=WIDTH/2 + INPUT_PADDING 
-\t (00:00:12) last pick:  0.0000 1.9540
-\t (00:00:12) Pick shapes to be merged
-\i (00:00:12) pick grid 0 1.9539999999999997 # y=WIDTH/2 + INPUT_PADDING 
-\t (00:00:12) last pick:  0.0000 1.9540
-\t (00:00:12) DRC errors detected.
-\i (00:00:12) pick grid 0 0.8267534907218336 # Y=WIDTH/2 
-\t (00:00:12) last pick:  0.0000 0.8270
-\t (00:00:12) DRC errors detected.
-\i (00:00:12) pick grid -0.4541013353968476 0 # X=-ROOTWIDTH/2s 
-\t (00:00:12) last pick:  -0.4540 0.0000
-\t (00:00:12) DRC errors detected.
-\i (00:00:12) pick grid 0 -0.8267534907218336 # Y=-WIDTH/2 
-\t (00:00:12) last pick:  0.0000 -0.8270
-\t (00:00:12) DRC errors detected.
-\i (00:00:12) pick grid 0 -1.9539999999999997 # y=-(WIDTH/2 + INPUT_PADDING) 
-\t (00:00:12) last pick:  0.0000 -1.9540
-\t (00:00:12) DRC errors detected.
-\i (00:00:12) pick grid 10.954471821678633 -1.9539999999999997 # X=2*QUARTER/3.14, Y=-(WIDTH/2 + INPUT_PADDING) 
-\t (00:00:12) last pick:  10.9550 -1.9540
-\t (00:00:12) DRC errors detected.
-\i (00:00:12) pick grid 10.954471821678633 1.9539999999999997 # X=2*QUARTER/3.14, Y=WIDTH/2 + INPUT_PADDING 
-\t (00:00:12) last pick:  10.9550 1.9540
-\t (00:00:12) DRC errors detected.
-\i (00:00:12) pick grid 11.40857315707548 -1.9539999999999997 # X=2*QUARTER/3.14 + ROOTWIDTH/2 Y=-(WIDTH/2 + INPUT_PADDING) 
-\t (00:00:12) last pick:  11.4090 -1.9540
-\i (00:00:12) pick grid 11.40857315707548 1.9539999999999997 # X=2*QUARTER/3.14 + ROOTWIDTH/2 Y=WIDTH/2 + INPUT_PADDING 
-\t (00:00:12) last pick:  11.4090 1.9540
-\i (00:00:12) pick grid 12.029074500000002 1.3461505 
-\t (00:00:12) last pick:  12.0290 1.3460
-\t (00:00:12) DRC errors detected.
-\i (00:00:12) pick grid 12.049074500000001 1.3461505 
-\t (00:00:12) last pick:  12.0490 1.3460
-\t (00:00:12) DRC errors detected.
-\i (00:00:12) pick grid 12.029074500000002 -1.3461505 
-\t (00:00:12) last pick:  12.0290 -1.3460
-\t (00:00:12) DRC errors detected.
-\i (00:00:12) pick grid 12.049074500000001 -1.3461505 
-\t (00:00:12) last pick:  12.0490 -1.3460
+\i (00:00:12) pick -0.8730 -0.9860 
+\t (00:00:12) last pick:  -0.8730 -0.9860
+\t (00:00:12) Enter text string.
+\i (00:00:12) text 1 
 \i (00:00:12) done 
+\i (00:00:12) setwindow pcb 
+\i (00:00:12) generaledit 
 \i (00:00:12) version 17.4 
 \t (00:00:12) Script version: 17.4
 \i (00:00:12) setwindow pcb 
+\i (00:00:12) trapsize 225 
 \i (00:00:12) generaledit 
-\i (00:00:12) add pin 
-\i (00:00:12) setwindow form.mini 
-\i (00:00:12) FORM mini pad_browse 
-\i (00:00:13) fillin ioport 
-\t (00:00:13) Using 'IOPORT.pad'.
-\i (00:00:13) setwindow pcb 
-\i (00:00:13) pick grid -2.0737103105684507 0.0000 # pad 1 x = -root/2 - PORT_1_PADDING - PAD_A/2 # pad 1 
-\t (00:00:13) last pick:  -2.0740 0.0000
-\t (00:00:13) Using 'IOPORT.pad'.
-\i (00:00:13) prepopup 0.0000 0.0000 
-\i (00:00:13) prepopup 0.0000 0.0000
-\i (00:00:13) setwindow form.mini 
-\i (00:00:13) FORM mini rotate_pin 45 
-\t (00:00:13) Using 'IOPORT.pad'.
-\i (00:00:13) FORM mini offsetx 1.2700 
-\i (00:00:13) setwindow pcb 
-\i (00:00:13) pick grid 13.184310989214437 2.491386989214435 #pad 2 x = DXF_X + (OUTPUT_PADDING + PAD_A/2) *cos , y = DXF_Y + (OUTPUT_PADDING + PAD_A/2) *sin 
-\t (00:00:13) last pick:  13.1840 2.4910
-\t (00:00:13) Using 'IOPORT.pad'.
-\i (00:00:13) prepopup 0.0000 0.0000 
-\i (00:00:13) prepopup 0.0000 0.0000
-\i (00:00:13) setwindow form.mini 
-\i (00:00:13) FORM mini rotate_pin -45 
-\t (00:00:13) Using 'IOPORT.pad'.
-\i (00:00:13) FORM mini offsetx 1.2700 
-\i (00:00:13) setwindow pcb 
-\i (00:00:13) pick grid 13.184310989214437 -2.491386989214435 # pad 3 x = DXF_X + (QURTER/20 + PAD_A/2) *cos , y = -DXF_Y + (OUTPUT_PADDING + PAD_A/2) *sin 
-\t (00:00:13) last pick:  13.1840 -2.4910
-\t (00:00:13) Using 'IOPORT.pad'.
-\i (00:00:13) prepopup 0.0000 0.0000 
-\i (00:00:13) prepopup 0.0000 0.0000
-\i (00:00:13) setwindow form.mini 
-\i (00:00:13) FORM mini rotate_pin 0.000 
-\t (00:00:13) Using 'IOPORT.pad'.
-\i (00:00:13) FORM mini offsetx -5.477 
-\i (00:00:13) setwindow pcb 
-\i (00:00:13) done 
-\t (00:00:13) Exiting from Add Pin.
-\i (00:00:13) add pin 
-\t (00:00:13) Using 'IOPORT.pad'.
-\i (00:00:13) setwindow form.mini 
-\i (00:00:13) FORM mini pad_browse 
-\i (00:00:13) fillin smt24s 
-\w (00:00:13) WARNING(SPMHUT-48): Scaled value has been rounded off.
-\t (00:00:13) Using 'SMT24S.pad'.
-\i (00:00:13) pick grid 10.954471821678633 0.5587999999999997 # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root - PAD_A/2 
-\t (00:00:13) last pick:  10.9550 0.5590
-\t (00:00:13) Using 'SMT24S.pad'.
-\i (00:00:13) pick grid 10.954471821678633 -0.5587999999999997 # pad 5 x = 2*R , y = -(width/2 +INPUT_PADDING -root - PAD_A/2) 
-\t (00:00:13) last pick:  10.9550 -0.5590
-\t (00:00:13) Using 'SMT24S.pad'.
-\i (00:00:13) done 
-\e (00:00:13) Form field label not found
-\i (00:00:13) generaledit 
-\t (00:00:13) Exiting from Add Pin.
-\i (00:00:13) version 17.4 
-\t (00:00:13) Script version: 17.4
-\i (00:00:13) setwindow pcb 
-\i (00:00:13) trapsize 368 
-\i (00:00:13) generaledit 
-\i (00:00:13) padeditdb 
-\i (00:00:13) setwindow form.mini 
-\i (00:00:13) FORM mini padlist IOPORT 
-\i (00:00:13) setwindow pcb 
-\i (00:00:13) padeditcur 1c2ac1b1-7a22-4292-999f-0c43da4ac0a0__tmp.scr 
-\i (00:00:14) version 17.4 
-\t (00:00:14) Script version: 17.4
-\i (00:00:14) setwindow pcb 
-\i (00:00:14) generaledit 
-\i (00:00:14) add connect 
-\w (00:00:14) WARNING(SPMHUT-48): Scaled value has been rounded off.
-\t (00:00:14) Pick first element.
-\i (00:00:14) pick grid -2.0737103105684507 0 # pad 1 x = -root/2 - PORT_1_PADDING - PAD_A/2 , y=0 
-\t (00:00:14) last pick:  -2.0740 0.0000
-\t (00:00:14) last pick:  -2.0740 0.0000
-\i (00:00:14) pick grid -1.9227103105684507 0 # pad 1 x = -root/2 - PORT_1_PADDING , y =0 
-\t (00:00:14) last pick:  -1.9230 0.0000
-\t (00:00:14) No DRC errors detected.
-\t (00:00:14) Pick first element.
-\i (00:00:14) pick grid 10.954471821678633 0.5587999999999997 # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root - PAD_A/2 
-\t (00:00:14) last pick:  10.9550 0.5590
-\t (00:00:14) Pick first element.
-\t (00:00:14) last pick:  10.9550 0.5590
-\i (00:00:14) pick grid 10.954471821678633 2.005 # pad 4 x = 2*R , y = width/2 +INPUT_PADDING -root 
-\t (00:00:14) last pick:  10.9550 2.0050
-\t (00:00:14) No DRC errors detected.
-\t (00:00:14) Pick first element.
-\i (00:00:14) pick grid 10.954471821678633 -0.5587999999999997 # pad 5 x = 2*R , y = -(width/2 +INPUT_PADDING -root - PAD_A/2) 
-\t (00:00:14) last pick:  10.9550 -0.5590
-\t (00:00:14) Pick first element.
-\t (00:00:14) last pick:  10.9550 -0.5590
-\i (00:00:14) pick grid 10.954471821678633 -2.005 # pad 5 x = 2*R , y = -(width/2 +INPUT_PADDING -root) 
-\t (00:00:14) last pick:  10.9550 -2.0050
-\t (00:00:15) No DRC errors detected.
-\t (00:00:15) Pick first element.
-\i (00:00:15) pick grid 13.184310989214437 -2.491386989214435 # pad 3 x = DXF_X + (OUTPUT_PADDING + PAD_A/2) *cos , y = -DXF_Y + (OUTPUT_PADDING + PAD_A/2) *sin 
-\t (00:00:15) last pick:  13.1840 -2.4910
-\t (00:00:15) Pick first element.
-\t (00:00:15) last pick:  13.1840 -2.4910
-\i (00:00:15) pick grid 13.077537865255268 -2.3846138652552664 # pad 3 x = DXF_X + (OUTPUT_PADDING) *cos , y = -DXF_Y + (OUTPUT_PADDING) *sin 
-\t (00:00:15) last pick:  13.0780 -2.3850
-\t (00:00:15) No DRC errors detected.
-\t (00:00:15) Pick first element.
-\i (00:00:15) pick grid 13.184310989214437 2.491386989214435 # pad 2 x = DXF_X + (OUTPUT_PADDING + PAD_A/2) *cos , y = DXF_Y + (OUTPUT_PADDING + PAD_A/2) *sin 
-\t (00:00:15) last pick:  13.1840 2.4910
-\t (00:00:15) Pick first element.
-\t (00:00:15) last pick:  13.1840 2.4910
-\i (00:00:15) pick grid 13.077537865255268 2.3846138652552664 #pad 2 x = DXF_X + (OUTPUT_PADDING) *cos , y = DXF_Y + (OUTPUT_PADDING) *sin 
-\t (00:00:15) last pick:  13.0780 2.3850
-\t (00:00:15) No DRC errors detected.
-\t (00:00:15) Pick first element.
-\i (00:00:15) done 
-\i (00:00:15) generaledit 
-\i (00:00:15) version 17.4 
-\t (00:00:15) Script version: 17.4
-\i (00:00:15) setwindow pcb 
-\i (00:00:15) trapsize 225 
-\i (00:00:15) generaledit 
-\i (00:00:15) label refdes 
-\t (00:00:15) Pick text location.
-\i (00:00:15) setwindow pcb 
-\i (00:00:15) prepopup -0.4777 -0.8246 
-\i (00:00:15) prepopup -0.4777 -0.8246
-\i (00:00:15) setwindow pcb 
-\i (00:00:15) pick -0.8730 -0.9860 
-\t (00:00:15) last pick:  -0.8730 -0.9860
-\t (00:00:15) Enter text string.
-\i (00:00:15) text 1 
-\i (00:00:15) done 
-\i (00:00:15) setwindow pcb 
-\i (00:00:15) generaledit 
-\i (00:00:15) version 17.4 
-\t (00:00:15) Script version: 17.4
-\i (00:00:15) setwindow pcb 
-\i (00:00:15) trapsize 225 
-\i (00:00:15) generaledit 
-\i (00:00:15) save 
-\i (00:00:15) fillin yes 
-   (00:00:15) Loading consmgr.cxt 
-   (00:00:15) Loading acns_formula.cxt 
-\t (00:00:15) Symbol 'wil_sym.psm' created.
-\i (00:00:15) generaledit 
-\i (00:00:15) exit 
-\t (00:00:15)     Journal end - Tue Jan 10 11:48:39 2023
+\i (00:00:12) save 
+\i (00:00:12) fillin yes 
+   (00:00:12) Loading consmgr.cxt 
+   (00:00:12) Loading acns_formula.cxt 
+\t (00:00:12) Symbol 'wil_sym.psm' created.
+\i (00:00:12) generaledit 
+\i (00:00:12) exit 
+\t (00:00:12)     Journal end - Tue Jan 10 13:06:04 2023
