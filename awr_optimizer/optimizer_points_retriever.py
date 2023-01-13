@@ -9,9 +9,9 @@ from materials.material import Material
 class OptimizerPointsRetriever:
     def __init__(self, material: Material):
         # TODO:change to mat
-        self._permutations = self._create_permutations(freq_start=2, freq_end=4, freq_points=5,
+        self._permutations = self._create_permutations(freq_start=2, freq_end=4, freq_points=3,
                                                        er_start=material.er - 0.3,
-                                                       er_end=material.er + 0.3, er_points=5,
+                                                       er_end=material.er + 0.3, er_points=3,
                                                        tanl_start=material.tanl - 0.001,
                                                        tanl_end=material.tanl + 0.001, tanl_points=2)
 

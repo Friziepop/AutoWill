@@ -3,7 +3,7 @@ from typing import Optional
 from materials.csv_db import CSVDb
 from materials.resistor import Resistor
 
-DEFAULT_DB_PATH = 'materials/resistors_db.csv'
+DEFAULT_DB_PATH = '../materials/resistors_db.csv'
 
 
 class ResistorDB(CSVDb):
