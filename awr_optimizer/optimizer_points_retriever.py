@@ -1,4 +1,5 @@
 # MATERIALS_DB_CSV_PATH = "materials/materials_db.csv"
+from builtins import map
 from typing import List, Tuple
 
 import numpy as np
@@ -8,8 +9,7 @@ from materials.material import Material
 
 class OptimizerPointsRetriever:
     def __init__(self, material: Material):
-        # TODO:change to mat
-        self._permutations = self._create_permutations(freq_start=2, freq_end=4, freq_points=3,
+        self._permutations = self._create_permutations(freq_start=material.start_freq, freq_end=material.end_freq, freq_points=20,
                                                        er_start=material.er - 0.3,
                                                        er_end=material.er + 0.3, er_points=3,
                                                        tanl_start=material.tanl - 0.001,

@@ -1,3 +1,4 @@
+import argparse
 from pathlib import Path
 from typing import List
 
@@ -97,8 +98,16 @@ def learn_models(materials_ids: List[int], models_dir: str = MODELS_DIR,
 
 
 def main():
-    show_graph = True
-    ids = [7]
+
+    show_graph = False
+    parser = argparse.ArgumentParser()
+
+    # -db DATABSE -u USERNAME -p PASSWORD -size 20
+    parser.add_argument("-id", "--id", help="id of material", type=int)
+
+    args = parser.parse_args()
+    ids = [args.id] if args.id else [1]
+
     print("starting to learn models")
     learn_models(materials_ids=ids, show_graph=show_graph)
     if show_graph:
