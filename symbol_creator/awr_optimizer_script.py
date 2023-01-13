@@ -1,4 +1,5 @@
 import math
+import sys
 
 import numpy as np
 from scipy.constants import speed_of_light
@@ -12,6 +13,7 @@ from microstip_freq_calc.copied_calc import MicroStripCopiedCalc
 
 from materials.materials_db import MaterialDB
 from copy import deepcopy
+import argparse
 
 
 def run_simulations(ids, step_size):
@@ -150,8 +152,13 @@ def set_meshing(freq):
 if __name__ == '__main__':
     step_size = 0.5
 
-    ids = [1, 2, 3]
+    parser = argparse.ArgumentParser()
 
+    # -db DATABSE -u USERNAME -p PASSWORD -size 20
+    parser.add_argument("-id", "--id", help="id of material", type=int)
+
+    args = parser.parse_args()
+    ids = [args.id] if args.id else [1]
     print("starting dataset generation using awr optimization")
     print(f"ids:{ids}")
 
