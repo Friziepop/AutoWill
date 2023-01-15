@@ -5,7 +5,7 @@ from materials.csv_db import CSVDb
 from materials.material import Material
 from materials.resistors_db import ResistorDB
 
-DEFAULT_DB_PATH = '../materials/materials_db.csv'
+DEFAULT_DB_PATH = 'materials/materials_db.csv'
 
 
 class MaterialDB(CSVDb):

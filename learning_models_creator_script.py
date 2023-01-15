@@ -7,19 +7,19 @@ from matplotlib import pyplot as plt
 
 from learning.learners import InverseLearner, PolyLearner
 
-CSV_DIR = "../awr_optimizer"
-MODELS_DIR = "models"
+CSV_DIR = "awr_optimizer"
+MODELS_DIR = "learning/models"
 
 X_COLS = ["frequency", "er", "tanl"]
 
 
 def get_vars_path(mode: str, csv_dir: str = CSV_DIR):
     if mode == 'a':
-        return f"{csv_dir}/vars.csv"
+        return f"vars.csv"
     if mode == 'tr':
-        return f"{csv_dir}/vars_train.csv"
+        return f"vars_train.csv"
     if mode == 'v':
-        return f"{csv_dir}/vars_val.csv"
+        return f"vars_val.csv"
     raise Exception("incorrect mode")
 
 
