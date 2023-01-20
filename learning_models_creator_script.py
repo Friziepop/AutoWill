@@ -93,7 +93,7 @@ def learn_models(materials_ids: List[int], models_dir: str = MODELS_DIR,
                                        coefficients=coeff_quarter)
         '''
 
-        get_best_model(start_deg=0, end_deg=2, material_id=mat_id, feature="root_width", show_graph=False,
+        get_best_model(start_deg=0, end_deg=5, material_id=mat_id, feature="root_width", show_graph=False,
                        models_dir=models_dir)
 
 
