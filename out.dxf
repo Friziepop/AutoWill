@@ -13,15 +13,15 @@ $INSUNITS
   9
 $EXTMIN
   10
--0.880602
+-0.519224
   20
--3.66412
+-2.068837
   9
 $EXTMAX
   10
-6.502968
+3.480185
   20
-3.66412
+2.068837
   0
 ENDSEC
   0
@@ -93,7 +93,7 @@ VERTEX
   8
 Thick_Metal
   10
--0.156252
+-0.148158
   20
 0.271901
   0
@@ -101,7 +101,7 @@ VERTEX
   8
 Thick_Metal
   10
-0.156252
+0.148158
   20
 0.271901
   0
@@ -109,7 +109,7 @@ VERTEX
   8
 Thick_Metal
   10
-0.156252
+0.148158
   20
 -0.271901
   0
@@ -117,1925 +117,7 @@ VERTEX
   8
 Thick_Metal
   10
--0.156252
-  20
--0.271901
-  0
-SEQEND
-  0
-POLYLINE
-  8
-Thick_Metal
-  70
-1
-  66
-1
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.156252
-  20
-0.8636
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.160032
-  20
-1.000718
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.171359
-  20
-1.137419
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.1902
-  20
-1.273289
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.216497
-  20
-1.407915
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.25017
-  20
-1.540887
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.291117
-  20
-1.671803
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.339214
-  20
-1.800264
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.394315
-  20
-1.925881
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.456251
-  20
-2.048271
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.524836
-  20
-2.167064
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.599861
-  20
-2.281898
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.681098
-  20
-2.392425
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.7683
-  20
-2.498308
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.861203
-  20
-2.599228
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.959524
-  20
-2.694876
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.062965
-  20
-2.784962
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.171211
-  20
-2.869214
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.283934
-  20
-2.947374
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.400792
-  20
-3.019207
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.521429
-  20
-3.084492
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.64548
-  20
-3.143033
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.772567
-  20
-3.194651
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.902305
-  20
-3.23919
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.034299
-  20
-3.276515
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.168149
-  20
-3.306511
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.303448
-  20
-3.329089
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.439785
-  20
-3.344179
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.576747
-  20
-3.351735
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.713917
-  20
-3.351735
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.850879
-  20
-3.344179
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.987216
-  20
-3.329089
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.122515
-  20
-3.306511
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.256365
-  20
-3.276515
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.388359
-  20
-3.23919
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.518097
-  20
-3.194651
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.645184
-  20
-3.143033
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.769235
-  20
-3.084492
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.889872
-  20
-3.019207
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.00673
-  20
-2.947374
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.119453
-  20
-2.869214
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.227699
-  20
-2.784962
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.33114
-  20
-2.694876
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.429461
-  20
-2.599228
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.522364
-  20
-2.498308
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.609566
-  20
-2.392425
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.690803
-  20
-2.281898
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.765828
-  20
-2.167064
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.834413
-  20
-2.048271
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.896349
-  20
-1.925881
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.95145
-  20
-1.800264
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.999547
-  20
-1.671803
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.040494
-  20
-1.540887
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.074167
-  20
-1.407915
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.100464
-  20
-1.273289
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.119305
-  20
-1.137419
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.130632
-  20
-1.000718
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.134412
-  20
-0.8636
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.446916
-  20
-0.8636
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.442662
-  20
-1.017933
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.429912
-  20
-1.171797
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.408706
-  20
-1.324726
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.379108
-  20
-1.476253
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.341207
-  20
-1.625921
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.295118
-  20
-1.773273
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.240983
-  20
-1.917862
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.178965
-  20
-2.05925
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.109252
-  20
-2.197007
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.032056
-  20
-2.330714
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.947612
-  20
-2.459965
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.856175
-  20
-2.584369
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.758025
-  20
-2.703546
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.653458
-  20
-2.817136
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.542793
-  20
-2.924792
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.426365
-  20
-3.026189
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.304529
-  20
-3.121019
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.177653
-  20
-3.208992
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.046124
-  20
-3.289843
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.910341
-  20
-3.363325
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.770715
-  20
-3.429216
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.627673
-  20
-3.487315
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.481646
-  20
-3.537446
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.33308
-  20
-3.579456
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.182425
-  20
-3.613219
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.03014
-  20
-3.638631
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.876685
-  20
-3.655615
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.722528
-  20
-3.66412
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.568136
-  20
-3.66412
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.413979
-  20
-3.655615
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.260524
-  20
-3.638631
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.108239
-  20
-3.613219
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.957584
-  20
-3.579456
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.809018
-  20
-3.537446
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.662991
-  20
-3.487315
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.519949
-  20
-3.429216
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.380323
-  20
-3.363325
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.24454
-  20
-3.289843
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.113011
-  20
-3.208992
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.986135
-  20
-3.121019
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.864299
-  20
-3.026189
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.747871
-  20
-2.924792
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.637206
-  20
-2.817136
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.532639
-  20
-2.703546
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.434489
-  20
-2.584369
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.343052
-  20
-2.459965
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.258608
-  20
-2.330714
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.181412
-  20
-2.197007
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.111699
-  20
-2.05925
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.049681
-  20
-1.917862
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.004454
-  20
-1.773273
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.050543
-  20
-1.625921
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.088444
-  20
-1.476253
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.118042
-  20
-1.324726
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.139248
-  20
-1.171797
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.151998
-  20
-1.017933
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.156252
-  20
-0.8636
-  0
-SEQEND
-  0
-POLYLINE
-  8
-Thick_Metal
-  70
-1
-  66
-1
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.134412
-  20
--0.8636
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.130632
-  20
--1.000718
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.119305
-  20
--1.137419
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.100464
-  20
--1.273289
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.074167
-  20
--1.407915
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.040494
-  20
--1.540887
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.999547
-  20
--1.671803
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.95145
-  20
--1.800264
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.896349
-  20
--1.925881
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.834413
-  20
--2.048271
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.765828
-  20
--2.167064
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.690803
-  20
--2.281898
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.609566
-  20
--2.392425
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.522364
-  20
--2.498308
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.429461
-  20
--2.599228
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.33114
-  20
--2.694876
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.227699
-  20
--2.784962
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.119453
-  20
--2.869214
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.00673
-  20
--2.947374
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.889872
-  20
--3.019207
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.769235
-  20
--3.084492
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.645184
-  20
--3.143033
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.518097
-  20
--3.194651
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.388359
-  20
--3.23919
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.256365
-  20
--3.276515
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.122515
-  20
--3.306511
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.987216
-  20
--3.329089
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.850879
-  20
--3.344179
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.713917
-  20
--3.351735
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.576747
-  20
--3.351735
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.439785
-  20
--3.344179
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.303448
-  20
--3.329089
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.168149
-  20
--3.306511
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.034299
-  20
--3.276515
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.902305
-  20
--3.23919
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.772567
-  20
--3.194651
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.64548
-  20
--3.143033
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.521429
-  20
--3.084492
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.400792
-  20
--3.019207
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.283934
-  20
--2.947374
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.171211
-  20
--2.869214
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.062965
-  20
--2.784962
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.959524
-  20
--2.694876
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.861203
-  20
--2.599228
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.7683
-  20
--2.498308
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.681098
-  20
--2.392425
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.599861
-  20
--2.281898
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.524836
-  20
--2.167064
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.456251
-  20
--2.048271
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.394315
-  20
--1.925881
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.339214
-  20
--1.800264
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.291117
-  20
--1.671803
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.25017
-  20
--1.540887
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.216497
-  20
--1.407915
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.1902
-  20
--1.273289
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.171359
-  20
--1.137419
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.160032
-  20
--1.000718
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.156252
-  20
--0.8636
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.156252
-  20
--0.8636
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.151998
-  20
--1.017933
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.139248
-  20
--1.171797
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.118042
-  20
--1.324726
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.088444
-  20
--1.476253
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.050543
-  20
--1.625921
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.004454
-  20
--1.773273
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.049681
-  20
--1.917862
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.111699
-  20
--2.05925
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.181412
-  20
--2.197007
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.258608
-  20
--2.330714
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.343052
-  20
--2.459965
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.434489
-  20
--2.584369
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.532639
-  20
--2.703546
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.637206
-  20
--2.817136
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.747871
-  20
--2.924792
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.864299
-  20
--3.026189
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-0.986135
-  20
--3.121019
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.113011
-  20
--3.208992
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.24454
-  20
--3.289843
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.380323
-  20
--3.363325
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.519949
-  20
--3.429216
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.662991
-  20
--3.487315
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.809018
-  20
--3.537446
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-1.957584
-  20
--3.579456
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.108239
-  20
--3.613219
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.260524
-  20
--3.638631
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.413979
-  20
--3.655615
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.568136
-  20
--3.66412
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.722528
-  20
--3.66412
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-2.876685
-  20
--3.655615
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.03014
-  20
--3.638631
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.182425
-  20
--3.613219
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.33308
-  20
--3.579456
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.481646
-  20
--3.537446
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.627673
-  20
--3.487315
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.770715
-  20
--3.429216
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-3.910341
-  20
--3.363325
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.046124
-  20
--3.289843
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.177653
-  20
--3.208992
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.304529
-  20
--3.121019
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.426365
-  20
--3.026189
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.542793
-  20
--2.924792
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.653458
-  20
--2.817136
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.758025
-  20
--2.703546
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.856175
-  20
--2.584369
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-4.947612
-  20
--2.459965
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.032056
-  20
--2.330714
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.109252
-  20
--2.197007
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.178965
-  20
--2.05925
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.240983
-  20
--1.917862
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.295118
-  20
--1.773273
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.341207
-  20
--1.625921
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.379108
-  20
--1.476253
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.408706
-  20
--1.324726
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.429912
-  20
--1.171797
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.442662
-  20
--1.017933
-  0
-VERTEX
-  8
-Thick_Metal
-  10
-5.446916
-  20
--0.8636
-  0
-SEQEND
-  0
-POLYLINE
-  8
-Thick_Metal
-  70
-1
-  66
-1
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.156252
-  20
-0.271901
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.880602
-  20
-0.271901
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.880602
-  20
--0.271901
-  0
-VERTEX
-  8
-Thick_Metal
-  10
--0.156252
+-0.148158
   20
 -0.271901
   0
@@ -2053,33 +135,545 @@ VERTEX
   8
 Thick_Metal
   10
-5.606249
+0.148158
   20
--0.835168
+0.6
   0
 VERTEX
   8
 Thick_Metal
   10
-6.118442
+0.153475
   20
--1.347361
+0.711614
   0
 VERTEX
   8
 Thick_Metal
   10
-6.502968
+0.169377
   20
--0.962835
+0.822216
   0
 VERTEX
   8
 Thick_Metal
   10
-5.990775
+0.195721
   20
--0.450642
+0.930807
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.232267
+  20
+1.036401
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.278686
+  20
+1.138044
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.334556
+  20
+1.234813
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.399372
+  20
+1.325834
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.472546
+  20
+1.410282
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.553416
+  20
+1.487391
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.64125
+  20
+1.556464
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.735252
+  20
+1.616876
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.83457
+  20
+1.668078
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.938306
+  20
+1.709608
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.04552
+  20
+1.741089
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.155241
+  20
+1.762235
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.266475
+  20
+1.772857
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.378215
+  20
+1.772857
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.489449
+  20
+1.762235
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.59917
+  20
+1.741089
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.706384
+  20
+1.709608
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.81012
+  20
+1.668078
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.909439
+  20
+1.616876
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.00344
+  20
+1.556464
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.091274
+  20
+1.487391
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.172144
+  20
+1.410282
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.245318
+  20
+1.325834
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.310134
+  20
+1.234813
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.366004
+  20
+1.138044
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.412423
+  20
+1.036401
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.448969
+  20
+0.930807
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.475313
+  20
+0.822216
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.491215
+  20
+0.711614
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.496532
+  20
+0.6
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.792848
+  20
+0.6
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.786189
+  20
+0.73978
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.766274
+  20
+0.878295
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.733282
+  20
+1.014289
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.687513
+  20
+1.146531
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.62938
+  20
+1.273823
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.559411
+  20
+1.395014
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.478238
+  20
+1.509005
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.386598
+  20
+1.614763
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.28532
+  20
+1.711332
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.17532
+  20
+1.797836
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.057597
+  20
+1.873493
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.933214
+  20
+1.937617
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.803299
+  20
+1.989627
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.669029
+  20
+2.029052
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.531619
+  20
+2.055535
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.392314
+  20
+2.068837
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.252376
+  20
+2.068837
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.113071
+  20
+2.055535
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.975661
+  20
+2.029052
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.841391
+  20
+1.989627
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.711476
+  20
+1.937617
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.587094
+  20
+1.873493
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.46937
+  20
+1.797836
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.35937
+  20
+1.711332
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.258092
+  20
+1.614763
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.166452
+  20
+1.509005
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.085279
+  20
+1.395014
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.01531
+  20
+1.273823
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+-0.042823
+  20
+1.146531
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+-0.088592
+  20
+1.014289
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+-0.121584
+  20
+0.878295
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+-0.141499
+  20
+0.73978
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+-0.148158
+  20
+0.6
   0
 SEQEND
   0
@@ -2095,33 +689,545 @@ VERTEX
   8
 Thick_Metal
   10
-5.990775
+2.496532
   20
-0.450642
+-0.6
   0
 VERTEX
   8
 Thick_Metal
   10
-6.502968
+2.491215
   20
-0.962835
+-0.711614
   0
 VERTEX
   8
 Thick_Metal
   10
-6.118442
+2.475313
   20
-1.347361
+-0.822216
   0
 VERTEX
   8
 Thick_Metal
   10
-5.606249
+2.448969
   20
-0.835168
+-0.930807
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.412423
+  20
+-1.036401
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.366004
+  20
+-1.138044
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.310134
+  20
+-1.234813
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.245318
+  20
+-1.325834
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.172144
+  20
+-1.410282
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.091274
+  20
+-1.487391
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.00344
+  20
+-1.556464
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.909439
+  20
+-1.616876
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.81012
+  20
+-1.668078
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.706384
+  20
+-1.709608
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.59917
+  20
+-1.741089
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.489449
+  20
+-1.762235
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.378215
+  20
+-1.772857
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.266475
+  20
+-1.772857
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.155241
+  20
+-1.762235
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.04552
+  20
+-1.741089
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.938306
+  20
+-1.709608
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.83457
+  20
+-1.668078
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.735252
+  20
+-1.616876
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.64125
+  20
+-1.556464
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.553416
+  20
+-1.487391
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.472546
+  20
+-1.410282
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.399372
+  20
+-1.325834
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.334556
+  20
+-1.234813
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.278686
+  20
+-1.138044
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.232267
+  20
+-1.036401
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.195721
+  20
+-0.930807
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.169377
+  20
+-0.822216
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.153475
+  20
+-0.711614
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.148158
+  20
+-0.6
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+-0.148158
+  20
+-0.6
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+-0.141499
+  20
+-0.73978
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+-0.121584
+  20
+-0.878295
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+-0.088592
+  20
+-1.014289
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+-0.042823
+  20
+-1.146531
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.01531
+  20
+-1.273823
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.085279
+  20
+-1.395014
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.166452
+  20
+-1.509005
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.258092
+  20
+-1.614763
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.35937
+  20
+-1.711332
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.46937
+  20
+-1.797836
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.587094
+  20
+-1.873493
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.711476
+  20
+-1.937617
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.841391
+  20
+-1.989627
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.975661
+  20
+-2.029052
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.113071
+  20
+-2.055535
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.252376
+  20
+-2.068837
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.392314
+  20
+-2.068837
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.531619
+  20
+-2.055535
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.669029
+  20
+-2.029052
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.803299
+  20
+-1.989627
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+1.933214
+  20
+-1.937617
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.057597
+  20
+-1.873493
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.17532
+  20
+-1.797836
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.28532
+  20
+-1.711332
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.386598
+  20
+-1.614763
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.478238
+  20
+-1.509005
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.559411
+  20
+-1.395014
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.62938
+  20
+-1.273823
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.687513
+  20
+-1.146531
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.733282
+  20
+-1.014289
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.766274
+  20
+-0.878295
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.786189
+  20
+-0.73978
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.792848
+  20
+-0.6
   0
 SEQEND
   0
@@ -2137,7 +1243,7 @@ VERTEX
   8
 Thick_Metal
   10
-0.156252
+-0.148158
   20
 0.271901
   0
@@ -2145,23 +1251,149 @@ VERTEX
   8
 Thick_Metal
   10
-0.156252
+-0.519224
   20
-0.8636
+0.271901
   0
 VERTEX
   8
 Thick_Metal
   10
--0.156252
+-0.519224
   20
-0.8636
+-0.271901
   0
 VERTEX
   8
 Thick_Metal
   10
--0.156252
+-0.148158
+  20
+-0.271901
+  0
+SEQEND
+  0
+POLYLINE
+  8
+Thick_Metal
+  70
+1
+  66
+1
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.833275
+  20
+-0.626368
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+3.095659
+  20
+-0.888752
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+3.480185
+  20
+-0.504226
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+3.217801
+  20
+-0.241842
+  0
+SEQEND
+  0
+POLYLINE
+  8
+Thick_Metal
+  70
+1
+  66
+1
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+3.217801
+  20
+0.241842
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+3.480185
+  20
+0.504226
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+3.095659
+  20
+0.888752
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+2.833275
+  20
+0.626368
+  0
+SEQEND
+  0
+POLYLINE
+  8
+Thick_Metal
+  70
+1
+  66
+1
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.148158
+  20
+0.271901
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+0.148158
+  20
+0.6
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+-0.148158
+  20
+0.6
+  0
+VERTEX
+  8
+Thick_Metal
+  10
+-0.148158
   20
 0.271901
   0
@@ -2179,15 +1411,15 @@ VERTEX
   8
 Thick_Metal
   10
-0.156252
+0.148158
   20
--0.8636
+-0.6
   0
 VERTEX
   8
 Thick_Metal
   10
-0.156252
+0.148158
   20
 -0.271901
   0
@@ -2195,7 +1427,7 @@ VERTEX
   8
 Thick_Metal
   10
--0.156252
+-0.148158
   20
 -0.271901
   0
@@ -2203,9 +1435,9 @@ VERTEX
   8
 Thick_Metal
   10
--0.156252
+-0.148158
   20
--0.8636
+-0.6
   0
 SEQEND
   0
@@ -2221,41 +1453,41 @@ VERTEX
   8
 Thick_Metal
   10
-5.595464
+2.82249
   20
--0.286899
+-0.078099
   0
 VERTEX
   8
 Thick_Metal
   10
-5.990775
+3.217801
   20
--0.450642
+-0.241842
   0
 VERTEX
   8
 Thick_Metal
   10
-5.606249
+2.833275
   20
--0.835168
+-0.626368
   0
 VERTEX
   8
 Thick_Metal
   10
-5.601782
+2.828808
   20
--0.830701
+-0.621901
   0
 VERTEX
   8
 Thick_Metal
   10
-5.595464
+2.82249
   20
--0.830701
+-0.621901
   0
 SEQEND
   0
@@ -2271,41 +1503,41 @@ VERTEX
   8
 Thick_Metal
   10
-5.595464
+2.82249
   20
-0.286899
+0.078099
   0
 VERTEX
   8
 Thick_Metal
   10
-5.990775
+3.217801
   20
-0.450642
+0.241842
   0
 VERTEX
   8
 Thick_Metal
   10
-5.606249
+2.833275
   20
-0.835168
+0.626368
   0
 VERTEX
   8
 Thick_Metal
   10
-5.601782
+2.828808
   20
-0.830701
+0.621901
   0
 VERTEX
   8
 Thick_Metal
   10
-5.595464
+2.82249
   20
-0.830701
+0.621901
   0
 SEQEND
   0
@@ -2321,33 +1553,33 @@ VERTEX
   8
 Thick_Metal
   10
-5.595464
+2.82249
   20
--0.254
+-0.1
   0
 VERTEX
   8
 Thick_Metal
   10
-4.985864
+2.46689
   20
--0.254
+-0.1
   0
 VERTEX
   8
 Thick_Metal
   10
-4.985864
+2.46689
   20
--0.8636
+-0.6
   0
 VERTEX
   8
 Thick_Metal
   10
-5.595464
+2.82249
   20
--0.8636
+-0.6
   0
 SEQEND
   0
@@ -2363,33 +1595,33 @@ VERTEX
   8
 Thick_Metal
   10
-5.595464
+2.82249
   20
-0.254
+0.1
   0
 VERTEX
   8
 Thick_Metal
   10
-4.985864
+2.46689
   20
-0.254
+0.1
   0
 VERTEX
   8
 Thick_Metal
   10
-4.985864
+2.46689
   20
-0.8636
+0.6
   0
 VERTEX
   8
 Thick_Metal
   10
-5.595464
+2.82249
   20
-0.8636
+0.6
   0
 SEQEND
   0
